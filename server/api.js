@@ -19,9 +19,12 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 app.use("/public", express.static(__dirname + "/public"));
 
 /* Routes Api */
-const base_url = "/api";
+const authRoute = require("./routes/auth");
 
 /* Use Routes */
+const base_url = "/api";
+app.use(base_url, authRoute);
+
 app.get("/deploy", (req, res) => {
   res.send({ object: "Hello from Node.js" });
 });

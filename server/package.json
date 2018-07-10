@@ -5,15 +5,24 @@
   "main": "api.js",
   "scripts": {
     "client": "cd ../client && npm run start",
-    "server": "nodemon server.js",
+    "server": "nodemon api.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.3",
-    "mongoose": "^5.0.16",
+    "mongoose": "^5.2.2",
     "morgan": "^1.9.0",
-    "cors": "^2.8.4"
+    "nodemon": "^1.17.5",
+    "sharp": "^0.20.5",
+    "multer": "^1.3.0",
+    "jsonwebtoken": "^8.2.1",
+    "jsonwebtoken-refresh": "^5.7.0",
+    "bcrypt-nodejs": "0.0.3"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
 }
