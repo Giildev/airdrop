@@ -82,11 +82,20 @@ register = (req, res) => {
     User.userName = body.userName.toLowerCase()
     User.email = body.email
 
+    modelUser.find({ $or: [
+      { email: User.email.toLowerCase() },
+      { userName: User.userName },
+    ] }) .exec((err, users) => {
+      if(err) return res.status(500).send({ success: false, msg: 'Error getting user to compare'})
+
+      if(users && users.length >= 1) return res.status(200).send({ success: false, msg: 'User already exiasdst'})
+    })
+
     bcrypt.hash(body.password, null, null, (err, hash) => {
       User.password = hash
 
       User.save((error, userStored) => {
-        if(error.name === 'MongoError' && error.code === 11000) return res.status(500).send({ success: false, msg: `User already exist` })
+        if(error) return res.status(500).send({ success: false, msg: `Error Register user` })
 
         if( userStored ) {
           res.status(200).send({ success: true, msg: `Registered user...Welcome` })

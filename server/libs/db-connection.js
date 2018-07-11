@@ -8,7 +8,6 @@ connection = () => {
     db = mongoose.connect("mongodb://localhost:27017/" + config.airDB, {
       useNewUrlParser: true
     });
-    console.log(mongoose.connection.readyState);
   }
 };
 

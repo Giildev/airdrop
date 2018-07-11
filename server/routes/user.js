@@ -4,10 +4,10 @@ const router = express.Router({
 });
 const authController = require("../controllers/authController");
 
-const prefix = "/auth";
+const prefix = "/user";
 
 router.post(`${prefix}/login`, authController.login);
 
-router.put(`${prefix}/register`, authController.register);
+router.post(`${prefix}/register`, authController.register);
 
 module.exports = router;
