@@ -9,19 +9,10 @@ const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
   access_token: String,
   password: { type: String, required: true },
-  avatar: {
-    type: String,
-    default: "defaultAvatar.png"
-  },
+  avatar: { type: String, default: "defaultAvatar.png" },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
   lastedEnter: { type: Date, default: Date.now },
-  RRSS: {
-    fb: String,
-    steemit: String,
-    twitter: String,
-    reddit: String
-  }
 });
 
 userSchema.methods.generateHash = function(password) {
