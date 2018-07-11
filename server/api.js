@@ -21,6 +21,7 @@ app.use("/public", express.static(__dirname + "/public"));
 /* Routes Api */
 const authRoute = require("./routes/auth");
 const siteRoute = require("./routes/site");
+const storyRoute = require("./routes/story");
 const donationRoute = require("./routes/donation");
 
 /* Use Routes */
@@ -28,6 +29,7 @@ const base_url = "/api";
 app.use(base_url, authRoute);
 app.use(base_url, siteRoute);
 app.use(base_url, donationRoute);
+app.use(base_url, storyRoute);
 
 app.get("/deploy", (req, res) => {
   res.send({ object: "Hello from Node.js" });

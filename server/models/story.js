@@ -5,10 +5,10 @@ const db = require("../libs/db-connection");
 const Schema = mongoose.Schema;
 
 const storySchema = new Schema({
-  title: { type: String, unique: true, required: true },
-  subtitle: { type: String, required: true },
-  cover: { type: String, required: true },
-  content: { type: String, required: true },
+  title: { type: String }, // unique
+  subtitle: { type: String },
+  cover: { type: String },
+  content: { type: String },
   featured: { type: Boolean, default: false },
   main: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
@@ -16,6 +16,6 @@ const storySchema = new Schema({
   deletedAt: Date,
 });
 
-const Story = mongoose.model("donations", storySchema);
+const Story = mongoose.model("story", storySchema);
 
 module.exports = Story;

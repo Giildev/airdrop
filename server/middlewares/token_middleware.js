@@ -68,7 +68,7 @@ ensureToken = (req, res, next) => {
       res.sendStatus(401);
     }
   } else {
-    res.sendFile(path.join(__dirname, '../public/not_found.html'));
+    res.sendStatus(401);
   }
 };
 
