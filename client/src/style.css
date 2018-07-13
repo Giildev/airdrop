@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+:root {
+  --primary: #00bf98; }
+
+body {
+  background-color: #f1f2f2;
+  height: 100%; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Pepi-Light", "Pepi-Medium", sans-serif; }
+
+@media (max-width: 430px) {
+  html {
+    box-sizing: border-box;
+    font-size: 50%; } }

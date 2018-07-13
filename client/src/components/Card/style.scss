@@ -1,0 +1,27 @@
+.hiwcard {
+  display: flex;
+  flex-direction: column;
+  width: 35rem;
+  height: 35rem;
+  padding: 8rem 1rem;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 20rem 0px rgba(0, 0, 0, 0.2);
+  &__iconBox {
+    box-shadow: 0.2rem 0.2rem 20rem 0px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center center;
+  }
+  &__title {
+    color: var(--primary);
+    font-size: 2.1rem;
+  }
+  &__subTitle {
+    color: black;
+    font-size: 1.8rem;
+  }
+}

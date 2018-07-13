@@ -1,0 +1,19 @@
+.howItWorks {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 60rem;
+  margin: auto 12%; }
+  .howItWorks__title {
+    color: inherit;
+    text-align: center;
+    font-size: 5rem; }
+  .howItWorks__subTitle {
+    text-align: center;
+    color: inherit;
+    font-size: 2.5rem; }
+  .howItWorks__cardContainer {
+    height: 40%;
+    display: flex; }

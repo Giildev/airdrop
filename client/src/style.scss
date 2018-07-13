@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  //Color Palette
+
+  --primary: #00bf98;
+}
+
+body {
+  background-color: #f1f2f2;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+  font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
+}
+
+%noLink {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin button($color, $width, $height, $bgCol, $borRad) {
+  width: $width;
+  height: $height;
+  background-color: $bgCol;
+  color: $color;
+  border-radius: $borRad;
+  border: none;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0px 0.5rem 1rem 0 hsla(0, 0%, 13%, 0.102);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: translateY(0.5rem);
+  }
+}
+
+@media (max-width: 430px) {
+  html {
+    box-sizing: border-box;
+    font-size: 50%;
+  }
+}

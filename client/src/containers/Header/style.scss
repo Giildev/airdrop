@@ -1,0 +1,33 @@
+@import "../../style.scss";
+// mixin button($color, $width, $height, $bgCol, $borRad)
+
+.header {
+  display: flex;
+  height: 10rem;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 0.5rem 1rem 0 hsla(0, 0%, 13%, 0.102);
+  &__logoBox {
+    width: 45rem;
+  }
+  &__logo {
+    width: 80%;
+    height: auto;
+  }
+  &__menu {
+    display: flex;
+    width: 45rem;
+    justify-content: space-evenly;
+    &__item {
+      font-size: 2rem;
+      @extend %noLink;
+    }
+  }
+  &__cta {
+    &__button {
+      font-size: 1.6rem;
+      color: white;
+      @include button(white, 20rem, 5rem, var(--primary), 3rem);
+    }
+  }
+}
