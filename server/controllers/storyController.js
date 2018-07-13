@@ -2,6 +2,7 @@ const express = require("express");
 const bcrypt = require("bcrypt-nodejs");
 const jwt = require("jsonwebtoken");
 const modelStory = require("../models/story");
+const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 getStories = (req, res) => {
@@ -32,6 +33,7 @@ setStory = (req, res) => {
     Story.subtitle = subtitle;
     Story.cover = cover;
     Story.content = content;
+    Story.site = '5b479f121f22d372dfb0f433';
 
     // Check for duplicates
     modelStory.find({ title: Story.title }, (err, stories) => {
@@ -48,11 +50,23 @@ setStory = (req, res) => {
         });
 
         if (storyStored) {
-          res.status(200).send({
-            success: true,
-            msg: `Registered story succesfully`,
-            data: storyStored
-          })
+
+          modelSite.update(
+            { _id: '5b479f121f22d372dfb0f433' }, // prueba
+            { $push: { stories: storyStored._id } },
+            (err, siteUpdated) => {
+              if (err) return res.status(500).send({
+                success: false,
+                msg: `Error saving story`
+              });
+              
+              res.status(200).send({
+                success: true,
+                msg: `Registered story succesfully`,
+                data: storyStored
+              })
+            }
+          )
         } else {
           res.status(404).send({
             success: false,

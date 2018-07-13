@@ -27,13 +27,14 @@ setDonation = (req, res) => {
   const { coin, icon, wallet, symbol, QR } = req.body;
   const Donation = new modelDonation();
 
-  if( coin && icon && wallet && symbol && QR ) {
+  if( coin && icon && wallet && symbol && QR) {
 
     Donation.coin = coin;
     Donation.icon = icon;
     Donation.wallet = wallet;
     Donation.symbol = symbol;
     Donation.QR = QR;
+    Donation.site = '5b479f121f22d372dfb0f433';
 
     // Save Donation into DB
     modelDonation.find({ wallet: Donation.wallet }, (err, donations) => {
@@ -45,11 +46,22 @@ setDonation = (req, res) => {
         if(error) return res.status(500).send({ success: false, msg: error }) 
 
         if (donationStored) {
-          res.status(200).send({
-            success: true,
-            msg: `Registered donation`,
-            data: donationStored
-          })
+          modelSite.update(
+            { _id: '5b479f121f22d372dfb0f433' },
+            { $push: { donations: donationStored._id } },
+            (err, siteUpdated) => {
+              if (err) return res.status(500).send({
+                success: false,
+                msg: `Error saving story`
+              });
+
+              res.status(200).send({
+                success: true,
+                msg: `Registered donation`,
+                data: donationStored
+              })
+            }
+          )
         } else {
           res.status(404).send({
             success: false,
@@ -96,7 +108,6 @@ editDonation = (req, res) => {
 
   res.status(200).send({
     success: true,
-    code: 200,
     msg: "All Donations modified successfully"
   })
 };

@@ -1,19 +1,117 @@
 const bcrypt = require("bcrypt-nodejs");
 const mongoose = require("mongoose");
 const db = require("../libs/db-connection");
-
 const Schema = mongoose.Schema;
 
 const siteSchema = new Schema({
-  userName: { type: String, unique: true, required: true },
-  email: { type: String, unique: true, required: true },
-  access_token: String,
-  password: { type: String, required: true },
-  avatar: { type: String, default: "defaultAvatar.png" },
-  donations: { type: Schema.ObjectId, ref: 'donations' },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
-  lastedEnter: { type: Date, default: Date.now },
+  banner: String,
+  header: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  middleSection: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  donationFundsAmount: {
+    raised: String,
+    goal: String
+  },
+  donationCerfiedUsersAmount: {
+    raised: String,
+    goal: String
+  },
+  timeline: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    },
+    lines: [{ type: Schema.ObjectId, ref: 'timeline' }]
+  },
+  about: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  story: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  mail: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  faq: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  contactUs: {
+    ES: {
+      title: String,
+      description: String
+    },
+    EN: {
+      title: String,
+      description: String
+    }
+  },
+  donation: {
+    ES: {
+      title: String,
+      description: String,
+      warningText: String,
+      bottomText: String,
+    },
+    EN: {
+      title: String,
+      description: String,
+      warningText: String,
+      bottomText: String,
+    }
+  },
+  social_media: [{ rrss: String, url: String }],
+  stories: [{ type: Schema.ObjectId, ref: 'story' }],
+  donations: [{ type: Schema.ObjectId, ref: 'donation' }],
+  faqs: [{ type: Schema.ObjectId, ref: 'faq' }]
 });
 
 const Site = mongoose.model("site", siteSchema);
