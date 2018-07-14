@@ -33,7 +33,7 @@ setFaq = (req, res) => {
   let { question, answer } = req.body;
   const Faq = new modelFaq();
 
-  if(question && answer){
+  if(question && answer && lan){
 
     Faq.question = question;
     Faq.answer = answer;

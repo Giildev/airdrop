@@ -4,8 +4,19 @@ const jwt = require("jsonwebtoken");
 const modelSite = require("../models/site");
 const config = require("../libs/config")
 
-getContent = (req, res) => {
-  modelSite.find({}).populate('stories donations faqs timeline.lines').exec((err, sites) => {
+getSiteContent = (req, res) => {
+  let lan = 'ES';
+
+  if(req.params.lan) {
+    lan = req.params.lan.toUpperCase();
+  }
+  
+  modelSite.find({})
+  .populate('stories', null,{ lan: lan })
+  .populate('donations')
+  .populate('faqs', null,{ lan: lan })
+  .populate('timeline.lines', null,{ lan: lan })
+  .exec((err, sites) => {
     if (err) return res.status(500).send({
       success: false,
       msg: `Problem to get all content`
@@ -13,7 +24,22 @@ getContent = (req, res) => {
 
     res.status(200).send({
       success: true,
-      site: sites
+      site: sites[0]
+    })
+  })
+};
+
+getContent = (req, res) => {
+  modelSite.find({})
+  .exec((err, sites) => {
+    if (err) return res.status(500).send({
+      success: false,
+      msg: `Problem to get all content`
+    })
+
+    res.status(200).send({
+      success: true,
+      site: sites[0]
     })
   })
 };
@@ -56,6 +82,7 @@ editContent = (req, res) => {
 };
 
 module.exports = {
+  getSiteContent,
   getContent,
   setContent,
   editContent
