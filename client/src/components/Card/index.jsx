@@ -8,10 +8,11 @@ export class HIWCard extends Component {
   render() {
     return (
       <div className="hiwcard">
-        <div
-          style={{ backgroundImage: `url("/hiwIcon.png")` }}
-          className="hiwcard__iconBox"
-        />
+        <div className="hiwcard__iconBox">
+          <div className="hiwcard__iconBox__imgBox">
+            <img src="/hiwIcon.png" alt="" />
+          </div>
+        </div>
         <div className="hiwcard__title">{this.props.title}</div>
         <div className="hiwcard__subTitle">{this.props.subTitle}</div>
       </div>

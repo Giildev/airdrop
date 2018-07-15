@@ -1,23 +1,35 @@
 .hiwcard {
+  background-color: white;
   display: flex;
   flex-direction: column;
   width: 35rem;
   height: 35rem;
-  padding: 8rem 1rem;
+  padding: 4rem;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0.2rem 0.2rem 20rem 0px rgba(0, 0, 0, 0.2); }
+  border-radius: 1rem;
+  box-shadow: 0 0 9rem -2.6rem rgba(0, 0, 0, 0.6); }
   .hiwcard__iconBox {
-    box-shadow: 0.2rem 0.2rem 20rem 0px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
     border-radius: 50%;
     width: 12rem;
     height: 12rem;
-    background-repeat: no-repeat;
-    background-size: initial;
-    background-position: center center; }
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .hiwcard__iconBox__imgBox {
+      background-color: white;
+      box-shadow: 1rem 1rem 1rem -0.8rem rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 10rem;
+      height: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
   .hiwcard__title {
     color: var(--primary);
     font-size: 2.1rem; }
   .hiwcard__subTitle {
+    text-align: center;
     color: black;
     font-size: 1.8rem; }
