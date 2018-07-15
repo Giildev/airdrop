@@ -5,7 +5,7 @@ import config from "../../../libs/config";
 
 // Components & Containers
 import "./style.css";
-
+import Loader from "../../Loader";
 export default class AdminSite extends Component {
   constructor(props) {
     super(props)
@@ -28,7 +28,7 @@ export default class AdminSite extends Component {
 
   updateContent = () => {
     axios
-      .put(`${config.BASE_URL}/site`)
+      .post(`${config.BASE_URL}/site`)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
   }

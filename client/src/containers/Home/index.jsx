@@ -10,7 +10,7 @@ import AdminSite from "../../components/Admin/Site";
 // Styles
 import "./style.css";
 
-export default class componentName extends Component {
+export default class Home extends Component {
 
   constructor(props) {
     super(props)
@@ -35,23 +35,24 @@ export default class componentName extends Component {
   }
 
   render() {
-    return (
-      <div>
+    return <div>
         <Header />
         <Banner />
         <HowItWorks />
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1>ANDO VIENDO COMO ES LA VAINA CON LOS TABS PARA EL ADMIN SI TIENES UN MEJOR CSS FUEGO XD</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>
+          ANDO VIENDO COMO ES LA VAINA CON LOS TABS PARA EL ADMIN SI TIENES
+          UN MEJOR CSS FUEGO XD
+        </h1>
         <AdminSite />
-      </div>
-    );
+      </div>;
   }
 }
