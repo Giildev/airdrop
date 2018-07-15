@@ -12,13 +12,13 @@ export default class Banner extends Component {
         className="banner"
       >
         <div className="banner__container">
-          <div className="banner__container__mainTitle">
+          <h1 className="banner__container__mainTitle">
             <span className="banner__container__mainTitle__color">
               Help Send &nbsp;
             </span>
             $10 to <br />
             100,000 Venezuelans
-          </div>
+          </h1>
           <div className="banner__container__subTitle">
             Cryptocurrency is unstoppable. No country needs it more than
             Venezuela.

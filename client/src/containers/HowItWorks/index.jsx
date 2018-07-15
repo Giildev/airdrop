@@ -9,12 +9,12 @@ export default class HowItWorks extends Component {
   render() {
     return (
       <section className="howItWorks">
-        <div className="howItWorks__title">How it Work's</div>
-        <div className="howItWorks__subTitle">
+        <h2 className="howItWorks__title">How it Work's</h2>
+        <h3 className="howItWorks__subTitle">
           Airdrop Venezuela distributes donations to help introduce Venezuelans
           to cryptocurrency benefits including freelance, eCommerce, investment,
           remittance, and other web-based opportunities.
-        </div>
+        </h3>
         <div className="howItWorks__cardContainer">
           <HIWCard
             title="Donate"
