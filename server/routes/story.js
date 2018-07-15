@@ -7,7 +7,7 @@ const md_auth = require("../middlewares/token_middleware");
 
 const prefix = "/story";
 
-router.get(`${prefix}`, md_auth.ensureToken, storyController.getStories); // get all stories
+router.get(`${prefix}`, storyController.getStories); // get all stories
 
 router.get(`${prefix}/:id`, storyController.getStory); // get story by id
 

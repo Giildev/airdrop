@@ -6,21 +6,21 @@ const Schema = mongoose.Schema;
 const siteSchema = new Schema({
   banner: String,
   header: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   middleSection: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
@@ -34,74 +34,74 @@ const siteSchema = new Schema({
     goal: String
   },
   timeline: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     },
     lines: [{ type: Schema.ObjectId, ref: 'timeline' }]
   },
   about: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   story: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   mail: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   faq: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   contactUs: {
-    ES: {
+    es: {
       title: String,
       description: String
     },
-    EN: {
+    en: {
       title: String,
       description: String
     }
   },
   donation: {
-    ES: {
+    es: {
       title: String,
       description: String,
       warningText: String,
       bottomText: String,
     },
-    EN: {
+    en: {
       title: String,
       description: String,
       warningText: String,

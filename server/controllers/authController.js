@@ -67,7 +67,6 @@ login = (req, res) => {
 
       auth.access_token = token; // assign token to return user with specific data.
       auth.user = user.userName;
-      auth.avatar = user.avatar;
       res.status(200).send({ success: true, auth: auth });
     }
   );
