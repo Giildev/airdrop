@@ -26,7 +26,6 @@
   &__cta {
     &__button {
       font-size: 1.6rem;
-      color: white;
       @include button(white, 20rem, 5rem, var(--primary), 3rem);
     }
   }

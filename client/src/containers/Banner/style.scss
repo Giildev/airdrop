@@ -16,6 +16,7 @@
       color: inherit;
       text-align: center;
       font-size: 8rem;
+      font-weight: 100 !important;
       &__color {
         color: var(--primary);
         text-transform: uppercase;
@@ -25,6 +26,7 @@
       text-align: center;
       color: inherit;
       font-size: 4rem;
+      font-weight: 100 !important;
     }
 
     &__scroll {

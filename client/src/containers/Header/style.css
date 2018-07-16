@@ -8,7 +8,8 @@
   box-sizing: inherit; }
 
 :root {
-  --primary: #00bf98; }
+  --primary: #00bf98;
+  --secundary: #93d5f1; }
 
 body {
   background-color: white;
@@ -17,7 +18,8 @@ body {
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: "Pepi-Light", "Pepi-Medium", sans-serif; }
+  font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
+  font-weight: 100 !important; }
 
 .header__menu__item {
   color: inherit;
@@ -49,7 +51,6 @@ html {
       font-size: 2rem; }
   .header__cta__button {
     font-size: 1.6rem;
-    color: white;
     width: 20rem;
     height: 5rem;
     background-color: var(--primary);

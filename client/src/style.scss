@@ -13,10 +13,11 @@
   //Color Palette
 
   --primary: #00bf98;
+  --secundary: #93d5f1;
 }
 
 body {
-  background-color: white; 
+  background-color: white;
   height: 100%;
 }
 
@@ -24,6 +25,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
   font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
+  font-weight: 100 !important;
 }
 
 %noLink {

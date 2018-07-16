@@ -8,7 +8,8 @@
   box-sizing: inherit; }
 
 :root {
-  --primary: #00bf98; }
+  --primary: #00bf98;
+  --secundary: #93d5f1; }
 
 body {
   background-color: white;
@@ -17,7 +18,8 @@ body {
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  font-family: "Pepi-Light", "Pepi-Medium", sans-serif; }
+  font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
+  font-weight: 100 !important; }
 
 @media (max-width: 430px) {
   html {

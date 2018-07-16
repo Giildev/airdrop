@@ -15,11 +15,13 @@
     .banner__container__mainTitle {
       color: inherit;
       text-align: center;
-      font-size: 8rem; }
+      font-size: 8rem;
+      font-weight: 100 !important; }
       .banner__container__mainTitle__color {
         color: var(--primary);
         text-transform: uppercase; }
     .banner__container__subTitle {
       text-align: center;
       color: inherit;
-      font-size: 4rem; }
+      font-size: 4rem;
+      font-weight: 100 !important; }

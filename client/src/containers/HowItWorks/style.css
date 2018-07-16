@@ -9,11 +9,13 @@
   .howItWorks__title {
     color: inherit;
     text-align: center;
-    font-size: 5rem; }
+    font-size: 5rem;
+    font-weight: 100 !important; }
   .howItWorks__subTitle {
     text-align: center;
     color: inherit;
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    font-weight: 100 !important; }
   .howItWorks__cardContainer {
     flex-wrap: wrap;
     display: flex;
