@@ -1,0 +1,23 @@
+.quote {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 10rem 0; }
+  .quote__text {
+    font-size: 5rem; }
+    .quote__text__author {
+      font-size: 4rem;
+      color: var(--primary); }
+  .quote__container {
+    display: flex;
+    align-items: center;
+    margin: 0 15rem; }
+    .quote__container__leftCol {
+      flex: 2; }
+    .quote__container__rightCol {
+      flex: 3;
+      font-size: 1.6rem;
+      text-align: left; }
+      .quote__container__rightCol p {
+        margin: 2rem 0; }
+      .quote__container__rightCol__color {
+        color: var(--primary); }
