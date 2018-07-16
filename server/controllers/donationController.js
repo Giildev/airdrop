@@ -8,7 +8,7 @@ const config = require("../libs/config")
 getDonations = (req, res) => {
     modelDonation.find({}, (err, donations) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get all donations` })
-
+    
     res.status(200).send({ success: true, data: donations })
   })
 };
@@ -37,10 +37,10 @@ setDonation = (req, res) => {
     Donation.site = '5b479f121f22d372dfb0f433';
 
     // Save Donation into DB
-    modelDonation.find({ wallet: Donation.wallet }, (err, donations) => {
+    modelDonation.find({ wallet: Donation.wallet, deleted: false }, (err, donations) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting donations to compare'})
 
-      if(donations && donations.length >= 1) return res.status(200).send({ success: false, msg: 'donations already used'})
+      if(donations && donations.length >= 1 ) return res.status(200).send({ success: false, msg: 'donations already used'})
 
       Donation.save((error, donationStored) => {
         if(error) return res.status(500).send({ success: false, msg: error }) 
@@ -83,6 +83,8 @@ editDonation = (req, res) => {
   let body = req.body;
   let ids = req.params.id.split(",");
 
+  let modifiedData = [];
+
   let newDate = new Date();
   if (body.hasOwnProperty("deleted")) {
     body.deletedAt = newDate;
@@ -95,20 +97,22 @@ editDonation = (req, res) => {
       { _id: ids[i] },
       { $set: body },
       { new: true },
-      (err, donation) => {
+      (err, updatedDonation) => {
         if (err) {
           console.log(err);
           return res
             .status(500)
             .send({ success: false, msg: "Problem Editing Donation" });
         }
+        modifiedData.push(updatedDonation);
       }
     );
   }
 
   res.status(200).send({
     success: true,
-    msg: "All Donations modified successfully"
+    msg: "All Donations modified successfully",
+    data: modifiedData
   })
 };
 

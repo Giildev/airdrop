@@ -39,12 +39,12 @@ setFaq = (req, res) => {
     Faq.answer = answer;
     Faq.site = '5b479f121f22d372dfb0f433'; // se envia desde el front
 
-    modelFaq.find({ question: Faq.question }, (err, faqs) => {
+    modelFaq.find({ question: Faq.question, deleted: false }, (err, faqs) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting faqs to compare'})
 
       if (faqs && faqs.length >= 1) return res.status(200).send({
         success: false,
-        msg: 'faqs already posted'
+        msg: 'faq already posted'
       })
 
       Faq.save((error, faqStored) => {
@@ -88,6 +88,8 @@ editFaq = (req, res) => {
   let body = req.body;
   let ids = req.params.id.split(',');
 
+  let modifiedData = [];
+
   let newDate = new Date();
   if (body.hasOwnProperty("deleted")) {
     body.deletedAt = newDate;
@@ -111,13 +113,16 @@ editFaq = (req, res) => {
               msg: "Problem Editing faqs"
             });
         }
+
+        modifiedData.push(faqUpdated);
       }
     );
   }
   
   res.status(200).send({
     success: true,
-    msg: "All faqs modified successfully"
+    msg: "All faqs modified successfully",
+    data: faqUpdated
   })
 };
 

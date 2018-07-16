@@ -15,6 +15,7 @@ const donationSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
   deletedAt: Date,
+  deleted: { type: Boolean, default: false },
   site: { type: Schema.ObjectId, ref: 'site' }
 });
 
