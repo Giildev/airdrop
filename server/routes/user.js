@@ -2,12 +2,14 @@ const express = require("express");
 const router = express.Router({
   strict: true
 });
-const authController = require("../controllers/authController");
+const userController = require("../controllers/userController");
 
 const prefix = "/user";
 
-router.post(`${prefix}/login`, authController.login);
+router.get(`${prefix}`, userController.getUsers);
 
-router.post(`${prefix}/register`, authController.register);
+router.get(`${prefix}/:id`, userController.getUser);
+
+router.post(`${prefix}/:id`, userController.editUser);
 
 module.exports = router;

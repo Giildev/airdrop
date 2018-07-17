@@ -36,7 +36,7 @@ setStory = (req, res) => {
     Story.site = '5b479f121f22d372dfb0f433';
 
     // Check for duplicates
-    modelStory.find({ title: Story.title }, (err, stories) => {
+    modelStory.find({ title: Story.title, deleted: false }, (err, stories) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting stories to compare'});
 
       // if exist 1 or more stories story already posted and break statement
@@ -88,6 +88,8 @@ editStory = (req, res) => {
   let body = req.body;
   let ids = req.params.id.split(",");
 
+  let modifiedData = [];
+
   let newDate = new Date();
   if (body.hasOwnProperty("deleted")) {
     body.deletedAt = newDate;
@@ -100,21 +102,23 @@ editStory = (req, res) => {
       ids[i],
       body,
       { new: true },
-      (err, donation) => {
+      (err, updatedStory) => {
         if (err) {
           console.log(err);
           return res
             .status(500)
             .send({ success: false, msg: "Problem Editing Donation" });
         }
+
+        modifiedData.push(updatedStory)
       }
     );
   }
 
   res.status(200).send({
     success: true,
-    code: 200,
-    msg: "All stories modified successfully"
+    msg: "All stories modified successfully",
+    data: modifiedData
   })
 };
 

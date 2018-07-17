@@ -12,10 +12,10 @@ getSiteContent = (req, res) => {
   }
   
   modelSite.find({})
-  .populate('stories', null,{ lan: lan })
-  .populate('donations')
-  .populate('faqs', null,{ lan: lan })
-  .populate('timeline.lines', null,{ lan: lan })
+  .populate('stories', null,{ lan: lan, deleted: false })
+  .populate('donations', null, { deleted: false })
+  .populate('faqs', null,{ lan: lan, deleted: false })
+  .populate('timeline.lines', null,{ lan: lan, deleted: false })
   .exec((err, sites) => {
     if (err) return res.status(500).send({
       success: false,
