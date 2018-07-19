@@ -1,0 +1,17 @@
+.contact {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 30rem;
+  align-items: center;
+  color: #444444;
+  justify-content: center;
+  font-size: 2rem;
+  background-image: url("/contactUs.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-position-x: 5rem; }
+  .contact__title {
+    font-size: 4rem; }
+  .contact__subTitle__color {
+    color: var(--primary); }
