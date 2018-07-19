@@ -7,7 +7,6 @@ import Header from "../Header";
 import Banner from "../Banner";
 import HowItWorks from "../HowItWorks";
 import FundsRaised from "../FundsRaised";
-import AdminSite from "../../components/Admin/Site";
 
 // Styles
 import "./style.css";
@@ -45,11 +44,6 @@ export default class Home extends Component {
         <Banner />
         <HowItWorks />
         <FundsRaised />
-        {/*<h1>
-          ANDO VIENDO COMO ES LA VAINA CON LOS TABS PARA EL ADMIN SI TIENES UN
-          MEJOR CSS FUEGO XD
-        </h1>
-        <AdminSite />*/}
       </div>
     );
   }

@@ -7,12 +7,12 @@ const md_auth = require("../middlewares/token_middleware");
 
 const prefix = "/story";
 
-router.get(`${prefix}`, storyController.getStories); // get all stories
+router.get(`${prefix}`, md_auth.ensureToken, storyController.getStories); // get all stories
 
-router.get(`${prefix}/:id`, storyController.getStory); // get story by id
+router.get(`${prefix}/:id`, md_auth.ensureToken, storyController.getStory); // get story by id
 
-router.post(`${prefix}/:id`, storyController.editStory); // edit story by id
+router.post(`${prefix}/:id`, md_auth.ensureToken, storyController.editStory); // edit story by id
 
-router.put(`${prefix}`, storyController.setStory); // create a story
+router.put(`${prefix}`, md_auth.ensureToken, storyController.setStory); // create a story
 
 module.exports = router;

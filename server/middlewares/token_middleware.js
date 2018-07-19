@@ -59,7 +59,10 @@ ensureToken = (req, res, next) => {
     if (validToken.success) {
       let checker = checkUser(token)
       if (checker) {
-        console.log('Tiene permiso')
+        /*
+          Assing data from token to a global var into the Request object
+        */
+        req.user = validToken.auth;
         next();
       } else {
         res.sendStatus(401);
