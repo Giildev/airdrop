@@ -9,6 +9,7 @@ import HowItWorks from "../HowItWorks";
 import FundsRaised from "../FundsRaised";
 import Quote from "../Quote";
 import Footer from "../Footer";
+import Contact from "../Contact";
 import AdminSite from "../../components/Admin/Site";
 
 // Styles
@@ -48,7 +49,7 @@ export default class Home extends Component {
         <HowItWorks />
         <FundsRaised />
         <Quote />
-
+        <Contact />
         <Footer />
         {/*<h1>
           ANDO VIENDO COMO ES LA VAINA CON LOS TABS PARA EL ADMIN SI TIENES UN
