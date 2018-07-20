@@ -1,0 +1,8 @@
+{
+  "name": "bitoracle",
+  "version": "1.0.0",
+  "scripts": {},
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
