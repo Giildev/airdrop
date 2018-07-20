@@ -1,0 +1,30 @@
+@import "../../style.scss";
+// mixin button($color, $width, $height, $bgCol, $borRad)
+
+.storiesSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100rem;
+  &__title {
+    text-align: center;
+    font-size: 5rem;
+    color: var(--primary);
+  }
+
+  &__subTitle {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__button {
+    font-size: 1.6rem;
+    align-self: center;
+    @include button(white, 20rem, 5rem, var(--primary), 3rem);
+  }
+
+  &__storiesContainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

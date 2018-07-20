@@ -25,12 +25,37 @@ export class TimeLineCard extends Component {
     return (
       <div>
         <div className="TimeContainer">
-          <div className="topBarTime"></div>
+          <div className="topBarTime" />
           <p className="TimeContainer__cardTitle">Public Launch, 7/2017:</p>
-          <p className="TimeContainer__cardContent">AirdropVenezuela.org live donations</p>
-          <p className="TimeContainer__cardTitle">Campaing Period, 7/16 - 9/14:</p>
-          <p className="TimeContainer__cardContent">Open for donations and Venezuelan participants.</p>
+          <p className="TimeContainer__cardContent">
+            AirdropVenezuela.org live donations
+          </p>
+          <p className="TimeContainer__cardTitle">
+            Campaing Period, 7/16 - 9/14:
+          </p>
+          <p className="TimeContainer__cardContent">
+            Open for donations and Venezuelan participants.
+          </p>
         </div>
+      </div>
+    );
+  }
+}
+
+export class StorieCard extends Component {
+  render() {
+    return (
+      <div className="stories">
+        <img className="stories__img" src="/storie1.jpg" alt="" />
+        <h2 className="stories__title">Bracelet Maker Tulio Benitez</h2>
+        <p className="stories__storie">
+          He started creating bracelets and selling them on the streets in
+          Cúcuta, Colombia. Initially scared to make a Venezuela bracelet
+          because he might be spotted by police and taken...
+        </p>
+        <a href="#" className="stories__more">
+          View More
+        </a>
       </div>
     );
   }

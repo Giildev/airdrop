@@ -11,6 +11,7 @@ import Quote from "../Quote";
 import TimeLine from "../Timeline";
 import Footer from "../Footer";
 import Contact from "../Contact";
+import Stories from "../Stories";
 import AdminSite from "../../components/Admin/Site";
 
 // Styles
@@ -50,7 +51,8 @@ export default class Home extends Component {
         <HowItWorks />
         <FundsRaised />
         <Quote />
-        <TimeLine/>
+        <TimeLine />
+        <Stories />
         <Contact />
         <Footer />
         {/*<h1>
