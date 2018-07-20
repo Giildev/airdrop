@@ -2,12 +2,13 @@ const express = require("express");
 const bcrypt = require("bcrypt-nodejs");
 const jwt = require("jsonwebtoken");
 const modelUser = require("../models/user");
+const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 login = (req, res) => {
   let body = req.body;
   let auth = {};
-  // console.log(JSON.stringify(body));
+
   modelUser.findOne(
     {
       $or: [{
@@ -35,39 +36,52 @@ login = (req, res) => {
       if (!decryptedPass) {
         return res.status(404).send({
           success: false,
-          code: 404,
           msg: "Incorrect password, try again"
         });
       }
 
-      delete user._doc.password
+      modelSite.find({}, "_id", (err, sites) => {
+        if (err) return res.status(500).send({ success: false, msg: "problem site" });
 
-      const token = jwt.sign({ user }, config.SECRET_KEY, {
-        expiresIn: "999d"
-      });
+        /*
+          Add property 'site' to object user
+          with the _id of unique site to manipulate
+        */
+        user._doc.site = sites[0]._id;
+        /*
+          Delete password from object user
+          to create the payload
+        */
+        delete user._doc.password
 
-      const lastedEnter = new Date();
-
-      modelUser.findOneAndUpdate(
-        { userName: user.userName },
-        { $set: { access_token: token, lastedEnter: lastedEnter } },
-        { new: true },
-        (err, user_w_t) => {
-          //user_with_token
-          if (err) {
-            console.log(err);
-            return res
-              .status(500)
-              .send({ success: false, msg: "problem saving the token" });
+        const token = jwt.sign({ user }, config.SECRET_KEY, {
+          expiresIn: "999d"
+        });
+  
+        const lastedEnter = new Date();
+  
+        modelUser.findOneAndUpdate(
+          { userName: user.userName },
+          { $set: { access_token: token, lastedEnter: lastedEnter } },
+          { new: true },
+          (err, user_w_t) => {
+            //user_with_token
+            if (err) {
+              console.log(err);
+              return res
+                .status(500)
+                .send({ success: false, msg: "problem saving the token" });
+            }
+  
+            if (user_w_t.access_token.length > 0) console.log("token save it");
           }
+        );
+  
+        auth.access_token = token; // assign token to return user with specific data.
+        auth.user = user.userName;
+        res.status(200).send({ success: true, auth: auth });
+      })
 
-          if (user_w_t.access_token.length > 0) console.log("token save it");
-        }
-      );
-
-      auth.access_token = token; // assign token to return user with specific data.
-      auth.user = user.userName;
-      res.status(200).send({ success: true, auth: auth });
     }
   );
 }
@@ -78,13 +92,13 @@ register = (req, res) => {
 
   if(body.userName && body.email && body.password) {
 
-    User.userName = body.userName.toLowerCase()
+    User.userName = body.userName
     User.email = body.email
 
     modelUser.find({ $or: [
-      { email: User.email.toLowerCase() },
+      { email: User.email },
       { userName: User.userName },
-    ] }) .exec((err, users) => {
+    ]}).exec((err, users) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting user to compare'})
 
       if(users && users.length >= 1) return res.status(200).send({ success: false, msg: 'User already exiasdst'})
