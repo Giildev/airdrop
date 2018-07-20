@@ -11,6 +11,7 @@ const corsOptions = {
   origin: "http://localhost:4000"
 };
 
+
 /* Middleware */
 app.use(cors());
 app.use(morgan("dev"));
