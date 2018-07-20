@@ -36,12 +36,22 @@ export default class Switch extends Component {
       .catch(err => console.log(err));
   };
 
+  handleLanguage = () => {
+    let lan = this.state.lan;
+
+    if(lan === 'es') {
+      this.setState({ lan: 'en' })
+    } else {
+      this.setState({ lan: 'es' })
+    }
+  }
+
 
   render() {
     const { content, lan } = this.state;
     return content === undefined ? <Loader /> : (
       <div>
-        
+        <button onClick={this.handleLanguage}>cambialo ahi</button>
         {content.header[lan].title}
         {/* {JSON.stringify(content.header)} */}
       </div>
