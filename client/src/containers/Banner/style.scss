@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 100%;
     &__mainTitle {
       color: inherit;
@@ -27,10 +27,19 @@
       color: inherit;
       font-size: 4rem;
       font-weight: 100 !important;
+      margin: 1rem;
     }
 
     &__scroll {
-      // scroll style
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8rem;
+      height: 8rem;
+      background-color: var(--white);
+      border-radius: 50rem;
+      position: absolute;
+      top: 66rem;
     }
   }
 }

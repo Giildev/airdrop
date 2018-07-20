@@ -23,7 +23,9 @@ export default class Banner extends Component {
             Cryptocurrency is unstoppable. No country needs it more than
             Venezuela.
           </div>
-          <div className="banner__container__scroll">Flechita</div>
+          <div className="banner__container__scroll">
+            <img src="/arrow.png" alt="" />
+          </div>
         </div>
       </section>
     );
