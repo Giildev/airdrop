@@ -1,0 +1,48 @@
+.timeLineContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/cloud.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-position-x: 120rem;
+  background-position-y: 10rem;
+  min-height: 30rem;
+  height: 80rem;
+  padding: 1rem 5rem;
+}
+
+.timeTitle{
+  color: inherit;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 100 !important;
+  margin-bottom: 4rem;
+}
+
+.cardRow{
+  display: flex;
+  height: 50rem;
+}
+
+.ColTimeCards{
+  display: flex;
+  &--up{
+    align-self: flex-start;
+  }
+  &--down{
+    align-self: flex-end;
+  }
+}
+
+.containerDate{
+  display: flex;
+  justify-content: space-around;
+  &__group{
+    font-family: inherit;
+    font-size: 1.3rem;
+    color: grey;
+    font-weight: 700;
+  }
+}

@@ -6,7 +6,8 @@
     font-size: 5rem; }
     .quote__text__author {
       font-size: 4rem;
-      color: var(--primary); }
+      color: var(--primary);
+      margin-bottom: 3rem; }
   .quote__container {
     display: flex;
     align-items: center;

@@ -24,7 +24,13 @@ export class TimeLineCard extends Component {
   render() {
     return (
       <div>
-        <p>Code</p>
+        <div className="TimeContainer">
+          <div className="topBarTime"></div>
+          <p className="TimeContainer__cardTitle">Public Launch, 7/2017:</p>
+          <p className="TimeContainer__cardContent">AirdropVenezuela.org live donations</p>
+          <p className="TimeContainer__cardTitle">Campaing Period, 7/16 - 9/14:</p>
+          <p className="TimeContainer__cardContent">Open for donations and Venezuelan participants.</p>
+        </div>
       </div>
     );
   }

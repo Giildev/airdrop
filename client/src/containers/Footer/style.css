@@ -9,7 +9,8 @@
 
 :root {
   --primary: #00bf98;
-  --secundary: #93d5f1; }
+  --secundary: #93d5f1;
+  --white: #ffffff; }
 
 body {
   background-color: white;

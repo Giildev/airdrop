@@ -2,8 +2,8 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 35rem;
-  height: 35rem;
+  width: 27rem;
+  height: 31rem;
   padding: 4rem;
   justify-content: space-around;
   align-items: center;
@@ -38,4 +38,33 @@
     color: black;
     font-size: 1.8rem;
   }
+}
+
+//timeLine styles
+
+.TimeContainer{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 2rem -0.2rem rgba(0, 0, 0, 0.2);
+  &__cardTitle{
+    padding: 1rem 3rem;
+    color: var(--primary);
+    font-weight: 300;
+  }
+  &__cardContent{
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+  }
+}
+
+.topBarTime{
+  background-color: var(--primary);
+  border-radius: 1rem 1rem 0rem 0rem;
+  height: 1rem;
+  padding: 0;
 }
