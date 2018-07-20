@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
   padding: 8rem;
+  background-image: url(/cloud.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-position-y: 7rem;
   &__title{
     color: inherit;
     text-align: center;
@@ -24,6 +28,10 @@
     font-size: 1.5rem;
     font-weight: 700;
     margin: 6rem 0rem;
+  }
+  &__message{
+    font-size: 2rem;
+    margin-top: 2rem;
   }
 }
 .cardsContainer{

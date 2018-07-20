@@ -25,6 +25,7 @@ export default class Donate extends Component {
             <CoinCard />
             <CoinCard />
           </div>
+          <div className="donateContainer__message">Cryptocurrency totals + $10k will be converted into USD upon distribution.</div>
         </div>
       </div>
     )
