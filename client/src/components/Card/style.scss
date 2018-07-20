@@ -2,7 +2,7 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 27rem;
+  width: 31rem;
   height: 31rem;
   padding: 4rem;
   justify-content: space-around;
@@ -67,4 +67,76 @@
   border-radius: 1rem 1rem 0rem 0rem;
   height: 1rem;
   padding: 0;
+}
+
+
+//CoinCards styles
+
+.coinCardC{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin: 2rem;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 2rem -0.2rem rgba(0, 0, 0, 0.2);
+}
+.topBarCoin{
+  background-color: var(--primary);
+  border-radius: 1rem 1rem 0rem 0rem;
+  height: 1rem;
+  padding: 0;
+}
+.coinInfo{
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+  &__text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3.5rem;
+    &__name{
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: inherit;
+      color: inherit;
+    }
+    &__amountR{
+      font-size: 1.7rem;
+      font-family: inherit;
+      color: inherit;
+      padding: 0.5rem 0rem;
+    }
+    &__pseudoName{
+      font-size: 1.8rem;
+      font-family: inherit;
+      font-weight: 800;
+      color: #bebebe;
+      padding: 0.5rem 0rem;
+    }
+  }
+}
+.coinWallet{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  &__title{
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 800;
+  }
+  &__address{
+    font-family: inherit;
+    font-weight: 800;
+    color: #bebebe;
+    padding: 0.5rem 0rem;
+  }
+  &__qr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+  }
 }

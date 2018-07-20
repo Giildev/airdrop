@@ -9,6 +9,7 @@ import HowItWorks from "../HowItWorks";
 import FundsRaised from "../FundsRaised";
 import Quote from "../Quote";
 import TimeLine from "../Timeline";
+import Donate from "../Donate";
 import Footer from "../Footer";
 import Contact from "../Contact";
 import AdminSite from "../../components/Admin/Site";
@@ -51,6 +52,7 @@ export default class Home extends Component {
         <FundsRaised />
         <Quote />
         <TimeLine/>
+        <Donate />
         <Contact />
         <Footer />
         {/*<h1>

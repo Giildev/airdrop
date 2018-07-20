@@ -40,7 +40,26 @@ export class CoinCard extends Component {
   render() {
     return (
       <div>
-        <p>Code</p>
+        <div className="coinCardC">
+          <div className="topBarCoin"></div>
+          <div className="coinInfo">
+            <div className="coinInfo__icon">
+              <img src="/coin.png" alt="CoinName" />
+            </div>
+            <div className="coinInfo__text">
+              <div className="coinInfo__text__name">Zcash (t-addr)</div>
+              <div className="coinInfo__text__amountR">1.1 ZEC Raised</div>
+              <div className="coinInfo__text__pseudoName">z.cash</div>
+            </div>
+          </div>
+          <div className="coinWallet">
+            <div className="coinWallet__title">Wallet</div>
+            <div className="coinWallet__address">t1Wd5wnJC7uQ7yGbgnEHYt1GowXouHgFMC7</div>
+            <div className="coinWallet__qr">
+              <img src="/qr.png" alt="QR" />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

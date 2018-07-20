@@ -1,0 +1,35 @@
+.donateContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem;
+  &__title{
+    color: inherit;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100 !important;
+    margin-bottom: 3rem;
+  }
+  &__subtitle{
+    text-align: center;
+    color: inherit;
+    font-size: 2rem;
+    font-weight: 100 !important;
+  }
+  &__warning{
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 6rem 0rem;
+  }
+}
+.cardsContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  
+}
