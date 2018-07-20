@@ -54,8 +54,8 @@ export default class Home extends Component {
         <HowItWorks />
         <FundsRaised />
         <Quote />
-        <Stories />
         <TimeLine/>
+        <Stories />
         <Donate />
         <MailList />
         <Faq />
