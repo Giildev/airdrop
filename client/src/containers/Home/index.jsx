@@ -14,6 +14,7 @@ import MailList from "../MailList";
 import Faq from "../Faq";
 import Footer from "../Footer";
 import Contact from "../Contact";
+import Stories from "../Stories";
 import AdminSite from "../../components/Admin/Site";
 
 // Styles
@@ -53,6 +54,7 @@ export default class Home extends Component {
         <HowItWorks />
         <FundsRaised />
         <Quote />
+        <Stories />
         <TimeLine/>
         <Donate />
         <MailList />
