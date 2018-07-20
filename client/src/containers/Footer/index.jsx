@@ -31,7 +31,7 @@ export default class Footer extends Component {
           <div className="footer__follow__icon">TW</div>
         </div>
         <div className="footer__copyright">
-          Website developed & designed with for Venezuela by Venezuelans. AirTM
+          Website developed & designed with <span className="footer__copyright__hearth">❤</span> for Venezuela by Venezuelans. AirTM
           ©2018
         </div>
       </footer>

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 50rem;
+  padding: 0 45rem;
   height: 30rem;
   font-size: 1.6rem;
   justify-content: space-evenly;
@@ -27,5 +27,8 @@
 
   &__copyright {
     padding: 2rem;
+    &__hearth{
+      color: red;
+    }
   }
 }

@@ -11,6 +11,7 @@ import Quote from "../Quote";
 import TimeLine from "../Timeline";
 import Donate from "../Donate";
 import MailList from "../MailList";
+import Faq from "../Faq";
 import Footer from "../Footer";
 import Contact from "../Contact";
 import AdminSite from "../../components/Admin/Site";
@@ -55,6 +56,7 @@ export default class Home extends Component {
         <TimeLine/>
         <Donate />
         <MailList />
+        <Faq />
         <Contact />
         <Footer />
         {/*<h1>
