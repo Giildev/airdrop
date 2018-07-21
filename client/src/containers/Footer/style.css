@@ -22,7 +22,8 @@ html {
   box-sizing: border-box;
   font-size: 52.5%;
   font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
-  font-weight: 100 !important; }
+  font-weight: 100 !important;
+  scroll-behavior: smooth; }
 
 .footer__menu__item {
   color: inherit;
