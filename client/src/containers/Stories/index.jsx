@@ -8,7 +8,7 @@ import { StorieCard } from "../../components/Card";
 export default class Stories extends Component {
   render() {
     return (
-      <section className="storiesSection">
+      <section className="storiesSection" id="Stories">
         <h2 className="storiesSection__title">Stories From Venezuelans</h2>
         <h3 className="storiesSection__subTitle">
           Read stories from Venezuelas during this crisis. Some identities are

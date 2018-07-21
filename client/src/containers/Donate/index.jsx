@@ -9,7 +9,7 @@ export default class Donate extends Component {
   render() {
     return (
       <div>
-        <div className="donateContainer">
+        <div className="donateContainer" id="Donate">
           <div className="donateContainer__title">Donate to AirDrop Venezuela</div>
           <div className="donateContainer__subtitle">
             Donation amounts are updated daily and distributed evenly in the value donated in to each recipients AirTM wallet.

@@ -22,6 +22,7 @@ html {
   box-sizing: border-box;
   font-size: 52.5%;
   font-family: "Pepi-Light", "Pepi-Medium", sans-serif;
+  scroll-behavior: smooth;
   font-weight: 100 !important; }
 
 @media (max-width: 430px) {

@@ -7,7 +7,7 @@ import "./style.css";
 export default class Contact extends Component {
   render() {
     return (
-      <section className="contact">
+      <section className="contact" id="Contant">
         <div className="contact__title">Contact Us</div>
         <div className="contact__subTitle">
           Please contact{" "}
