@@ -15,3 +15,14 @@
     font-size: 4rem; }
   .contact__subTitle__color {
     color: var(--primary); }
+
+@media (max-width: 430px) {
+  .contact {
+    padding: 3rem;
+    height: 38rem;
+    background-position-x: 4rem;
+    background-position-y: 5rem; }
+    .contact__title {
+      margin-top: 17rem; }
+    .contact__subTitle {
+      text-align: center; } }

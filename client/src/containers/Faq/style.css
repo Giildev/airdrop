@@ -49,3 +49,7 @@
       .containerFaq__closed__header__title {
         font-size: 2rem;
         width: 100%; }
+
+@media (max-width: 430px) {
+  .containerFaq {
+    margin: 4rem; } }

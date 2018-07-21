@@ -45,3 +45,13 @@
     font-weight: 700;
   }
 }
+
+@media (max-width: 430px) {
+  .timeLineContainer{
+    height: auto;
+  }
+  .cardRow{
+    flex-wrap: wrap;
+    height: auto;
+  }
+}

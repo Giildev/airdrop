@@ -43,3 +43,15 @@
     }
   }
 }
+@media (max-width: 430px) {
+  .banner{
+    &__container{
+      &__mainTitle{
+        font-size: 5rem;
+      }
+      &__subTitle{
+        font-size: 3rem;
+      }
+    }
+  }
+}

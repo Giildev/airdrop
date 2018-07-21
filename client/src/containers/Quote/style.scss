@@ -36,3 +36,14 @@
     }
   }
 }
+@media (max-width: 430px) {
+  .quote{
+    &__container{
+      flex-direction: column;
+      margin: 0 5rem;
+    }
+  }
+  .imgResponsive{
+    width: 100%;
+  }
+}

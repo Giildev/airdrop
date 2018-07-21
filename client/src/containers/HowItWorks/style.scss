@@ -26,3 +26,14 @@
     justify-content: space-evenly;
   }
 }
+@media (max-width: 430px) {
+  .howItWorks{
+    margin:10rem 5rem;
+    height: auto;
+    &__subTitle{
+      margin-bottom: 8rem;
+      margin-top: 4rem;
+      font-size: 2rem;
+    }
+  }
+}

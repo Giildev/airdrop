@@ -22,3 +22,10 @@
         margin: 2rem 0; }
       .quote__container__rightCol__color {
         color: var(--primary); }
+
+@media (max-width: 430px) {
+  .quote__container {
+    flex-direction: column;
+    margin: 0 5rem; }
+  .imgResponsive {
+    width: 100%; } }

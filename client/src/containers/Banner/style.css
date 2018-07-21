@@ -36,3 +36,9 @@
       border-radius: 50rem;
       position: absolute;
       top: 67rem; }
+
+@media (max-width: 430px) {
+  .banner__container__mainTitle {
+    font-size: 5rem; }
+  .banner__container__subTitle {
+    font-size: 3rem; } }

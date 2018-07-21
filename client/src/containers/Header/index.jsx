@@ -11,6 +11,7 @@ export default class Header extends Component {
         <div className="header__logoBox">
           <img src="/logo.png" alt="" className="header__logo" />
         </div>
+        <div className="header__hamburguerIco"></div>
         <nav className="header__menu">
           <a href="#About" className="header__menu__item">
             About

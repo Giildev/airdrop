@@ -16,7 +16,7 @@ export default class componentName extends Component {
         </div>
         <div className="quote__container">
           <div className="quote__container__leftCol">
-            <img src="/mapDrop.png" alt="" />
+            <img src="/mapDrop.png" alt="AirDrop" className="imgResponsive" />
           </div>
           <div className="quote__container__rightCol">
             <p>

@@ -46,7 +46,28 @@
    &__btn{
      font-size: 2rem;
      padding: 1rem;
+     font-family: inherit;
     @include button(white, 35rem, 8rem, var(--terciary), 0rem 5rem 5rem 0rem);
    }
  }
+}
+
+@media (max-width: 430px) {
+  .containerMail{
+    padding: 5rem;
+    &__form{
+      &__mail{
+        width: 70%;
+        height: 6rem;
+        &::placeholder{
+          font-size: 1.5rem;
+        }
+      }
+      &__btn{
+        width: 30%;
+        height: 6rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

@@ -69,6 +69,7 @@ html {
     .containerMail__form__btn {
       font-size: 2rem;
       padding: 1rem;
+      font-family: inherit;
       width: 35rem;
       height: 8rem;
       background-color: var(--terciary);
@@ -83,3 +84,16 @@ html {
         outline: none; }
       .containerMail__form__btn:active {
         transform: translateY(0.5rem); }
+
+@media (max-width: 430px) {
+  .containerMail {
+    padding: 5rem; }
+    .containerMail__form__mail {
+      width: 70%;
+      height: 6rem; }
+      .containerMail__form__mail::placeholder {
+        font-size: 1.5rem; }
+    .containerMail__form__btn {
+      width: 30%;
+      height: 6rem;
+      font-size: 1.5rem; } }

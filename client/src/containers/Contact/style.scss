@@ -22,3 +22,18 @@
     }
   }
 }
+
+@media (max-width: 430px) {
+  .contact{
+    padding: 3rem;
+    height: 38rem;
+    background-position-x: 4rem;
+    background-position-y: 5rem;
+    &__title{
+      margin-top: 17rem;
+    }
+    &__subTitle{
+      text-align: center;
+    }
+  }
+}
