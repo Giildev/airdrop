@@ -26,3 +26,10 @@
       margin-top: 17rem; }
     .contact__subTitle {
       text-align: center; } }
+
+@media (max-width: 770px) {
+  .contact {
+    background-position-x: 30rem;
+    background-position-y: 2rem; }
+    .contact__title {
+      margin-top: 16rem; } }

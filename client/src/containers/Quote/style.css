@@ -29,3 +29,7 @@
     margin: 0 5rem; }
   .imgResponsive {
     width: 100%; } }
+
+@media (max-width: 770px) {
+  .quote__container {
+    flex-direction: column; } }

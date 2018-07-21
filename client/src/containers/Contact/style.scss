@@ -37,3 +37,13 @@
     }
   }
 }
+
+@media (max-width: 770px) {
+  .contact{
+    background-position-x: 30rem;
+    background-position-y: 2rem;
+    &__title{
+      margin-top: 16rem;
+    }
+  }
+}

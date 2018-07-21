@@ -37,3 +37,12 @@
     }
   }
 }
+
+@media (max-width: 770px) {
+  .howItWorks{
+    height: auto;
+    &__subTitle{
+      margin-bottom: 6rem;
+    }
+  }
+}

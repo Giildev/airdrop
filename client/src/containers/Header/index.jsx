@@ -10,8 +10,8 @@ export default class Header extends Component {
       <header className="header">
         <div className="header__logoBox">
           <img src="/logo.png" alt="" className="header__logo" />
+          <img src="/hamburguer.png" alt="" className="header__ico" />
         </div>
-        <div className="header__hamburguerIco"></div>
         <nav className="header__menu">
           <a href="#About" className="header__menu__item">
             About

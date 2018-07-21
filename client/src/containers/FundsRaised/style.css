@@ -196,3 +196,13 @@ html {
     height: auto; }
   .recipents__container {
     height: auto; } }
+
+@media (max-width: 770px) {
+  .fundsRecipents {
+    margin: 10rem 5rem; }
+    .fundsRecipents__buttonBox {
+      margin-top: 13rem; }
+  .funds__container {
+    height: auto; }
+  .recipents__container {
+    height: auto; } }

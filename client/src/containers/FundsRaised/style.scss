@@ -193,3 +193,22 @@
     }
   }
 }
+
+@media (max-width: 770px) {
+  .fundsRecipents{
+    margin: 10rem 5rem;
+    &__buttonBox{
+      margin-top: 13rem;
+    }
+  }
+  .funds{
+    &__container{
+      height: auto;
+    }
+  }
+  .recipents{
+    &__container{
+      height: auto;
+    }
+  }
+}

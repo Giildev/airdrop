@@ -30,3 +30,9 @@
       margin-bottom: 8rem;
       margin-top: 4rem;
       font-size: 2rem; } }
+
+@media (max-width: 770px) {
+  .howItWorks {
+    height: auto; }
+    .howItWorks__subTitle {
+      margin-bottom: 6rem; } }
