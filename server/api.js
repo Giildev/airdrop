@@ -23,6 +23,7 @@ const authRoute = require("./routes/auth");
 const siteRoute = require("./routes/site");
 const faqRoute = require("./routes/faq");
 const userRoute = require("./routes/user");
+const subscribeRoute = require("./routes/subscribe");
 const timelineRoute = require("./routes/timeline");
 const storyRoute = require("./routes/story");
 const donationRoute = require("./routes/donation");
@@ -31,14 +32,17 @@ const donationRoute = require("./routes/donation");
 const base_url = "/api";
 app.use(base_url, authRoute);
 app.use(base_url, siteRoute);
+app.use(base_url, subscribeRoute);
 app.use(base_url, userRoute);
 app.use(base_url, donationRoute);
 app.use(base_url, storyRoute);
 app.use(base_url, timelineRoute);
 app.use(base_url, faqRoute);
 
+/* endpoint test */
 app.get("/deploy", (req, res) => {
   res.send({ object: "Hello from Node.js" });
 });
 
+/* message when server is up */
 app.listen(port, () => console.log(`Listening on port ${port}`));

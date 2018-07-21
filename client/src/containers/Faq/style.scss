@@ -25,17 +25,23 @@
       justify-content: space-between;
       padding: 2rem;
       width: 100%;
+      cursor: pointer;
       &__title{
         font-size: 2rem;
         width: 100%;
       }
     }
-    &__text{
-      font-family: inherit;
-      font-size: 1.7rem;
-      color: var(--gray);
-      padding: 2rem;
-      width: 100%;
+    &__content{
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      &__text{
+        font-family: inherit;
+        font-size: 1.7rem;
+        color: var(--gray);
+        padding: 2rem;
+        width: 100%;
+      }
     }
   }
   &__closed{
@@ -51,6 +57,7 @@
       justify-content: space-between;
       padding: 2rem;
       width: 100%;
+      transition: 0.4s;
       &__title{
         font-size: 2rem;
         width: 100%;
