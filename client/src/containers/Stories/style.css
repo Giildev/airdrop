@@ -34,7 +34,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100rem; }
+  height: 100rem;
+  background-color: #f9f9f9; }
   .storiesSection__title {
     text-align: center;
     font-size: 5rem;
