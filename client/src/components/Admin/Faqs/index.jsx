@@ -4,6 +4,7 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
+
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader";
@@ -16,6 +17,11 @@ export default class AdminFaq extends Component {
     this.headers = this.auth.buildAuthHeader();
 
     this.state = {
+      faq: {
+        question: "",
+        answer: "",
+        lan: "",
+      },
       faqs: {},
       filteredFaqs: {},
       isOpen: false
@@ -50,7 +56,12 @@ export default class AdminFaq extends Component {
   }
 
   handleFaq = (e) => {
-    console.log(e.target.name, e.target.value);
+    this.setState(prevState => ({
+      faq: {
+        ...prevState.faq,
+        [e.target.name]: e.target.value
+      }
+    }))
   }
 
   onShowCloseModal = () => {
