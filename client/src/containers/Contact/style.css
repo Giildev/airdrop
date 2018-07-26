@@ -29,7 +29,7 @@
 
 @media (max-width: 770px) {
   .contact {
-    background-position-x: 30rem;
+    background-position-x: 5rem;
     background-position-y: 2rem; }
     .contact__title {
       margin-top: 16rem; } }
