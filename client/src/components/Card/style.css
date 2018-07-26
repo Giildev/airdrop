@@ -100,7 +100,8 @@ html {
   overflow: hidden;
   justify-content: space-between;
   box-shadow: 0 0 9rem -2.6rem rgba(0, 0, 0, 0.6);
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  background-color: var(--white); }
   .stories__title {
     color: var(--primary);
     font-size: 1.6rem;
@@ -109,7 +110,8 @@ html {
     word-wrap: break-word;
     font-size: 1.4rem;
     padding: 0 2.5rem;
-    color: #a2a2a2; }
+    color: #a2a2a2;
+    background-color: var(--white); }
   .stories__more {
     text-align: right;
     color: var(--primary);
@@ -121,12 +123,14 @@ html {
   .stories:hover {
     opacity: 1;
     cursor: pointer;
-    transform: scale(1.2, 1.2); }
+    transform: scale(1.2, 1.2);
+    z-index: 999; }
 
 .hovered {
   opacity: 1 !important;
   cursor: pointer;
-  transform: scale(1.2, 1.2) !important; }
+  transform: scale(1.2, 1.2) !important;
+  z-index: 999; }
 
 .topBarTime {
   background-color: var(--primary);
