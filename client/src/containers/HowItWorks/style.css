@@ -16,6 +16,8 @@
     color: inherit;
     font-size: 2.5rem;
     font-weight: 100 !important; }
+    .howItWorks__subTitle::first-letter {
+      text-transform: capitalize; }
   .howItWorks__cardContainer {
     flex-wrap: wrap;
     display: flex;

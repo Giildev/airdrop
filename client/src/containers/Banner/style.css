@@ -26,6 +26,8 @@
       font-size: 4rem;
       font-weight: 100 !important;
       margin: 1rem; }
+      .banner__container__subTitle::first-letter {
+        text-transform: capitalize; }
     .banner__container__scroll {
       display: flex;
       align-items: center;

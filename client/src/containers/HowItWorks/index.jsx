@@ -6,14 +6,22 @@ import "./style.css";
 import { HIWCard } from "../../components/Card";
 
 export default class HowItWorks extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      title: "How it Work's" || props.title,
+      description: "Airdrop Venezuela distributes donations to help introduce Venezuelans to cryptocurrency benefits including freelance, eCommerce, investment, remittance, and other web-based opportunities." || props.description
+    }
+  }
+  
   render() {
+    const { title, description } = this.state
     return (
       <section className="howItWorks">
-        <h2 className="howItWorks__title">How it Work's</h2>
+        <h2 className="howItWorks__title">{ `${title}` }</h2>
         <h3 className="howItWorks__subTitle">
-          Airdrop Venezuela distributes donations to help introduce Venezuelans
-          to cryptocurrency benefits including freelance, eCommerce, investment,
-          remittance, and other web-based opportunities.
+          { `${description}` }
         </h3>
         <div className="howItWorks__cardContainer">
           <HIWCard
