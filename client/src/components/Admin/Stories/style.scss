@@ -41,6 +41,7 @@
   flex-direction: column;
   width: 100%;
   height: auto;
+  padding: 3rem;
 }
 .form{
   display: flex;
@@ -83,6 +84,7 @@
     &::placeholder{
       color: grey;
       padding: 1rem;
+      margin: 1rem 0rem;
       font-family: inherit;
     }
     &__textarea{
