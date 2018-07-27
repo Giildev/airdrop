@@ -60,7 +60,23 @@ export default class AdminStory extends Component {
       .catch(err => console.log(err));
   }
 
+  handleStories = (msg, id) => {
+    let stories = this.state.stories
+    
+    if(msg === 'delete') {
+      let newStories = stories.filter(story => story._id !== id )
   
+      /*
+        handle class animate before delete it from state
+      */
+      this.setState({
+        stories: newStories
+      })
+    } else if (msg === 'update') {
+      console.log(msg, id)
+    }
+  }
+
   handleStory = (e) => {
     this.setState(prevState => ({
       story: {
@@ -90,28 +106,30 @@ export default class AdminStory extends Component {
   handleImage = fl => {
     let file = fl;
     file.src = URL.createObjectURL(fl.files[0]);
-    // this.setState(
-    //   prevState => ({
-    //     story: {
-    //       ...prevState.story,
-    //       coverImg: fl.files[0],
-    //       coverImgName: fl.files[0].name
-    //     }
-    //   }),
-    //   () => {
-    //     this.setState({ coverPhotoTmp: file.src }, () => {
-    //       this.setState({
-    //         bgImage: {
-    //           backgroundColor: "",
-    //           backgroundImage: "url(" + this.state.coverPhotoTmp + ")", //Blob
-    //           backgroundPosition: "center",
-    //           backgroundRepeat: "no-repeat",
-    //           backgroundSize: "contain"
-    //         }
-    //       });
-    //     });
-    //   }
-    // );
+    console.log(file)
+    console.log(file.src)
+    this.setState(
+      prevState => ({
+        coverImg: fl.files[0],
+        story: {
+          ...prevState.story,
+          cover: fl.files[0].name
+        }
+      }),
+      () => {
+        // this.setState({ coverPhotoTmp: file.src }, () => {
+        //   this.setState({
+        //     bgImage: {
+        //       backgroundColor: "",
+        //       backgroundImage: "url(" + this.state.coverPhotoTmp + ")", //Blob
+        //       backgroundPosition: "center",
+        //       backgroundRepeat: "no-repeat",
+        //       backgroundSize: "contain"
+        //     }
+        //   });
+        // });
+      }
+    );
   };
 
   uploadFile = () => {
@@ -124,15 +142,20 @@ export default class AdminStory extends Component {
 
   render() {
     const { isOpen, stories } = this.state;
-    return (
-      <div>
+    return <div>
         <h1 className="languageTitle">Select Language</h1>
         <select className="selectLang" name="" onChange={this.handleFilterStory}>
-          <option  className="selectLang__item" value="">All</option>
-          <option  className="selectLang__item" value="ES">ES</option>
-          <option  className="selectLang__item" value="EN">EN</option>
+          <option className="selectLang__item" value="">
+            All
+          </option>
+          <option className="selectLang__item" value="ES">
+            ES
+          </option>
+          <option className="selectLang__item" value="EN">
+            EN
+          </option>
         </select>
-       
+
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Stories</h1>
@@ -142,41 +165,35 @@ export default class AdminStory extends Component {
               </svg>
             </button>
           </div>
-          {
-            (stories === undefined ? <Loader /> :
-              stories.map(story => {
-                return <StorieCardAdmin key={story._id} story={story} />
-              }) 
-            )
-          }
+          {stories === undefined ? <Loader /> : stories.map(story => {
+              return <StorieCardAdmin key={story._id} story={story} handleStories={this.handleStories} />;
+            })}
         </div>
 
-        <Modal
-          open={isOpen}
-          onClose={this.onShowCloseModal}
-          classNames={{ modal: "custom-modal" }}
-        >
-        <div className="containerModal">
-          <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
+        <Modal open={isOpen} onClose={this.onShowCloseModal} classNames={{ modal: "custom-modal" }}>
+          <div className="containerModal">
+            <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
               <div className="col1">
-                <input type="file" className="formContainer" name="cover" />
+                <input 
+                  type="file" 
+                  className="formContainer" 
+                  onInputCapture={e => {
+                    this.handleImage(e.target);
+                  }} />
                 <p className="formContainer__text">Upload Image / Video</p>
               </div>
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Title" name="title" className="formContainer__item" />
                   <input type="text" placeholder="Subtitle" name="subtitle" className="formContainer__item" />
-                  <textarea name="" id="" cols="30" rows="10" name="content" className="formContainer__item__textarea" placeholder="Content"></textarea>
-
+                  <textarea name="" id="" cols="30" rows="10" name="content" className="formContainer__item__textarea" placeholder="Content" />
                 </div>
-              </div> 
-              <button class="fundsRecipents__buttonBox">Save</button>
+              </div>
+              <button className="fundsRecipents__buttonBox">Save</button>
             </div>
-        </div>
-  
+          </div>
         </Modal>
-      </div>
-    )
+      </div>;
   }
 }

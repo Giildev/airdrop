@@ -8,6 +8,9 @@ import Auth from "../../services/authService";
 import "./style.css";
 import Icons from "../../icons.svg";
 
+var auth =  new Auth();
+var headers = auth.buildAuthHeader();
+
 export class HIWCard extends Component {
   render() {
     return (
@@ -100,24 +103,52 @@ export class StorieCardAdmin extends Component {
     super(props)
 
     this.state = {
-      story: props.story
+      story: props.story,
+      id: props.story._id
     }
   }
 
-  handleFeatured = (e, id) => {
+  onChangeFeatured = (e, id) => {
     const target = e.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log(id, value)
     this.setState(prevState => ({
       story: {
         ...prevState.story,
         featured: value
       }
     }))
+  }
+
+  handleFeatured = (e, id) => {
+    const target = e.target;
+    console.log(target)
     console.log(id)
-    // axios
-    //   .post(`${config.BASE_URL}/story/${id}`, this.headers)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err));
+  }
+
+
+  handleDelete = (id) => {
+    const body = {
+      deleted: true
+    }
+
+    this.uploadStory(id, body)
+      .then(res => {
+        const response = res.data
+
+        if(res.status === 200 && response.success) {
+          this.props.handleStories('delete', id);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleEdit = (e, id) => {
+    console.log(id)
+  }
+
+  uploadStory = (id, body) => {
+    return axios.post(`${config.BASE_URL}/story/${id}`, body, headers)
   }
 
   render() {
@@ -134,19 +165,13 @@ export class StorieCardAdmin extends Component {
         </div>
         <div className="containerList__icons">
           <p className="featured">Featured</p>
-          <div className="checkboxFour">
-            <input type="checkbox" 
-            checked={story.featured} 
-            id="checkboxFourInput" 
-            name="featured"
-            onChange={(e) => this.handleFeatured(e, story._id)}
-            />
-            <label htmlFor="checkboxFourInput"></label>
+          <div className="checkbox">
+              Cuadrito
           </div>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={(e) => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={(e) => this.handleEdit(e, story._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
