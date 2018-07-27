@@ -4,7 +4,8 @@
   height: 200rem;
   /* This part sucks -- HORRIBLE*/
   clear: both;
-  margin: 50px 0; }
+  margin: 50px 0;
+  display: flex; }
   .tabs__tab {
     float: left; }
     .tabs__tab > label {
@@ -28,6 +29,16 @@
   bottom: 0;
   padding: 20px;
   border: 1px solid #ccc; }
+  .content__titles {
+    font-family: inherit;
+    font-size: 2rem;
+    color: var(--primary); }
+    .content__titles--tabs {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary); }
+      .content__titles--tabs:hover {
+        cursor: pointer; }
 
 [type=radio]:checked ~ label {
   background: white;
@@ -36,3 +47,22 @@
 
 [type=radio]:checked ~ label ~ .content {
   z-index: 1; }
+
+.saveBTN {
+  width: 12rem;
+  height: auto;
+  background-color: var(--primary);
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  border-radius: 8rem;
+  height: 6.5rem;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem;
+  padding: 1rem; }
+  .saveBTN:hover {
+    background-color: #00a684;
+    cursor: pointer; }
