@@ -199,3 +199,54 @@
     margin: 1.5rem;
   }
 }
+
+//CoinCardsAdminList styles
+
+.containerList{
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  background-color: var(--white);
+  padding: 1.5rem;
+  box-shadow: 5px -1px 62px -10px rgba(0,0,0,0.2);
+  justify-content: flex-start;
+  &__icons{
+    display: flex;
+    align-self: flex-end;
+    &__ico{
+      width: 2.5rem;
+      height: auto;
+      margin: 2rem;
+      fill: var(--terciary);
+      transition: all .3s ease;
+      &:hover{
+        fill:var(--primary);
+        cursor: pointer;
+      }
+    }
+  }
+  &__img{
+    width: 20rem;
+    height: auto;
+    //margin: 3rem 3rem 0rem 0rem;
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    margin: 2rem;
+    flex: 3;
+    &__title{
+      color: grey;
+      font-size: 2.5rem;
+    }
+    &__separator{
+
+    }
+    &__text{
+      width: 40rem;
+      font-size: 1.5rem;
+      padding: 0.6rem 0rem;
+    }
+  }
+}

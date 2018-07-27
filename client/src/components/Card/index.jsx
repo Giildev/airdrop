@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 // Components & Containers
 import "./style.css";
+import Icons from "../../icons.svg";
 
 export class HIWCard extends Component {
   render() {
@@ -84,6 +85,33 @@ export class CoinCard extends Component {
               <img src="/qr.png" alt="QR" />
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+}
+//card StorieListAdmin
+export class StorieCardAdmin extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <img className="containerList__img" src="/storie1.jpg" alt="" />
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Bracelet Maker Tulio Benitez</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            He started creating bracelets and selling them on the streets in
+            Cúcuta, Colombia. Initially scared to make a Venezuela bracelet
+            because he might be spotted by police and taken...
+          </p>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
         </div>
       </div>
     );

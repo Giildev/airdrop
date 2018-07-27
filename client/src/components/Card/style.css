@@ -198,3 +198,40 @@ html {
     justify-content: center;
     align-items: center;
     margin: 1.5rem; }
+
+.containerList {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  background-color: var(--white);
+  padding: 1.5rem;
+  box-shadow: 5px -1px 62px -10px rgba(0, 0, 0, 0.2);
+  justify-content: flex-start; }
+  .containerList__icons {
+    display: flex;
+    align-self: flex-end; }
+    .containerList__icons__ico {
+      width: 2.5rem;
+      height: auto;
+      margin: 2rem;
+      fill: var(--terciary);
+      transition: all .3s ease; }
+      .containerList__icons__ico:hover {
+        fill: var(--primary);
+        cursor: pointer; }
+  .containerList__img {
+    width: 20rem;
+    height: auto; }
+  .containerList__info {
+    display: flex;
+    flex-direction: column;
+    font-family: inherit;
+    margin: 2rem;
+    flex: 3; }
+    .containerList__info__title {
+      color: grey;
+      font-size: 2.5rem; }
+    .containerList__info__text {
+      width: 40rem;
+      font-size: 1.5rem;
+      padding: 0.6rem 0rem; }

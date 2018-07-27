@@ -63,7 +63,6 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25rem;
   flex-wrap: wrap; }
   .funds__container__middle {
     display: flex;

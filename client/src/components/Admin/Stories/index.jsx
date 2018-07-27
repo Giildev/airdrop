@@ -4,6 +4,8 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
+import Icons from "../../../icons.svg";
+import { StorieCardAdmin } from "../../Card";
 
 // Components & Containers
 import "./style.css";
@@ -83,19 +85,50 @@ export default class AdminStory extends Component {
     const { isOpen } = this.state;
     return (
       <div>
-        <button onClick={this.onShowCloseModal}>Modal</button>
-        <select name="" onChange={this.handleFilterStory}>
-          <option value="">All</option>
-          <option value="ES">ES</option>
-          <option value="EN">EN</option>
+        <h1 className="languageTitle">Select Language</h1>
+        <select className="selectLang" name="" onChange={this.handleFilterStory}>
+          <option  className="selectLang__item" value="">All</option>
+          <option  className="selectLang__item" value="ES">ES</option>
+          <option  className="selectLang__item" value="EN">EN</option>
         </select>
-        HTML ASI ARRECHISIMO PARA MOSTRAR LAS Stories ASI Y SU FILTRICO CHIEBRE
+       
+        <div className="containerStories">
+          <div className="headerAdmin">
+            <h1 className="headerAdmin__storiesTitle">Stories</h1>
+            <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+              <svg className="headerAdmin__addBTN__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+              </svg>
+            </button>
+          </div>
+          <StorieCardAdmin />
+          <StorieCardAdmin />
+          <StorieCardAdmin />
+        </div>
+
         <Modal
           open={isOpen}
           onClose={this.onShowCloseModal}
           classNames={{ modal: "custom-modal" }}
         >
-          HTML ASI BRUTAL PARA CREAR Y EDITAR FAQS
+        <div className="containerModal">
+          <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
+            <div className="form">
+              <div className="col1">
+                <input type="file" className="formContainer"/>
+                <p className="formContainer__text">Upload Image / Video</p>
+              </div>
+              <div className="col2">
+                <div className="formContainer">
+                  <input type="text" placeholder="Title" className="formContainer__item" />
+                  <input type="text" placeholder="Subtitle" className="formContainer__item" />
+                  <textarea name="" id="" cols="30" rows="10" className="formContainer__item__textarea" placeholder="Content"></textarea>
+                </div>
+              </div> 
+              <button class="fundsRecipents__buttonBox">Save</button>
+            </div>
+        </div>
+  
         </Modal>
       </div>
     )

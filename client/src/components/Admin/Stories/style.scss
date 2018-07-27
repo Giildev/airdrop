@@ -1,0 +1,132 @@
+
+.headerAdmin{
+ display: flex;
+ align-items: center;
+  &__addBTN{
+    width: 10rem;
+    height: auto;
+    background-color: var(--primary);
+    border: none;
+    font-size: 1.9rem;
+    color: var(--white);
+    border-radius: 8rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem;
+    &:hover{
+      background-color: darken($color: #00bf98, $amount: 5);
+      cursor: pointer;
+    }
+    &__ico{
+      width: 4rem;
+      height: 4rem;
+      fill: var(--white);
+    }
+  }
+  &__storiesTitle{
+    color: var(--primary);
+    font-size: 4.2rem;
+    font-weight: 600;
+  }
+}
+
+//modal styles
+
+.containerModal{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.col1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.col2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  min-width: 70rem;
+  &__text{
+    font-family: inherit;
+    font-size: 2rem;
+  }
+  &__item{
+    background-color: var(--white);
+    border-radius: 5rem;
+    border:none;
+    box-shadow: 9px 4px 10px -8px rgba(0,0,0,0.43);
+    height: 6rem;
+    margin: 1rem 0rem;
+    color: grey;
+    padding: 1rem;
+    font-family: inherit;
+    &:focus{
+      border: none;
+      outline: none;
+    }
+    &::placeholder{
+      color: grey;
+      padding: 1rem;
+      font-family: inherit;
+    }
+    &__textarea{
+      height: 10rem;
+      background-color: var(--white);
+      border-radius: 2rem;
+      border:none;
+      box-shadow: 9px 4px 10px -8px rgba(0,0,0,0.43);
+      margin: 1rem 0rem;
+      color: grey;
+      padding: 1rem;
+      font-family: inherit;
+      &:focus{
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.selectLang{
+  background-color: #c2f8f1aa;
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--primary);
+  transition: all .3s ease;
+  width: 15rem;
+  height: 6rem;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  margin: 2rem 0rem;
+  text-align: center;
+  font-family: inherit;
+  font-size: 2rem;
+  &:focus{
+    border: none;
+    outline:  none;
+  }
+}
+.languageTitle{
+  font-family: inherit;
+  color: var(--primary);
+  font-size: 2rem;
+  margin: 1rem;
+}
