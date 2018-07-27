@@ -5,23 +5,40 @@ import React, { Component } from "react";
 import "./style.css";
 
 export default class Banner extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      img: "/banner.jpg" || props.image,
+      title: undefined || props.title,
+      description: undefined || props.description 
+    }
+  }
+
   render() {
+    const { img, title, description } = this.state;
+    // Divide for words 
+    const splittedTitle = title.split(" ");
+    let restWords = "";
+    // then unite words after position 4 to forward to complete the sentence
+    for (let i = 4; i < splittedTitle.length; i++) {
+      restWords += splittedTitle[i] + " ";
+    }
     return (
       <section
-        style={{ backgroundImage: `url("/banner.jpg")` }}
+        style={{ backgroundImage: `url(${img})` }}
         className="banner"
       >
         <div className="banner__container">
           <h1 className="banner__container__mainTitle">
             <span className="banner__container__mainTitle__color">
-              Help Send &nbsp;
+              {`${splittedTitle[0]} ${splittedTitle[1]}`} &nbsp;
             </span>
-            $10 to <br />
-            100,000 Venezuelans
+            {`${splittedTitle[2]} ${splittedTitle[3]}`} <br />
+            {`${ restWords }`}
           </h1>
           <div className="banner__container__subTitle">
-            Cryptocurrency is unstoppable. No country needs it more than
-            Venezuela.
+            {description}
           </div>
           <div className="banner__container__scroll">
             <img src="/arrow.png" alt="" />

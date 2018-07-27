@@ -28,6 +28,9 @@
       font-size: 4rem;
       font-weight: 100 !important;
       margin: 1rem;
+     &::first-letter {
+      text-transform:capitalize;
+     }
     }
 
     &__scroll {

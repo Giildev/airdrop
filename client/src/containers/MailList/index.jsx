@@ -11,6 +11,8 @@ export default class MailList extends Component {
     super(props)
 
     this.state = {
+      title: props.title || "Join our mailing list." ,
+      description: props.description || "Stay informed about Airdrop Venezuela milestones and stories from donation recipients.",
       email: ""
     }
 
@@ -41,12 +43,13 @@ export default class MailList extends Component {
   }
 
   render() {
+    const { title, description } = this.state;
+    console.log(this.state)
     return <div>
         <div className="containerMail">
-          <div className="containerMail__title">Join Our Mailing List</div>
+          <div className="containerMail__title">{`${ title }`}</div>
           <div className="containerMail__subTitle">
-            Stay informed about Airdrop Venezuela milestones and stories
-            from donation recipients.
+            {`${ description }`}
           </div>
         <form className="containerMail__form" onSubmit={this.getSubscriber} autoComplete="off">
           <input type="email" name="email" className="containerMail__form__mail" placeholder="Enter Email Address" value={this.state.email} ref={el => (this.inputSubscription = el)} onChange={(e) => this.handleSubscription(e.target.value)}/>

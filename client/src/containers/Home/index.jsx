@@ -19,14 +19,15 @@ import AdminSite from "../../components/Admin/Site";
 
 // Styles
 import "./style.css";
+import Loader from "../../components/Loader"
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
       lan: "",
-      selectedLan: "es", // handle selected before change content with State.lan
-      content: {}
+      selectedLan: "en", // handle selected before change content with State.lan
+      content: undefined
     };
   }
 
@@ -37,36 +38,32 @@ export default class Home extends Component {
   getContentData = () => {
     axios
       .get(`${config.BASE_URL}/site/${this.state.selectedLan}`)
-      .then(res =>
+      .then(res =>{
+        console.log(res.data.site)
         this.setState({ content: res.data.site, lan: this.state.selectedLan })
-      ); // fix
+      }); // fix
   };
 
   handleLanguage = e => {
     this.setState({ selectedLan: e.target });
-  };
+  };middleSection
 
   render() {
-    return (
-      <div>
+    const { content, selectedLan } = this.state;
+    console.log(content)
+    return content === undefined ? <Loader /> : <div>
         <Header />
-        <Banner />
-        <HowItWorks />
+        <Banner image={content.banner} title={content.header[selectedLan].title} description={content.header[selectedLan].description} />
+        <HowItWorks title={content.middleSection[selectedLan].title} description={content.middleSection[selectedLan].description} />
         <FundsRaised />
         <Quote />
-        <TimeLine/>
+        <TimeLine />
         <Stories />
         <Donate />
-        <MailList />
+        <MailList title={content.mail[selectedLan].title} description={content.mail[selectedLan].description} />
         <Faq />
         <Contact />
         <Footer />
-        {/*<h1>
-          ANDO VIENDO COMO ES LA VAINA CON LOS TABS PARA EL ADMIN SI TIENES UN
-          MEJOR CSS FUEGO XD
-        </h1>
-        <AdminSite />*/}
-      </div>
-    );
+      </div>;
   }
 }

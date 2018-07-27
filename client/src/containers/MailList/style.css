@@ -43,11 +43,15 @@ html {
     font-size: 5rem;
     font-weight: 100 !important;
     margin-bottom: 1rem; }
+    .containerMail__title::first-letter {
+      text-transform: capitalize; }
   .containerMail__subTitle {
     text-align: center;
     font-size: 2rem;
     font-weight: 100 !important;
     margin-bottom: 3rem; }
+    .containerMail__subTitle::first-letter {
+      text-transform: capitalize; }
   .containerMail__form {
     display: flex;
     align-items: center; }

@@ -5,7 +5,17 @@ import React, { Component } from "react";
 import "./style.css";
 
 export default class componentName extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      title: undefined || props.title,
+      description: undefined || props.description
+    }
+  }
+
   render() {
+    const { title, description } = this.state;
     return <section className="quote" id="About">
         <div className="quote__text">
           <div className="quote__text__quote">
