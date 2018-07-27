@@ -7,6 +7,7 @@ import Home from "./containers/Home/";
 import NotFound from "./containers/NotFound";
 import Login from "./components/Admin/Login";
 import SwitchLan from "./components/SwitchLan";
+import Dashboard from "./containers/Dashboard";
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/login"} component={Login} />
           <Route exact path={"/switch"} component={SwitchLan} />
+          <Route exact path={"/dashboard"} component={Dashboard} />
           <Route component={NotFound} />
         </Switch>
       </Router>
