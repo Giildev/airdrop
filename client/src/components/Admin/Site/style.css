@@ -18,6 +18,8 @@
       display: none; }
 
 .content {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 28px;
   left: 0;

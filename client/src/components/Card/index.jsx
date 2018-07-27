@@ -157,16 +157,16 @@ export class StorieCardAdmin extends Component {
       <div className="containerList">
         <img className="containerList__img" src="/storie1.jpg" alt="" />
         <div className="containerList__info">
-          <h2 className="containerList__info__title">{ story.title }</h2>
+          <h2 className="containerList__info__title">Mauro</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            { story.content }
+            hola mauro
           </p>
         </div>
         <div className="containerList__icons">
           <p className="featured">Featured</p>
           <div className="checkbox">
-              Cuadrito
+            <div className="active"></div>
           </div>
           <svg className="containerList__icons__ico" onClick={(e) => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />

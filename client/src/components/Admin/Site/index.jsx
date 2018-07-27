@@ -43,15 +43,15 @@ export default class AdminSite extends Component {
   };
 
   handleContent = e => {
-    this.setState(
-      prevState => ({
-        contentToEdit: {
-          ...prevState.contentToEdit,
-          [e.target.name]: e.target.value
-        }
-      }),
-      () => console.log(this.state.contentToEdit)
-    );
+    // this.setState(
+    //   prevState => ({
+    //     contentToEdit: {
+    //       ...prevState.contentToEdit,
+    //       [e.target.name]: e.target.value
+    //     }
+    //   }),
+    //   () => console.log(this.state.contentToEdit)
+    // );
   };
 
   render() {
@@ -71,11 +71,13 @@ export default class AdminSite extends Component {
               placeholder="Titulo"
               name="header.es.title"
               onChange={this.handleContent}
+              className="formContainer__item"
             />
             <textarea
               placeholder="Descripcion"
               name="header.es.description"
               onChange={this.handleContent}
+              className="formContainer__item__textarea"
             />
             <br />
             <label htmlFor="">Middle Section</label>

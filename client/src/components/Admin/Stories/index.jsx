@@ -6,6 +6,7 @@ import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import Icons from "../../../icons.svg";
 import { StorieCardAdmin } from "../../Card";
+import TabLang from "../TabLang";
 
 // Components & Containers
 import "./style.css";

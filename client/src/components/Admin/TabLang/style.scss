@@ -11,6 +11,8 @@
   color: var(--primary);
   background-color: #c2f8f1aa;
   transition: all .3s ease;
+  border-radius: 6rem;
+  margin-left: 1rem;
   &:hover{
     cursor: pointer;
     background-color: var(--primary);

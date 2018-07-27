@@ -73,9 +73,9 @@
     border:none;
     box-shadow: 9px 4px 10px -8px rgba(0,0,0,0.43);
     height: 6rem;
-    margin: 1rem 0rem;
+    margin: 1rem;
     color: grey;
-    padding: 1rem;
+    //padding: 1rem;
     font-family: inherit;
     &:focus{
       border: none;
@@ -88,14 +88,14 @@
       font-family: inherit;
     }
     &__textarea{
-      height: 10rem;
+      //height: 10rem;
       background-color: var(--white);
       border-radius: 2rem;
       border:none;
       box-shadow: 9px 4px 10px -8px rgba(0,0,0,0.43);
-      margin: 1rem 0rem;
+      margin: 1rem;
       color: grey;
-      padding: 1rem;
+      padding: 3rem 1rem;
       font-family: inherit;
       &:focus{
         border: none;
