@@ -33,7 +33,8 @@ setStory = (req, res) => {
     Story.subtitle = subtitle;
     Story.cover = cover;
     Story.content = content;
-    Story.site = '5b479f121f22d372dfb0f433';
+    // Story.site = '5b479f121f22d372dfb0f433';
+    // Story.site = req.user.site;
 
     // Check for duplicates
     modelStory.find({ title: Story.title, deleted: false }, (err, stories) => {

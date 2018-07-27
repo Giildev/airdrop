@@ -19,11 +19,14 @@ export default class AdminStory extends Component {
 
     this.state = {
       story: {
-        question: "",
-        answer: "",
+        title: "",
+        subtitle: "",
+        content: "",
+        cover: "",
         lan: "",
       },
-      stories: {},
+      coverImg: "",
+      stories: undefined,
       filteredStories: {},
       isOpen: false
     }
@@ -35,8 +38,11 @@ export default class AdminStory extends Component {
 
   getStories = () => {
     axios
-      .get(`${config.BASE_URL}/story`)
-      .then(res => this.setState({ stories: res.data.data }))
+      .get(`${config.BASE_URL}/story`, this.headers)
+      .then(res => {
+        console.log(res.data.data);
+        this.setState({ stories: res.data.data });
+      })
       .catch(err => console.log(err));
   }
 
@@ -81,8 +87,43 @@ export default class AdminStory extends Component {
     }
   }
 
+  handleImage = fl => {
+    let file = fl;
+    file.src = URL.createObjectURL(fl.files[0]);
+    // this.setState(
+    //   prevState => ({
+    //     story: {
+    //       ...prevState.story,
+    //       coverImg: fl.files[0],
+    //       coverImgName: fl.files[0].name
+    //     }
+    //   }),
+    //   () => {
+    //     this.setState({ coverPhotoTmp: file.src }, () => {
+    //       this.setState({
+    //         bgImage: {
+    //           backgroundColor: "",
+    //           backgroundImage: "url(" + this.state.coverPhotoTmp + ")", //Blob
+    //           backgroundPosition: "center",
+    //           backgroundRepeat: "no-repeat",
+    //           backgroundSize: "contain"
+    //         }
+    //       });
+    //     });
+    //   }
+    // );
+  };
+
+  uploadFile = () => {
+    const data = new FormData();
+    data.append("file", this.state.coverImg);
+    return axios.post(`${config.baseURL}/upload/cover`, data).then(data => {
+      return data;
+    });
+  };
+
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, stories } = this.state;
     return (
       <div>
         <h1 className="languageTitle">Select Language</h1>
@@ -97,13 +138,17 @@ export default class AdminStory extends Component {
             <h1 className="headerAdmin__storiesTitle">Stories</h1>
             <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
               <svg className="headerAdmin__addBTN__ico">
-                  <use xlinkHref={`${Icons}#icon-plus`} />
+                <use xlinkHref={`${Icons}#icon-plus`} />
               </svg>
             </button>
           </div>
-          <StorieCardAdmin />
-          <StorieCardAdmin />
-          <StorieCardAdmin />
+          {
+            (stories === undefined ? <Loader /> :
+              stories.map(story => {
+                return <StorieCardAdmin key={story._id} story={story}/>
+              }) 
+            )
+          }
         </div>
 
         <Modal
@@ -115,14 +160,15 @@ export default class AdminStory extends Component {
           <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
               <div className="col1">
-                <input type="file" className="formContainer"/>
+                <input type="file" className="formContainer" name="cover" />
                 <p className="formContainer__text">Upload Image / Video</p>
               </div>
               <div className="col2">
                 <div className="formContainer">
-                  <input type="text" placeholder="Title" className="formContainer__item" />
-                  <input type="text" placeholder="Subtitle" className="formContainer__item" />
-                  <textarea name="" id="" cols="30" rows="10" className="formContainer__item__textarea" placeholder="Content"></textarea>
+                  <input type="text" placeholder="Title" name="title" className="formContainer__item" />
+                  <input type="text" placeholder="Title" name="subtitle" className="formContainer__item" />
+                  <textarea name="" id="" cols="30" rows="10" name="content" className="formContainer__item__textarea" placeholder="Content"></textarea>
+
                 </div>
               </div> 
               <button class="fundsRecipents__buttonBox">Save</button>

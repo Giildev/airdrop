@@ -63,6 +63,7 @@ ensureToken = (req, res, next) => {
           Assing data from token to a global var into the Request object
         */
         req.user = validToken.auth;
+        
         next();
       } else {
         res.sendStatus(401);
