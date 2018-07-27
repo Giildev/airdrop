@@ -1,0 +1,30 @@
+.langContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 3rem;
+}
+.flagContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: var(--primary);
+  background-color: #c2f8f1aa;
+  transition: all .3s ease;
+  &:hover{
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  &__ico{
+    width: 5rem;
+    height: auto;
+  }
+  &__name{
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0rem 1rem;
+    width: 10rem;
+  }
+}
