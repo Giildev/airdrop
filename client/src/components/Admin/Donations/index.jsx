@@ -4,6 +4,8 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
+import Icons from "../../../icons.svg";
+import { StorieCardDonation } from "../../Card";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader"
@@ -66,7 +68,7 @@ export default class AdminDonation extends Component {
     this.setState({ isOpen: !this.state.isOpen })
   }
 
-  handleFilterFaq = (e) => {
+  handleFilterDonations = (e) => {
     let lan = e.target.value;
     let faqs = this.state.filteredFaqs;
     let filteredFaqs = {};
@@ -83,19 +85,56 @@ export default class AdminDonation extends Component {
     const { isOpen } = this.state;
     return (
       <div>
-        <button onClick={this.onShowCloseModal}>Modal</button>
-        <select name="" onChange={this.handleFilterFaq}>
-          <option value="">All</option>
-          <option value="ES">ES</option>
-          <option value="EN">EN</option>
+        <h1 className="languageTitle">Select Language</h1>
+        <select className="selectLang" name="" onChange={this.handleFilterDonations}>
+          <option className="selectLang__item" value="">All</option>
+          <option className="selectLang__item" value="ES">ES</option>
+          <option className="selectLang__item" value="EN">EN</option>
         </select>
-        HTML ASI ARRECHISIMO PARA MOSTRAR LAS FAQS ASI Y SU FILTRICO CHIEBRE
+
+        <div className="containerStories">
+        <div className="headerAdmin">
+          <h1 className="headerAdmin__storiesTitle">Donations</h1>
+          <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+            <svg className="headerAdmin__addBTN__ico">
+              <use xlinkHref={`${Icons}#icon-plus`} />
+            </svg>
+          </button>
+        </div>
+        <StorieCardDonation/>
+        <StorieCardDonation/>
+        <StorieCardDonation/>
+      </div>
+
+        
+       
+
         <Modal
           open={isOpen}
           onClose={this.onShowCloseModal}
           classNames={{ modal: "custom-modal" }}
         >
-          HTML ASI BRUTAL PARA CREAR Y EDITAR FAQS
+          <div className="containerModal">
+            <h1 className="headerAdmin__storiesTitle">Add Donation</h1>
+            <div className="form">
+              <div className="col1">
+                <input type="file" className="formContainer" />
+                <p className="formContainer__text">Upload Coin Icon</p>
+                <br/>
+                <input type="file" className="formContainer" />
+                <p className="formContainer__text">Upload QR Code</p>
+              </div>
+              <div className="col2">
+                <div className="formContainer">
+                  <input type="text" placeholder="Name" className="formContainer__item" />
+                  <input type="text" placeholder="Wallet" className="formContainer__item" />
+                  <input type="number" placeholder="Amount" className="formContainer__item" />
+                  <input type="text" placeholder="Site" className="formContainer__item" />
+                </div>
+              </div>
+              <button class="fundsRecipents__buttonBox">Save</button>
+            </div>
+          </div>
         </Modal>
       </div>
     )

@@ -16,14 +16,14 @@
     font-weight: 700; }
     .sideContainer__menu__item {
       margin: 3rem;
-      list-style-type: none;
-      cursor: pointer; }
+      list-style-type: none; }
       .sideContainer__menu__item > a {
         color: var(--white);
         text-decoration: none;
         transition: all 0.4s ease; }
         .sideContainer__menu__item > a:hover {
-          color: #273d51; }
+          color: #273d51;
+          cursor: pointer; }
   .sideContainer__profilePic {
     height: 16rem;
     width: 16rem;

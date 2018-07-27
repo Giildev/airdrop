@@ -213,6 +213,7 @@
   &__icons{
     display: flex;
     align-self: flex-end;
+    align-items: center;
     &__ico{
       width: 2.5rem;
       height: auto;
@@ -229,6 +230,10 @@
     width: 20rem;
     height: auto;
     //margin: 3rem 3rem 0rem 0rem;
+    &--coin{
+      width: 11rem;
+      height: auto;
+    }
   }
   &__info{
     display: flex;
@@ -241,7 +246,9 @@
       font-size: 2.5rem;
     }
     &__separator{
-
+      width: 45%;  
+      height: 0.3rem;
+      background-color: var(--primary);
     }
     &__text{
       width: 40rem;
@@ -249,4 +256,44 @@
       padding: 0.6rem 0rem;
     }
   }
+}
+.featured{
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+//checkbox styles
+input[type=checkbox] {
+  visibility: hidden;
+}
+.checkboxFour {
+  margin-right: 2rem;
+  width: 23px;
+  height: 23px;
+  background: #ddd;
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.checkboxFour label {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 100px;
+
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+
+  background: #333;
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.checkboxFour input[type=checkbox]:checked + label {
+  background: var(--primary);
 }

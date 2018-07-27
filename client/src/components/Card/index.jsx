@@ -90,6 +90,7 @@ export class CoinCard extends Component {
     );
   }
 }
+
 //card StorieListAdmin
 export class StorieCardAdmin extends Component {
   render() {
@@ -103,6 +104,37 @@ export class StorieCardAdmin extends Component {
             He started creating bracelets and selling them on the streets in
             Cúcuta, Colombia. Initially scared to make a Venezuela bracelet
             because he might be spotted by police and taken...
+          </p>
+        </div>
+        <div className="containerList__icons">
+          <p className="featured">Featured</p>
+          <div class="checkboxFour">
+            <input type="checkbox" value="1" id="checkboxFourInput" name="" />
+            <label for="checkboxFourInput"></label>
+          </div>
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}
+
+//card StorieListDonation
+export class StorieCardDonation extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <img className="containerList__img--coin" src="/coin.png" alt="" />
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Bitcoin</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            3Amm1Yo2BQ1zcEdgjFHoHjT72Cg2gkg2pL
           </p>
         </div>
         <div className="containerList__icons">
