@@ -6,6 +6,7 @@ import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import Icons from "../../../icons.svg";
 import { StorieCardAdmin } from "../../Card";
+import TabLang from "../TabLang";
 
 // Components & Containers
 import "./style.css";
@@ -157,6 +158,7 @@ export default class AdminStory extends Component {
           classNames={{ modal: "custom-modal" }}
         >
         <div className="containerModal">
+          <TabLang />
           <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
               <div className="col1">

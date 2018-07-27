@@ -10,7 +10,9 @@
   align-items: center;
   color: var(--primary);
   background-color: #c2f8f1aa;
-  transition: all .3s ease; }
+  transition: all .3s ease;
+  border-radius: 6rem;
+  margin-left: 1rem; }
   .flagContainer:hover {
     cursor: pointer;
     background-color: var(--primary);
