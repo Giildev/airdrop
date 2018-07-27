@@ -143,12 +143,13 @@ export default class AdminStory extends Component {
               </svg>
             </button>
           </div>
+          <StorieCardAdmin />
           {
-            (stories === undefined ? <Loader /> :
-              stories.map(story => {
-                return <StorieCardAdmin key={story._id} story={story} />
-              }) 
-            )
+            // (stories === undefined ? <Loader /> :
+            //   stories.map(story => {
+            //     return <StorieCardAdmin />
+            //   }) 
+            // )
           }
         </div>
 
