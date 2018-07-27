@@ -1,5 +1,8 @@
 // Dependencies
 import React, { Component } from "react";
+import axios from "axios";
+import config from "../../libs/config";
+import Auth from "../../services/authService";
 
 // Components & Containers
 import "./style.css";
@@ -93,24 +96,52 @@ export class CoinCard extends Component {
 
 //card StorieListAdmin
 export class StorieCardAdmin extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      story: props.story
+    }
+  }
+
+  handleFeatured = (e, id) => {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState(prevState => ({
+      story: {
+        ...prevState.story,
+        featured: value
+      }
+    }))
+    console.log(id)
+    // axios
+    //   .post(`${config.BASE_URL}/story/${id}`, this.headers)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.log(err));
+  }
+
   render() {
+    const { story } = this.state;
     return (
       <div className="containerList">
         <img className="containerList__img" src="/storie1.jpg" alt="" />
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Bracelet Maker Tulio Benitez</h2>
+          <h2 className="containerList__info__title">{ story.title }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            He started creating bracelets and selling them on the streets in
-            Cúcuta, Colombia. Initially scared to make a Venezuela bracelet
-            because he might be spotted by police and taken...
+            { story.content }
           </p>
         </div>
         <div className="containerList__icons">
           <p className="featured">Featured</p>
-          <div class="checkboxFour">
-            <input type="checkbox" value="1" id="checkboxFourInput" name="" />
-            <label for="checkboxFourInput"></label>
+          <div className="checkboxFour">
+            <input type="checkbox" 
+            checked={story.featured} 
+            id="checkboxFourInput" 
+            name="featured"
+            onChange={(e) => this.handleFeatured(e, story._id)}
+            />
+            <label htmlFor="checkboxFourInput"></label>
           </div>
           <svg className="containerList__icons__ico">
             <use xlinkHref={`${Icons}#icon-trash`} />

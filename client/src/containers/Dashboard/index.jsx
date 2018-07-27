@@ -8,7 +8,8 @@ import "./style.css";
 import SideMenu from '../../components/Admin/SideMenu/';
 import AdminStory from '../../components/Admin/Stories';
 import AdminDonations from '../../components/Admin/Donations';
-import AdminHome from '../../components/Admin/Manage';
+import AdminHome from '../../components/Admin/Preview';
+import AdminSite from '../../components/Admin/Site';
 import { StorieCard } from "../../components/Card";
 
 export default class Dashboard extends Component {
@@ -25,6 +26,7 @@ export default class Dashboard extends Component {
           <SideMenu />
           <div className="containerDash__content">
             <Route exact path={`${match.url}`} component={AdminHome} />
+            <Route path={`${match.url}/manage`} component={AdminSite} />
             <Route path={`${match.url}/stories`} component={AdminStory} />
             <Route path={`${match.url}/donations`} component={AdminDonations} />
           </div>

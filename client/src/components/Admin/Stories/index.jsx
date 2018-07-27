@@ -145,7 +145,7 @@ export default class AdminStory extends Component {
           {
             (stories === undefined ? <Loader /> :
               stories.map(story => {
-                return <StorieCardAdmin key={story._id} story={story}/>
+                return <StorieCardAdmin key={story._id} story={story} />
               }) 
             )
           }
@@ -166,7 +166,7 @@ export default class AdminStory extends Component {
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Title" name="title" className="formContainer__item" />
-                  <input type="text" placeholder="Title" name="subtitle" className="formContainer__item" />
+                  <input type="text" placeholder="Subtitle" name="subtitle" className="formContainer__item" />
                   <textarea name="" id="" cols="30" rows="10" name="content" className="formContainer__item__textarea" placeholder="Content"></textarea>
 
                 </div>
