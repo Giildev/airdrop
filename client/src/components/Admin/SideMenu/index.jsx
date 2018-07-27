@@ -1,26 +1,37 @@
 // Dependencies
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 // Components & Containers
 import "./style.css";
 
 export default class SideMenu extends Component {
   render() {
-    return (
-      <div>
+    return <div>
         <div className="sideContainer">
-          <img src="/storie1.jpg" alt="profile" className="sideContainer__profilePic"/>
+          <img src="/storie1.jpg" alt="profile" className="sideContainer__profilePic" />
           <h3 className="sideContainer__title">Admin</h3>
           <ul className="sideContainer__menu">
-            <li className="sideContainer__menu__item">Site</li>
-            <li className="sideContainer__menu__item">Storys</li>
-            <li className="sideContainer__menu__item">Donations</li>
-            <li className="sideContainer__menu__item">Amounts Rised</li>
-            <li className="sideContainer__menu__item">FAQ's</li>
-            <li className="sideContainer__menu__item">Log Out</li>
+            <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/manage`}>Site</Link>
+            </li>
+            <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/stories`}>Stories</Link>
+            </li>
+            <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/donations`}>Donations</Link>
+            </li>
+            <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/amount`}>Amounts Rised</Link>
+            </li>
+            <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/faqs`}>FAQ's</Link>
+            </li>
+            <li className="sideContainer__menu__item">
+              <a  >Log Out </a>
+            </li>
           </ul>
         </div>
-      </div>
-    )
+      </div>;
   }
 }

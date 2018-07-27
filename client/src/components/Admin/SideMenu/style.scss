@@ -17,13 +17,16 @@
     font-weight: 700;
     &__item{
       margin: 3rem;
-      text-decoration: none;
       list-style-type: none;
-      transition: all 0.4s ease;  
-      &:hover{
-        cursor: pointer;
-        color: #273d51;
-      }
+      & > a {
+        color: var(--white);
+        text-decoration: none;
+        transition: all 0.4s ease;
+        &:hover{
+          color: #273d51;
+          
+        }
+      }  
     }
   }
   &__profilePic{

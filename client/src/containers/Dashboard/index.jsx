@@ -1,46 +1,34 @@
 // Dependencies
 import React, { Component } from 'react'
-
+import PropTypes from "prop-types";
+import { Link, Route, Switch, withRouter } from "react-router-dom";
 // Components & Containers
 import "./style.css";
 //import TabLang from "../../components/Admin/TabLang/";
 import SideMenu from '../../components/Admin/SideMenu/';
-import AdminStory from '../../components/Admin/Stories/';
+import AdminStory from '../../components/Admin/Stories';
+import AdminDonations from '../../components/Admin/Donations';
+import AdminHome from '../../components/Admin/Manage';
 import { StorieCard } from "../../components/Card";
 
 export default class Dashboard extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
+    history: PropTypes.object.isRequired
+  }
+
   render() {
-    return (
-      <div>
-      <div className="containerDash">
+    const { match, location, history } = this.props;
+    return <div>
+        <div className="containerDash">
           <SideMenu />
           <div className="containerDash__content">
-            <h1 className="containerDash__content__amount">Current Status of Amount Raised</h1>
-            <div className="funds__container">
-              <div className="funds__container__middle">
-                <div className="funds__container__middle__outerBox">
-                  <div className="funds__container__middle__innerBox">
-                    <div className="funds__container__middle__innerBox__bar" />
-                    <div
-                      className="funds__container__middle__innerBox__bar__bubbleBox"
-                      aria-valuenow="34093 USD Raised"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h1 className="containerDash__content__amount--story">Last Stories</h1>
-            <div className="containerDash__content__stories">
-              <StorieCard />
-              <StorieCard />
-              <StorieCard />
-              <StorieCard />
-            </div> 
-            <AdminStory />
+            <Route exact path={`${match.url}`} component={AdminHome} />
+            <Route path={`${match.url}/stories`} component={AdminStory} />
+            <Route path={`${match.url}/donations`} component={AdminDonations} />
           </div>
-          
-      </div>
-      </div>
-    )
+        </div>
+      </div>;
   }
 }
