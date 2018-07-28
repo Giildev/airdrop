@@ -1,0 +1,23 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.logoLogin {
+  width: 30rem;
+  height: auto; }
+
+.showPass {
+  border: none;
+  outline: none;
+  background: none;
+  margin: 1.5rem;
+  font-family: inherit;
+  font-size: 1.7rem;
+  color: var(--primary);
+  transition: all .3s ease; }
+  .showPass:hover {
+    cursor: pointer;
+    color: var(--terciary); }

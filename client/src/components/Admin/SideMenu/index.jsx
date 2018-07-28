@@ -13,7 +13,7 @@ export default class SideMenu extends Component {
           <h3 className="sideContainer__title">Admin</h3>
           <ul className="sideContainer__menu">
             <li className="sideContainer__menu__item">
-              <Link to={`/dashboard/manage`}>Site</Link>
+              <Link to={`/dashboard`}>Site</Link>
             </li>
             <li className="sideContainer__menu__item">
               <Link to={`/dashboard/stories`}>Stories</Link>

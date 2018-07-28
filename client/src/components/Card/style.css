@@ -243,6 +243,10 @@ html {
       width: 40rem;
       font-size: 1.5rem;
       padding: 0.6rem 0rem; }
+      .containerList__info__text--faqs {
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 0.6rem 0rem; }
       .containerList__info__text--date {
         color: var(--primary);
         font-weight: bold;
