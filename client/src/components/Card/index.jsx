@@ -274,3 +274,33 @@ export class TimeLineListCard extends Component {
     );
   }
 }
+
+//card UserList
+export class UserListCard extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Username</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            Email del usuario
+          </p>
+          <div className="dateContainer">
+            <div className="dateContainer__col">
+              <h4 className="dateContainer__title">Creation Date</h4>
+              <p className="dateContainer__text">
+                21/11/2017 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}

@@ -1,0 +1,42 @@
+.imageUpload {
+  background-color:var(--primary);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 7rem 2rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2rem;
+  justify-content: center;
+  margin: 2rem;
+  border-radius: 50rem;
+  &--single{
+    background-color:var(--primary);
+    width: 77%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 7rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+  }
+  &__hide {
+    display: none;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &__ico {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--white);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}

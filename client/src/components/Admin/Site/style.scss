@@ -11,7 +11,7 @@
     & > label {
       background: #eee;
       padding: 10px;
-      border: 1px solid #ccc;
+      //border: 1px solid #ccc;
       margin-left: -1px;
       position: relative;
       left: 1px;
@@ -21,7 +21,6 @@
     }
   }
 }
-
 .content {
   display: flex;
   flex-direction: column;
@@ -32,7 +31,7 @@
   right: 0;
   bottom: 0;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: none;
   &__titles{
     font-family: inherit;
     font-size: 2rem;
@@ -49,9 +48,10 @@
 }
 
 [type=radio]:checked~label {
-  background: white;
-  border-bottom: 1px solid white;
+  background: var(--primary);
+  //border-bottom: 1px solid white;
   z-index: 2;
+  color: var(--primary);
 }
 
 [type=radio]:checked~label~.content {
