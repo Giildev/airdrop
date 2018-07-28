@@ -174,3 +174,103 @@ export class StorieCardDonation extends Component {
     );
   }
 }
+
+//card StorieListDonation
+export class CardRaised extends Component {
+  render() {
+    return (
+      <div className="containerList">
+       
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Amount Rised</h2>
+          <br/>          
+          <div className="funds__container__middle">
+            <div className="funds__container__middle__outerBox">
+              <div className="funds__container__middle__innerBox">
+                <div className="funds__container__middle__innerBox__bar" />
+                <div
+                  className="funds__container__middle__innerBox__bar__bubbleBox"
+                  aria-valuenow="34093 USD Raised"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}
+
+//card StorieListDonation
+export class CardRaisedUsers extends Component {
+  render() {
+    return (
+      <div className="containerList">
+       
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Verified Users</h2>
+          <div className="recipents__container__middle">
+            <div className="recipents__container__middle__outerBox">
+              <div className="recipents__container__middle__innerBox">
+                <div className="recipents__container__middle__innerBox__bar" />
+                <div
+                  className="recipents__container__middle__innerBox__bar__bubbleBox"
+                  aria-valuenow="22230 Verified Users"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}
+
+//card TimeLine ListCard
+export class TimeLineListCard extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Time line title</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugiat praesentium nihil sit
+          </p>
+          <div className="dateContainer">
+            <div className="dateContainer__col">
+              <h4 className="dateContainer__title">Starting Date</h4>
+              <p className="dateContainer__text">
+                21/11/2017 
+              </p>
+            </div>
+            <div className="dateContainer__col">
+              <h4 className="dateContainer__title">Finish Date</h4>
+              <p className="dateContainer__text">
+                28/11/2017 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}

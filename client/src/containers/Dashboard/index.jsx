@@ -10,6 +10,8 @@ import AdminStory from '../../components/Admin/Stories';
 import AdminDonations from '../../components/Admin/Donations';
 import AdminHome from '../../components/Admin/Preview';
 import AdminSite from '../../components/Admin/Site';
+import AdminAmount from '../../components/Admin/Amount';
+import AdminTimeLine from '../../components/Admin/Timeline';
 import { StorieCard } from "../../components/Card";
 
 export default class Dashboard extends Component {
@@ -29,6 +31,8 @@ export default class Dashboard extends Component {
             <Route path={`${match.url}/manage`} component={AdminSite} />
             <Route path={`${match.url}/stories`} component={AdminStory} />
             <Route path={`${match.url}/donations`} component={AdminDonations} />
+            <Route path={`${match.url}/amount`} component={AdminAmount} />
+            <Route path={`${match.url}/timeline`} component={AdminTimeLine} />
           </div>
         </div>
       </div>;

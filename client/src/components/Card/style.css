@@ -243,6 +243,10 @@ html {
       width: 40rem;
       font-size: 1.5rem;
       padding: 0.6rem 0rem; }
+      .containerList__info__text--date {
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.8rem; }
 
 .featured {
   font-family: inherit;
@@ -266,3 +270,18 @@ html {
   width: 1.7rem;
   height: 1.7rem;
   background-color: var(--primary); }
+
+.dateContainer {
+  display: flex;
+  align-items: center; }
+  .dateContainer__col {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem; }
+  .dateContainer__title {
+    font-family: inherit;
+    font-size: 1.7rem;
+    color: var(--primary); }
+  .dateContainer__text {
+    font-family: inherit;
+    font-size: 1.4rem; }
