@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 
 const app = express();
 
@@ -13,6 +14,7 @@ const corsOptions = {
 
 /* Middleware */
 app.use(cors());
+app.use(fileUpload());
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
@@ -22,6 +24,7 @@ app.use("/public", express.static(__dirname + "/public"));
 const authRoute = require("./routes/auth");
 const siteRoute = require("./routes/site");
 const faqRoute = require("./routes/faq");
+const uploadRoute = require("./routes/upload");
 const userRoute = require("./routes/user");
 const subscribeRoute = require("./routes/subscribe");
 const timelineRoute = require("./routes/timeline");
@@ -32,6 +35,7 @@ const donationRoute = require("./routes/donation");
 const base_url = "/api";
 app.use(base_url, authRoute);
 app.use(base_url, siteRoute);
+app.use(base_url, uploadRoute);
 app.use(base_url, subscribeRoute);
 app.use(base_url, userRoute);
 app.use(base_url, donationRoute);

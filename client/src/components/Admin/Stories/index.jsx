@@ -18,18 +18,21 @@ export default class AdminStory extends Component {
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
 
+    this.story = {
+      title: "",
+      subtitle: "",
+      content: "",
+      cover: "",
+      lan: ""
+    }
+
     this.state = {
-      story: {
-        title: "",
-        subtitle: "",
-        content: "",
-        cover: "",
-        lan: "",
-      },
       coverImg: "",
       stories: undefined,
       filteredStories: {},
-      isOpen: false
+      isOpen: false,
+      newStory: true,
+      idStoryToUpdate: undefined
     }
   }
 
@@ -47,32 +50,70 @@ export default class AdminStory extends Component {
       .catch(err => console.log(err));
   }
 
-  updateStory = (id) => {
+  updateStory = (e) => {
+    e.preventDefault();
+    let id = this.state.idStoryToUpdate;
     axios
-      .post(`${config.BASE_URL}/story/${id}`, this.headers)
+      .post(`${config.BASE_URL}/story/${id}`, this.story, this.headers)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
   }
 
-  createStory = () => {
-    axios
-      .put(`${config.BASE_URL}/story`, this.headers)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
-
+  createStory = (e) => {
+    e.preventDefault();
+    console.log('create')
+    // if(this.story.cover !== "") {
+    this.uploadFile().then(res => console.log(res))
   
+    //   // axios
+    //   //   .put(`${config.BASE_URL}/story`, this.story, this.headers)
+    //   //   .then(res => console.log(res.data))
+    //   //   .catch(err => console.log(err));
+    // } else {
+    //   alert('tavaciao')
+    // }
+  }
+
+  handleStories = (msg, id) => {
+    let stories = this.state.stories
+    
+    if(msg === 'delete') {
+      let newStories = stories.filter(story => story._id !== id )
+  
+      /*
+        handle class animate before delete it from state
+      */
+      this.setState({
+        stories: newStories
+      })
+    } else if (msg === 'update') {
+      let story = stories.filter(story => story._id === id)[0]
+      this.setState({ newStory: false, idStoryToUpdate: story._id }, () => {
+        this.story = {
+          title: story.title,
+          subtitle: story.subtitle,
+          lan: story.lan,
+          content: story.content
+        }
+        this.onShowCloseModal()
+      })
+    }
+  }
+
   handleStory = (e) => {
-    this.setState(prevState => ({
-      story: {
-        ...prevState.story,
-        [e.target.name]: e.target.value
-      }
-    }))
+    this.story[e.target.name] = e.target.value;
   }
   
   onShowCloseModal = () => {
-    this.setState({ isOpen: !this.state.isOpen })
+    this.setState({ isOpen: !this.state.isOpen, newStory: true, idStoryToUpdate: undefined }, () => {
+      this.story = {
+        title: "",
+        subtitle: "",
+        content: "",
+        cover: "",
+        lan: ""
+      }
+    })
   }
   
   handleFilterStory = (e) => {
@@ -91,49 +132,36 @@ export default class AdminStory extends Component {
   handleImage = fl => {
     let file = fl;
     file.src = URL.createObjectURL(fl.files[0]);
-    // this.setState(
-    //   prevState => ({
-    //     story: {
-    //       ...prevState.story,
-    //       coverImg: fl.files[0],
-    //       coverImgName: fl.files[0].name
-    //     }
-    //   }),
-    //   () => {
-    //     this.setState({ coverPhotoTmp: file.src }, () => {
-    //       this.setState({
-    //         bgImage: {
-    //           backgroundColor: "",
-    //           backgroundImage: "url(" + this.state.coverPhotoTmp + ")", //Blob
-    //           backgroundPosition: "center",
-    //           backgroundRepeat: "no-repeat",
-    //           backgroundSize: "contain"
-    //         }
-    //       });
-    //     });
-    //   }
-    // );
+    this.story.cover = fl.files[0].name;
+    this.setState({ coverImg: fl.files[0] });
   };
 
   uploadFile = () => {
-    const data = new FormData();
-    data.append("file", this.state.coverImg);
-    return axios.post(`${config.baseURL}/upload/cover`, data).then(data => {
+    const body = new FormData();
+    body.append("file", this.state.coverImg);
+    return axios.post(`${config.BASE_URL}/upload/cover`, body, this.headers).then(data => {
+      // debugger;
       return data;
     });
   };
 
   render() {
-    const { isOpen, stories } = this.state;
-    return (
-      <div>
+    const { story } = this;
+    const { isOpen, stories, newStory } = this.state;
+    return <div>
         <h1 className="languageTitle">Select Language</h1>
         <select className="selectLang" name="" onChange={this.handleFilterStory}>
-          <option  className="selectLang__item" value="">All</option>
-          <option  className="selectLang__item" value="ES">ES</option>
-          <option  className="selectLang__item" value="EN">EN</option>
+          <option className="selectLang__item" value="">
+            All
+          </option>
+          <option className="selectLang__item" value="ES">
+            ES
+          </option>
+          <option className="selectLang__item" value="EN">
+            EN
+          </option>
         </select>
-       
+
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Stories</h1>
@@ -143,24 +171,15 @@ export default class AdminStory extends Component {
               </svg>
             </button>
           </div>
-          <StorieCardAdmin />
-          {
-            // (stories === undefined ? <Loader /> :
-            //   stories.map(story => {
-            //     return <StorieCardAdmin />
-            //   }) 
-            // )
-          }
+          {stories === undefined ? <Loader /> : stories.map(story => {
+              return <StorieCardAdmin key={story._id} story={story} handleStories={this.handleStories} />;
+            })}
         </div>
 
-        <Modal
-          open={isOpen}
-          onClose={this.onShowCloseModal}
-          classNames={{ modal: "custom-modal" }}
-        >
-        <div className="containerModal">
+        <Modal open={isOpen} onClose={this.onShowCloseModal} classNames={{ modal: "custom-modal" }}>
+          <div className="containerModal">
           <TabLang />
-          <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
+            <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
               <div className="col1">
               <label
@@ -182,18 +201,23 @@ export default class AdminStory extends Component {
               </div>
               <div className="col2">
                 <div className="formContainer">
-                  <input type="text" placeholder="Title" name="title" className="formContainer__item" />
-                  <input type="text" placeholder="Subtitle" name="subtitle" className="formContainer__item" />
-                  <textarea name="" id="" cols="30" rows="10" name="content" className="formContainer__item__textarea" placeholder="Content"></textarea>
-
+                  <input type="text" placeholder="Title" name="title" defaultValue={story.title} className="formContainer__item" onChange={(e) => this.handleStory(e)}/>
+                  <input type="text" placeholder="Subtitle" name="subtitle" defaultValue={story.subtitle} className="formContainer__item" onChange={this.handleStory}/>
+                  <textarea name="content" cols="30" rows="10" name="content" defaultValue={story.content} className="formContainer__item__textarea" placeholder="Content" onChange={this.handleStory} />
                 </div>
-              </div> 
-              <button class="fundsRecipents__buttonBox">Save</button>
+              </div>
+              <button type="submit"
+                className="fundsRecipents__buttonBox"
+                onClick={e => {
+                  newStory === true
+                    ? this.createStory(e)
+                    : this.updateStory(e);
+                }}
+              >
+              Save</button>
             </div>
-        </div>
-  
+          </div>
         </Modal>
-      </div>
-    )
+      </div>;
   }
 }

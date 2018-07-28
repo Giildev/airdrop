@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
 // Components & Containers
 import "./style.css";
-//import TabLang from "../../components/Admin/TabLang/";
+
 import SideMenu from '../../components/Admin/SideMenu/';
 import AdminStory from '../../components/Admin/Stories';
 import AdminDonations from '../../components/Admin/Donations';

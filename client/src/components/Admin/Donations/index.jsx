@@ -156,10 +156,9 @@ export default class AdminDonation extends Component {
               </div>
               <div className="col2">
                 <div className="formContainer">
-                  <input type="text" placeholder="Name" className="formContainer__item" />
-                  <input type="text" placeholder="Wallet" className="formContainer__item" />
-                  <input type="number" placeholder="Amount" className="formContainer__item" />
-                  <input type="text" placeholder="Site" className="formContainer__item" />
+                  <input type="text" placeholder="name" className="formContainer__item" />
+                  <input type="text" placeholder="wallet" className="formContainer__item" />
+                  <input type="number" placeholder="amount" className="formContainer__item" />
                 </div>
               </div>
               <button class="fundsRecipents__buttonBox">Save</button>

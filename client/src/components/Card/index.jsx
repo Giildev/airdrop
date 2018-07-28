@@ -8,6 +8,9 @@ import Auth from "../../services/authService";
 import "./style.css";
 import Icons from "../../icons.svg";
 
+var auth =  new Auth();
+var headers = auth.buildAuthHeader();
+
 export class HIWCard extends Component {
   render() {
     return (
@@ -100,52 +103,77 @@ export class StorieCardAdmin extends Component {
     super(props)
 
     this.state = {
-      story: props.story
+      story: props.story,
+      featured: props.story.featured
     }
   }
 
-  handleFeatured = (e, id) => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState(prevState => ({
-      story: {
-        ...prevState.story,
-        featured: value
+  handleFeatured = (id) => {
+    this.setState({ featured: !this.state.featured }, () => {
+      let body = {
+        featured: this.state.featured
       }
-    }))
-    console.log(id)
-    // axios
-    //   .post(`${config.BASE_URL}/story/${id}`, this.headers)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err));
+
+    this.uploadStory(id, body)
+      .then(res => {
+        const response = res.data
+
+        if (res.status === 200 && response.success) {
+          console.log(response.msg)
+        }
+      })
+      .catch(err => console.log(err));
+
+    })
+  }
+
+
+  handleDelete = (id) => {
+    const body = {
+      deleted: true
+    }
+
+    this.uploadStory(id, body)
+      .then(res => {
+        const response = res.data
+
+        if(res.status === 200 && response.success) {
+          this.props.handleStories('delete', id);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleEdit = (e, id) => {
+    this.props.handleStories("update", id);
+  }
+
+  uploadStory = (id, body) => {
+    return axios.post(`${config.BASE_URL}/story/${id}`, body, headers)
   }
 
   render() {
-    const { story } = this.state;
-    return (
-      <div className="containerList">
+    const { story, featured } = this.state;
+    return <div className="containerList">
         <img className="containerList__img" src="/storie1.jpg" alt="" />
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Mauro</h2>
-          <div className="containerList__info__separator"></div>
-          <p className="containerList__info__text">
-            hola mauro
-          </p>
+          <h2 className="containerList__info__title">{story.title}</h2>
+          <div className="containerList__info__separator" />
+          <p className="containerList__info__text">{story.subtitle}</p>
         </div>
         <div className="containerList__icons">
           <p className="featured">Featured</p>
-          <div className="checkbox">
-            <div className="active"></div>
+          <div className="checkbox" onClick={() => this.handleFeatured(story._id)}>
+            <div className={featured ? "active" : null} data-ref={story._id} />
           </div>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, story._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
@@ -307,23 +335,58 @@ export class UserListCard extends Component {
 
 //card Faqs
 export class FaqCard extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      faq: props.faq
+    }
+  }
+
+  handleDelete = (e, id) => {
+    e.preventDefault();
+    const body = {
+      deleted: true
+    }
+
+    this.uploadFaq(id, body)
+      .then(res => {
+        const response = res.data;
+
+        if (res.status === 200 && response.success) {
+          this.props.handleFaqs("delete", id);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleEdit = (e, id) => {
+    e.preventDefault();
+    this.props.handleFaqs("update", id);
+  }
+
+  uploadFaq = (id, body) => {
+    return axios.post(`${config.BASE_URL}/faq/${id}`, body, headers)
+  }
+  
   render() {
+    const { faq, featured } = this.state;
     return (
       <div className="containerList">
         <div className="containerList__info">
-          <h2 className="containerList__info__title">FAQ title</h2>
+          <h2 className="containerList__info__title">{ faq.question }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text--faqs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nostrum officiis, quas numquam sit aliquid incidunt iure aperiam voluptatem perferendis tempora? Illum molestiae rerum porro sapiente excepturi earum sequi eaque.
+            { faq.answer }
           </p>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>

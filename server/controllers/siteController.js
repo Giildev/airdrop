@@ -73,7 +73,7 @@ editContent = (req, res) => {
 
 
       res.status(200).send({
-        success: false,
+        success: true,
         msg: `Edited`,
         data: siteUpdated
       })
