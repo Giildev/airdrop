@@ -10,12 +10,9 @@ import AdminStory from '../../components/Admin/Stories';
 import AdminDonations from '../../components/Admin/Donations';
 import AdminHome from '../../components/Admin/Preview';
 import AdminSite from '../../components/Admin/Site';
-<<<<<<< HEAD
-=======
-import AdminAmount from '../../components/Admin/Amount';
-import AdminTimeLine from '../../components/Admin/Timeline';
+import AdminAmount from "../../components/Admin/Amount";
+import AdminTimeLine from "../../components/Admin/Timeline";
 import { StorieCard } from "../../components/Card";
->>>>>>> master
 
 export default class Dashboard extends Component {
   static propTypes = {
