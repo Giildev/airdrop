@@ -13,7 +13,7 @@ import AdminSite from '../../components/Admin/Site';
 import AdminAmount from '../../components/Admin/Amount';
 import AdminTimeLine from '../../components/Admin/Timeline';
 import AdminUsers from '../../components/Admin/Users';
-import { StorieCard } from "../../components/Card";
+import AdminFaqs from '../../components/Admin/Faqs';
 
 export default class Dashboard extends Component {
   static propTypes = {
@@ -35,6 +35,7 @@ export default class Dashboard extends Component {
             <Route path={`${match.url}/amount`} component={AdminAmount} />
             <Route path={`${match.url}/timeline`} component={AdminTimeLine} />
             <Route path={`${match.url}/users`} component={AdminUsers} />
+            <Route path={`${match.url}/faqs`} component={AdminFaqs} />
           </div>
         </div>
       </div>;
