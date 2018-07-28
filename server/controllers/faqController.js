@@ -6,7 +6,11 @@ const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 getFaqs = (req, res) => {
-  modelFaq.find({}).exec((err, faqs) => {
+  modelFaq.find({
+    deleted: false
+  }).sort({
+    createdAt: -1
+  }).exec((err, faqs) => {
     if (err) return res.status(500).send({
       success: false,
       msg: `Problem to get all faqs`
@@ -30,14 +34,16 @@ getFaq = () => {
 }
 
 setFaq = (req, res) => {
-  let { question, answer } = req.body;
+  let { question, answer, lan } = req.body;
   const Faq = new modelFaq();
 
   if(question && answer && lan){
 
     Faq.question = question;
     Faq.answer = answer;
-    Faq.site = '5b479f121f22d372dfb0f433'; // se envia desde el front
+    Faq.lan = lan;
+    // Faq.site = '5b479f121f22d372dfb0f433'; // se envia desde el front
+    Faq.site = req.user.site; 
 
     modelFaq.find({ question: Faq.question, deleted: false }, (err, faqs) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting faqs to compare'})
@@ -63,7 +69,7 @@ setFaq = (req, res) => {
               res.status(200).send({
                 success: true,
                 msg: `Registered faq succesfully`,
-                data: faqStored
+                faq: faqStored
               })
             }
           )
@@ -122,7 +128,7 @@ editFaq = (req, res) => {
   res.status(200).send({
     success: true,
     msg: "All faqs modified successfully",
-    data: faqUpdated
+    data: modifiedData
   })
 };
 

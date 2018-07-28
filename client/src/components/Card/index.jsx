@@ -108,18 +108,6 @@ export class StorieCardAdmin extends Component {
     }
   }
 
-  onChangeFeatured = (e, id) => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    console.log(id, value)
-    this.setState(prevState => ({
-      story: {
-        ...prevState.story,
-        featured: value
-      }
-    }))
-  }
-
   handleFeatured = (id) => {
     this.setState({ featured: !this.state.featured }, () => {
       let body = {
@@ -347,23 +335,56 @@ export class UserListCard extends Component {
 
 //card Faqs
 export class FaqCard extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      faq: props.faq
+    }
+  }
+
+  handleDelete = (id) => {
+    const body = {
+      deleted: true
+    }
+
+    this.uploadFaq(id, body)
+      .then(res => {
+        const response = res.data;
+
+        if (res.status === 200 && response.success) {
+          this.props.handleFaqs("delete", id);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleEdit = (id) => {
+    this.props.handleFaqs("update", id);
+  }
+
+  uploadFaq = (id, body) => {
+    return axios.post(`${config.BASE_URL}/faq/${id}`, body, headers)
+  }
+  
   render() {
+    const { faq, featured } = this.state;
     return (
       <div className="containerList">
         <div className="containerList__info">
-          <h2 className="containerList__info__title">FAQ title</h2>
+          <h2 className="containerList__info__title">{ faq.question }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nostrum officiis, quas numquam sit aliquid incidunt iure aperiam voluptatem perferendis tempora? Illum molestiae rerum porro sapiente excepturi earum sequi eaque.
+            { faq.answer }
           </p>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(faq._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(faq._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>

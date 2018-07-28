@@ -88,7 +88,6 @@ export default class AdminStory extends Component {
       })
     } else if (msg === 'update') {
       let story = stories.filter(story => story._id === id)[0]
-      console.log(story)
       this.setState({ newStory: false, idStoryToUpdate: story._id }, () => {
         this.story = {
           title: story.title,
