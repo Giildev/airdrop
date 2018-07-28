@@ -313,7 +313,7 @@ export class FaqCard extends Component {
         <div className="containerList__info">
           <h2 className="containerList__info__title">FAQ title</h2>
           <div className="containerList__info__separator"></div>
-          <p className="containerList__info__text">
+          <p className="containerList__info__text--faqs">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nostrum officiis, quas numquam sit aliquid incidunt iure aperiam voluptatem perferendis tempora? Illum molestiae rerum porro sapiente excepturi earum sequi eaque.
           </p>
         </div>

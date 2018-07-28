@@ -28,8 +28,8 @@ export default class Dashboard extends Component {
         <div className="containerDash">
           <SideMenu />
           <div className="containerDash__content">
-            <Route exact path={`${match.url}`} component={AdminHome} />
-            <Route path={`${match.url}/manage`} component={AdminSite} />
+            <Route exact path={`${match.url}`} component={AdminSite} />
+            {/*<Route path={`${match.url}/manage`} component={AdminSite} />*/}
             <Route path={`${match.url}/stories`} component={AdminStory} />
             <Route path={`${match.url}/donations`} component={AdminDonations} />
             <Route path={`${match.url}/amount`} component={AdminAmount} />
