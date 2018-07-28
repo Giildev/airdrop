@@ -254,6 +254,11 @@
       width: 40rem;
       font-size: 1.5rem;
       padding: 0.6rem 0rem;
+      &--date{
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.8rem;
+      }
     }
   }
 }
@@ -288,3 +293,21 @@
   background-color: var(--primary);
 }
 
+.dateContainer{
+  display: flex;
+  align-items: center;
+  &__col{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  &__title{
+    font-family: inherit;
+    font-size: 1.7rem;
+    color: var(--primary);
+  }
+  &__text{
+    font-family: inherit;
+    font-size: 1.4rem;
+  }
+}

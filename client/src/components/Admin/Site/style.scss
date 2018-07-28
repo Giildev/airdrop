@@ -5,6 +5,7 @@
   /* This part sucks -- HORRIBLE*/
   clear: both;
   margin: 50px 0;
+  display: flex;
   &__tab {
     float: left;
     & > label {
@@ -32,6 +33,19 @@
   bottom: 0;
   padding: 20px;
   border: 1px solid #ccc;
+  &__titles{
+    font-family: inherit;
+    font-size: 2rem;
+    color: var(--primary);
+    &--tabs{
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 [type=radio]:checked~label {
@@ -43,3 +57,26 @@
 [type=radio]:checked~label~.content {
   z-index: 1;
 }
+
+.saveBTN{
+  width: 12rem;
+  height: auto;
+  background-color: var(--primary);
+  border: none;
+  font-size: 1.5rem;
+  color: var(--white);
+  border-radius: 8rem;
+  //width: 6.5rem;
+  height: 6.5rem;
+  transition: all .3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem;
+  padding: 1rem;
+  &:hover{
+    background-color: darken($color: #00bf98, $amount: 5);
+    cursor: pointer;
+  }
+}
+

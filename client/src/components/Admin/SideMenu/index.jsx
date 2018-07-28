@@ -25,6 +25,9 @@ export default class SideMenu extends Component {
               <Link to={`/dashboard/amount`}>Amounts Rised</Link>
             </li>
             <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/timeline`}>TimeLine</Link>
+            </li>
+            <li className="sideContainer__menu__item">
               <Link to={`/dashboard/faqs`}>FAQ's</Link>
             </li>
             <li className="sideContainer__menu__item">
