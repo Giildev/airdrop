@@ -2,7 +2,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 3rem 0rem; }
+  margin: 3rem 0rem;
+  background-color: var(--primary);
+  width: 42%;
+  border-radius: 5rem;
+  padding: 1rem 0rem; }
 
 .flagContainer {
   display: flex;
@@ -26,3 +30,9 @@
     font-weight: 600;
     padding: 0rem 1rem;
     width: 10rem; }
+
+.lang {
+  display: flex;
+  align-items: center;
+  margin: 2rem;
+  background-color: var(--primary); }

@@ -1,32 +1,75 @@
+
+
+//old styles
+
 .langContainer{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin:  3rem 0rem;
+  margin: 3rem 0rem;
+  background-color: var(--primary);
+  width: 42%;
+  border-radius: 5rem;
+  padding: 0rem 1rem;
 }
-.flagContainer{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: var(--primary);
-  background-color: #c2f8f1aa;
-  transition: all .3s ease;
-  border-radius: 6rem;
-  margin-left: 1rem;
-  &:hover{
-    cursor: pointer;
-    background-color: var(--primary);
-    color: var(--white);
-  }
-  &__ico{
-    width: 5rem;
-    height: auto;
-  }
-  &__name{
-    font-family: inherit;
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 0rem 1rem;
-    width: 10rem;
-  }
-}
+// .flagContainer{
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   color: var(--primary);
+//   background-color: #c2f8f1aa;
+//   transition: all .3s ease;
+//   border-radius: 6rem;
+//   margin-left: 1rem;
+//   &:hover{
+//     cursor: pointer;
+//     background-color: var(--primary);
+//     color: var(--white);
+//   }
+//   &__ico{
+//     width: 5rem;
+//     height: auto;
+//   }
+//   &__name{
+//     font-family: inherit;
+//     font-size: 1.5rem;
+//     font-weight: 600;
+//     padding: 0rem 1rem;
+//     width: 10rem;
+//   }
+// }
+// .lang{
+//   display: flex;
+//   align-items: center;
+//   margin: 2rem;
+//   background-color: var(--primary);
+// }
+
+// //radio btn styles
+// @button-text-color: #1474cc;
+// @button-background-color: #298EEA;
+// @button-inverse-text-color: white;
+
+// .btn-group {
+//   display: flex;
+//   .btn {
+//     display: inline-block;
+//     //float: left;
+//     width: 140px;
+//     color: @button-text-color;
+//     padding: 10px 0 8px;
+//     text-align: center;
+//     cursor: pointer;
+//     border: 1px solid @button-background-color;
+//     border-left: none;
+//     transition: all .15s;
+//     &.first {
+//       border-left: 1px solid;
+//       border-radius: 3px 0 0 3px;
+//     }
+//     &.last {
+//       border-radius: 0 3px 3px 0;
+//     }
+//   }
+
+// }
