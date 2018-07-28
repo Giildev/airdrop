@@ -64,10 +64,10 @@ export default class AdminLogin extends Component {
        <div className="loginContainer">
         <img className="logoLogin"  src="/logo.png" alt="" />
         <form onSubmit={(e) => this.login(e)} className="formContainer">     
-          <input type="text" placeholder="User or email" name="userName" onChange={this.handleInput}/>
-          <input type={this.state.type} placeholder="Password" name="password" onChange={this.handleInput}/>
-          <input type="button" value="Ojito pa ve la clave" onClick={this.changeTypeInput}/>
-          <button type="submit"> Entrompele </button>
+          <input className="formContainer__item" type="text" placeholder="User or email" name="userName" onChange={this.handleInput}/>
+          <input className="formContainer__item" type={this.state.type} placeholder="Password" name="password" onChange={this.handleInput}/>
+          <input type="button" value="Show Password" className="showPass" onClick={this.changeTypeInput}/>
+          <button type="submit" class="fundsRecipents__buttonBox"> Login </button>
         </form>
        </div>
       </div>
