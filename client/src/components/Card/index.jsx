@@ -104,7 +104,7 @@ export class StorieCardAdmin extends Component {
 
     this.state = {
       story: props.story,
-      id: props.story._id
+      featured: props.story.featured
     }
   }
 
@@ -120,10 +120,23 @@ export class StorieCardAdmin extends Component {
     }))
   }
 
-  handleFeatured = (e, id) => {
-    const target = e.target;
-    console.log(target)
-    console.log(id)
+  handleFeatured = (id) => {
+    this.setState({ featured: !this.state.featured }, () => {
+      let body = {
+        featured: this.state.featured
+      }
+
+    this.uploadStory(id, body)
+      .then(res => {
+        const response = res.data
+
+        if (res.status === 200 && response.success) {
+          console.log(response.msg)
+        }
+      })
+      .catch(err => console.log(err));
+
+    })
   }
 
 
@@ -144,7 +157,7 @@ export class StorieCardAdmin extends Component {
   }
 
   handleEdit = (e, id) => {
-    console.log(id)
+    this.props.handleStories("update", id);
   }
 
   uploadStory = (id, body) => {
@@ -152,31 +165,27 @@ export class StorieCardAdmin extends Component {
   }
 
   render() {
-    const { story } = this.state;
-    return (
-      <div className="containerList">
+    const { story, featured } = this.state;
+    return <div className="containerList">
         <img className="containerList__img" src="/storie1.jpg" alt="" />
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Mauro</h2>
-          <div className="containerList__info__separator"></div>
-          <p className="containerList__info__text">
-            hola mauro
-          </p>
+          <h2 className="containerList__info__title">{story.title}</h2>
+          <div className="containerList__info__separator" />
+          <p className="containerList__info__text">{story.subtitle}</p>
         </div>
         <div className="containerList__icons">
           <p className="featured">Featured</p>
-          <div className="checkbox">
-            <div className="active"></div>
+          <div className="checkbox" onClick={() => this.handleFeatured(story._id)}>
+            <div className={featured ? "active" : null} data-ref={story._id} />
           </div>
-          <svg className="containerList__icons__ico" onClick={(e) => this.handleDelete(story._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico" onClick={(e) => this.handleEdit(e, story._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, story._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
