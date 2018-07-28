@@ -183,13 +183,21 @@ export default class AdminStory extends Component {
             <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
               <div className="col1">
-                <input 
-                  type="file" 
-                  className="formContainer" 
-                  onInputCapture={e => {
-                    this.handleImage(e.target);
-                  }} 
-                  />
+              <label
+              className="imageUpload--single"
+
+            >
+              <input
+                onInputCapture={e => {
+                  this.handleImage(e.target);
+                }}
+                className="imageUpload__hide"
+                type="file"
+              />
+              <svg className="imageUpload__ico">
+                <use xlinkHref={`${Icons}#icon-plus`} />
+              </svg>
+            </label>
                 <p className="formContainer__text">Upload Image / Video</p>
               </div>
               <div className="col2">

@@ -314,3 +314,60 @@ export class TimeLineListCard extends Component {
     );
   }
 }
+
+//card UserList
+export class UserListCard extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">Username</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            Email del usuario
+          </p>
+          <div className="dateContainer">
+            <div className="dateContainer__col">
+              <h4 className="dateContainer__title">Creation Date</h4>
+              <p className="dateContainer__text">
+                21/11/2017 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}
+
+//card Faqs
+export class FaqCard extends Component {
+  render() {
+    return (
+      <div className="containerList">
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">FAQ title</h2>
+          <div className="containerList__info__separator"></div>
+          <p className="containerList__info__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nostrum officiis, quas numquam sit aliquid incidunt iure aperiam voluptatem perferendis tempora? Illum molestiae rerum porro sapiente excepturi earum sequi eaque.
+          </p>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-trash`} />
+          </svg>
+        </div>
+        <div className="containerList__icons">
+          <svg className="containerList__icons__ico">
+            <use xlinkHref={`${Icons}#icon-pen`} />
+          </svg>
+        </div>
+      </div>
+    );
+  }
+}

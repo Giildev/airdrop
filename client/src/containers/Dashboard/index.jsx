@@ -10,9 +10,10 @@ import AdminStory from '../../components/Admin/Stories';
 import AdminDonations from '../../components/Admin/Donations';
 import AdminHome from '../../components/Admin/Preview';
 import AdminSite from '../../components/Admin/Site';
-import AdminAmount from "../../components/Admin/Amount";
-import AdminTimeLine from "../../components/Admin/Timeline";
-import { StorieCard } from "../../components/Card";
+import AdminAmount from '../../components/Admin/Amount';
+import AdminTimeLine from '../../components/Admin/Timeline';
+import AdminUsers from '../../components/Admin/Users';
+import AdminFaqs from '../../components/Admin/Faqs';
 
 export default class Dashboard extends Component {
   static propTypes = {
@@ -33,6 +34,8 @@ export default class Dashboard extends Component {
             <Route path={`${match.url}/donations`} component={AdminDonations} />
             <Route path={`${match.url}/amount`} component={AdminAmount} />
             <Route path={`${match.url}/timeline`} component={AdminTimeLine} />
+            <Route path={`${match.url}/users`} component={AdminUsers} />
+            <Route path={`${match.url}/faqs`} component={AdminFaqs} />
           </div>
         </div>
       </div>;

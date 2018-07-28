@@ -31,6 +31,9 @@ export default class SideMenu extends Component {
               <Link to={`/dashboard/faqs`}>FAQ's</Link>
             </li>
             <li className="sideContainer__menu__item">
+              <Link to={`/dashboard/users`}>Users</Link>
+            </li>
+            <li className="sideContainer__menu__item">
               <a  >Log Out </a>
             </li>
           </ul>

@@ -11,7 +11,6 @@
     .tabs__tab > label {
       background: #eee;
       padding: 10px;
-      border: 1px solid #ccc;
       margin-left: -1px;
       position: relative;
       left: 1px; }
@@ -28,7 +27,7 @@
   right: 0;
   bottom: 0;
   padding: 20px;
-  border: 1px solid #ccc; }
+  border: none; }
   .content__titles {
     font-family: inherit;
     font-size: 2rem;
@@ -41,9 +40,9 @@
         cursor: pointer; }
 
 [type=radio]:checked ~ label {
-  background: white;
-  border-bottom: 1px solid white;
-  z-index: 2; }
+  background: var(--primary);
+  z-index: 2;
+  color: var(--primary); }
 
 [type=radio]:checked ~ label ~ .content {
   z-index: 1; }

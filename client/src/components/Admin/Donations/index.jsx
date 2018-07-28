@@ -118,10 +118,40 @@ export default class AdminDonation extends Component {
             <h1 className="headerAdmin__storiesTitle">Add Donation</h1>
             <div className="form">
               <div className="col1">
-                <input type="file" className="formContainer" />
+                <label
+                  className="imageUpload"
+                  
+                >
+                  <input
+                    onInputCapture={e => {
+                      this.handleImage(e.target);
+                    }}
+                    className="imageUpload__hide"
+                    type="file"
+                  // style={{ backgroundColor: "red" }}
+                  />
+                  <svg className="imageUpload__ico">
+                    <use xlinkHref={`${Icons}#icon-plus`} />
+                  </svg>
+                </label>
                 <p className="formContainer__text">Upload Coin Icon</p>
                 <br/>
-                <input type="file" className="formContainer" />
+                <label
+                  className="imageUpload"
+
+                >
+                  <input
+                    onInputCapture={e => {
+                      this.handleImage(e.target);
+                    }}
+                    className="imageUpload__hide"
+                    type="file"
+                  // style={{ backgroundColor: "red" }}
+                  />
+                  <svg className="imageUpload__ico">
+                    <use xlinkHref={`${Icons}#icon-plus`} />
+                  </svg>
+                </label>
                 <p className="formContainer__text">Upload QR Code</p>
               </div>
               <div className="col2">
