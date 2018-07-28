@@ -19,13 +19,12 @@ export default class AdminFaq extends Component {
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
 
-    this.faq = {
-      question: "",
-      answer: "",
-      lan: "es",
-    }
-
     this.state = {
+      faq: {
+        question: "",
+        answer: "",
+        lan: "es",
+      },
       faqs: undefined,
       filteredFaqs: {},
       idFaqToUpdate: undefined,
@@ -48,36 +47,52 @@ export default class AdminFaq extends Component {
   }
 
   updateFaq = (e) => {
-    e.preventDefault();
-    console.log("update");
     let id = this.state.idFaqToUpdate;
-    console.log(id)
-    // axios
-    //   .post(`${config.BASE_URL}/faq/${id}`, this.faq, this.headers)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err));
+    axios
+      .post(`${config.BASE_URL}/faq/${id}`, this.state.faq, this.headers)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   }
 
   createFaq = (e) => {
-    e.preventDefault();
-    console.log('create')
+    let bodyFaq =  this.state.faq;
+    /**
+     * Check if any field es equal to "" (empty) to delete 
+     * and send it to back and handle empty fields from server
+     */
+    Object.keys(bodyFaq).map(key => {
+      if (bodyFaq[key] === "") {
+        delete bodyFaq[key];
+      }
+    })
     axios
-      .put(`${config.BASE_URL}/faq`, this.faq, this.headers)
+      .put(`${config.BASE_URL}/faq`, bodyFaq, this.headers)
       .then(res => {
-        if(res.status === 200) {
+        if (res.status === 200 && res.data.success) {
+          /**
+           * Msg from server if all is correct
+           */
           let faq = res.data.faq;
           let faqs = this.state.faqs;
           this.setState({ faqs: [faq, ...faqs] }, () => {
             this.onShowCloseModal();
-          })
+          });
+        } else if (res.status === 200 && !res.data.success) {
+          /**
+           * Msg from server if left any field in object
+           */
+          alert(res.data.msg);
         }
       })
       .catch(err => console.log(err));
   }
 
   handleFaq = (e) => {
-    this.faq[e.target.name] = e.target.value
-    console.log(e.target.name, e.target.value);
+    // this.faq[e.target.name] = e.target.value
+    const faq = Object.assign({}, this.state.faq, { [e.target.name]: e.target.value })
+    this.setState({ faq }, () => {
+      console.log(this.state.faq)
+    })
   }
 
   handleFaqs = (msg, id) => {
@@ -93,29 +108,39 @@ export default class AdminFaq extends Component {
       })
     } else if (msg === 'update') {
       let faq = faqs.filter(faq => faq._id === id)[0];
-      this.setState({ idFaqToUpdate: faq._id }, () => {
-        console.log(this.state.newFaq)
-        this.faq = {
-          answer: faq.answer,
+      this.setState({ 
+        newFaq: false, 
+        idFaqToUpdate: faq._id, 
+        faq: {
           question: faq.question,
-          lan: faq.lan,
+          answer: faq.answer,
+          lan: faq.lan
         }
-        this.setState({ newFaq: false }, () => {
-          this.onShowCloseModal()
-        })
+      }, () => {        
+        this.onShowCloseModal();
       })
     }
   }
 
   onShowCloseModal = () => {
-    this.setState({ isOpen: !this.state.isOpen, newFaq: true, idFaqToUpdate: undefined }, () => {
-      this.faq = {
-        question: "",
-        answer: "",
-        lan: "es",
-      }
+    const resetFaq = {
+      question: "",
+      answer: "",
+      lan: "",
+    }
+
+    this.setState({ isOpen: !this.state.isOpen }, () => {
+      if(!this.state.isOpen) {
+          this.setState({
+            newFaq: true,
+            idFaqToUpdate: undefined,
+            faq: resetFaq
+          });
+        }
     })
   }
+
+
 
   handleFilterFaq = (e) => {
     let lan = e.target.value;
@@ -131,8 +156,7 @@ export default class AdminFaq extends Component {
   }
 
   render() {
-    const { faq } = this;
-    const { isOpen, faqs, newFaq } = this.state;
+    const { isOpen, faqs, newFaq, faq } = this.state;
     return (
       <div>
         <h1 className="languageTitle">Select Language</h1>
@@ -169,7 +193,7 @@ export default class AdminFaq extends Component {
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Question" defaultValue={faq.question} onChange={this.handleFaq} name="question" className="formContainer__item" />
-                  <textarea name="" cols="30" rows="10" name="answer" defaultValue={faq.answer} onChange={this.handleFaq} className="formContainer__item__textarea" placeholder="Content"></textarea>
+                  <textarea name="" cols="30" rows="10" name="answer" defaultValue={faq.answer} onChange={this.handleFaq} className="formContainer__item__textarea" placeholder="Answer"></textarea>
                 </div>
               </div>
               {

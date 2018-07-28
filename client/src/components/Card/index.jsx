@@ -343,7 +343,8 @@ export class FaqCard extends Component {
     }
   }
 
-  handleDelete = (id) => {
+  handleDelete = (e, id) => {
+    e.preventDefault();
     const body = {
       deleted: true
     }
@@ -359,7 +360,8 @@ export class FaqCard extends Component {
       .catch(err => console.log(err));
   }
 
-  handleEdit = (id) => {
+  handleEdit = (e, id) => {
+    e.preventDefault();
     this.props.handleFaqs("update", id);
   }
 
@@ -379,12 +381,12 @@ export class FaqCard extends Component {
           </p>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(faq._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(faq._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>

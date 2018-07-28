@@ -17,7 +17,8 @@ export default class Switch extends Component {
 
     this.state = {
       content: undefined,
-      lan: "es"
+      lan: "es", 
+      sw: true
     };
   }
 
@@ -36,6 +37,18 @@ export default class Switch extends Component {
       .catch(err => console.log(err));
   };
 
+  hola = () => {
+    console.log('hola')
+  }
+
+  chao = () => {
+    console.log('chao')
+  }
+
+  handleSw = () => {
+    this.setState({ sw: !this.state.sw })
+  }
+
   handleLanguage = () => {
     let lan = this.state.lan;
 
@@ -48,12 +61,31 @@ export default class Switch extends Component {
 
 
   render() {
-    const { content, lan } = this.state;
+    const { content, lan, sw } = this.state;
     return content === undefined ? <Loader /> : (
       <div>
-        <button onClick={this.handleLanguage}>cambialo ahi</button>
+        <button onClick={this.handleSw}>cambialo ahi</button>
         {content.header[lan].title}
-        {/* {JSON.stringify(content.header)} */}
+        {
+          sw
+            ? (
+              <button
+                type="button"
+                className="fundsRecipents__buttonBox"
+                onClick={e => {
+                  this.hola(e)
+                }}
+              >hola</button>
+            ) : (
+              <button
+                type="button"
+                className="fundsRecipents__buttonBox"
+                onClick={e => {
+                  this.chao(e);
+                }}
+              >chao</button>
+            )
+        }
       </div>
     ) 
   }
