@@ -2,7 +2,7 @@ const express = require("express");
 const modelSubscribe = require("../models/subscribe");
 
 getSubscribedUsers = (req, res) => {
-  modelSubscribe.find({})
+  modelSubscribe.find({ deleted: false })
   .exec((err, subscriber) => {
     if (err) return res.status(500).send({
       success: false,

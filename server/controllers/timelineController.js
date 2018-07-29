@@ -6,7 +6,9 @@ const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 getTimeline = (req, res) => {
-  modelTl.find({}).exec((err, faqs) => {
+  modelTl.find({deleted: false}).sort({
+      createdAt: -1
+    }).exec((err, lines) => {
     if (err) return res.status(500).send({
       success: false,
       msg: `Problem to get all lines`
@@ -14,7 +16,7 @@ getTimeline = (req, res) => {
 
     res.status(200).send({
       success: true,
-      timeline: faqs
+      timeline: lines
     })
   })
 };
@@ -33,14 +35,15 @@ setLine = (req, res) => {
   let body = req.body;
   const Line = new modelTl(body);
 
-  Line.site = '5b479f121f22d372dfb0f433'; // se envia desde el front
+  Line.site = req.user.site;
+  Line.lan = body.lan.toUpperCase();
 
-  modelTl.find({ events: Line.events }, (err, faqs) => {
-    if(err) return res.status(500).send({ success: false, msg: 'Error getting faqs to compare'})
+  modelTl.find({ title: Line.title }, (err, faqs) => {
+    if(err) return res.status(500).send({ success: false, msg: 'Error getting events to compare'})
 
     if (faqs && faqs.length >= 1) return res.status(200).send({
       success: false,
-      msg: 'faqs already posted'
+      msg: 'line already posted'
     })
 
     Line.save((error, lineStored) => {
@@ -48,17 +51,17 @@ setLine = (req, res) => {
 
       if (lineStored) {
         modelSite.update(
-          { _id: '5b479f121f22d372dfb0f433' }, // se envia desde el front
+          { _id: req.user.site }, // se envia desde el front
           { $push: { "timeline.lines": lineStored._id } },
           (err, faqUpdated) => {
             if (err) return res.status(500).send({
               success: false,
-              msg: `Error saving faq`
+              msg: `Error saving event`
             });
 
             res.status(200).send({
               success: true,
-              msg: `Registered faq succesfully`,
+              msg: `Registered event succesfully`,
               data: lineStored
             })
           }
@@ -66,7 +69,7 @@ setLine = (req, res) => {
       } else {
         res.status(404).send({
           success: false,
-          msg: `Can't save faq`
+          msg: `Can't save event`
         })
       }
     })

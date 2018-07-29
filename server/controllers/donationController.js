@@ -27,14 +27,13 @@ setDonation = (req, res) => {
   const { coin, icon, wallet, symbol, QR } = req.body;
   const Donation = new modelDonation();
 
-  if( coin && icon && wallet && symbol && QR) {
+  if( coin && icon && wallet && symbol) {
 
     Donation.coin = coin;
     Donation.icon = icon;
     Donation.wallet = wallet;
     Donation.symbol = symbol;
-    Donation.QR = QR;
-    Donation.site = '5b479f121f22d372dfb0f433';
+    Donation.site = req.user.site;
 
     // Save Donation into DB
     modelDonation.find({ wallet: Donation.wallet, deleted: false }, (err, donations) => {
@@ -47,7 +46,7 @@ setDonation = (req, res) => {
 
         if (donationStored) {
           modelSite.update(
-            { _id: '5b479f121f22d372dfb0f433' },
+            { _id: req.user.site },
             { $push: { donations: donationStored._id } },
             (err, siteUpdated) => {
               if (err) return res.status(500).send({

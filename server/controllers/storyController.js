@@ -27,12 +27,13 @@ setStory = (req, res) => {
   const { title, subtitle, cover, content } = req.body;
   const Story = new modelStory();
 
-  if ( title && subtitle && cover && content ) {
+  if ( title && subtitle && cover && content && lan ) {
 
     Story.title = title;
     Story.subtitle = subtitle;
     Story.cover = cover;
     Story.content = content;
+    Story.lan = lan.toUpperCase();
     // Story.site = '5b479f121f22d372dfb0f433';
     Story.site = req.user.site;
 
@@ -53,7 +54,7 @@ setStory = (req, res) => {
         if (storyStored) {
 
           modelSite.update(
-            { _id: '5b479f121f22d372dfb0f433' }, // prueba
+            { _id: req.user.site }, // prueba
             { $push: { stories: storyStored._id } },
             (err, siteUpdated) => {
               if (err) return res.status(500).send({

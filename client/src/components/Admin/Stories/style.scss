@@ -31,6 +31,7 @@
     color: var(--primary);
     font-size: 4.2rem;
     font-weight: 600;
+    text-align: center;
   }
 }
 
@@ -101,6 +102,16 @@
         border: none;
         outline: none;
       }
+    }
+    &__picker > input {
+      background-color: var(--white);
+      border-radius: 5rem;
+      border:none;
+      box-shadow: 9px 4px 10px -8px rgba(0, 0, 0, 0.43);
+      height: 6rem;
+      margin: 1rem;
+      color: grey; //padding: 1rem;
+      font-family: inherit;
     }
   }
 }

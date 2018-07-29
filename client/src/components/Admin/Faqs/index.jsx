@@ -38,7 +38,7 @@ export default class AdminFaq extends Component {
   }
 
   getFaqs = () => {
-    axios
+    return axios
       .get(`${config.BASE_URL}/faq`, this.headers)
       .then(res => {
         this.setState({ faqs: res.data.faqs, filteredFaqs: res.data.faqs });
@@ -50,8 +50,18 @@ export default class AdminFaq extends Component {
     let id = this.state.idFaqToUpdate;
     axios
       .post(`${config.BASE_URL}/faq/${id}`, this.state.faq, this.headers)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+      .then(res => {
+        if (res.status === 200 && res.data.success) {
+          this.setState({ faqs: undefined }, () => {
+            this.getFaqs().then(() => this.onShowCloseModal())
+          });
+        } else {
+          this.getFaqs().then(() => this.onShowCloseModal());
+        }
+      })
+      .catch(err => {
+        let error = err.response;
+      });
   }
 
   createFaq = (e) => {
@@ -126,7 +136,7 @@ export default class AdminFaq extends Component {
     const resetFaq = {
       question: "",
       answer: "",
-      lan: "",
+      lan: "es",
     }
 
     this.setState({ isOpen: !this.state.isOpen }, () => {
@@ -176,7 +186,7 @@ export default class AdminFaq extends Component {
           </div>
           {
             faqs === undefined ? <Loader /> : faqs.map(faq => {
-              return <FaqCard key={faq._id} faq={faq} handleFaqs={this.handleFaqs}/>;
+              return <FaqCard key={faq._id} faq={faq} handleFaqs={this.handleFaqs} />;
             })
           }
           
@@ -193,7 +203,7 @@ export default class AdminFaq extends Component {
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Question" defaultValue={faq.question} onChange={this.handleFaq} name="question" className="formContainer__item" />
-                  <textarea name="" cols="30" rows="10" name="answer" defaultValue={faq.answer} onChange={this.handleFaq} className="formContainer__item__textarea" placeholder="Answer"></textarea>
+                  <textarea cols="30" rows="10" name="answer" defaultValue={faq.answer} onChange={this.handleFaq} className="formContainer__item__textarea" placeholder="Answer"></textarea>
                 </div>
               </div>
               {
