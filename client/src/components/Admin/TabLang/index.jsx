@@ -7,13 +7,14 @@ import "./style.css";
 
 export default class TabLang extends Component {
   render() {
-    return <div>
-        <div className="langContainer">
+    return 
+  (<div>
         <label>
-          <Toggle/>
-          <span>Custom className</span>
+          <span className="langName">Español</span>
+          <Toggle 
+          icons={false} />
+          <span className="langName">Ingles</span>
         </label>
-        </div>
-      </div>;
+      </div>)
   }
 }

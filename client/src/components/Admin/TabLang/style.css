@@ -1,12 +1,13 @@
-.langContainer {
+.containerLang {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 3rem 0rem;
-  background-color: var(--primary);
-  width: 42%;
-  border-radius: 5rem;
-  padding: 0rem 1rem; }
+  align-items: center; }
+
+.langName {
+  font-size: 1.7rem;
+  font-family: inherit;
+  color: var(--primary);
+  font-weight: bold;
+  margin: 1.5rem; }
 
 .react-toggle {
   touch-action: pan-x;

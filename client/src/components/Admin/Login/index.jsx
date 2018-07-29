@@ -33,7 +33,8 @@ export default class AdminLogin extends Component {
           localStorage.auth = JSON.stringify(res.data.auth);
         })
         .catch(err => {
-          let error = err.response.data;
+          let error = err.response;
+          console.log(error)
           let status = err.response.status;
 
           if(status === 404 || status === 500) {
