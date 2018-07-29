@@ -5,7 +5,8 @@ const db = require("../libs/db-connection");
 const Schema = mongoose.Schema;
 
 const timelineSchema = new Schema({
-  events: String,
+  title: String,
+  event: String,
   start: Date,
   end: Date,
   lan: String,

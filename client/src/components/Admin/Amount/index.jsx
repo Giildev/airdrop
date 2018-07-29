@@ -19,115 +19,125 @@ export default class AdminDonation extends Component {
     this.headers = this.auth.buildAuthHeader();
 
     this.state = {
-      donation: {
-        symbol: "",
-        coin: "",
-        icon: "",
-        wallet: "",
-      },
-      donations: {},
-      filteredDonations: {},
+      site: undefined,
+      donationFundsAmount: undefined,
+      donationCerfiedUsersAmount: undefined,
+      objectToUpdate: {},
+      funds: undefined, // true if is right FALSE if fundsUser
       isOpen: false
     }
   }
 
   componentDidMount = () => {
-    this.getDonations();
+    this.getFunds();
   }
 
-  getDonations = () => {
+  getFunds = () => {
     axios
-      .get(`${config.BASE_URL}/donation`)
-      .then(res =>
-        this.setState({
-          donations: res.data.data,
-          filteredDonations: res.data.data
-        })
-      )
+      .get(`${config.BASE_URL}/site/manage/`, this.headers)
+      .then(res => {
+        let data = res.data
+        if (data.success && res.status === 200) {
+         this.setData(res.data.site);
+        }  
+      })
       .catch(err => console.log(err));
   }
 
-  updateContent = (id) => {
+  setData = (data) => {
+    let site = data;
+    let amountUsers = site.donationCerfiedUsersAmount === undefined ? { raised: 0, goal: 0 } : site.donationCerfiedUsersAmount;
+    let amountFunds = site.donationFundsAmount === undefined ? { raised: 0, goal: 0 } : site.donationFundsAmount;
+
+    this.setState({
+      site,
+      donationCerfiedUsersAmount: amountUsers,
+      donationFundsAmount: amountFunds
+    })
+  }
+
+  updateContent = () => {
+    let user = this.auth.getProfile();
+    let id = user.site;
+    let body = this.state.objectToUpdate;
+
     axios
-      .put(`${config.BASE_URL}/donation/${id}`, this.headers)
-      .then(res => console.log(res.data))
+      .post(`${config.BASE_URL}/site/manage/${id}`, body, this.headers)
+      .then(res => {
+        let data = res.data;
+        if (data.success && res.status === 200) {
+          this.setData(res.data.data);
+          this.onShowCloseModal();
+        }  
+      })
       .catch(err => console.log(err));
   }
 
-  createDonation = () => {
-    axios
-      .put(`${config.BASE_URL}/donation`, this.headers)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
-
-  handleDonation = (e) => {
-    console.log(e.target.name, e.target.value);
-  }
-
-  onShowCloseModal = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  handleFilterDonations = (e) => {
-    let lan = e.target.value;
-    let faqs = this.state.filteredFaqs;
-    let filteredFaqs = {};
-
-    if (lan === "") {
-      this.setState({ faqs: this.state.filteredFaqs });
-    } else {
-      filteredFaqs = faqs.filter(faq => faq.lan === lan);
-      this.setState({ faqs: filteredFaqs })
+  handleAmounts = (msg) => {
+    if ( msg === 'userAmount') {
+      this.setState({ funds: false }, () => {
+        this.onShowCloseModal();
+      })
+    } else if ( msg === 'fundsAmount' ){
+      this.setState({ funds: true }, () => {
+        this.onShowCloseModal();
+      });
     }
   }
 
+  handleFunds = (e) => {
+    e.preventDefault();
+    let amount = Object.assign({}, this.state.objectToUpdate, { [e.target.name]: e.target.value })
+    this.setState({ objectToUpdate: amount }, () => {
+      console.log("toChange", this.state.objectToUpdate);
+    });
+  }
+
+  onShowCloseModal = () => {
+    this.setState({ isOpen: !this.state.isOpen }, () => {
+      if(!this.state.isOpen) {
+        this.setState({ objectToUpdate: {} })
+      }
+    })
+  }
+
+
   render() {
-    const { isOpen } = this.state;
-    return (
-      <div>
-        <h1 className="languageTitle">Select Language</h1>
-        <select className="selectLang" name="" onChange={this.handleFilterDonations}>
-          <option className="selectLang__item" value="">All</option>
-          <option className="selectLang__item" value="ES">ES</option>
-          <option className="selectLang__item" value="EN">EN</option>
-        </select>
-
+    const { isOpen, donationCerfiedUsersAmount, donationFundsAmount, funds, site } = this.state;
+    return site === undefined ? <Loader /> : <div>
         <div className="containerStories">
-        <div className="headerAdmin">
-          <h1 className="headerAdmin__storiesTitle">Change Amount & Verified Users</h1>
-          <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
-            <svg className="headerAdmin__addBTN__ico">
-              <use xlinkHref={`${Icons}#icon-plus`} />
-            </svg>
-          </button>
+          <div className="headerAdmin">
+            <h1 className="headerAdmin__storiesTitle">
+              Change Amount & Verified Users
+            </h1>
+            {/* <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+              <svg className="headerAdmin__addBTN__ico">
+                <use xlinkHref={`${Icons}#icon-plus`} />
+              </svg>
+            </button> */}
+          </div>
+          <CardRaised amount={donationCerfiedUsersAmount} handleAmounts={this.handleAmounts} />
+          <CardRaisedUsers amount={donationFundsAmount} handleAmounts={this.handleAmounts} />
         </div>
-        <CardRaised />
-        <CardRaisedUsers />
-      </div>
 
-        
-       
-
-        <Modal
-          open={isOpen}
-          onClose={this.onShowCloseModal}
-          classNames={{ modal: "custom-modal" }}
-        >
+        <Modal open={isOpen} onClose={this.onShowCloseModal} classNames={{ modal: "custom-modal" }}>
           <div className="containerModal">
-            <h1 className="headerAdmin__storiesTitle">Change Amount & Verified Users</h1>
+            <h1 className="headerAdmin__storiesTitle">
+              Change { funds ? `Funds Amount` : `Verified Users Funds Amount` }  
+            </h1>
             <div className="form">
               <div className="col2">
                 <div className="formContainer">
-                  <input type="number" placeholder="Funds Raised" className="formContainer__item" />
-                  <input type="number" placeholder="Verified Users" className="formContainer__item" />
+                  <input type="number" defaultValue={funds ? donationFundsAmount.raised : donationCerfiedUsersAmount.raised} placeholder="Raised Amount" name={funds ? `donationFundsAmount.raised` : `donationCerfiedUsersAmount.raised`} onChange={e => this.handleFunds(e)} className="formContainer__item" />
+                  <input type="number" defaultValue={funds ? donationFundsAmount.goal : donationCerfiedUsersAmount.goal} placeholder="Goal Amount" name={funds ? `donationFundsAmount.goal` : `donationCerfiedUsersAmount.goal`} onChange={e => this.handleFunds(e)} className="formContainer__item" />
                 </div>
               </div>
-              <button class="fundsRecipents__buttonBox">Save</button>
+              <button className="fundsRecipents__buttonBox" onClick={this.updateContent}>
+                Save
+              </button>
             </div>
           </div>
         </Modal>
-      </div>
-    )
+      </div>;
   }
 }

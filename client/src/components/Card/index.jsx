@@ -1,6 +1,7 @@
 // Dependencies
 import React, { Component } from "react";
 import axios from "axios";
+import moment from "moment";
 import config from "../../libs/config";
 import Auth from "../../services/authService";
 
@@ -205,6 +206,19 @@ export class StorieCardDonation extends Component {
 
 //card StorieListDonation
 export class CardRaised extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      amount: props.line
+    }
+  }
+
+  handleEdit = (e) => {
+    e.preventDefault();
+    this.props.handleAmounts("fundsAmount");
+  }
+
   render() {
     return (
       <div className="containerList">
@@ -225,7 +239,7 @@ export class CardRaised extends Component {
           </div>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
@@ -236,6 +250,19 @@ export class CardRaised extends Component {
 
 //card StorieListDonation
 export class CardRaisedUsers extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      amount: props.line
+    }
+  }
+
+  handleEdit = (e) => {
+    e.preventDefault();
+    this.props.handleAmounts("userAmount");
+  }
+
   render() {
     return (
       <div className="containerList">
@@ -255,7 +282,7 @@ export class CardRaisedUsers extends Component {
           </div>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
@@ -266,35 +293,79 @@ export class CardRaisedUsers extends Component {
 
 //card TimeLine ListCard
 export class TimeLineListCard extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      line: props.line
+    }
+  }
+
+  // handleLines
+
+  handleDelete = (e, id) => {
+    e.preventDefault();
+    const body = {
+      deleted: true
+    }
+
+    this.uploadLine(id, body)
+      .then(res => {
+        const response = res.data;
+
+        if (res.status === 200 && response.success) {
+          this.props.handleLines("delete", id);
+        }
+      })
+      .catch(err => {
+        let error = err.response;
+        if (error.status === 401) {
+          alert("Unauthorized");
+        } else if (error.status === 500) {
+
+        }
+      });
+  }
+
+  handleEdit = (e, id) => {
+    e.preventDefault();
+    this.props.handleLines("update", id);
+  }
+
+  uploadLine = (id, body) => {
+    return axios.post(`${config.BASE_URL}/timeline/${id}`, body, headers);
+  }
+
   render() {
+    const { line } = this.state;
     return (
       <div className="containerList">
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Time line title</h2>
+          <h2 className="containerList__info__title">{ line.title }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugiat praesentium nihil sit
+            { line.event }
           </p>
           <div className="dateContainer">
             <div className="dateContainer__col">
               <h4 className="dateContainer__title">Starting Date</h4>
               <p className="dateContainer__text">
-                21/11/2017 
+                { moment(line.start).format("MMM D, YYYY") }
               </p>
             </div>
             <div className="dateContainer__col">
               <h4 className="dateContainer__title">Finish Date</h4>
               <p className="dateContainer__text">
-                28/11/2017 
+                { moment(line.end).format("MMM D, YYYY") }
               </p>
             </div>
           </div>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, line._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, line._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
@@ -305,26 +376,63 @@ export class TimeLineListCard extends Component {
 
 //card UserList
 export class UserListCard extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      subscriber: props.subscriber
+    }
+  }
+
+  handleDelete = (e, id) => {
+    e.preventDefault();
+    const body = {
+      deleted: true
+    }
+
+    this.uploadSubscriber(id, body)
+      .then(res => {
+        const response = res.data;
+
+        if (res.status === 200 && response.success) {
+          this.props.handleSubscribers("delete", id);
+        }
+      })
+      .catch(err => {
+        let error = err.response;
+        if (error.status === 401) {
+          alert("Unauthorized");
+        } else if (error.status === 500) {
+
+        }
+      });
+  }
+
+  uploadSubscriber = (id, body) => {
+    return axios.post(`${config.BASE_URL}/subscribe/${id}`, body, headers);
+  }
+
   render() {
+    const { subscriber } = this.state;
     return (
       <div className="containerList">
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Username</h2>
+          <h2 className="containerList__info__title">{ subscriber.email }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            Email del usuario
+            
           </p>
           <div className="dateContainer">
             <div className="dateContainer__col">
               <h4 className="dateContainer__title">Creation Date</h4>
               <p className="dateContainer__text">
-                21/11/2017 
+                {moment(subscriber.createdAt).format("MMM D, YYYY [at] HH:mm a")}
               </p>
             </div>
           </div>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, subscriber._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
         </div>
@@ -333,7 +441,7 @@ export class UserListCard extends Component {
   }
 }
 
-//card Faqs
+//card subscribers
 export class FaqCard extends Component {
   constructor(props) {
     super(props)

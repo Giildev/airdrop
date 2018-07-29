@@ -19,90 +19,52 @@ export default class AdminTimeline extends Component {
     this.headers = this.auth.buildAuthHeader();
 
     this.state = {
-      line: {
-        events: "",
-        start: "",
-        end: "",
-        lan: "",
-      },
-      lines: {},
-      filteredLines: {},
-      isOpen: false
+      subscribers: undefined,
     }
   }
 
   componentDidMount = () => {
-    this.getTimeline();
+    this.getSubscribers();
   }
 
-  getTimeline = () => {
+  getSubscribers = () => {
     axios
-      .get(`${config.BASE_URL}/timeline`)
-      .then(res => this.setState({ lines: res.data.data }))
-      .catch(err => console.log(err));
+      .get(`${config.BASE_URL}/subscribe`)
+      .then(res => this.setState({ subscribers: res.data.subscriber }, () => {
+        console.log(this.state.subscribers)
+      }))
+      .catch(err => {
+        let error = err.response;
+        if (error.status === 401) {
+          alert("Unauthorized");
+        } else if (error.status === 500) {
+        }
+      });
   }
 
-  updateTimeline = (id) => {
-    axios
-      .post(`${config.BASE_URL}/timeline/${id}`)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
+  handleSubscribers = (msg, id) => {
+    let subscribers = this.state.subscribers;
 
-  createTimeline = () => {
-    axios
-      .put(`${config.BASE_URL}/timeline`, this.headers)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
-  }
+    if (msg === 'delete') {
+      let newSubscribers = subscribers.filter(subscriber => subscriber._id !== id);
 
-  handleFaq = (e) => {
-    this.setState(prevState => ({
-      line: {
-        ...prevState.line,
-        [e.target.name]: e.target.value
-      }
-    }))
-  }
-
-  onShowCloseModal = () => {
-    this.setState({ isOpen: !this.state.isOpen })
-  }
-
-  handleFilterStory = (e) => {
-    let lan = e.target.value;
-    let faqs = this.state.filteredFaqs;
-    let filteredFaqs = {};
-
-    if (lan === "") {
-      this.setState({ faqs: this.state.filteredFaqs });
-    } else {
-      filteredFaqs = faqs.filter(faq => faq.lan === lan);
-      this.setState({ faqs: filteredFaqs })
+      this.setState({ subscribers: newSubscribers });
     }
   }
 
   render() {
-    const {isOpen}=this.state;
+    const { subscribers } = this.state;
     return (
       <div>
-        
-        <h1 className="languageTitle">Select Language</h1>
-        <select className="selectLang" name="" onChange={this.handleFilterStory}>
-          <option  className="selectLang__item" value="">All</option>
-          <option  className="selectLang__item" value="ES">ES</option>
-          <option  className="selectLang__item" value="EN">EN</option>
-        </select>
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Users</h1>
           </div>
-          <UserListCard />
-          <UserListCard />
-          <UserListCard />
-          <UserListCard />
-          <UserListCard />
-          <UserListCard />
+          {
+            subscribers === undefined ? <Loader /> : subscribers.map(subscriber => {
+              return <UserListCard key={subscriber._id} subscriber={subscriber} handleSubscribers={this.handleSubscribers} />;
+            })
+          }
 
         </div>
       </div>

@@ -41,9 +41,9 @@ setFaq = (req, res) => {
 
     Faq.question = question;
     Faq.answer = answer;
-    Faq.lan = lan;
-    // Faq.site = '5b479f121f22d372dfb0f433'; // se envia desde el front
-    Faq.site = req.user.site; 
+    Faq.lan = lan.toUpperCase();
+    // Faq.site = '5b479f121f22d372dfb0f433'; 
+    Faq.site = req.user.site;
 
     modelFaq.find({ question: Faq.question, deleted: false }, (err, faqs) => {
       if(err) return res.status(500).send({ success: false, msg: 'Error getting faqs to compare'})
@@ -58,7 +58,7 @@ setFaq = (req, res) => {
 
         if (faqStored) {
           modelSite.update(
-            { _id: '5b479f121f22d372dfb0f433' }, // se envia desde el front
+            { _id: req.user.site }, 
             { $push: { faqs: faqStored._id } },
             (err, faqUpdated) => {
               if (err) return res.status(500).send({
