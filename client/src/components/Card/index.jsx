@@ -165,7 +165,7 @@ export class StorieCardAdmin extends Component {
         <div className="containerList__icons">
           <p className="featured">Featured</p>
           <div className="checkbox" onClick={() => this.handleFeatured(story._id)}>
-            <div className={featured ? "active" : null} data-ref={story._id} />
+            <div className={featured ? "activeCheck" : null} data-ref={story._id} />
           </div>
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />

@@ -11,7 +11,6 @@ import moment from 'moment';
 
 // Components & Containers
 import "./style.css";
-import 'react-datepicker/dist/react-datepicker.css';
 import Icons from "../../../icons.svg";
 import TabLang from "../TabLang";
 import Loader from "../../Loader";
