@@ -12,8 +12,8 @@ router.post("/upload/cover", (req, res) => {
     sharp(req.files.file.data)
       .resize(1920, 1080)
       .toFile(`${__dirname}/../../client/public/${imgName}`, err => {
-        err ? console.log(err) : "";
-      })
+        err ? console.log(err) : console.log('object');
+      })     
       .toBuffer()
       .then(() => {
         console.log(imgName);

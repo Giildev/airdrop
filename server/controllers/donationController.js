@@ -6,7 +6,7 @@ const modelDonation = require("../models/donation");
 const config = require("../libs/config")
 
 getDonations = (req, res) => {
-    modelDonation.find({}, (err, donations) => {
+    modelDonation.find({deleted: false}, (err, donations) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get all donations` })
     
     res.status(200).send({ success: true, data: donations })

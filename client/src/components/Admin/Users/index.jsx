@@ -24,7 +24,12 @@ export default class AdminTimeline extends Component {
   }
 
   componentDidMount = () => {
-    this.getSubscribers();
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      this.getSubscribers();
+    } else {
+      history.push("/login")
+    }
   }
 
   getSubscribers = () => {

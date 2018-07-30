@@ -24,13 +24,22 @@ export default class AdminLogin extends Component {
     }
   }
 
+  componentWillMount = () => {
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      history.push("/dashboard")
+    }    
+  }
+
   login = (e) => {
+    const { history, location } = this.props;
     e.preventDefault();
     const { userName, password } = this.user
     if(userName && password) {
       this.auth.login(userName, password)
         .then(res => {
           localStorage.auth = JSON.stringify(res.data.auth);
+          history.push("/dashboard")
         })
         .catch(err => {
           let error = err.response.data;

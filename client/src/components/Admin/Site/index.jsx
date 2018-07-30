@@ -22,7 +22,12 @@ export default class AdminSite extends Component {
   }
 
   componentDidMount = () => {
-    this.getContentData();
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      this.getContentData();
+    } else {
+      history.push("/dashboard")
+    }
   };
 
   getContentData = () => {

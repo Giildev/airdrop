@@ -23,7 +23,7 @@ export default class AdminFaq extends Component {
       faq: {
         question: "",
         answer: "",
-        lan: "es",
+        lan: "ES",
       },
       faqs: undefined,
       filteredFaqs: {},
@@ -34,14 +34,21 @@ export default class AdminFaq extends Component {
   }
 
   componentDidMount = () => {
-    this.getFaqs();
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      this.getFaqs();
+    } else {
+      history.push("/login")
+    }
   }
 
   getFaqs = () => {
     return axios
       .get(`${config.BASE_URL}/faq`, this.headers)
       .then(res => {
-        this.setState({ faqs: res.data.faqs, filteredFaqs: res.data.faqs });
+        if(res.status === 200) { 
+          this.setState({ faqs: res.data.faqs, filteredFaqs: res.data.faqs });
+        }
       })
       .catch(err => console.log(err));
   }
@@ -84,7 +91,7 @@ export default class AdminFaq extends Component {
            */
           let faq = res.data.faq;
           let faqs = this.state.faqs;
-          this.setState({ faqs: [faq, ...faqs] }, () => {
+          this.setState({ faqs: [faq, ...faqs], filteredFaqs:[faq, ...faqs]}, () => {
             this.onShowCloseModal();
           });
         } else if (res.status === 200 && !res.data.success) {
@@ -100,9 +107,7 @@ export default class AdminFaq extends Component {
   handleFaq = (e) => {
     // this.faq[e.target.name] = e.target.value
     const faq = Object.assign({}, this.state.faq, { [e.target.name]: e.target.value })
-    this.setState({ faq }, () => {
-      console.log(this.state.faq)
-    })
+    this.setState({ faq })
   }
 
   handleFaqs = (msg, id) => {
@@ -136,7 +141,7 @@ export default class AdminFaq extends Component {
     const resetFaq = {
       question: "",
       answer: "",
-      lan: "es",
+      lan: "ES",
     }
 
     this.setState({ isOpen: !this.state.isOpen }, () => {
@@ -150,7 +155,10 @@ export default class AdminFaq extends Component {
     })
   }
 
-
+  handleLan = (lan) => {
+    const faq = Object.assign({}, this.state.faq, { lan })
+    this.setState({ faq })
+  }
 
   handleFilterFaq = (e) => {
     let lan = e.target.value;
@@ -197,7 +205,7 @@ export default class AdminFaq extends Component {
           classNames={{ modal: "custom-modal" }}
         >
           <div className="containerModal">
-            <TabLang />
+            <TabLang lan={faq.lan === "" ? "ES" : faq.lan.toUpperCase()} handleLan={this.handleLan}/>
             <h1 className="headerAdmin__storiesTitle">Create FAQ</h1>
             <div className="form">
               <div className="col2">

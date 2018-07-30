@@ -11,6 +11,7 @@ import Icons from "../../icons.svg";
 
 var auth =  new Auth();
 var headers = auth.buildAuthHeader();
+var calculatePercent = amount => (amount.raised * 100) / amount.goal;
 
 export class HIWCard extends Component {
   render() {
@@ -180,10 +181,43 @@ export class StorieCardAdmin extends Component {
 
 //card StorieListDonation
 export class StorieCardDonation extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      donation: props.donation,
+    }
+  }
+
+  handleDelete = (id) => {
+    const body = {
+      deleted: true
+    }
+
+    this.uploadStory(id, body)
+      .then(res => {
+        const response = res.data
+
+        if (res.status === 200 && response.success) {
+          this.props.handleDonations("delete", id);
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  handleEdit = (id) => {
+    this.props.handleDonations("update", id);
+  }
+
+  uploadStory = (id, body) => {
+    return axios.post(`${config.BASE_URL}/donation/${id}`, body, headers)
+  }
+
   render() {
+    const { donation } = this.state
     return (
       <div className="containerList">
-        <img className="containerList__img--coin" src="/coin.png" alt="" />
+        <img className="containerList__img--coin" src={donation.icon === "" ? "/coin.png" : donation.icon} alt={donation.coin} />
         <div className="containerList__info">
           <h2 className="containerList__info__title">Bitcoin</h2>
           <div className="containerList__info__separator"></div>
@@ -192,10 +226,10 @@ export class StorieCardDonation extends Component {
           </p>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={this.handleDelete(donation._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico">
+          <svg className="containerList__icons__ico" onClick={this.handleEdit(donation._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
@@ -210,9 +244,21 @@ export class CardRaised extends Component {
     super(props)
 
     this.state = {
-      amount: props.line
+      amount: props.amount,
+      percent: calculatePercent(props.amount)
     }
   }
+
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.amount !== nextprops.amount) {
+      this.setState({ amount: nextprops.amount }, () => {
+        const { amount } = this.state;
+        let percent = calculatePercent(amount)
+        this.setState({ percent })
+      })
+    }
+    return true;
+  };
 
   handleEdit = (e) => {
     e.preventDefault();
@@ -220,6 +266,7 @@ export class CardRaised extends Component {
   }
 
   render() {
+    const { amount, percent } = this.state;
     return (
       <div className="containerList">
        
@@ -229,7 +276,7 @@ export class CardRaised extends Component {
           <div className="funds__container__middle">
             <div className="funds__container__middle__outerBox">
               <div className="funds__container__middle__innerBox">
-                <div className="funds__container__middle__innerBox__bar" />
+                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}/>
                 <div
                   className="funds__container__middle__innerBox__bar__bubbleBox"
                   aria-valuenow="34093 USD Raised"
@@ -254,9 +301,21 @@ export class CardRaisedUsers extends Component {
     super(props)
 
     this.state = {
-      amount: props.line
+      amount: props.amount,
+      percent: calculatePercent(props.amount)
     }
   }
+
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.amount !== nextprops.amount) {
+      this.setState({ amount: nextprops.amount }, () => {
+        const { amount } = this.state;
+        let percent = calculatePercent(amount)
+        this.setState({ percent })
+      })
+    }
+    return true;
+  };
 
   handleEdit = (e) => {
     e.preventDefault();
@@ -264,6 +323,7 @@ export class CardRaisedUsers extends Component {
   }
 
   render() {
+    const { amount, percent } = this.state;
     return (
       <div className="containerList">
        
@@ -272,7 +332,7 @@ export class CardRaisedUsers extends Component {
           <div className="recipents__container__middle">
             <div className="recipents__container__middle__outerBox">
               <div className="recipents__container__middle__innerBox">
-                <div className="recipents__container__middle__innerBox__bar" />
+                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} />
                 <div
                   className="recipents__container__middle__innerBox__bar__bubbleBox"
                   aria-valuenow="22230 Verified Users"

@@ -1,5 +1,5 @@
 // Dependencies
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
@@ -9,11 +9,11 @@ import { CardRaisedUsers } from "../../Card";
 import { CardRaised } from "../../Card";
 // Components & Containers
 import "./style.css";
-import Loader from "../../Loader"
+import Loader from "../../Loader";
 
 export default class AdminDonation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
@@ -25,36 +25,47 @@ export default class AdminDonation extends Component {
       objectToUpdate: {},
       funds: undefined, // true if is right FALSE if fundsUser
       isOpen: false
-    }
+    };
   }
 
   componentDidMount = () => {
-    this.getFunds();
-  }
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      this.getFunds();
+    } else {
+      history.push("/login")
+    }
+  };
 
   getFunds = () => {
     axios
       .get(`${config.BASE_URL}/site/manage/`, this.headers)
       .then(res => {
-        let data = res.data
+        let data = res.data;
         if (data.success && res.status === 200) {
-         this.setData(res.data.site);
-        }  
+          this.setData(res.data.site);
+        }
       })
       .catch(err => console.log(err));
-  }
+  };
 
-  setData = (data) => {
+  setData = data => {
     let site = data;
-    let amountUsers = site.donationCerfiedUsersAmount === undefined ? { raised: 0, goal: 0 } : site.donationCerfiedUsersAmount;
-    let amountFunds = site.donationFundsAmount === undefined ? { raised: 0, goal: 0 } : site.donationFundsAmount;
+    let amountUsers =
+      site.donationCerfiedUsersAmount === undefined
+        ? { raised: 0, goal: 0 }
+        : site.donationCerfiedUsersAmount;
+    let amountFunds =
+      site.donationFundsAmount === undefined
+        ? { raised: 0, goal: 0 }
+        : site.donationFundsAmount;
 
     this.setState({
       site,
       donationCerfiedUsersAmount: amountUsers,
       donationFundsAmount: amountFunds
-    })
-  }
+    });
+  };
 
   updateContent = () => {
     let user = this.auth.getProfile();
@@ -68,43 +79,52 @@ export default class AdminDonation extends Component {
         if (data.success && res.status === 200) {
           this.setData(res.data.data);
           this.onShowCloseModal();
-        }  
+        }
       })
       .catch(err => console.log(err));
-  }
+  };
 
-  handleAmounts = (msg) => {
-    if ( msg === 'userAmount') {
+  handleAmounts = msg => {
+    if (msg === "userAmount") {
       this.setState({ funds: false }, () => {
         this.onShowCloseModal();
-      })
-    } else if ( msg === 'fundsAmount' ){
+      });
+    } else if (msg === "fundsAmount") {
       this.setState({ funds: true }, () => {
         this.onShowCloseModal();
       });
     }
-  }
+  };
 
-  handleFunds = (e) => {
+  handleFunds = e => {
     e.preventDefault();
-    let amount = Object.assign({}, this.state.objectToUpdate, { [e.target.name]: e.target.value })
-    this.setState({ objectToUpdate: amount }, () => {
-      console.log("toChange", this.state.objectToUpdate);
+    let amount = Object.assign({}, this.state.objectToUpdate, {
+      [e.target.name]: e.target.value
     });
-  }
+    this.setState({ objectToUpdate: amount });
+  };
 
   onShowCloseModal = () => {
     this.setState({ isOpen: !this.state.isOpen }, () => {
-      if(!this.state.isOpen) {
-        this.setState({ objectToUpdate: {} })
+      if (!this.state.isOpen) {
+        this.setState({ objectToUpdate: {} });
       }
-    })
-  }
-
+    });
+  };
 
   render() {
-    const { isOpen, donationCerfiedUsersAmount, donationFundsAmount, funds, site } = this.state;
-    return site === undefined ? <Loader /> : <div>
+    const {
+      isOpen,
+      donationCerfiedUsersAmount,
+      donationFundsAmount,
+      funds,
+      site
+    } = this.state;
+    console.log('padre', donationFundsAmount);
+    return site === undefined ? (
+      <Loader />
+    ) : (
+      <div>
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">
@@ -116,28 +136,72 @@ export default class AdminDonation extends Component {
               </svg>
             </button> */}
           </div>
-          <CardRaised amount={donationCerfiedUsersAmount} handleAmounts={this.handleAmounts} />
-          <CardRaisedUsers amount={donationFundsAmount} handleAmounts={this.handleAmounts} />
+          <CardRaised
+            amount={donationFundsAmount}
+            handleAmounts={this.handleAmounts}
+          />
+          <CardRaisedUsers
+            amount={donationCerfiedUsersAmount}
+            handleAmounts={this.handleAmounts}
+          />
         </div>
 
-        <Modal open={isOpen} onClose={this.onShowCloseModal} classNames={{ modal: "custom-modal" }}>
+        <Modal
+          open={isOpen}
+          onClose={this.onShowCloseModal}
+          classNames={{ modal: "custom-modal" }}
+        >
           <div className="containerModal">
             <h1 className="headerAdmin__storiesTitle">
-              Change { funds ? `Funds Amount` : `Verified Users Funds Amount` }  
+              Change {funds ? `Funds Amount` : `Verified Users Funds Amount`}
             </h1>
             <div className="form">
               <div className="col2">
                 <div className="formContainer">
-                  <input type="number" defaultValue={funds ? donationFundsAmount.raised : donationCerfiedUsersAmount.raised} placeholder="Raised Amount" name={funds ? `donationFundsAmount.raised` : `donationCerfiedUsersAmount.raised`} onChange={e => this.handleFunds(e)} className="formContainer__item" />
-                  <input type="number" defaultValue={funds ? donationFundsAmount.goal : donationCerfiedUsersAmount.goal} placeholder="Goal Amount" name={funds ? `donationFundsAmount.goal` : `donationCerfiedUsersAmount.goal`} onChange={e => this.handleFunds(e)} className="formContainer__item" />
+                  <input
+                    type="number"
+                    defaultValue={
+                      funds
+                        ? donationFundsAmount.raised
+                        : donationCerfiedUsersAmount.raised
+                    }
+                    placeholder="Raised Amount"
+                    name={
+                      funds
+                        ? `donationFundsAmount.raised`
+                        : `donationCerfiedUsersAmount.raised`
+                    }
+                    onChange={e => this.handleFunds(e)}
+                    className="formContainer__item"
+                  />
+                  <input
+                    type="number"
+                    defaultValue={
+                      funds
+                        ? donationFundsAmount.goal
+                        : donationCerfiedUsersAmount.goal
+                    }
+                    placeholder="Goal Amount"
+                    name={
+                      funds
+                        ? `donationFundsAmount.goal`
+                        : `donationCerfiedUsersAmount.goal`
+                    }
+                    onChange={e => this.handleFunds(e)}
+                    className="formContainer__item"
+                  />
                 </div>
               </div>
-              <button className="fundsRecipents__buttonBox" onClick={this.updateContent}>
+              <button
+                className="fundsRecipents__buttonBox"
+                onClick={this.updateContent}
+              >
                 Save
               </button>
             </div>
           </div>
         </Modal>
-      </div>;
+      </div>
+    );
   }
 }

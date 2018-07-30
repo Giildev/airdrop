@@ -27,7 +27,7 @@ export default class AdminTimeline extends Component {
         event: "",
         start: "",
         end: "",
-        lan: "es",
+        lan: "ES",
       },
       lines: undefined,
       startDate: "",
@@ -40,7 +40,12 @@ export default class AdminTimeline extends Component {
   }
 
   componentDidMount = () => {
-    this.getTimeline();
+    const { history, location } = this.props
+    if (this.auth.authGuard()) {
+      this.getTimeline();
+    } else {
+      history.push("/login")
+    }
   }
 
   getTimeline = () => {
@@ -88,7 +93,7 @@ export default class AdminTimeline extends Component {
            */
           let line = res.data.data;
           let lines = this.state.lines;
-          this.setState({ lines: [line, ...lines] }, () => {
+          this.setState({ lines: [line, ...lines], filteredLines: [line, ...lines] }, () => {
             this.onShowCloseModal();
           });
         } else if (res.status === 200 && !res.data.success) {
@@ -103,9 +108,7 @@ export default class AdminTimeline extends Component {
 
   handleLine = (e) => {
     const line = Object.assign({}, this.state.line, { [e.target.name]: e.target.value })
-    this.setState({ line }, () => {
-      // console.log(this.state.line)
-    })
+    this.setState({ line })
   }
 
   handleStart = (date) => {
@@ -151,12 +154,17 @@ export default class AdminTimeline extends Component {
     }
   }
 
+  handleLan = (lan) => {
+    const line = Object.assign({}, this.state.line, { lan });
+    this.setState({ line });
+  }
+
   onShowCloseModal = () => {
     const resetLine = {
       events: "",
       start: "",
       end: "",
-      lan: "es",
+      lan: "ES",
     }
 
     this.setState({ isOpen: !this.state.isOpen }, () => {
@@ -213,7 +221,7 @@ export default class AdminTimeline extends Component {
         </div>
         <Modal open={isOpen} onClose={this.onShowCloseModal} classNames={{ modal: "custom-modal" }}>
           <div className="containerModal">
-            <TabLang />
+          <TabLang lan={line.lan === "" ? "ES" : line.lan.toUpperCase()} handleLan={this.handleLan} />
             <h1 className="headerAdmin__storiesTitle">Create TimeLine</h1>
             <div className="form">
               <div className="col2">
