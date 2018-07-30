@@ -26,7 +26,7 @@ export default class AdminSite extends Component {
     if (this.auth.authGuard()) {
       this.getContentData();
     } else {
-      history.push("/dashboard")
+      history.push("/login")
     }
   };
 
