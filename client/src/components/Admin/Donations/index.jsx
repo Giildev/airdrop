@@ -188,7 +188,6 @@ export default class AdminDonation extends Component {
         </div>
         {
           donations === undefined ? <Loader /> :  donations.map(donation => {
-            console.log(donation)
             return <StorieCardDonation key={donation._id} donation={donation} handleDonations={this.handleDonations} />
           })
         }

@@ -24,7 +24,7 @@ export default class TabLang extends Component {
   }
   render() {
     const { lan } = this.state;
-    return <div>
+    return 
         <div className="langContainer">
         <label>
           <Toggle 
@@ -32,6 +32,6 @@ export default class TabLang extends Component {
             onChange={e => this.onSwitch(e)}
           />
         </label>
-      </div>)
+      </div>
   }
 }

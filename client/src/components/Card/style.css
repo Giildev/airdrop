@@ -442,7 +442,8 @@ td.rdtYear:hover {
     flex: 3; }
     .containerList__info__title {
       color: grey;
-      font-size: 2.5rem; }
+      font-size: 2.5rem;
+      text-transform: capitalize; }
     .containerList__info__separator {
       width: 45%;
       height: 0.3rem;

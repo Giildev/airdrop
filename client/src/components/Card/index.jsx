@@ -189,7 +189,8 @@ export class StorieCardDonation extends Component {
     }
   }
 
-  handleDelete = (id) => {
+  handleDelete = (e, id) => {
+    e.preventDefault();
     const body = {
       deleted: true
     }
@@ -205,7 +206,7 @@ export class StorieCardDonation extends Component {
       .catch(err => console.log(err));
   }
 
-  handleEdit = (id) => {
+  handleEdit = (e, id) => {
     this.props.handleDonations("update", id);
   }
 
@@ -219,17 +220,17 @@ export class StorieCardDonation extends Component {
       <div className="containerList">
         <img className="containerList__img--coin" src={donation.icon === "" ? "/coin.png" : donation.icon} alt={donation.coin} />
         <div className="containerList__info">
-          <h2 className="containerList__info__title">Bitcoin</h2>
+          <h2 className="containerList__info__title">{ donation.coin }</h2>
           <div className="containerList__info__separator"></div>
           <p className="containerList__info__text">
-            3Amm1Yo2BQ1zcEdgjFHoHjT72Cg2gkg2pL
+            { donation.wallet }
           </p>
         </div>
         <div className="containerList__icons">
-          <svg className="containerList__icons__ico" onClick={this.handleDelete(donation._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, donation._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
-          <svg className="containerList__icons__ico" onClick={this.handleEdit(donation._id)}>
+          <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, donation._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
         </div>
