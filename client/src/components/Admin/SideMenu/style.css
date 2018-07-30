@@ -37,3 +37,7 @@
       height: 16rem;
       opacity: 0.7;
       cursor: pointer; }
+
+@media (max-width: 770px) {
+  .sideContainer {
+    display: none; } }

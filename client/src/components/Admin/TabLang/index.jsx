@@ -31,9 +31,7 @@ export default class TabLang extends Component {
             defaultChecked={lan}
             onChange={e => this.onSwitch(e)}
           />
-          <span>Custom className</span>
         </label>
-        </div>
-      </div>;
+      </div>)
   }
 }
