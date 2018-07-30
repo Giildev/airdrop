@@ -1,0 +1,47 @@
+.storieDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2rem;
+  padding: 5rem; }
+  .storieDetailContainer__main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem; }
+    .storieDetailContainer__main__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: inherit;
+      word-wrap: break-word;
+      flex: 2 1; }
+      .storieDetailContainer__main__text__title {
+        font-size: 3rem;
+        color: var(--primary);
+        padding: 1rem; }
+      .storieDetailContainer__main__text__subTitle {
+        font-size: 2rem;
+        color: grey;
+        font-style: italic;
+        font-weight: 200;
+        padding: 1rem; }
+      .storieDetailContainer__main__text__content {
+        font-size: 1.6rem;
+        padding: 1.5rem 6rem; }
+    .storieDetailContainer__main__picture {
+      flex: 2 1; }
+      .storieDetailContainer__main__picture__img {
+        width: 100%;
+        height: auto;
+        box-shadow: 9px 4px 10px -6px rgba(0, 0, 0, 0.4); }
+  .storieDetailContainer__title {
+    font-family: inherit;
+    font-size: 3rem;
+    color: var(--primary);
+    text-align: center;
+    margin: 4rem; }
+  .storieDetailContainer__cardsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem; }

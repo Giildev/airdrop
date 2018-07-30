@@ -8,6 +8,7 @@ import NotFound from "./containers/NotFound";
 import Login from "./components/Admin/Login";
 import SwitchLan from "./components/SwitchLan";
 import Dashboard from "./containers/Dashboard";
+import StorieDetail from "./containers/StorieDetail";
 import AdminStory from "./components/Admin/Stories";
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/login"} component={Login} />
           <Route path={"/dashboard"} component={Dashboard} />
+          <Route exact path={"/storie-detail"} component={StorieDetail} />
           <Route component={NotFound} />
         </Switch>
       </Router>

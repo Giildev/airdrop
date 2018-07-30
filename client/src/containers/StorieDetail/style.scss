@@ -1,0 +1,57 @@
+.storieDetailContainer{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2rem;
+  padding: 5rem;
+  &__main{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    &__text{  
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: inherit;
+      word-wrap: break-word;
+      flex: 2 1;
+      &__title{
+        font-size: 3rem;
+        color: var(--primary);
+        padding: 1rem;
+      }
+      &__subTitle{
+        font-size: 2rem;
+        color: grey;
+        font-style: italic;
+        font-weight: 200;
+        padding: 1rem;
+      }
+      &__content{
+        font-size: 1.6rem;
+        padding: 1.5rem 6rem;
+      }
+    }
+    &__picture{
+      flex: 2 1;
+      &__img{
+        width: 100%;
+        height: auto;
+        box-shadow: 9px 4px 10px -6px rgba(0,0,0,0.40);
+      }
+    }
+  }
+  &__title{
+    font-family: inherit;
+    font-size: 3rem;
+    color: var(--primary);
+    text-align: center;
+    margin: 4rem;
+  }
+  &__cardsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+  }
+}
