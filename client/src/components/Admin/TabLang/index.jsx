@@ -24,14 +24,13 @@ export default class TabLang extends Component {
   }
   render() {
     const { lan } = this.state;
-    return 
-        <div className="langContainer">
-        <label>
-          <Toggle 
-            defaultChecked={lan}
-            onChange={e => this.onSwitch(e)}
-          />
-        </label>
-      </div>
+    return (<div className="langContainer">
+      <label>
+        <Toggle
+          defaultChecked={lan}
+          onChange={e => this.onSwitch(e)}
+        />
+      </label>
+    </div>)        
   }
 }
