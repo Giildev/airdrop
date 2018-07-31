@@ -50,4 +50,17 @@
   .sideContainer{
     display: none;
   }
+  .hamburguerIco{
+    display: flex;
+    &__btn{
+      border: none;
+      background: none;
+      &__ico{
+        width: 5rem;
+        height: 5rem;
+        fill: var(--primary);
+        margin: 2rem 1rem;
+      }
+    }
+  }
 }

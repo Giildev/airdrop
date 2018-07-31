@@ -274,4 +274,8 @@ td.rdtYear:hover {
 
 @media (max-width: 430px) {
   .storiesSection {
-    padding: 2rem; } }
+    padding: 2rem;
+    height: auto; }
+    .storiesSection__storiesContainer {
+      flex-wrap: wrap;
+      margin-bottom: 2rem; } }

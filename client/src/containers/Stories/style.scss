@@ -32,5 +32,9 @@
 @media (max-width: 430px) {
   .storiesSection{
     padding: 2rem;
+    height: auto;
+    &__storiesContainer{
+      flex-wrap: wrap;
+      margin-bottom: 2rem;    }
   }
 }

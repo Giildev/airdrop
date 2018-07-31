@@ -309,6 +309,7 @@ td.rdtYear:hover {
   justify-content: space-between;
   box-shadow: 0 0 9rem -2.6rem rgba(0, 0, 0, 0.6);
   transition: all 0.2s;
+  margin: 0.5rem;
   background-color: var(--white); }
   .stories__title {
     color: var(--primary);
@@ -480,8 +481,8 @@ td.rdtYear:hover {
     background-color: #aeaeae; }
 
 .activeCheck {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: var(--primary); }
 
 .dateContainer {
@@ -498,3 +499,9 @@ td.rdtYear:hover {
   .dateContainer__text {
     font-family: inherit;
     font-size: 1.4rem; }
+
+@media (max-width: 430px) {
+  .coinCardC {
+    margin: 2rem 0rem; }
+  .stories__title {
+    padding: 1rem 2.5rem; } }

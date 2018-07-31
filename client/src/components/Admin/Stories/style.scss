@@ -51,7 +51,7 @@
 }
 .col1{
   display: flex;
-  flex-direction: column;
+ // flex-direction: column;
   align-items: center;
 }
 .col2{
@@ -67,6 +67,7 @@
   &__text{
     font-family: inherit;
     font-size: 2rem;
+    word-break: break-word;
   }
   &__item{
     background-color: var(--white);
@@ -142,4 +143,59 @@
   color: var(--primary);
   font-size: 2rem;
   margin: 1rem;
+}
+.hamburguerIco{
+  display: none;
+}
+
+@media (max-width: 430px) {
+  .col1{
+    flex-direction: row;
+    
+  }
+  .containerDash{
+    &__content{
+      margin: 0rem;
+      padding: 2rem;
+    }
+  }
+  .containerList{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    &__img{
+      width: 100%;
+      height: auto;
+    }
+    &__info{
+      margin: 0rem;
+      padding: 2rem;
+      align-items: center;
+      text-align: center;
+    }
+    &__icons{
+      height: 10rem;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .containerDash{
+    &__content{
+      margin: 0;
+      padding: 2rem;
+    }
+  }
+  .containerList{
+    &__icons{
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      &__ico{
+        height: 2rem;
+        margin: 2rem;
+        align-items: center;
+      }
+    }
+  }
 }

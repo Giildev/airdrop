@@ -138,6 +138,7 @@
           width: 10%;
           height: 3rem;
           border-radius: 10rem;
+          transition: all 1.2s ease;
           &__bubbleBox {
             position: relative;
 
@@ -185,11 +186,19 @@
   .funds{
     &__container{
       height: auto;
+      display: flex;
+      flex-direction: column;
+      &__middle{
+        width: 100%;
+      }
     }
   }
   .recipents{
     &__container{
       height: auto;
+      &__middle{
+        width: 100%;
+      }
     }
   }
 }
@@ -209,6 +218,8 @@
   .recipents{
     &__container{
       height: auto;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

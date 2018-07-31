@@ -288,8 +288,8 @@ export default class AdminDonation extends Component {
                   <svg className="imageUpload__ico">
                     <use xlinkHref={`${Icons}#icon-plus`} />
                   </svg>
+                  <p className="formContainer__text">Upload Coin Icon</p>
                 </label>
-                <p className="formContainer__text">Upload Coin Icon</p>
                 <br/>
                 <label
                   className="imageUpload"
@@ -306,8 +306,8 @@ export default class AdminDonation extends Component {
                   <svg className="imageUpload__ico">
                     <use xlinkHref={`${Icons}#icon-plus`} />
                   </svg>
+                  <p className="formContainer__text">Upload QR Code</p>
                 </label>
-                <p className="formContainer__text">Upload QR Code</p>
               </div>
               <div className="col2">
                 <div className="formContainer">

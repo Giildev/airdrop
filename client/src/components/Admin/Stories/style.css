@@ -43,7 +43,6 @@
 
 .col1 {
   display: flex;
-  flex-direction: column;
   align-items: center; }
 
 .col2 {
@@ -58,7 +57,8 @@
   min-width: 70rem; }
   .formContainer__text {
     font-family: inherit;
-    font-size: 2rem; }
+    font-size: 2rem;
+    word-break: break-word; }
   .formContainer__item {
     background-color: var(--white);
     border-radius: 5rem;
@@ -123,3 +123,40 @@
   color: var(--primary);
   font-size: 2rem;
   margin: 1rem; }
+
+.hamburguerIco {
+  display: none; }
+
+@media (max-width: 430px) {
+  .col1 {
+    flex-direction: row; }
+  .containerDash__content {
+    margin: 0rem;
+    padding: 2rem; }
+  .containerList {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    .containerList__img {
+      width: 100%;
+      height: auto; }
+    .containerList__info {
+      margin: 0rem;
+      padding: 2rem;
+      align-items: center;
+      text-align: center; }
+    .containerList__icons {
+      height: 10rem; } }
+
+@media (max-width: 770px) {
+  .containerDash__content {
+    margin: 0;
+    padding: 2rem; }
+  .containerList__icons {
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .containerList__icons__ico {
+      height: 2rem;
+      margin: 2rem;
+      align-items: center; } }
