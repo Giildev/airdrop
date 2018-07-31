@@ -16,20 +16,24 @@ export default class TimeLine extends Component {
             <TimeLineCard />
               <div className="containerDate">
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <img src="timeLine2.png" alt=""/>
+                  <p className="containerDate__group__date">7/16/2018</p>
                 </div>
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <img src="timeLine2.png" alt=""/>
+                  <p className="containerDate__group__date">7/16/2018</p>
                 </div>
               </div>
           </div>
           <div className="ColTimeCards--down">
               <div className="containerDate">
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <p className="containerDate__group__date">7/16/2018</p>
+                  <img src="timeLine.png" alt=""/>
                 </div>
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <p className="containerDate__group__date">7/16/2018</p>
+                  <img src="timeLine.png" alt=""/>
                 </div>
               </div>
             <TimeLineCard />
@@ -38,20 +42,24 @@ export default class TimeLine extends Component {
             <TimeLineCard />
               <div className="containerDate">
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <img src="timeLine2.png" alt=""/>
+                  <p className="containerDate__group__date">7/16/2018</p>
                 </div>
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <img src="timeLine2.png" alt=""/>
+                  <p className="containerDate__group__date">7/16/2018</p>
                 </div>
               </div>
           </div>
           <div className="ColTimeCards--down">
               <div className="containerDate">
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <p className="containerDate__group__date">7/16/2018</p>
+                  <img src="timeLine.png" alt=""/>
                 </div>
                 <div className="containerDate__group">
-                  <p>7/16/2018</p>
+                  <p className="containerDate__group__date">7/16/2018</p>
+                  <img src="timeLine.png" alt=""/>
                 </div>
               </div>
             <TimeLineCard />
