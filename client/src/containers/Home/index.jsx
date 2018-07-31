@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import config from "../../libs/config";
+import { ToastContainer } from "react-toastify";
 // Components
 import Header from "../Header";
 import Banner from "../Banner";
@@ -15,10 +16,11 @@ import Faq from "../Faq";
 import Footer from "../Footer";
 import Contact from "../Contact";
 import Stories from "../Stories";
-import AdminSite from "../../components/Admin/Site";
 
 // Styles
 import "./style.css";
+import "react-tippy/dist/tippy.css";
+import "react-toastify/dist/ReactToastify.css";
 import Loader from "../../components/Loader"
 
 export default class Home extends Component {
@@ -64,6 +66,7 @@ export default class Home extends Component {
         <Faq />
         <Contact />
         <Footer />
+        <ToastContainer />
       </div>;
   }
 }

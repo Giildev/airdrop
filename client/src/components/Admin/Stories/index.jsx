@@ -15,6 +15,7 @@ export default class AdminStory extends Component {
   constructor(props) {
     super(props)
 
+    this.form = new FormData();
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
 
@@ -28,7 +29,7 @@ export default class AdminStory extends Component {
         cover: "",
         lan: "ES"
       },
-      coverImg: "",
+      coverImage: {},
       stories: undefined,
       idStoryToUpdate: undefined,
       filteredStories: {},
@@ -47,7 +48,7 @@ export default class AdminStory extends Component {
   }
 
   getStories = () => {
-    axios
+    return axios
       .get(`${config.BASE_URL}/story`, this.headers)
       .then(res => {
         console.log(res.data.data);
@@ -61,47 +62,38 @@ export default class AdminStory extends Component {
   updateStory = (e) => {
     e.preventDefault();
     let id = this.state.idStoryToUpdate;
+    let story = this.state.story;
+    this.form.set("data", JSON.stringify(story));
     axios
-      .post(`${config.BASE_URL}/story/${id}`, this.state.story, this.headers)
-      .then(res => console.log(res.data))
+      .post(`${config.BASE_URL}/story/${id}`, this.form, this.headers)
+      .then(res => {
+        if(res.status === 200 && res.data.success) {
+          this.getStories().then(() => this.onShowCloseModal())
+        }
+      })
       .catch(err => console.log(err));
   }
 
   createStory = (e) => {
     e.preventDefault();
-    console.log('create', e)
-    // debugger;
     let story = this.state.story;
     if(story.cover !== "") {
-      console.log('holi')
-      // debugger;
-    this.uploadFile()
-      // console.log(res)
-      // if(res.status === 200) {
-      //   story = Object.assign({}, this.state.story, { cover: res.data.imgName } )
-      //   this.setState({ story }, () => {
-      //     let bodyStory = this.state.story
 
-      //     Object.keys(bodyStory).map(key => {
-      //       if (bodyStory[key] === "") {
-      //         delete bodyStory[key];
-      //       }
-      //     })
+      Object.keys(story).map(key => {
+        if (story[key] === "") {
+          delete story[key];
+        }
+      })
+      this.form.set("data", JSON.stringify(story));
+      axios
+        .put(`${config.BASE_URL}/story`, this.form, this.headers)
+        .then(res => {
+          console.log(res.data);
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
 
-      //     axios
-      //       .put(`${config.BASE_URL}/story`, bodyStory, this.headers)
-      //       .then(resp => {
-      //         console.log(resp.data);
-      //       })
-      //       .catch(err => {
-      //         console.log(err.response);
-      //       });
-
-      //   })
-      // }
-
-    // })
-    // .catch(err => console.log(err.response))
   
     } else {
       alert('tavaciao')
@@ -131,6 +123,13 @@ export default class AdminStory extends Component {
           lan: story.lan,
           content: story.content,
           cover: story.cover
+        },
+        coverImage: {
+          backgroundColor: "",
+          backgroundImage: `url("/${story.cover}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
         }
        }, () => {
          console.log(this.state.story)
@@ -142,6 +141,12 @@ export default class AdminStory extends Component {
   handleStory = (e) => {
     const story = Object.assign({}, this.state.story, { [e.target.name]: e.target.value })
     this.setState({ story });
+  }
+
+  clearFormData = () => {
+    this.form.forEach(el => {
+      console.log(el)
+    });
   }
   
   onShowCloseModal = () => {
@@ -158,7 +163,8 @@ export default class AdminStory extends Component {
         this.setState({
           newStory: true,
           idStoryToUpdate: undefined,
-          story: resetStory
+          story: resetStory,
+          coverImage: {}
         })
       }
     })
@@ -183,20 +189,31 @@ export default class AdminStory extends Component {
   }
 
   handleImage = fl => {
-    let file = fl;
+    this.form.set("cover", fl.files[0]);
+
     const story = Object.assign({}, this.state.story, { cover: fl.files[0].name })
-    file.src = URL.createObjectURL(fl.files[0]);
-    this.setState({ coverImg: fl.files[0], story });
+    fl.src = URL.createObjectURL(fl.files[0]);
+    this.setState({
+      coverImage: {
+        backgroundColor: "",
+        backgroundImage: `url("${fl.src}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain"
+      }, story }, () => {
+      console.log(this.state.story)
+    });
   };
 
   uploadFile = (e) => {
     const body = new FormData();
-    body.append("file", this.state.coverImg);
+    body.append("cover", this.state.coverImg);
+    // body.set("otrofile", this.state.coverImg);
     axios.post(`${config.BASE_URL}/upload/cover`, body, this.headers).then(res => console.log(res))
   };
 
   render() {
-    const { isOpen, stories, newStory, story } = this.state;
+    const { isOpen, stories, newStory, story, coverImage } = this.state;
     return <div>
         <h1 className="languageTitle">Select Language</h1>
         <select className="selectLang" name="" onChange={this.handleFilterStory}>
@@ -233,7 +250,7 @@ export default class AdminStory extends Component {
               <div className="col1">
               <label
               className="imageUpload--single"
-
+              style={coverImage}
             >
               <input
                 onInputCapture={e => {

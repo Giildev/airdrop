@@ -4,6 +4,7 @@ import axios from "axios";
 import moment from "moment";
 import config from "../../libs/config";
 import Auth from "../../services/authService";
+import { Tooltip } from "react-tippy";
 
 // Components & Containers
 import "./style.css";
@@ -110,6 +111,13 @@ export class StorieCardAdmin extends Component {
     }
   }
 
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.story !== nextprops.story) {
+      this.setState({ story: nextprops.story, featured: nextprops.story.featured })
+    }
+    return true;
+  };
+
   handleFeatured = (id) => {
     this.setState({ featured: !this.state.featured }, () => {
       let body = {
@@ -157,7 +165,7 @@ export class StorieCardAdmin extends Component {
   render() {
     const { story, featured } = this.state;
     return <div className="containerList">
-        <img className="containerList__img" src="/storie1.jpg" alt="" />
+        <img className="containerList__img" src={`/${story.cover}`} alt="" />
         <div className="containerList__info">
           <h2 className="containerList__info__title">{story.title}</h2>
           <div className="containerList__info__separator" />
@@ -168,12 +176,26 @@ export class StorieCardAdmin extends Component {
           <div className="checkbox" onClick={() => this.handleFeatured(story._id)}>
             <div className={featured ? "activeCheck" : null} data-ref={story._id} />
           </div>
+          <Tooltip
+            title="Delete"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(story._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
+          </Tooltip>
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, story._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>;
   }
@@ -188,6 +210,13 @@ export class StorieCardDonation extends Component {
       donation: props.donation,
     }
   }
+
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.donation !== nextprops.donation) {
+      this.setState({ donation: nextprops.donation })
+    }
+    return true;
+  };
 
   handleDelete = (e, id) => {
     e.preventDefault();
@@ -218,7 +247,7 @@ export class StorieCardDonation extends Component {
     const { donation } = this.state
     return (
       <div className="containerList">
-        <img className="containerList__img--coin" src={donation.icon === "" ? "/coin.png" : donation.icon} alt={donation.coin} />
+        <img className="containerList__img--coin" src={donation.icon === "" ? "/coin.png" : `/${donation.icon}`} alt={donation.coin} />
         <div className="containerList__info">
           <h2 className="containerList__info__title">{ donation.coin }</h2>
           <div className="containerList__info__separator"></div>
@@ -227,12 +256,26 @@ export class StorieCardDonation extends Component {
           </p>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Delete"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, donation._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
+          </Tooltip>
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, donation._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );
@@ -287,9 +330,16 @@ export class CardRaised extends Component {
           </div>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );
@@ -343,9 +393,16 @@ export class CardRaisedUsers extends Component {
           </div>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );
@@ -423,12 +480,26 @@ export class TimeLineListCard extends Component {
           </div>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Delete"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, line._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
+          </Tooltip>
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, line._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );
@@ -493,9 +564,16 @@ export class UserListCard extends Component {
           </div>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Delete"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, subscriber._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );
@@ -550,14 +628,28 @@ export class FaqCard extends Component {
           </p>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Delete"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleDelete(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-trash`} />
           </svg>
+          </Tooltip>
         </div>
         <div className="containerList__icons">
+          <Tooltip
+            title="Edit"
+            position="top"
+            size="big"
+            arrow="true"
+          >
           <svg className="containerList__icons__ico" onClick={e => this.handleEdit(e, faq._id)}>
             <use xlinkHref={`${Icons}#icon-pen`} />
           </svg>
+          </Tooltip>
         </div>
       </div>
     );

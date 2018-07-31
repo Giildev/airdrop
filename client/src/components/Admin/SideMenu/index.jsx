@@ -1,11 +1,18 @@
 // Dependencies
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import Auth from "../../../services/authService"
 
 // Components & Containers
 import "./style.css";
 
 export default class SideMenu extends Component {
+  constructor(props) {
+    super(props)
+
+    this.auth = new Auth();
+  }
+
   render() {
     return <div>
         <div className="sideContainer">
@@ -33,7 +40,7 @@ export default class SideMenu extends Component {
             <li className="sideContainer__menu__item">
               <Link to={`/dashboard/users`}>Users</Link>
             </li>
-            <li className="sideContainer__menu__item">
+            <li className="sideContainer__menu__item" onClick={e => this.auth.logout(e)}>
               <a  >Log Out </a>
             </li>
           </ul>

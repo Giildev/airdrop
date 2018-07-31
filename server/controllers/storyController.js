@@ -24,7 +24,7 @@ getStory = (req, res) => {
 };
 
 setStory = (req, res) => {
-  const { title, subtitle, cover, content } = req.body;
+  const { title, subtitle, cover, content, lan } = req.body;
   const Story = new modelStory();
 
   if ( title && subtitle && cover && content && lan ) {
