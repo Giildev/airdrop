@@ -50,11 +50,11 @@ setStory = (req, res) => {
           success: false,
           msg: `Error saving story`
         });
-
+        console.log(storyStored);
         if (storyStored) {
 
           modelSite.update(
-            { _id: req.user.site }, // prueba
+            { _id: req.user.site },
             { $push: { stories: storyStored._id } },
             (err, siteUpdated) => {
               if (err) return res.status(500).send({

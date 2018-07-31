@@ -48,7 +48,7 @@ export default class Home extends Component {
 
   handleLanguage = e => {
     this.setState({ selectedLan: e.target });
-  };middleSection
+  };
 
   render() {
     const { content, selectedLan } = this.state;
