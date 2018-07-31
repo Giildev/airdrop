@@ -501,5 +501,7 @@ td.rdtYear:hover {
     font-size: 1.4rem; }
 
 @media (max-width: 430px) {
+  .coinCardC {
+    margin: 2rem 0rem; }
   .stories__title {
     padding: 1rem 2.5rem; } }
