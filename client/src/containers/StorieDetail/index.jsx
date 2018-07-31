@@ -29,6 +29,7 @@ export default class storieDetail extends Component {
             <StorieCard />
             <StorieCard />
           </div>
+          <button className="storiesSection__button">More Stories</button>
         </div>
         
       </div>

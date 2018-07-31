@@ -481,8 +481,8 @@ td.rdtYear:hover {
     background-color: #aeaeae; }
 
 .activeCheck {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 1.2rem;
+  height: 1.2rem;
   background-color: var(--primary); }
 
 .dateContainer {
@@ -499,3 +499,7 @@ td.rdtYear:hover {
   .dateContainer__text {
     font-family: inherit;
     font-size: 1.4rem; }
+
+@media (max-width: 430px) {
+  .stories__title {
+    padding: 1rem 2.5rem; } }
