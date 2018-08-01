@@ -42,7 +42,7 @@
 [type=radio]:checked ~ label {
   background: var(--primary);
   z-index: 2;
-  color: var(--primary); }
+  color: var(--white); }
 
 [type=radio]:checked ~ label ~ .content {
   z-index: 1; }

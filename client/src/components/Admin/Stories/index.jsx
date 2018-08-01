@@ -247,24 +247,24 @@ export default class AdminStory extends Component {
           <TabLang lan={story.lan === "" ? "ES" : story.lan.toUpperCase()} handleLan={this.handleLan}/>
             <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
-              <div className="col1">
+            <div className="col1">
               <label
-              className="imageUpload--single"
-              style={coverImage}
-            >
-              <input
-                onInputCapture={e => {
-                  this.handleImage(e.target);
-                }}
-                className="imageUpload__hide"
-                type="file"
-              />
-              <svg className="imageUpload__ico">
-                <use xlinkHref={`${Icons}#icon-plus`} />
-              </svg>
-            </label>
+                className="imageUpload--single"
+                style={coverImage}
+              >
+                <input
+                  onInputCapture={e => {
+                    this.handleImage(e.target);
+                  }}
+                  className="imageUpload__hide"
+                  type="file"
+                />
+                <svg className="imageUpload__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+                </svg>
                 <p className="formContainer__text">Upload Image / Video</p>
-              </div>
+              </label>
+            </div>
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Title" name="title" defaultValue={story.title} className="formContainer__item" onChange={(e) => this.handleStory(e)}/>

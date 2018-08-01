@@ -6,6 +6,7 @@
   background: linear-gradient(to bottom, rgb(45, 211, 206) 0%, rgba(0,245,196,1) 100%);
   color: var(--white);
   font-family: inherit;
+  min-height: 100vh;
   height: 100%;
   &__title{
     font-size: 3rem;
