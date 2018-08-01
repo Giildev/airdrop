@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import config from "../../libs/config";
-import { ToastContainer } from "react-toastify";
+
 // Components
 import Header from "../Header";
 import Banner from "../Banner";
@@ -69,7 +69,7 @@ export default class Home extends Component {
         <Faq />
         <Contact />
         <Footer />
-        <ToastContainer />
+        
       </div>;
   }
 }

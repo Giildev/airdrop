@@ -57,7 +57,7 @@ export default class componentName extends Component {
           <div className="funds__container__right">
             <img src="/fundsRight.png" alt="" />
             <h3>
-              1000000 USD <br /> Goal
+              {fundsAmount.goal} USD <br /> Goal
             </h3>
           </div>
         </div>
@@ -81,7 +81,9 @@ export default class componentName extends Component {
           </div>
           <div className="recipents__container__right">
             <img src="/recipentsRight.png" alt="" />
-            <h3 />
+            <h3>
+              {cerfiedUsersAmount.goal} USD <br /> Goal
+            </h3>
           </div>
         </div>
         <button className="fundsRecipents__buttonBox">Donate Crypto</button>

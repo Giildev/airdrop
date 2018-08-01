@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types";
 import { Link, Route, Switch, withRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
 // Components & Containers
 import "./style.css";
 
@@ -38,6 +40,7 @@ export default class Dashboard extends Component {
             <Route path={`${match.url}/faqs`} component={AdminFaqs} />
           </div>
         </div>
+        <ToastContainer />
       </div>;
   }
 }

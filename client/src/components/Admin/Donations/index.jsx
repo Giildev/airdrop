@@ -6,6 +6,7 @@ import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import Icons from "../../../icons.svg";
 import { StorieCardDonation } from "../../Card";
+import { toast } from "react-toastify";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader"
@@ -71,6 +72,7 @@ export default class AdminDonation extends Component {
       .then(res => {
         if (res.status === 200 && res.data.success) {
           this.setState({ donations: undefined }, () => {
+            toast.success(res.data.msg)
             this.getDonations().then(() => this.onShowCloseModal());
           });
         } else {
