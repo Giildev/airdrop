@@ -11,7 +11,7 @@ uploadCover = async (req, res, next) => {
     for (const file in files) {
       let imgName = `${uniqid()}.jpeg`;
       await sharp(files[file].data)
-        .resize(1920, 1080)
+        // .resize(1920, 1080)
         .toFile(`${__dirname}/../../client/public/${imgName}`, err => {
           err ? console.log(err) : "";
         })

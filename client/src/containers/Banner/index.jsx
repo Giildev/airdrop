@@ -9,7 +9,7 @@ export default class Banner extends Component {
     super(props)
 
     this.state = {
-      img: "/banner.jpg" || props.image,
+      img: props.image || "banner.jpg",
       title: undefined || props.title,
       description: undefined || props.description 
     }
@@ -26,7 +26,7 @@ export default class Banner extends Component {
     }
     return (
       <section
-        style={{ backgroundImage: `url(${img})` }}
+        style={{ backgroundImage: `url(/${img})` }}
         className="banner"
       >
         <div className="banner__container">
@@ -41,7 +41,9 @@ export default class Banner extends Component {
             {description}
           </div>
           <div className="banner__container__scroll">
-            <img src="/arrow.png" alt="" />
+            <a href="#howItWorks">
+              <img src="/arrow.png" alt="" />
+            </a>
           </div>
         </div>
       </section>

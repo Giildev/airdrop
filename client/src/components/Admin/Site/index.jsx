@@ -13,13 +13,14 @@ export default class AdminSite extends Component {
     super(props);
 
     this.contentToEdit = {};
-
+    this.form = new FormData();
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
     
     this.state = {
       contentToEdit: {},
       content: undefined,
+      bannerImg: {}
     };
   }
 
@@ -37,7 +38,13 @@ export default class AdminSite extends Component {
       .get(`${config.BASE_URL}/site/manage/`, this.headers)
       .then(res => {
         let site = res.data.site;
-        this.setState({ content: res.data.site });
+        this.setState({ content: site, bannerImg: {
+          backgroundColor: "",
+          backgroundImage: `url("/${site.banner}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
+        } });
       })
       .catch(err => console.log(err));
   };
@@ -46,13 +53,14 @@ export default class AdminSite extends Component {
     e.preventDefault();
     let user = this.auth.getProfile();
     let id = user.site;
+    this.form.set("data", JSON.stringify(this.contentToEdit));
+
 
     if (Object.keys(this.contentToEdit).length > 0) {
       axios
-        .post(`${config.BASE_URL}/site/manage/${id}`, this.contentToEdit, this.headers)
+        .post(`${config.BASE_URL}/site/manage/${id}`, this.form, this.headers)
         .then(res => {
           if(res.status === 200) {
-            console.log('object')
             toast.success('Site modified successfully');
           }
         })
@@ -66,8 +74,25 @@ export default class AdminSite extends Component {
     this.contentToEdit[e.target.name] = e.target.value
   };
 
+  handleImage = fl => {
+    this.form.set("banner", fl.files[0]);
+
+    this.contentToEdit.banner = fl.files[0].name;
+
+    fl.src = URL.createObjectURL(fl.files[0]);
+    this.setState({
+      bannerImg: {
+        backgroundColor: "",
+        backgroundImage: `url("${fl.src}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain"
+      }
+    });
+  };
+
   render() {
-    const { content } = this.state;
+    const { content, bannerImg } = this.state;
     return content === undefined ? (
       <Loader />
     ) : (
@@ -75,6 +100,7 @@ export default class AdminSite extends Component {
           <div className="col1">
             <label
               className="imageUpload--banner"
+              style={bannerImg}
             >
               <input
                 onInputCapture={e => {
