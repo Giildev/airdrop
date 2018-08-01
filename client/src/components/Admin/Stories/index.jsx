@@ -20,8 +20,6 @@ export default class AdminStory extends Component {
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
 
-
-
     this.state = {
       story: {
         title: "",
