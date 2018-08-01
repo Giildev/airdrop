@@ -6,6 +6,7 @@
   background: linear-gradient(to bottom, #2dd3ce 0%, #00f5c4 100%);
   color: var(--white);
   font-family: inherit;
+  min-height: 100vh;
   height: 100%; }
   .sideContainer__title {
     font-size: 3rem;

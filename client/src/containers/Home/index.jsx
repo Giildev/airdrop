@@ -21,7 +21,7 @@ import Stories from "../Stories";
 import "./style.css";
 import "react-tippy/dist/tippy.css";
 import "react-toastify/dist/ReactToastify.css";
-import Loader from "../../components/Loader"
+import Loader from "../../components/Loader";
 
 export default class Home extends Component {
   constructor(props) {
@@ -38,38 +38,53 @@ export default class Home extends Component {
   };
 
   getContentData = () => {
-    axios
-      .get(`${config.BASE_URL}/site/${this.state.selectedLan}`)
-      .then(res =>{
-        console.log(res.data.site)
-        this.setState({ content: res.data.site, lan: this.state.selectedLan })
-      }); // fix
+    axios.get(`${config.BASE_URL}/site/${this.state.selectedLan}`).then(res => {
+      console.log("DATA_CONTENT: ", res.data.site);
+      console.log("FAQS_DATA:", res.data.site.faqs[1].question);
+      this.setState({ content: res.data.site, lan: this.state.selectedLan });
+    }); // fix
   };
 
   handleLanguage = e => {
     this.setState({ selectedLan: e.target });
   };
-
   render() {
     const { content, selectedLan } = this.state;
-    console.log(content)
-    return content === undefined ? <Loader /> : <div>
+    console.log(content);
+    return content === undefined ? (
+      <Loader />
+    ) : (
+      <div>
         <Header />
-        <Banner image={content.banner} title={content.header[selectedLan].title} description={content.header[selectedLan].description} />
-        <HowItWorks title={content.middleSection[selectedLan].title} description={content.middleSection[selectedLan].description} />
-        <FundsRaised 
-          fundsAmount={content.donationFundsAmount} 
+        <Banner
+          image={content.banner}
+          title={content.header[selectedLan].title}
+          description={content.header[selectedLan].description}
+        />
+        <HowItWorks
+          title={content.middleSection[selectedLan].title}
+          description={content.middleSection[selectedLan].description}
+        />
+        <FundsRaised
+          fundsAmount={content.donationFundsAmount}
           cerfiedUsersAmount={content.donationCerfiedUsersAmount}
         />
         <Quote title={content.about[selectedLan].title} description={content.about[selectedLan].description} />
         <TimeLine />
         <Stories />
         <Donate />
-        <MailList title={content.mail[selectedLan].title} description={content.mail[selectedLan].description} />
-        <Faq />
+        <MailList
+          title={content.mail[selectedLan].title}
+          description={content.mail[selectedLan].description}
+        />
+        <Faq
+          title={content.faq[selectedLan].title}
+          description={content.faq[selectedLan].description}
+          faqs={content.faqs}
+        />
         <Contact />
         <Footer />
-        
-      </div>;
+      </div>
+    );
   }
 }
