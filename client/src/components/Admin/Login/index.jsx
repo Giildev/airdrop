@@ -77,7 +77,7 @@ export default class AdminLogin extends Component {
           <input className="formContainer__item" type="text" placeholder="User or email" name="userName" onChange={this.handleInput}/>
           <input className="formContainer__item" type={this.state.type} placeholder="Password" name="password" onChange={this.handleInput}/>
           <input type="button" value="Show Password" className="showPass" onClick={this.changeTypeInput}/>
-          <button type="submit" class="fundsRecipents__buttonBox"> Login </button>
+          <button type="submit" className="fundsRecipents__buttonBox"> Login </button>
         </form>
        </div>
       </div>

@@ -11,7 +11,7 @@ export default class Stories extends Component {
       <section className="storiesSection" id="Stories">
         <h2 className="storiesSection__title">Stories From Venezuelans</h2>
         <h3 className="storiesSection__subTitle">
-          Read stories from Venezuelas during this crisis. Some identities are
+          Read stories from Venezuelans during this crisis. Some identities are
           kept private.
         </h3>
         <div className="storiesSection__storiesContainer">
