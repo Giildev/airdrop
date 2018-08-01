@@ -7,8 +7,10 @@ import Modal from "react-responsive-modal";
 import Icons from "../../../icons.svg";
 import { StorieCardDonation } from "../../Card";
 import { toast } from "react-toastify";
+import { Tooltip } from "react-tippy";
 // Components & Containers
 import "./style.css";
+// import "react-tippy/dist/tippy.css";
 import Loader from "../../Loader"
 
 export default class AdminDonation extends Component {
@@ -251,11 +253,18 @@ export default class AdminDonation extends Component {
         <div className="containerStories">
         <div className="headerAdmin">
           <h1 className="headerAdmin__storiesTitle">Donations</h1>
-          <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
-            <svg className="headerAdmin__addBTN__ico">
-              <use xlinkHref={`${Icons}#icon-plus`} />
-            </svg>
-          </button>
+          <Tooltip
+            title="Add Donation"
+            position="right"
+            size="big"
+            arrow="true"
+          >
+            <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+              <svg className="headerAdmin__addBTN__ico">
+                <use xlinkHref={`${Icons}#icon-plus`} />
+              </svg>
+            </button>
+          </Tooltip>
         </div>
         {
           donations === undefined ? <Loader /> :  donations.map(donation => {

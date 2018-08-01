@@ -52,7 +52,7 @@ export default class AdminSite extends Component {
         .then(res => {
           if(res.status === 200) {
             console.log('object')
-            toast('Site modified successfully');
+            toast.success('Site modified successfully');
           }
         })
         .catch(err => console.log(err));
