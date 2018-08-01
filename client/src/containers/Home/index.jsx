@@ -57,7 +57,10 @@ export default class Home extends Component {
         <Header />
         <Banner image={content.banner} title={content.header[selectedLan].title} description={content.header[selectedLan].description} />
         <HowItWorks title={content.middleSection[selectedLan].title} description={content.middleSection[selectedLan].description} />
-        <FundsRaised />
+        <FundsRaised 
+          fundsAmount={content.donationFundsAmount} 
+          cerfiedUsersAmount={content.donationCerfiedUsersAmount}
+        />
         <Quote />
         <TimeLine />
         <Stories />
