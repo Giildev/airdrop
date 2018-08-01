@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService"
+import Icons from "../../../icons.svg";
 
 // Components & Containers
 import "./style.css";
@@ -82,7 +83,21 @@ export default class SideMenu extends Component {
   render() {
     return <div>
         <div className="sideContainer">
-          <img src="/storie1.jpg" alt="profile" className="sideContainer__profilePic" />
+          <label
+            className="imageUpload--profile"
+          >
+            <input
+              onInputCapture={e => {
+                this.handleImage(e.target);
+              }}
+              className="imageUpload__hide"
+              type="file"
+            />
+            <svg className="imageUpload__ico">
+              <use xlinkHref={`${Icons}#icon-plus`} />
+            </svg>
+            <p className="formContainer__text">Upload Image / Video</p>
+          </label>  
           <h3 className="sideContainer__title">Admin</h3>
           <ul className="sideContainer__menu">
             <li className="sideContainer__menu__item">

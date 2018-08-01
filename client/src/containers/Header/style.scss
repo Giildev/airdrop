@@ -8,6 +8,11 @@
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 0px 0.5rem 1rem 0 hsla(0, 0%, 13%, 0.102);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+  z-index: 9999;
   &__logoBox {
     width: 45rem;
   }
@@ -41,6 +46,7 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+    top: -0.1rem;
     &__cta{
       display: none;
       &__button{

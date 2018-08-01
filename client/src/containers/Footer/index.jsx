@@ -26,9 +26,11 @@ export default class Footer extends Component {
           </a>
         </div>
         <div className="footer__follow">
-          <div className="footer__follow__text">Follow US</div>
-          <div className="footer__follow__icon">FB</div>
-          <div className="footer__follow__icon">TW</div>
+            <div className="footer__follow__text">Follow US</div>
+            <div className="footer__follow__icoCont">
+              <img className="footer__follow__icon" src="fb.png" alt=""/>
+              <img className="footer__follow__icon" src="tw.png" alt=""/>
+            </div>
         </div>
         <div className="footer__copyright">
           Website developed & designed with <span className="footer__copyright__hearth">❤</span> for Venezuela by Venezuelans. AirTM
