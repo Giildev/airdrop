@@ -270,7 +270,18 @@ td.rdtYear:hover {
       margin: 2rem; }
   .footer__follow {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2rem; }
+    .footer__follow__iconCont {
+      display: flex;
+      margin: 1rem; }
+    .footer__follow__icon {
+      width: 5rem;
+      height: 5rem;
+      margin: 1rem; }
+      .footer__follow__icon:hover {
+        cursor: pointer; }
   .footer__copyright {
     padding: 2rem; }
     .footer__copyright__hearth {

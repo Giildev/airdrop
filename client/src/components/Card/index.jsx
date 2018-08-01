@@ -106,6 +106,8 @@ export class StorieCardAdmin extends Component {
   constructor (props) {
     super(props)
 
+    this.form = new FormData();
+
     this.state = {
       story: props.story,
       featured: props.story.featured
@@ -160,7 +162,8 @@ export class StorieCardAdmin extends Component {
   }
 
   uploadStory = (id, body) => {
-    return axios.post(`${config.BASE_URL}/story/${id}`, body, headers)
+    this.form.set('data', JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/story/${id}`, this.form, headers)
   }
 
   render() {
@@ -656,3 +659,28 @@ export class FaqCard extends Component {
     );
   }
 }
+
+
+//card Slide Storie
+export class SlideCard extends Component {
+ 
+  render() {
+    return (
+      <div className="slideContainer">
+        <div className="storieDetailContainer__main">
+          <div className="storieDetailContainer__main__text">
+            <h1 className="storieDetailContainer__main__text__title">Alexa Walts</h1>
+            <h3 className="storieDetailContainer__main__text__subTitle">"phrase from storie"</h3>
+            <p className="storieDetailContainer__main__text__content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eos perferendis, amet ratione quisquam accusantium esse nulla reiciendis, quam nemo eligendi. Impedit quidem neque rem unde labore laboriosam soluta, quia ipsam dolor iusto quibusdam laborum dolorem necessitatibus voluptatum distinctio explicabo aspernatur architecto, placeat, veritatis quaerat. Nemo harum aliquam culpa explicabo.
+          </p>
+          </div>
+          <div className="storieDetailContainer__main__picture">
+            <img className="storieDetailContainer__main__picture__img" src="/storie1.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
