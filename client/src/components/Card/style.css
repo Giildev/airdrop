@@ -429,7 +429,7 @@ td.rdtYear:hover {
     align-items: center; }
     .containerList__icons__ico {
       width: 2.5rem;
-      height: auto;
+      height: 2.5rem;
       margin: 2rem;
       fill: var(--terciary);
       transition: all .3s ease; }
