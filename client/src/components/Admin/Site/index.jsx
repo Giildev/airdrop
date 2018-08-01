@@ -67,7 +67,6 @@ export default class AdminSite extends Component {
 
   render() {
     const { content } = this.state;
-    console.log(content)
     return content === undefined ? (
       <Loader />
     ) : (

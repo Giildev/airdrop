@@ -15,7 +15,7 @@ export default class SideMenu extends Component {
     this.form = new FormData();
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
-    this.user = this.auth.getProfile();
+    
 
     this.state = {
       user: {
@@ -26,7 +26,11 @@ export default class SideMenu extends Component {
   }
 
   componentDidMount = () => {
-    this.getUser();
+    const { history, location } = this.props
+    
+    if (this.auth.authGuard()) {
+      this.getUser();
+    } 
   }
 
   // qrImg: {
@@ -38,17 +42,19 @@ export default class SideMenu extends Component {
   //     }
 
   getUser = () => {
+    let adm = this.auth.getProfile();
     axios
-    .get(`${config.BASE_URL}/user/${this.user._id}`)
+    .get(`${config.BASE_URL}/user/${adm._id}`)
     .then(res => console.log(res))
     .catch(res => console.log(res))
   }
 
   editUser = () => {
+    let adm = this.auth.getProfile();
     let user = this.story.user
     this.form.set("data", JSON.stringify(user));
     axios
-      .post(`${config.BASE_URL}/user/${this.user._id}`, this.form, this.headers)
+      .post(`${config.BASE_URL}/user/${adm._id}`, this.form, this.headers)
       .then(res => {
         if (res.status === 200 && res.data.success) {
           alert('cambio')
@@ -70,8 +76,6 @@ export default class SideMenu extends Component {
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain"
       }, user
-    }, () => {
-      console.log(this.state.story)
     });
   };
 
