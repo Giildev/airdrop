@@ -51,7 +51,7 @@
   background: var(--primary);
   //border-bottom: 1px solid white;
   z-index: 2;
-  color: var(--primary);
+  color: var(--white);
 }
 
 [type=radio]:checked~label~.content {

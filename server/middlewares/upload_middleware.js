@@ -9,7 +9,6 @@ uploadCover = async (req, res, next) => {
     body = JSON.parse(body);
 
     for (const file in files) {
-      // console.log(file)
       let imgName = `${uniqid()}.jpeg`;
       await sharp(files[file].data)
         .resize(1920, 1080)
@@ -22,7 +21,6 @@ uploadCover = async (req, res, next) => {
         });        
     }
     req.body = body;
-    console.log(req.body)
     next();
   } else {
     let body = req.body.data;

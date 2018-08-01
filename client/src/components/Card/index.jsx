@@ -8,6 +8,7 @@ import { Tooltip } from "react-tippy";
 
 // Components & Containers
 import "./style.css";
+import "react-tippy/dist/tippy.css";
 import Icons from "../../icons.svg";
 
 var auth =  new Auth();
