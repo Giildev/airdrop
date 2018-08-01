@@ -18,7 +18,7 @@ export default class HowItWorks extends Component {
   render() {
     const { title, description } = this.state
     return (
-      <section className="howItWorks">
+      <section className="howItWorks" id="howItWorks">
         <h2 className="howItWorks__title">{ `${title}` }</h2>
         <h3 className="howItWorks__subTitle">
           { `${description}` }

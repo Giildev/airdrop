@@ -15,9 +15,10 @@ export default class Faq extends Component {
     }
   }
 
-  toggleAccordion = () => {
+  toggleAccordion = (e) => {
+    e.preventDefault();
     let i;
-
+    console.log('sasd')
     for (i = 0; i < this.acc.length; i++) {
       this.acc[i].onclick = function () {
         this.classList.toggle("active");
@@ -53,7 +54,7 @@ export default class Faq extends Component {
           </div>
           
           <div className="containerFaq__open">
-            <div className="containerFaq__open__header" onClick={this.toggleAccordion}>
+            <div className="containerFaq__open__header" onClick={e => this.toggleAccordion(e)}>
               <h4 className="containerFaq__open__header__title"> What is AirTM?</h4>
               <img src="/faqArrow.png" alt="Arrow"/>
             </div>

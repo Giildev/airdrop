@@ -8,6 +8,7 @@ import { Tooltip } from "react-tippy";
 
 // Components & Containers
 import "./style.css";
+import "react-tippy/dist/tippy.css";
 import Icons from "../../icons.svg";
 
 var auth =  new Auth();
@@ -105,6 +106,8 @@ export class StorieCardAdmin extends Component {
   constructor (props) {
     super(props)
 
+    this.form = new FormData();
+
     this.state = {
       story: props.story,
       featured: props.story.featured
@@ -159,7 +162,8 @@ export class StorieCardAdmin extends Component {
   }
 
   uploadStory = (id, body) => {
-    return axios.post(`${config.BASE_URL}/story/${id}`, body, headers)
+    this.form.set('data', JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/story/${id}`, this.form, headers)
   }
 
   render() {

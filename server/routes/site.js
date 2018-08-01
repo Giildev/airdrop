@@ -4,6 +4,7 @@ const router = express.Router({
 });
 const siteController = require("../controllers/siteController");
 const md_auth = require("../middlewares/token_middleware");
+const md_upload = require("../middlewares/upload_middleware");
 
 const prefix = "/site";
 
@@ -13,6 +14,6 @@ router.get(`${prefix}/manage/`, md_auth.ensureToken, siteController.getContent);
 
 router.put(`${prefix}`, md_auth.ensureToken, siteController.setContent); // Create content
 
-router.post(`${prefix}/manage/:id`, md_auth.ensureToken, siteController.editContent); // Edit content
+router.post(`${prefix}/manage/:id`, [md_auth.ensureToken, md_upload.uploadCover], siteController.editContent); // Edit content
 
 module.exports = router;
