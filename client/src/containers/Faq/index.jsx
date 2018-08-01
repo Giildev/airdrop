@@ -33,7 +33,8 @@ export default class Faq extends Component {
 
   render() {
     const { faqs } = this.state;
-    console.log("PROPS_DATA_FAQS:", this.props.faqs);
+    console.log("PROPS_DATA_FAQS:", this.props.faqs[1]);
+    console.log("STATE_DATA_FAQS:", faqs[1]);
     return (
       <div id="FAQ">
         <div className="containerFaq">

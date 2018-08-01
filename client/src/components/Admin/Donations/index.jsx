@@ -6,6 +6,7 @@ import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import Icons from "../../../icons.svg";
 import { StorieCardDonation } from "../../Card";
+import { toast } from "react-toastify";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader"
@@ -14,6 +15,7 @@ export default class AdminDonation extends Component {
   constructor(props) {
     super(props)
 
+    this.form = new FormData();
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
 
@@ -25,6 +27,8 @@ export default class AdminDonation extends Component {
         wallet: "",
         QR: ""
       },
+      iconImg: {},
+      qrImg: {},
       donations: undefined,
       filteredDonations: undefined,
       idDonationToUpdate: undefined,
@@ -59,15 +63,20 @@ export default class AdminDonation extends Component {
 
   updateContent = () => {
     let id = this.state.idDonationToUpdate;
+    let donation = this.state.donation;
+
+    this.form.set("data", JSON.stringify(donation));
+
     axios
-      .post(`${config.BASE_URL}/donation/${id}`, this.headers)
+      .post(`${config.BASE_URL}/donation/${id}`, this.form, this.headers)
       .then(res => {
         if (res.status === 200 && res.data.success) {
           this.setState({ donations: undefined }, () => {
-            this.getFaqs().then(() => this.onShowCloseModal());
+            toast.success(res.data.msg)
+            this.getDonations().then(() => this.onShowCloseModal());
           });
         } else {
-          this.getFaqs().then(() => this.onShowCloseModal());
+          this.getDonations().then(() => this.onShowCloseModal());
         }
       })
       .catch(err => {
@@ -76,34 +85,38 @@ export default class AdminDonation extends Component {
   }
 
   createDonation = () => {
-    let body = this.state.donation;
+    let donation = this.state.donation;
 
-    Object.keys(body).map(key => {
-      if (body[key] === "") {
-        delete body[key];
-      }
-    });
-
-    axios
-      .put(`${config.BASE_URL}/donation`, body, this.headers)
-      .then(res => {
-        if (res.status === 200 && res.data.success) {
-          /**
-           * Msg from server if all is correct
-           */
-          let donation = res.data.data;
-          let donations = this.state.donations;
-          this.setState({ donations: [donation, ...donations], filteredFaqs: [donation, ...donations] }, () => {
-            this.onShowCloseModal();
-          });
-        } else if (res.status === 200 && !res.data.success) {
-          /**
-           * Msg from server if left any field in object
-           */
-          alert(res.data.msg);
+    if(donation.icon !== ""){
+      Object.keys(donation).map(key => {
+        if (donation[key] === "") {
+          delete donation[key];
         }
-      })
-      .catch(err => console.log(err));
+      });
+      this.form.set("data", JSON.stringify(donation));
+      axios
+        .put(`${config.BASE_URL}/donation`, this.form, this.headers)
+        .then(res => {
+          if (res.status === 200 && res.data.success) {
+            /**
+             * Msg from server if all is correct
+             */
+            let donation = res.data.data;
+            let donations = this.state.donations;
+            this.setState({ donations: [donation, ...donations], filteredFaqs: [donation, ...donations] }, () => {
+              this.onShowCloseModal();
+            });
+          } else if (res.status === 200 && !res.data.success) {
+            /**
+             * Msg from server if left any field in object
+             */
+            alert(res.data.msg);
+          }
+        })
+        .catch(err => console.log(err));
+    } else {
+      console.log('tavacio')
+    }
   }
 
   handleDonation = (e) => {
@@ -133,6 +146,20 @@ export default class AdminDonation extends Component {
           icon: donation.icon,
           wallet: donation.wallet,
           QR: donation.QR,
+        },
+        iconImg: {
+          backgroundColor: "",
+          backgroundImage: `url("/${donation.icon}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
+        },
+        qrImg: {
+          backgroundColor: "",
+          backgroundImage: `url("/${donation.QR}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
         }
       }, () => {
         this.onShowCloseModal();
@@ -154,11 +181,55 @@ export default class AdminDonation extends Component {
         this.setState({
           newDonation: true,
           idDonationToUpdate: undefined,
-          donation: resetDonation
+          donation: resetDonation,
+          iconImg: {},
+          qrImg: {}
         });
       }
     })
   }
+
+  handleImageCoin = fl => {
+    this.form.set("icon", fl.files[0]);
+
+    const donation = Object.assign({}, this.state.donation, { icon: fl.files[0].name })
+    fl.src = URL.createObjectURL(fl.files[0]);
+    this.setState({ 
+      donation,
+      iconImg: {
+        backgroundColor: "",
+        backgroundImage: `url("${fl.src}")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "contain"
+      }
+
+    }, () => {
+      console.log(this.state.donation)
+    });
+  };
+
+  handleImageQR = fl => {
+    this.form.set("QR", fl.files[0]);
+
+    const donation = Object.assign({}, this.state.donation, { QR: fl.files[0].name })
+    fl.src = URL.createObjectURL(fl.files[0]);
+    this.setState(
+      {
+        donation,
+        qrImg: {
+          backgroundColor: "",
+          backgroundImage: `url("${fl.src}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
+        },
+      },
+      () => {
+        console.log(this.state.donation);
+      }
+    );
+  };
 
   handleFilterDonations = (e) => {
     let lan = e.target.value;
@@ -174,7 +245,7 @@ export default class AdminDonation extends Component {
   }
 
   render() {
-    const { isOpen, donations, donation, newDonation } = this.state;
+    const { isOpen, donations, donation, newDonation, iconImg, qrImg } = this.state;
     return (
       <div>
         <div className="containerStories">
@@ -206,11 +277,11 @@ export default class AdminDonation extends Component {
               <div className="col1">
                 <label
                   className="imageUpload"
-                  
+                  style={iconImg}
                 >
                   <input
                     onInputCapture={e => {
-                      this.handleImage(e.target);
+                      this.handleImageCoin(e.target);
                     }}
                     className="imageUpload__hide"
                     type="file"
@@ -224,11 +295,11 @@ export default class AdminDonation extends Component {
                 <br/>
                 <label
                   className="imageUpload"
-
+                  style={qrImg}
                 >
                   <input
                     onInputCapture={e => {
-                      this.handleImage(e.target);
+                      this.handleImageQR(e.target);
                     }}
                     className="imageUpload__hide"
                     type="file"
@@ -243,14 +314,22 @@ export default class AdminDonation extends Component {
               <div className="col2">
                 <div className="formContainer">
                   <input type="text"
+                  name="coin"
                   defaultValue={donation.coin}
                   onChange={this.handleDonation}
                   placeholder="Coin" className="formContainer__item" />
                   <input type="text"
+                  name="wallet"
                   defaultValue={donation.wallet}
                   onChange={this.handleDonation}
                   placeholder="wallet" className="formContainer__item" />
+                  <input type="text"
+                  name="symbol"
+                  defaultValue={donation.symbol}
+                  onChange={this.handleDonation}
+                  placeholder="amount" className="formContainer__item" />
                   <input type="number"
+                  name="amount"
                   defaultValue={donation.amount}
                   onChange={this.handleDonation}
                   placeholder="amount" className="formContainer__item" />
@@ -259,9 +338,9 @@ export default class AdminDonation extends Component {
               {
                 newDonation 
                 ? (
-                  <button class="fundsRecipents__buttonBox" onClick={this.createDonation}>Save</button>
+                  <button className="fundsRecipents__buttonBox" onClick={e => this.createDonation(e)}>Save</button>
                 ) : (
-                  <button class="fundsRecipents__buttonBox" onClick={this.updateContent}>Upload</button>
+                  <button className="fundsRecipents__buttonBox" onClick={e => this.updateContent(e)}>Upload</button>
                 )
               }
             </div>

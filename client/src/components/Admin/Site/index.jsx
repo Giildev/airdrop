@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
+import { toast } from "react-toastify";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader";
@@ -48,7 +49,12 @@ export default class AdminSite extends Component {
     if (Object.keys(this.contentToEdit).length > 0) {
       axios
         .post(`${config.BASE_URL}/site/manage/${id}`, this.contentToEdit, this.headers)
-        .then(res => console.log(res.data))
+        .then(res => {
+          if(res.status === 200) {
+            console.log('object')
+            toast('Site modified successfully');
+          }
+        })
         .catch(err => console.log(err));
     } else {
       console.log('else')
@@ -60,9 +66,7 @@ export default class AdminSite extends Component {
   };
 
   render() {
-    const { site } = this;
     const { content } = this.state;
-    console.log(content)
     return content === undefined ? (
       <Loader />
     ) : (
