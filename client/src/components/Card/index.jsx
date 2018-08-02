@@ -53,15 +53,25 @@ export class TimeLineCard extends Component {
 }
 
 export class StorieCard extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {      
+        title: props.title,
+        cover: props.cover,
+        subtitle: props.subtitle,
+        content: props.content      
+    }
+  }
+  
   render() {
+    const { title, cover, subtitle, content } = this.state;        
     return (
       <div className="stories">
-        <img className="stories__img" src="/storie1.jpg" alt="" />
-        <h2 className="stories__title">Bracelet Maker Tulio Benitez</h2>
+        <img className="stories__img" src={`/${cover}`} alt="" />
+        <h2 className="stories__title">{`${title}`}</h2>
         <p className="stories__storie">
-          He started creating bracelets and selling them on the streets in
-          Cúcuta, Colombia. Initially scared to make a Venezuela bracelet
-          because he might be spotted by police and taken...
+        {`${content}`}
         </p>
         <a href="#" className="stories__more">
           View More
@@ -104,6 +114,8 @@ export class CoinCard extends Component {
 export class StorieCardAdmin extends Component {
   constructor (props) {
     super(props)
+
+    this.form = new FormData();
 
     this.state = {
       story: props.story,
@@ -159,7 +171,8 @@ export class StorieCardAdmin extends Component {
   }
 
   uploadStory = (id, body) => {
-    return axios.post(`${config.BASE_URL}/story/${id}`, body, headers)
+    this.form.set("data", JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/story/${id}`, this.form, headers)
   }
 
   render() {
