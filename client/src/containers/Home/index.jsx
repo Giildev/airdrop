@@ -39,8 +39,7 @@ export default class Home extends Component {
 
   getContentData = () => {
     axios.get(`${config.BASE_URL}/site/${this.state.selectedLan}`).then(res => {
-      console.log("DATA_CONTENT: ", res.data.site);
-      console.log("FAQS_DATA:", res.data.site.faqs[1].question);
+      console.log("DATA_CONTENT: ", res.data.site);      
       this.setState({ content: res.data.site, lan: this.state.selectedLan });
     }); // fix
   };
@@ -48,6 +47,7 @@ export default class Home extends Component {
   handleLanguage = e => {
     this.setState({ selectedLan: e.target });
   };
+
   render() {
     const { content, selectedLan } = this.state;
     console.log(content);
@@ -71,7 +71,11 @@ export default class Home extends Component {
         />
         <Quote title={content.about[selectedLan].title} description={content.about[selectedLan].description} />
         <TimeLine />
-        <Stories />
+        <Stories 
+          title={content.story[selectedLan].title}
+          description={content.story[selectedLan].description}
+          stories={content.stories}
+        />
         <Donate />
         <MailList
           title={content.mail[selectedLan].title}
