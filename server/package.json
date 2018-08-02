@@ -19,7 +19,8 @@
     "mongoose": "^5.2.2",
     "morgan": "^1.9.0",
     "multer": "^1.3.0",
-    "nodemon": "^1.17.5",
+    "nodemon": "^1.17.5",   
+    "wrappy": "^1.0.2",
     "react-slick": "^0.23.1",
     "sharp": "^0.20.5",
     "uniqid": "^5.0.3"
