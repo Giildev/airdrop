@@ -1,11 +1,26 @@
 import React, {Component} from "react";
 import { SlideCard } from "../../components/Card";
 import {Carousel} from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import "./style.css";
+import "react-responsive-carousel/lib/styles/carousel.css";
 
 export default class Caroussel extends Component{
-  render() {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      stories: props.stories || undefined,
+      index: 0
+    };
+  };
+  
+  componentDidMount = () => {
 
+  }
+  
+  render() {
+    const { stories, index } = this.state;
     return (
         <div>
         <Carousel 
@@ -18,10 +33,11 @@ export default class Caroussel extends Component{
         showThumbs={false}
         showStatus={false}
         interval={9000}
+        selectedItem={index}
         >
-          <SlideCard/>
-          <SlideCard/>
-          <SlideCard/>
+        {
+          stories.map(story => <SlideCard story={story} />)
+        }
         </Carousel>
         </div>
     );

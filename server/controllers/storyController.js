@@ -6,7 +6,7 @@ const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 getStories = (req, res) => {
-    modelStory.find({deleted: false}, (err, stories) => {
+  modelStory.find({deleted: false}, (err, stories) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get all stories` })
 
     res.status(200).send({ success: true, data: stories })

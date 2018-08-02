@@ -1,2 +1,2 @@
-.slide {
-  background-color: aqua !important; }
+.carousel .slide[style] {
+  background: aqua !important; }

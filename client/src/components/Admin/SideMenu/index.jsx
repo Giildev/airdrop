@@ -34,27 +34,32 @@ export default class SideMenu extends Component {
     } 
   }
 
-  // qrImg: {
-  //   backgroundColor: "",
-  //   backgroundImage: `url("/${donation.QR}")`,
-  //     backgroundPosition: "center",
-  //       backgroundRepeat: "no-repeat",
-  //         backgroundSize: "contain"
-  //     }
-
   getUser = () => {
     let adm = this.auth.getProfile();
     axios
     .get(`${config.BASE_URL}/user/${adm._id}`)
-    .then(res => console.log(res))
+    .then(res => {
+      if(res.status === 200 && res.data.success) {
+        let data = res.data.data;
+        this.setState({ 
+          avatarImg: {
+            backgroundColor: "",
+            backgroundImage: `url("/${data.avatar}")`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain"
+          }
+        })
+      }
+    })
     .catch(res => console.log(res))
   }
 
-  editUser = () => {
+  editUser = (user) => {
     let adm = this.auth.getProfile();
-    let user = this.story.user
+    // let user = this.story.user
     this.form.set("data", JSON.stringify(user));
-    axios
+    return axios
       .post(`${config.BASE_URL}/user/${adm._id}`, this.form, this.headers)
       .then(res => {
         if (res.status === 200 && res.data.success) {
@@ -69,22 +74,27 @@ export default class SideMenu extends Component {
 
     const user = Object.assign({}, this.state.user, { avatar: fl.files[0].name })
     fl.src = URL.createObjectURL(fl.files[0]);
-    this.setState({
-      avatarImg: {
-        backgroundColor: "",
-        backgroundImage: `url("${fl.src}")`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "contain"
-      }, user
-    });
+    this.editUser(user).then(() => {
+      this.setState({
+        avatarImg: {
+          backgroundColor: "",
+          backgroundImage: `url("${fl.src}")`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain"
+        }, user
+      });
+    })
+    .catch(err => console.log(err));
   };
 
   render() {
+    const { avatarImg } = this.state;
     return <div>
         <div className="sideContainer">
           <label
             className="imageUpload--profile"
+            style={avatarImg}
           >
             <input
               onInputCapture={e => {
@@ -96,7 +106,7 @@ export default class SideMenu extends Component {
             <svg className="imageUpload__ico">
               <use xlinkHref={`${Icons}#icon-plus`} />
             </svg>
-            <p className="formContainer__text">Upload Image / Video</p>
+            <p className="formContainer__text">Upload Avatar</p>
           </label>  
           <h3 className="sideContainer__title">Admin</h3>
           <ul className="sideContainer__menu">

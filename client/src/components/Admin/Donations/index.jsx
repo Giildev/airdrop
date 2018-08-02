@@ -331,17 +331,17 @@ export default class AdminDonation extends Component {
                   name="wallet"
                   defaultValue={donation.wallet}
                   onChange={this.handleDonation}
-                  placeholder="wallet" className="formContainer__item" />
+                  placeholder="Wallet" className="formContainer__item" />
                   <input type="text"
                   name="symbol"
                   defaultValue={donation.symbol}
                   onChange={this.handleDonation}
-                  placeholder="amount" className="formContainer__item" />
+                  placeholder="Symbol" className="formContainer__item" />
                   <input type="number"
                   name="amount"
                   defaultValue={donation.amount}
                   onChange={this.handleDonation}
-                  placeholder="amount" className="formContainer__item" />
+                  placeholder="Amount" className="formContainer__item" />
                 </div>
               </div>
               {

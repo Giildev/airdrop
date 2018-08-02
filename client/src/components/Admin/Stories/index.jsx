@@ -5,6 +5,7 @@ import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import { Tooltip } from "react-tippy";
+import { toast } from "react-toastify";
 
 // Components & Containers
 import "./style.css";
@@ -52,7 +53,7 @@ export default class AdminStory extends Component {
       .then(res => {
         console.log(res.data.data);
         if(res.status === 200) {
-          this.setState({ stories: res.data.data, filteredStories: res.data.data });
+          this.setState({ stories: res.data.data });
         }
       })
       .catch(err => console.log(err));
@@ -87,7 +88,9 @@ export default class AdminStory extends Component {
       axios
         .put(`${config.BASE_URL}/story`, this.form, this.headers)
         .then(res => {
-          console.log(res.data);
+          if(res.status === 200) {
+            toast(res.data.msg)
+          }
         })
         .catch(err => {
           console.log(err.response);
@@ -95,7 +98,7 @@ export default class AdminStory extends Component {
 
   
     } else {
-      alert('tavaciao')
+      toast('Cover empty, try again');
     }
   }
 
