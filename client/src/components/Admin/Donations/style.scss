@@ -20,6 +20,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     padding: 7rem 2rem;
     color: var(--white);
     font-weight: 700;
@@ -27,6 +28,54 @@
     justify-content: center;
     margin: 2rem;
     border-radius: 50rem;
+    align-items: center;
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &--profile{
+    background-color:var(--primary);
+    width: 15rem;
+    height: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+    align-items: center;
+    text-align: center;
+    transition: all .3s ease;
+    &:hover{
+      cursor: pointer;
+      opacity: .7;
+    }
+  }
+  &--banner{
+    background-color:var(--primary);
+    width: 27rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+    align-items: center;
+    text-align: center;
+    &:hover{
+      cursor: pointer;
+    }
   }
   &__hide {
     display: none;
@@ -49,7 +98,7 @@
     min-width: 44rem;
   }
 }
-@media (min-width: 760px) {
+@media (max-width: 768px) {
   .formContainer{
     min-width: 56rem;
   }

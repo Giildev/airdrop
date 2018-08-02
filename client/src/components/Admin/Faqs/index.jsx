@@ -5,12 +5,13 @@ import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import { FaqCard } from "../../Card";
-import Icons from "../../../icons.svg";
-import TabLang from "../TabLang";
+import { Tooltip } from "react-tippy";
 
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader";
+import Icons from "../../../icons.svg";
+import TabLang from "../TabLang";
 
 export default class AdminFaq extends Component {
   constructor(props) {
@@ -186,11 +187,18 @@ export default class AdminFaq extends Component {
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Faq's</h1>
-            <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
-              <svg className="headerAdmin__addBTN__ico">
-                <use xlinkHref={`${Icons}#icon-plus`} />
-              </svg>
-            </button>
+            <Tooltip
+              title="Add Faq"
+              position="right"
+              size="big"
+              arrow="true"
+            >
+              <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+                <svg className="headerAdmin__addBTN__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+                </svg>
+              </button>
+            </Tooltip>
           </div>
           {
             faqs === undefined ? <Loader /> : faqs.map(faq => {

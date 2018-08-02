@@ -12,8 +12,7 @@ export default class Header extends Component {
   }
 
   render() {
-    return (
-      <header className="header">
+    return <header className="header">
         <div className="header__logoBox">
           <img src="/logo.png" alt="" className="header__logo" />
           <img src="/hamburguer.png" alt="" className="header__ico" />
@@ -36,9 +35,12 @@ export default class Header extends Component {
           </a>
         </nav>
         <div className="header__cta">
-          <button className="header__cta__button">Donate Crypto</button>
+          <a href="#Donate">        
+            <button className="header__cta__button" >
+              Donate Crypto
+            </button>
+          </a>
         </div>
-      </header>
-    );
+      </header>;
   }
 }

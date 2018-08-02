@@ -29,8 +29,11 @@ export default class TabLang extends Component {
         <Toggle
           defaultChecked={lan}
           onChange={e => this.onSwitch(e)}
+          className='flag'
+          icons={false}
         />
       </label>
+      {/*<h1 class="languageTitle">Select Language</h1>*/}
     </div>)        
   }
 }

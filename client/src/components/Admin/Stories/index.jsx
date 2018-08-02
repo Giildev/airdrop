@@ -4,13 +4,14 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
-import Icons from "../../../icons.svg";
-import { StorieCardAdmin } from "../../Card";
-import TabLang from "../TabLang";
+import { Tooltip } from "react-tippy";
 
 // Components & Containers
 import "./style.css";
+import Icons from "../../../icons.svg";
 import Loader from "../../Loader";
+import { StorieCardAdmin } from "../../Card";
+import TabLang from "../TabLang";
 export default class AdminStory extends Component {
   constructor(props) {
     super(props)
@@ -18,8 +19,6 @@ export default class AdminStory extends Component {
     this.form = new FormData();
     this.auth = new Auth();
     this.headers = this.auth.buildAuthHeader();
-
-
 
     this.state = {
       story: {
@@ -231,11 +230,18 @@ export default class AdminStory extends Component {
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Stories</h1>
-            <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
-              <svg className="headerAdmin__addBTN__ico">
-                <use xlinkHref={`${Icons}#icon-plus`} />
-              </svg>
-            </button>
+            <Tooltip
+              title="Add Faq"
+              position="right"
+              size="big"
+              arrow="true"
+            >
+              <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+                <svg className="headerAdmin__addBTN__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+                </svg>
+              </button>
+            </Tooltip>
           </div>
           {stories === undefined ? <Loader /> : stories.map(story => {
               return <StorieCardAdmin key={story._id} story={story} handleStories={this.handleStories} />;
@@ -247,24 +253,24 @@ export default class AdminStory extends Component {
           <TabLang lan={story.lan === "" ? "ES" : story.lan.toUpperCase()} handleLan={this.handleLan}/>
             <h1 className="headerAdmin__storiesTitle">Create Stories</h1>
             <div className="form">
-              <div className="col1">
+            <div className="col1">
               <label
-              className="imageUpload--single"
-              style={coverImage}
-            >
-              <input
-                onInputCapture={e => {
-                  this.handleImage(e.target);
-                }}
-                className="imageUpload__hide"
-                type="file"
-              />
-              <svg className="imageUpload__ico">
-                <use xlinkHref={`${Icons}#icon-plus`} />
-              </svg>
-            </label>
+                className="imageUpload--single"
+                style={coverImage}
+              >
+                <input
+                  onInputCapture={e => {
+                    this.handleImage(e.target);
+                  }}
+                  className="imageUpload__hide"
+                  type="file"
+                />
+                <svg className="imageUpload__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+                </svg>
                 <p className="formContainer__text">Upload Image / Video</p>
-              </div>
+              </label>
+            </div>
               <div className="col2">
                 <div className="formContainer">
                   <input type="text" placeholder="Title" name="title" defaultValue={story.title} className="formContainer__item" onChange={(e) => this.handleStory(e)}/>

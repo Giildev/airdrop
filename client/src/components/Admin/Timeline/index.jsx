@@ -4,9 +4,9 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
-import { TimeLineListCard } from "../../Card";
 import DatePicker from "react-datetime";
 import moment from 'moment';
+import { Tooltip } from "react-tippy";
 
 
 // Components & Containers
@@ -14,6 +14,7 @@ import "./style.css";
 import Icons from "../../../icons.svg";
 import TabLang from "../TabLang";
 import Loader from "../../Loader";
+import { TimeLineListCard } from "../../Card";
 export default class AdminTimeline extends Component {
   constructor(props) {
     super(props)
@@ -209,11 +210,18 @@ export default class AdminTimeline extends Component {
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">Timeline</h1>
-            <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
-              <svg className="headerAdmin__addBTN__ico">
-                <use xlinkHref={`${Icons}#icon-plus`} />
-              </svg>
-            </button>
+            <Tooltip
+              title="Add Event"
+              position="right"
+              size="big"
+              arrow="true"
+            >
+              <button className="headerAdmin__addBTN" onClick={this.onShowCloseModal}>
+                <svg className="headerAdmin__addBTN__ico">
+                  <use xlinkHref={`${Icons}#icon-plus`} />
+                </svg>
+              </button>
+            </Tooltip>
           </div>
           {lines === undefined ? <Loader /> : lines.map(line => {
               return <TimeLineListCard key={line._id} line={line} handleLines={this.handleLines} />;
