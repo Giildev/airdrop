@@ -115,6 +115,7 @@ export default class AdminSite extends Component {
               <p className="formContainer__text">Upload Image for Banner</p>
             </label>
           </div>
+          
           <div className="tabs">
           <div className="tabs__tab">
             <input  type="radio" id="tab-1" name="tab-group-1" checked readOnly />
@@ -289,7 +290,7 @@ export default class AdminSite extends Component {
                 className="formContainer__item"
               />
               
-            <button className="saveBTN" onClick={e => this.updateContent(e)}> Save Change </button>
+            
             </div>
           </div>
 
@@ -470,6 +471,7 @@ export default class AdminSite extends Component {
               </div>
           </div>
         </div>  
+        <button className="saveBTN" onClick={e => this.updateContent(e)}> Save Change </button>
       </div>
     );
   }
