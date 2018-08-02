@@ -55,7 +55,7 @@ export default class Home extends Component {
       <Loader />
     ) : (
       <div>
-        <Header handleLanguage={this.handleLanguage}/>
+        <Header handleLanguage={this.handleLanguage} />
         <Banner
           image={content.banner}
           title={content.header[selectedLan].title}

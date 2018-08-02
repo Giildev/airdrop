@@ -17,8 +17,9 @@ export default class storieDetail extends Component {
     super(props)
   
     this.state = {
-       stories: undefined,
-       index: 0
+      stories: undefined,
+      index: 0,
+      selectedLan: "EN"
     };
   };
 
@@ -28,14 +29,32 @@ export default class storieDetail extends Component {
       if(location.state !== undefined) {
         const stories = this.state.stories;
         stories.map((story, i) => {
-          if (story._id === location.state.sid){
+          if (story._id === location.state.sid) {
             this.setState({ index: i })
           }
         })
       }
     })
   }
-  
+
+  shouldComponentUpdate = (nextProps, nextState) => {
+    const { location } = this.props
+    if(location.hash !== nextProps.location.hash) {
+      let title = nextProps.location.hash;
+      title = title.slice(1).split("-").join(" ").toLowerCase();
+
+      const stories = this.state.stories;
+      stories.map((story, i) => {
+        if (story.title.toLowerCase() === title) {
+          this.setState({ index: i }, () => {
+            this.scrollTop();
+          })
+        }
+      })
+    }
+    return true;
+  };
+
   getStories = () => {
     return axios
       .get(`${config.BASE_URL}/story`, this.headers)
@@ -46,6 +65,17 @@ export default class storieDetail extends Component {
       })
       .catch(err => console.log(err));
   }
+
+  scrollTop = () => {
+    document.body.scrollTop = 0; // for safari
+    document.documentElement.scrollTop = 0; // for the rest of browsers
+  }
+
+  // handleLanguage = lan => {
+  //   this.setState({ selectedLan: lan.toUpperCase() }, () => {
+      
+  //   });
+  // };
   
   render() {
     const { stories, index } = this.state;

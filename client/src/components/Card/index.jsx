@@ -72,7 +72,7 @@ export class StorieCard extends Component {
         <p className="stories__storie">
         {`${story.content}`}
         </p>
-        <Link to={{ pathname:`/stories`, state: { sid: `${story._id}` }  }} className="stories__more">
+        <Link to={{ pathname: `/stories`, state: { sid: `${story._id}` }, hash: `${story.title.split(" ").join("-")}`  }} className="stories__more">
           View More
         </Link>
       </div>
