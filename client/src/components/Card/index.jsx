@@ -343,11 +343,9 @@ export class CardRaised extends Component {
           <div className="funds__container__middle">
             <div className="funds__container__middle__outerBox">
               <div className="funds__container__middle__innerBox">
-                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}/>
-                <div
-                  className="funds__container__middle__innerBox__bar__bubbleBox"
-                  aria-valuenow="34093 USD Raised"
-                />
+                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}>
+                  <span className="barInfo--admin">34093 USD</span>
+                </div>
               </div>
             </div>
           </div>
@@ -406,11 +404,9 @@ export class CardRaisedUsers extends Component {
           <div className="recipents__container__middle">
             <div className="recipents__container__middle__outerBox">
               <div className="recipents__container__middle__innerBox">
-                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} />
-                <div
-                  className="recipents__container__middle__innerBox__bar__bubbleBox"
-                  aria-valuenow="22230 Verified Users"
-                />
+                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} > 
+                  <span className="barInfo--admin">34093 Users</span>
+                </div>
               </div>
             </div>
           </div>

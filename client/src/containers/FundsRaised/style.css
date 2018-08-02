@@ -288,6 +288,16 @@ td.rdtYear:hover {
   padding: 0.9rem;
   text-align: center;
   display: none; }
+  .barInfo--admin {
+    font-family: inherit;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem;
+    text-align: center; }
 
 .funds__title {
   color: inherit;
@@ -324,7 +334,9 @@ td.rdtYear:hover {
         background-color: var(--primary);
         width: 10%;
         height: 3rem;
-        border-radius: 10rem; }
+        border-radius: 10rem;
+        display: flex;
+        justify-content: center; }
         .funds__container__middle__innerBox__bar__bubbleBox {
           position: relative;
           font-size: 1.6rem;
@@ -382,7 +394,9 @@ td.rdtYear:hover {
         width: 10%;
         height: 3rem;
         border-radius: 10rem;
-        transition: all 1.2s ease; }
+        transition: all 1.2s ease;
+        display: flex;
+        justify-content: center; }
         .recipents__container__middle__innerBox__bar--hidden {
           max-width: 100%;
           position: relative;
