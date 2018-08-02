@@ -83,26 +83,35 @@ export class StorieCard extends Component {
 }
 
 export class CoinCard extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       donationData: props.donationData
+    }
+  }
+  
   render() {
+    const { donationData } = this.state;    
     return (
       <div>
         <div className="coinCardC">
           <div className="topBarCoin"></div>
           <div className="coinInfo">
             <div className="coinInfo__icon">
-              <img src="/coin.png" alt="CoinName" />
+              <img src={`/${donationData.icon}`} alt="CoinName" />
             </div>
             <div className="coinInfo__text">
-              <div className="coinInfo__text__name">Zcash (t-addr)</div>
-              <div className="coinInfo__text__amountR">1.1 ZEC Raised</div>
-              <div className="coinInfo__text__pseudoName">z.cash</div>
+              <div className="coinInfo__text__name">{`${donationData.coin}`}</div>
+              <div className="coinInfo__text__amountR">{`${donationData.amount}`}</div>
+              <div className="coinInfo__text__pseudoName">{`${donationData.symbol}`}</div>
             </div>
           </div>
           <div className="coinWallet">
             <div className="coinWallet__title">Wallet</div>
-            <div className="coinWallet__address">t1Wd5wnJC7uQ7yGbgnEHYt1GowXouHgFMC7</div>
+            <div className="coinWallet__address">{`${donationData.wallet}`}</div>
             <div className="coinWallet__qr">
-              <img src="/qr.png" alt="QR" />
+              <img src={`/${donationData.QR}`} alt="QR" />
             </div>
           </div>
         </div>

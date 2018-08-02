@@ -76,7 +76,11 @@ export default class Home extends Component {
           description={content.story[selectedLan].description}
           stories={content.stories}
         />
-        <Donate />
+        <Donate 
+          title={content.donation[selectedLan].title}
+          description={content.donation[selectedLan].description}
+          donations={content.donations}
+        />
         <MailList
           title={content.mail[selectedLan].title}
           description={content.mail[selectedLan].description}

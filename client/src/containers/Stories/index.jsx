@@ -15,8 +15,7 @@ export default class Stories extends Component {
   }
   
   render() {
-    const { stories } = this.state;
-    console.log("DATA_STORIES: ", stories);
+    const { stories } = this.state;    
     return (
       <section className="storiesSection" id="Stories">      
         <h2 className="storiesSection__title">Stories From Venezuelans</h2>
