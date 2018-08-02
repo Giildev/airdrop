@@ -16,8 +16,7 @@ export default class Faq extends Component {
 
   toggleAccordion = (e) => {
     e.preventDefault();
-    let i;
-    console.log('sasd')
+    let i;    
     for (i = 0; i < this.acc.length; i++) {
       this.acc[i].onclick = function() {
         this.classList.toggle("active");
