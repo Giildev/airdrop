@@ -33,21 +33,31 @@ export class HIWCard extends Component {
 }
 
 export class TimeLineCard extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       timeline: props.timeline
+    }
+  }
+  
+
   render() {
+    const { timeline } = this.state;
     return (
       <div>
         <div className="TimeContainer">
           <div className="topBarTime" />
-          <p className="TimeContainer__cardTitle">Public Launch, 7/2017:</p>
+          <p className="TimeContainer__cardTitle">{timeline.title}:</p>
           <p className="TimeContainer__cardContent">
-            AirdropVenezuela.org live donations
+          {timeline.event}
           </p>
-          <p className="TimeContainer__cardTitle">
+          {/*<p className="TimeContainer__cardTitle">
             Campaing Period, 7/16 - 9/14:
           </p>
           <p className="TimeContainer__cardContent">
             Open for donations and Venezuelan participants.
-          </p>
+          </p>*/}
         </div>
       </div>
     );
@@ -344,11 +354,9 @@ export class CardRaised extends Component {
           <div className="funds__container__middle">
             <div className="funds__container__middle__outerBox">
               <div className="funds__container__middle__innerBox">
-                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}/>
-                <div
-                  className="funds__container__middle__innerBox__bar__bubbleBox"
-                  aria-valuenow="34093 USD Raised"
-                />
+                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}>
+                  <span className="barInfo--admin">34093 USD</span>
+                </div>
               </div>
             </div>
           </div>
@@ -407,11 +415,9 @@ export class CardRaisedUsers extends Component {
           <div className="recipents__container__middle">
             <div className="recipents__container__middle__outerBox">
               <div className="recipents__container__middle__innerBox">
-                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} />
-                <div
-                  className="recipents__container__middle__innerBox__bar__bubbleBox"
-                  aria-valuenow="22230 Verified Users"
-                />
+                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} > 
+                  <span className="barInfo--admin">34093 Users</span>
+                </div>
               </div>
             </div>
           </div>
