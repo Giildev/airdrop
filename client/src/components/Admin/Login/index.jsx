@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
+import { toast } from "react-toastify";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader";
@@ -24,7 +25,7 @@ export default class AdminLogin extends Component {
     }
   }
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     const { history, location } = this.props
     if (this.auth.authGuard()) {
       history.push("/dashboard")
@@ -43,15 +44,14 @@ export default class AdminLogin extends Component {
         })
         .catch(err => {
           let error = err.response;
-          console.log(error)
           let status = err.response.status;
 
           if(status === 404 || status === 500) {
-            alert(error.msg);
+            toast.warn(error.msg);
           }
         }) 
     } else {
-      alert("Empty Fields")
+      toast.warn("Empty Fields")
     }
   }
 

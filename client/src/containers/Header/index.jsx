@@ -9,7 +9,18 @@ export default class Header extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      selectedLan: "EN"
+    };
+
   }
+
+  // shouldComponentUpdate = (nextProps) => {
+  //   if (this.state.selectedLan !== nextProps.lan) {
+  //     this.setState({ selectedLan: nextProps.lan })
+  //   }
+  //   return true;
+  // }
 
   handleLan = (lan) => {
     this.props.handleLanguage(lan);
@@ -47,7 +58,7 @@ export default class Header extends Component {
             </button>
           </a>
         </div>
-        <TabLan lan={`EN`} handleLan={this.handleLan} />
+        <TabLan lan={this.state.selectedLan} handleLan={this.handleLan} />
       </header>;
   }
 }

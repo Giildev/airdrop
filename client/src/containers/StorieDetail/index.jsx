@@ -18,32 +18,36 @@ export default class storieDetail extends Component {
   
     this.state = {
       stories: undefined,
+      filteredStories: undefined,
       index: 0,
-      selectedLan: "EN"
+      selectedLan: props.lan || "EN"
     };
   };
 
   componentDidMount = () => {
     const { location } = this.props
     this.getStories().then(() => {      
+      const stories = this.state.filteredStories;      
       if(location.state !== undefined) {
-        const stories = this.state.stories;
         stories.map((story, i) => {
           if (story._id === location.state.sid) {
             this.setState({ index: i })
           }
         })
       }
+
+      
     })
   }
 
   shouldComponentUpdate = (nextProps, nextState) => {
     const { location } = this.props
+    const { selectedLan } = this.state
     if(location.hash !== nextProps.location.hash) {
       let title = nextProps.location.hash;
       title = title.slice(1).split("-").join(" ").toLowerCase();
 
-      const stories = this.state.stories;
+      const stories = this.state.filteredStories;
       stories.map((story, i) => {
         if (story.title.toLowerCase() === title) {
           this.setState({ index: i }, () => {
@@ -60,10 +64,15 @@ export default class storieDetail extends Component {
       .get(`${config.BASE_URL}/story`, this.headers)
       .then(res => {
         if (res.status === 200) {
-          this.setState({ stories: res.data.data, filteredStories: res.data.data });
+          this.setState({ stories: res.data.data, filteredStories: this.handleStories(res.data.data) });
         }
       })
       .catch(err => console.log(err));
+  }
+
+  handleStories = (stories = this.state.stories) => {
+    const { selectedLan } = this.state
+    return stories.filter(story => story.lan === selectedLan);
   }
 
   scrollTop = () => {
@@ -71,17 +80,18 @@ export default class storieDetail extends Component {
     document.documentElement.scrollTop = 0; // for the rest of browsers
   }
 
-  // handleLanguage = lan => {
-  //   this.setState({ selectedLan: lan.toUpperCase() }, () => {
-      
-  //   });
-  // };
+  handleLanguage = lan => {
+    this.setState({ selectedLan: lan.toUpperCase() }, () => {
+      this.setState({ filteredStories: this.handleStories() })
+    });
+  };
   
   render() {
-    const { stories, index } = this.state;
+    const { index, filteredStories } = this.state;
+    const stories = filteredStories; 
     return (
       <div>
-        <Header />
+        <Header handleLanguage={this.handleLanguage} />
         {
           stories === undefined 
           ? <Loader />

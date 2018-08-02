@@ -7,6 +7,7 @@ import Modal from "react-responsive-modal";
 import DatePicker from "react-datetime";
 import moment from 'moment';
 import { Tooltip } from "react-tippy";
+import { toast } from "react-toastify";
 
 
 // Components & Containers
@@ -52,8 +53,14 @@ export default class AdminTimeline extends Component {
   getTimeline = () => {
     return axios
       .get(`${config.BASE_URL}/timeline`, this.headers)
-      .then(res => this.setState({ lines: res.data.timeline, filteredLines: res.data.timeline }))
-      .catch(err => console.log(err));
+      .then(res => {if(res.status === 200) this.setState({ lines: res.data.timeline, filteredLines: res.data.timeline })})
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
+      });
   }
 
   updateLine = () => {
@@ -61,7 +68,6 @@ export default class AdminTimeline extends Component {
     axios
       .post(`${config.BASE_URL}/timeline/${id}`, this.state.line, this.headers)
       .then(res => {
-        console.log(res.data);
         if (res.status === 200 && res.data.success) {
           this.setState({ lines: undefined }, () => {
             this.getTimeline().then(() => this.onShowCloseModal())
@@ -70,7 +76,13 @@ export default class AdminTimeline extends Component {
           this.getTimeline().then(() => this.onShowCloseModal());
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
+      });
   }
 
   createLine = () => {
@@ -96,15 +108,22 @@ export default class AdminTimeline extends Component {
           let lines = this.state.lines;
           this.setState({ lines: [line, ...lines], filteredLines: [line, ...lines] }, () => {
             this.onShowCloseModal();
+            toast.success(line.msg)
           });
         } else if (res.status === 200 && !res.data.success) {
           /**
            * Msg from server if left any field in object
            */
-          alert(res.data.msg);
+          toast.warn(res.data.msg);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => { 
+        let error = err.response; 
+        let status = err.response.status; 
+        if (status === 404 || status === 500) { 
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
+      });
   }
 
   handleLine = (e) => {

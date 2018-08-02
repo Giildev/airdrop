@@ -60,7 +60,14 @@ export default class AdminDonation extends Component {
           })
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+
+        if (status === 404 || status === 500 || status === 401) {
+          this.auth.logout();
+        }
+      });
   }
 
   updateContent = () => {
@@ -83,6 +90,10 @@ export default class AdminDonation extends Component {
       })
       .catch(err => {
         let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
       });
   }
 
@@ -115,9 +126,15 @@ export default class AdminDonation extends Component {
             alert(res.data.msg);
           }
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+          let error = err.response;
+          let status = err.response.status;
+          if (status === 404 || status === 500) {
+            toast.warn(error.msg)
+          } else if (status === 401) this.auth.logout(); 
+        });
     } else {
-      console.log('tavacio')
+      toast.warn('Empty Icon')
     }
   }
 
@@ -205,9 +222,6 @@ export default class AdminDonation extends Component {
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain"
       }
-
-    }, () => {
-      console.log(this.state.donation)
     });
   };
 
@@ -226,9 +240,6 @@ export default class AdminDonation extends Component {
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain"
         },
-      },
-      () => {
-        console.log(this.state.donation);
       }
     );
   };

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+  	import React, {Component} from "react";
 import { SlideCard } from "../../components/Card";
 import {Carousel} from "react-responsive-carousel";
 
@@ -17,8 +17,8 @@ export default class Caroussel extends Component{
 
   shouldComponentUpdate = (nextProps) => {
     console.log(nextProps)
-    if(this.state.index !== nextProps.index) {
-      this.setState({ index: nextProps.index })
+    if(this.state.index !== nextProps.index || this.state.stories !== nextProps.stories) {
+      this.setState({ index: nextProps.index, stories: nextProps.stories })
     }
     return true;
   }

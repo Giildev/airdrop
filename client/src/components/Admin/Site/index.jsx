@@ -34,6 +34,7 @@ export default class AdminSite extends Component {
   };
 
   getContentData = () => {
+    const { history } = this.props;
     axios
       .get(`${config.BASE_URL}/site/manage/`, this.headers)
       .then(res => {
@@ -46,7 +47,13 @@ export default class AdminSite extends Component {
           backgroundSize: "contain"
         } });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout();
+      });
   };
 
   updateContent = (e) => {
@@ -64,10 +71,14 @@ export default class AdminSite extends Component {
             toast.success('Site modified successfully');
           }
         })
-        .catch(err => console.log(err));
-    } else {
-      console.log('else')
-    }
+        .catch(err => {
+          let error = err.response;
+          let status = err.response.status;
+          if (status === 404 || status === 500) {
+            toast.warn(error.msg)
+          } else if (status === 401) this.auth.logout();
+        });
+    } 
   };
 
   handleContent = e => {

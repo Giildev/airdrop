@@ -6,6 +6,7 @@ import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
 import { FaqCard } from "../../Card";
 import { Tooltip } from "react-tippy";
+import { toast } from "react-toastify";
 
 // Components & Containers
 import "./style.css";
@@ -51,7 +52,13 @@ export default class AdminFaq extends Component {
           this.setState({ faqs: res.data.faqs, filteredFaqs: res.data.faqs });
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
+      });
   }
 
   updateFaq = (e) => {
@@ -69,6 +76,10 @@ export default class AdminFaq extends Component {
       })
       .catch(err => {
         let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
       });
   }
 
@@ -102,7 +113,13 @@ export default class AdminFaq extends Component {
           alert(res.data.msg);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
+      });
   }
 
   handleFaq = (e) => {

@@ -28,7 +28,9 @@ export default class SideMenu extends Component {
   }
 
   componentDidMount = () => {
-    this.getUser();
+    if (this.auth.authGuard()) {
+      this.getUser();
+    } 
   }
 
   getUser = () => {
@@ -83,7 +85,13 @@ export default class SideMenu extends Component {
         }, user
       });
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      let error = err.response;
+      let status = err.response.status;
+      if (status === 404 || status === 500) {
+        toast.warn(error.msg)
+      } else if (status === 401) this.auth.logout();
+    });
   };
 
   render() {

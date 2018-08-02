@@ -33,6 +33,14 @@ export default class Home extends Component {
     };
   }
 
+  shouldComponentUpdate = (nextProps) => {
+    const { selectedLan } = this.state;
+    if(selectedLan !== nextProps.lan) {
+      this.handleLanguage(nextProps.lan);
+    }
+    return true;
+  }
+
   componentDidMount = () => {
     this.getContentData();
   };
@@ -55,7 +63,7 @@ export default class Home extends Component {
       <Loader />
     ) : (
       <div>
-        <Header handleLanguage={this.handleLanguage} />
+        
         <Banner
           image={content.banner}
           title={content.header[selectedLan].title}
@@ -98,7 +106,6 @@ export default class Home extends Component {
           title={content.contactUs[selectedLan].title} 
           description={content.contactUs[selectedLan].description} 
         />
-        <Footer />
       </div>
     );
   }

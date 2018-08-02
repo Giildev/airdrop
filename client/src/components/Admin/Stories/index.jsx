@@ -51,12 +51,17 @@ export default class AdminStory extends Component {
     return axios
       .get(`${config.BASE_URL}/story`, this.headers)
       .then(res => {
-        console.log(res.data.data);
         if(res.status === 200) {
           this.setState({ stories: res.data.data, filteredStories: res.data.data });
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout();
+      });
   }
 
   updateStory = (e) => {
@@ -71,7 +76,13 @@ export default class AdminStory extends Component {
           this.getStories().then(() => this.onShowCloseModal())
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout();
+      });
   }
 
   createStory = (e) => {
@@ -89,16 +100,20 @@ export default class AdminStory extends Component {
         .put(`${config.BASE_URL}/story`, this.form, this.headers)
         .then(res => {
           if(res.status === 200) {
-            toast(res.data.msg)
+            toast.success(res.data.msg)
           }
         })
         .catch(err => {
-          console.log(err.response);
+          let error = err.response;
+          let status = err.response.status;
+          if (status === 404 || status === 500) {
+            toast.warn(error.msg)
+          } else if (status === 401) this.auth.logout();
         });
 
   
     } else {
-      toast('Cover empty, try again');
+      toast.warn('Cover empty, try again');
     }
   }
 
@@ -134,7 +149,6 @@ export default class AdminStory extends Component {
           backgroundSize: "contain"
         }
        }, () => {
-         console.log(this.state.story)
         this.onShowCloseModal()
       })
     }
@@ -202,9 +216,7 @@ export default class AdminStory extends Component {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "contain"
-      }, story }, () => {
-      console.log(this.state.story)
-    });
+      }, story });
   };
 
   uploadFile = (e) => {

@@ -40,10 +40,10 @@ export default class AdminTimeline extends Component {
       }))
       .catch(err => {
         let error = err.response;
-        if (error.status === 401) {
-          alert("Unauthorized");
-        } else if (error.status === 500) {
-        }
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout();
       });
   }
 
