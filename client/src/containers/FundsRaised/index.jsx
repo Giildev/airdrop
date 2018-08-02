@@ -25,8 +25,8 @@ export default class componentName extends Component {
       this.setState({ cerfiedUsersAmount: { goal: 0, raised: 0 } });
 
     this.setState({
-      percentUser: this.calculatePercent(fundsAmount),
-      percentFunds: this.calculatePercent(cerfiedUsersAmount)
+      percentUser: this.calculatePercent(cerfiedUsersAmount),
+      percentFunds: this.calculatePercent(fundsAmount)
     });
   };
 
@@ -47,7 +47,7 @@ export default class componentName extends Component {
                 <div
                   className="funds__container__middle__innerBox__bar"
                   style={{ width: `${parseFloat(percentFunds).toFixed(2)}%` }}
-                ><span className="barInfo">10283123 USD</span></div>
+                ></div>
                 <div className="containerBar">
                   <div
                     className="funds__container__middle__innerBox__bar--hidden"
@@ -56,7 +56,7 @@ export default class componentName extends Component {
                     <div className="containerBar__bubble">
                       <img src="timeLine.png" className="barTimeline" alt="" />
                       <div className="funds__container__middle__innerBox__bar__bubbleBox">
-                        34093 USD Raised
+                      {fundsAmount.raised} USD Raised
                       </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export default class componentName extends Component {
                   className="recipents__container__middle__innerBox__bar"
                   style={{ width: `${parseFloat(percentUser).toFixed(2)}%` }}
                 >
-                  <span className="barInfo">34093 Certified Users </span>
+                  {/* <span className="barInfo">34093 Certified Users </span> */}
                   </div>
                   <div className="containerBar">
                     <div
@@ -94,7 +94,7 @@ export default class componentName extends Component {
                       <img src="timeLine.png" class="barTimeline" alt="" />
                       <div
                         className="recipents__container__middle__innerBox__bar__bubbleBox"
-                      > 34093 Certified Users </div>
+                      > {cerfiedUsersAmount.raised} Certified Users </div>
                     </div>
                   </div>
                 </div>
