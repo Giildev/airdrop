@@ -47,7 +47,7 @@ export default class Faq extends Component {
       <div id="FAQ">
         <div className="containerFaq">
           <div className="containerFaq__title">FAQ</div>
-          {faqs.slice(0,3).map(faq => (            
+          {faqs.map(faq => (            
             <div key={faq._id} className="containerFaq__open">
               <div
                 className="containerFaq__open__header"

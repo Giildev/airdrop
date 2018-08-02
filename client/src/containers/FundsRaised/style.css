@@ -298,6 +298,7 @@ td.rdtYear:hover {
       margin: 0 2rem;
       background-color: #f9f9f9; }
       .funds__container__middle__innerBox__bar {
+        max-width: 100%;
         position: relative;
         background-color: var(--primary);
         width: 10%;
@@ -369,6 +370,7 @@ td.rdtYear:hover {
       margin: 0 2rem;
       background-color: #f9f9f9; }
       .recipents__container__middle__innerBox__bar {
+        max-width: 100%;
         position: relative;
         background-color: var(--secundary);
         width: 10%;
