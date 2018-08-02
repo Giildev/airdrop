@@ -12,7 +12,11 @@ getSiteContent = (req, res) => {
   }
   
   modelSite.find({})
-  .populate('stories', null,{ lan: lan, deleted: false, featured: true }).slice("stories", -3)
+  .populate({
+    path: 'stories',
+    match: { lan: lan, deleted: false, featured: true },
+    options: { limit: 3 }
+  })
   .populate('donations', null, { deleted: false })
   .populate('faqs', null,{ lan: lan, deleted: false })
   .populate('timeline.lines', null,{ lan: lan, deleted: false })

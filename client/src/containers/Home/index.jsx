@@ -39,23 +39,23 @@ export default class Home extends Component {
 
   getContentData = () => {
     axios.get(`${config.BASE_URL}/site/${this.state.selectedLan}`).then(res => {
-      console.log("DATA_CONTENT: ", res.data.site);      
       this.setState({ content: res.data.site, lan: this.state.selectedLan });
     }); // fix
   };
 
-  handleLanguage = e => {
-    this.setState({ selectedLan: e.target });
+  handleLanguage = lan => {
+    this.setState({ selectedLan: lan.toLowerCase() }, () => {
+      this.getContentData();
+    });
   };
 
   render() {
     const { content, selectedLan } = this.state;
-    console.log(content);
     return content === undefined ? (
       <Loader />
     ) : (
       <div>
-        <Header />
+        <Header handleLanguage={this.handleLanguage}/>
         <Banner
           image={content.banner}
           title={content.header[selectedLan].title}
@@ -86,7 +86,10 @@ export default class Home extends Component {
           description={content.faq[selectedLan].description}
           faqs={content.faqs}
         />
-        <Contact />
+        <Contact 
+          title={content.contactUs[selectedLan].title} 
+          description={content.contactUs[selectedLan].description} 
+        />
         <Footer />
       </div>
     );

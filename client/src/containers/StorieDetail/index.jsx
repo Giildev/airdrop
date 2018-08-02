@@ -17,19 +17,29 @@ export default class storieDetail extends Component {
     super(props)
   
     this.state = {
-       stories: undefined
+       stories: undefined,
+       index: 0
     };
   };
 
   componentDidMount = () => {
-    this.getStories();
+    const { location } = this.props
+    this.getStories().then(() => {      
+      if(location.state !== undefined) {
+        const stories = this.state.stories;
+        stories.map((story, i) => {
+          if (story._id === location.state.sid){
+            this.setState({ index: i })
+          }
+        })
+      }
+    })
   }
   
   getStories = () => {
     return axios
       .get(`${config.BASE_URL}/story`, this.headers)
       .then(res => {
-        console.log(res.data.data);
         if (res.status === 200) {
           this.setState({ stories: res.data.data, filteredStories: res.data.data });
         }
@@ -38,7 +48,7 @@ export default class storieDetail extends Component {
   }
   
   render() {
-    const { stories } = this.state;
+    const { stories, index } = this.state;
     return (
       <div>
         <Header />
@@ -46,18 +56,18 @@ export default class storieDetail extends Component {
           stories === undefined 
           ? <Loader />
           : (
-              <React.Fragment>
-                <Carousel stories={stories}/>
-                <div className="storieDetailContainer">
-                  <div className="storieDetailContainer__title">More Stories</div>
-                  <div className="storieDetailContainer__cardsContainer">
-                  {
-                    stories.map(story => <StorieCard key={story._id} story={story}/>)
-                  }
-                  </div>
-                  <button className="storiesSection__button">More Stories</button>
+            <React.Fragment>
+              <Carousel stories={stories} index={index}/>
+              <div className="storieDetailContainer">
+                <div className="storieDetailContainer__title">More Stories</div>
+                <div className="storieDetailContainer__cardsContainer">
+                {
+                  stories.map(story => <StorieCard key={story._id} story={story} />)
+                }
                 </div>
-              </React.Fragment>
+                <button className="storiesSection__button">More Stories</button>
+              </div>
+            </React.Fragment>
           )
         }
         <Footer />

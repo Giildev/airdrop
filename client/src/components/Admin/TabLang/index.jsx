@@ -22,6 +22,7 @@ export default class TabLang extends Component {
       }
     })
   }
+  
   render() {
     const { lan } = this.state;
     return (<div className="langContainer">

@@ -10,9 +10,20 @@ export default class HowItWorks extends Component {
     super(props)
 
     this.state = {
-      title: "How it Work's" || props.title,
-      description: "Airdrop Venezuela distributes donations to help introduce Venezuelans to cryptocurrency benefits including freelance, eCommerce, investment, remittance, and other web-based opportunities." || props.description
+      title: props.title || "How it Work's",
+      description: props.description || "Airdrop Venezuela distributes donations to help introduce Venezuelans to cryptocurrency benefits including freelance, eCommerce, investment, remittance, and other web-based opportunities."
     }
+  }
+
+  shouldComponentUpdate = (nextProps) => {
+    const { title, description } = this.state;
+    if (title !== nextProps.title || description !== nextProps.description) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description
+      })
+    }
+    return true;
   }
   
   render() {

@@ -1,5 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import config from "../../libs/config";
@@ -56,27 +57,24 @@ export class TimeLineCard extends Component {
 export class StorieCard extends Component {
   constructor(props) {
     super(props)
-  
+    
     this.state = {      
-        title: props.title,
-        cover: props.cover,
-        subtitle: props.subtitle,
-        content: props.content      
+      story: props.story   
     }
   }
   
   render() {
-    const { title, cover, subtitle, content } = this.state;        
+    const { story } = this.state;        
     return (
       <div className="stories">
-        <img className="stories__img" src={`/${cover}`} alt="" />
-        <h2 className="stories__title">{`${title}`}</h2>
+        <img className="stories__img" src={`/${story.cover}`} alt="" />
+        <h2 className="stories__title">{`${story.title}`}</h2>
         <p className="stories__storie">
-        {`${content}`}
+        {`${story.content}`}
         </p>
-        <a href="#" className="stories__more">
+        <Link to={{ pathname:`/stories`, state: { sid: `${story._id}` }  }} className="stories__more">
           View More
-        </a>
+        </Link>
       </div>
     );
   }
@@ -220,6 +218,8 @@ export class StorieCardDonation extends Component {
   constructor(props) {
     super(props)
 
+    this.form = new FormData();
+
     this.state = {
       donation: props.donation,
     }
@@ -254,7 +254,8 @@ export class StorieCardDonation extends Component {
   }
 
   uploadStory = (id, body) => {
-    return axios.post(`${config.BASE_URL}/donation/${id}`, body, headers)
+    this.form.set("data", JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/donation/${id}`, this.form, headers)
   }
 
   render() {
@@ -428,6 +429,8 @@ export class TimeLineListCard extends Component {
   constructor(props) {
     super(props)
 
+    this.form = new FormData();
+
     this.state = {
       line: props.line
     }
@@ -465,7 +468,8 @@ export class TimeLineListCard extends Component {
   }
 
   uploadLine = (id, body) => {
-    return axios.post(`${config.BASE_URL}/timeline/${id}`, body, headers);
+    this.form.set("data", JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/timeline/${id}`, this.form, headers);
   }
 
   render() {

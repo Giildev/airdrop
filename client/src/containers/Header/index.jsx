@@ -1,20 +1,26 @@
 // Dependencies
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 // Components & Containers
 import "./style.css";
-
+import TabLan from "../../components/Admin/TabLang"
 export default class Header extends Component {
   constructor(props) {
     super(props)
 
-    console.log(props)
+  }
+
+  handleLan = (lan) => {
+    this.props.handleLanguage(lan);
   }
 
   render() {
     return <header className="header">
         <div className="header__logoBox">
-          <img src="/logo.png" alt="" className="header__logo" />
+          <Link to={`/`}>
+            <img src="/logo.png" alt="" className="header__logo" />
+          </Link>
           <img src="/hamburguer.png" alt="" className="header__ico" />
         </div>
         <nav className="header__menu">
@@ -41,6 +47,7 @@ export default class Header extends Component {
             </button>
           </a>
         </div>
+        <TabLan lan={`EN`} handleLan={this.handleLan} />
       </header>;
   }
 }

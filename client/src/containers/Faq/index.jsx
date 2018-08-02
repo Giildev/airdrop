@@ -14,10 +14,20 @@ export default class Faq extends Component {
     };
   }
 
+  shouldComponentUpdate = (nextProps) => {
+    const { faqs } = this.state;
+    if ( faqs !== nextProps.faqs) {
+      this.setState({
+        faqs: nextProps.faqs,
+      })
+    }
+    return true;
+  }
+
+
   toggleAccordion = (e) => {
     e.preventDefault();
     let i;
-    console.log('sasd')
     for (i = 0; i < this.acc.length; i++) {
       this.acc[i].onclick = function() {
         this.classList.toggle("active");

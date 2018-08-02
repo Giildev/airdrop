@@ -29,7 +29,6 @@ editUser = (req, res) => {
   let newDate = new Date();
   body.updatedAt = newDate;
 
-
   if (body.password) {
     let encryptedPass = bcrypt.hashSync(body.password, null)
     body.password = encryptedPass;

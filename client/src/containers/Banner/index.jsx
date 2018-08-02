@@ -15,6 +15,17 @@ export default class Banner extends Component {
     }
   }
 
+  shouldComponentUpdate = (nextProps) => {
+    const { title, description } = this.state;
+    if(title !== nextProps.title || description !== nextProps.description) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description
+      })
+    }
+    return true;
+  }
+
   render() {
     const { img, title, description } = this.state;
     // Divide for words 

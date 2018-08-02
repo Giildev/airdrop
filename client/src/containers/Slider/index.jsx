@@ -11,14 +11,18 @@ export default class Caroussel extends Component{
   
     this.state = {
       stories: props.stories || undefined,
-      index: 0
+      index: props.index || 0
     };
   };
-  
-  componentDidMount = () => {
 
+  shouldComponentUpdate = (nextProps) => {
+    console.log(nextProps)
+    if(this.state.index !== nextProps.index) {
+      this.setState({ index: nextProps.index })
+    }
+    return true;
   }
-  
+
   render() {
     const { stories, index } = this.state;
     return (
@@ -36,7 +40,7 @@ export default class Caroussel extends Component{
         selectedItem={index}
         >
         {
-          stories.map(story => <SlideCard story={story} />)
+          stories.map(story => <SlideCard key={story._id} story={story} />)
         }
         </Carousel>
         </div>

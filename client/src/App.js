@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/login"} component={Login} />
           <Route path={"/dashboard"} component={Dashboard} />
-          <Route exact path={"/stories"} component={StorieDetail} />
+          <Route exact path={"/stories/:title?"} component={StorieDetail} />
           <Route component={NotFound} />
         </Switch>
       </Router>

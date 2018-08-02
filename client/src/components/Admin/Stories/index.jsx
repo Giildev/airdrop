@@ -53,7 +53,7 @@ export default class AdminStory extends Component {
       .then(res => {
         console.log(res.data.data);
         if(res.status === 200) {
-          this.setState({ stories: res.data.data });
+          this.setState({ stories: res.data.data, filteredStories: res.data.data });
         }
       })
       .catch(err => console.log(err));
@@ -210,7 +210,6 @@ export default class AdminStory extends Component {
   uploadFile = (e) => {
     const body = new FormData();
     body.append("cover", this.state.coverImg);
-    // body.set("otrofile", this.state.coverImg);
     axios.post(`${config.BASE_URL}/upload/cover`, body, this.headers).then(res => console.log(res))
   };
 

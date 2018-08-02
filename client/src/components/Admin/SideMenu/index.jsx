@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService"
-import Icons from "../../../icons.svg";
+import { toast } from "react-toastify";
 
 // Components & Containers
 import "./style.css";
+import Icons from "../../../icons.svg";
 import Loader from "../../Loader";
 export default class SideMenu extends Component {
   constructor(props) {
@@ -27,11 +28,7 @@ export default class SideMenu extends Component {
   }
 
   componentDidMount = () => {
-    const { history, location } = this.props
-    
-    if (this.auth.authGuard()) {
-      this.getUser();
-    } 
+    this.getUser();
   }
 
   getUser = () => {
@@ -62,8 +59,9 @@ export default class SideMenu extends Component {
     return axios
       .post(`${config.BASE_URL}/user/${adm._id}`, this.form, this.headers)
       .then(res => {
+        console.log(res)
         if (res.status === 200 && res.data.success) {
-          alert('cambio')
+          toast.success(`Avatar modified succesfully`)
         }
       })
       .catch(err => console.log(err));

@@ -15,8 +15,19 @@ export default class MailList extends Component {
       description: props.description || "Stay informed about Airdrop Venezuela milestones and stories from donation recipients.",
       email: ""
     }
-
   }
+
+  shouldComponentUpdate = (nextProps) => {
+    const { title, description, stories } = this.state;
+    if (title !== nextProps.title || description !== nextProps.description) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description,
+      })
+    }
+    return true;
+  }
+
 
   handleSubscription = (value) => {
     this.setState({ email: value })
@@ -44,7 +55,6 @@ export default class MailList extends Component {
 
   render() {
     const { title, description } = this.state;
-    console.log(this.state)
     return <div>
         <div className="containerMail">
           <div className="containerMail__title">{`${ title }`}</div>

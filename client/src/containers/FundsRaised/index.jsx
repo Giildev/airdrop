@@ -32,7 +32,6 @@ export default class componentName extends Component {
 
   render() {
     const { percentFunds, percentUser, fundsAmount, cerfiedUsersAmount } = this.state;
-    console.log(this.state)
     return (
       <section className="fundsRecipents">
         <h2 className="funds__title">Airdrop Funds Raised</h2>
