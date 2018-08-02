@@ -1,5 +1,6 @@
 // Dependencies
 import React, { Component } from "react";
+import ReactHtmlRender from "react-html-parser"
 
 // Components & Containers
 import "./style.css";
@@ -61,7 +62,8 @@ export default class Faq extends Component {
               </div>
               <div className="containerFaq__open__content">
                 <p className="containerFaq__open__content__text">
-                  {`${faq.answer}`}
+                 {ReactHtmlRender(faq.answer)}
+                  {/*`${faq.answer}`*/}
                 </p>
               </div>
             </div>
