@@ -45,7 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem; }
+    padding: 5rem;
+    flex-wrap: wrap; }
 
 @media (max-width: 430px) {
   .storieDetailContainer {

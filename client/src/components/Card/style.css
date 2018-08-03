@@ -334,7 +334,7 @@ td.rdtYear:hover {
     padding: 2rem;
     font-size: 1.4rem; }
   .stories__img {
-    object-fit: cover;
+    object-fit: scale-down;
     height: 55%; }
   .stories:hover {
     opacity: 1;
@@ -432,7 +432,7 @@ td.rdtYear:hover {
       height: 2.5rem;
       margin: 2rem;
       fill: var(--terciary);
-      transition: all .3s ease; }
+      transition: all 0.3s ease; }
       .containerList__icons__ico:hover {
         fill: var(--primary);
         cursor: pointer; }
@@ -486,7 +486,7 @@ td.rdtYear:hover {
   height: 3rem;
   background-color: #bebebe;
   margin: 1.4rem;
-  transition: all .3s ease; }
+  transition: all 0.3s ease; }
   .checkbox:hover {
     cursor: pointer;
     background-color: #aeaeae; }
