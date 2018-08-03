@@ -10,25 +10,43 @@ export default class Donate extends Component {
     super(props);
 
     this.state = {
+      title: props.title,
+      description: props.description,
+      warningText: props.warningText,
+      bottomText: props.bottomText,
       donations: props.donations
     };
   }
 
+  shouldComponentUpdate = (nextProps) => {
+    const { title, description, warningText, bottomText } = this.state;
+    if (title !== nextProps.title || 
+        description !== nextProps.description || 
+        warningText !== nextProps.warningText || 
+        bottomText !== nextProps.bottomText) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description,
+        warningText: nextProps.warningText,
+        bottomText: nextProps.bottomText
+      });
+    }
+    return true;
+  }
+
   render() {
-    const { donations } = this.state;    
+    const { donations, title, description, warningText, bottomText } = this.state;    
     return (
       <div>
         <div className="donateContainer" id="Donate">
           <div className="donateContainer__title">
-            Donate to AirDrop Venezuela
+            { title }
           </div>
           <div className="donateContainer__subtitle">
-            Donation amounts are updated daily and distributed evenly in the
-            value donated in to each recipients AirTM wallet.
+            { description }
           </div>
           <div className="donateContainer__warning">
-            DO NOT DONATE TO ANY ADDRESSES LISTED OUTSIDE OF
-            AIRDROPVENEZUELA.ORG.
+            { warningText }
           </div>
           <div className="cardsContainer">
             {donations.map(donation => (
@@ -36,8 +54,7 @@ export default class Donate extends Component {
             ))}
           </div>
           <div className="donateContainer__message">
-            Cryptocurrency totals + $10k will be converted into USD upon
-            distribution.
+            { bottomText }
           </div>
         </div>
       </div>

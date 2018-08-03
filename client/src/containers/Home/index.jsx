@@ -59,6 +59,7 @@ export default class Home extends Component {
 
   render() {
     const { content, selectedLan } = this.state;
+    console.log(content)
     return content === undefined ? (
       <Loader />
     ) : (
@@ -91,6 +92,8 @@ export default class Home extends Component {
         <Donate 
           title={content.donation[selectedLan].title}
           description={content.donation[selectedLan].description}
+          warningText={content.donation[selectedLan].warningText}
+          bottomText={content.donation[selectedLan].bottomText}
           donations={content.donations}
         />
         <MailList
