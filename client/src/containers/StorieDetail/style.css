@@ -62,3 +62,19 @@
 @media (max-width: 770px) {
   .storieDetailContainer__cardsContainer {
     flex-wrap: wrap; } }
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  max-height: 70rem !important; }
+
+.carousel .slide img {
+  width: auto !important;
+  max-height: 68rem !important; }
+
+.carousel .slide {
+  background-color: white !important; }
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: var(--primary); }
+
+.carousel .control-dots .dot {
+  background-color: var(--primary) !important; }

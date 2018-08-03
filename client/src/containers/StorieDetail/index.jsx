@@ -102,7 +102,7 @@ export default class storieDetail extends Component {
                 <div className="storieDetailContainer__title">More Stories</div>
                 <div className="storieDetailContainer__cardsContainer">
                 {
-                  stories.map(story => <StorieCard key={story._id} story={story} />)
+                  // stories.map(story => <StorieCard key={story._id} story={story} />)
                 }
                 </div>
                 <button className="storiesSection__button">More Stories</button>
