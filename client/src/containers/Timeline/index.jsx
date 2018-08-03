@@ -11,12 +11,14 @@ export default class TimeLine extends Component {
     super(props);
 
     this.state = {
+      title: props.title,
+      description: props.description,
       timeline: props.timeline
     };
   }
 
   render() {
-    const { timeline } = this.state;           
+    const { title, description, timeline } = this.state;    
     // let evenValues = [];
     // let oddValues = [];
     // for (let i = 0; i < data.length; i++) {
@@ -31,7 +33,7 @@ export default class TimeLine extends Component {
     return (
       <div>
         <div className="timeLineContainer">
-          <h1 className="timeTitle">AirDrop 2018 Timeline</h1>
+          <h1 className="timeTitle">{title}</h1>
           <div className="cardRow">
             {timeline.lines.map((timeL, i) => 
                 i % 2 === 0 ? (

@@ -30,9 +30,10 @@ export default class Quote extends Component {
     return <section className="quote" id="About">
         <div className="quote__text">
           <div className="quote__text__quote">
-            “A people that loves freedom will in the end be free.”
+            {title}
+            {/*“A people that loves freedom will in the end be free.”*/}
           </div>
-          <div className="quote__text__author">- Simon Bolivar -</div>
+          <div className="quote__text__author">{/*- Simon Bolivar -*/}</div>
         </div>
         <div className="quote__container">
           <div className="quote__container__leftCol">
