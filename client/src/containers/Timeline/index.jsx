@@ -17,6 +17,17 @@ export default class TimeLine extends Component {
     };
   }
 
+  shouldComponentUpdate = (nextProps) => {
+    const { title, description } = this.state;
+    if (title !== nextProps.title || description !== nextProps.description) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description
+      })
+    }
+    return true;
+  }
+
   render() {
     const { title, description, timeline } = this.state;    
     // let evenValues = [];
