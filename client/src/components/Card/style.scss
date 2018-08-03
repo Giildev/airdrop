@@ -104,7 +104,7 @@
   }
 
   &__img {
-    object-fit: cover;
+    object-fit: scale-down;
     height: 55%;
   }
 
@@ -129,10 +129,9 @@
   padding: 0;
 }
 
-
 //CoinCards styles
 
-.coinCardC{
+.coinCardC {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
@@ -142,34 +141,34 @@
   border-radius: 1rem;
   box-shadow: 1rem 1rem 2rem -0.2rem rgba(0, 0, 0, 0.2);
 }
-.topBarCoin{
+.topBarCoin {
   background-color: var(--primary);
   border-radius: 1rem 1rem 0rem 0rem;
   height: 1rem;
   padding: 0;
 }
-.coinInfo{
+.coinInfo {
   display: flex;
   align-items: center;
   margin: 2rem;
-  &__text{
+  &__text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 3.5rem;
-    &__name{
+    &__name {
       font-size: 2rem;
       font-weight: 800;
       font-family: inherit;
       color: inherit;
     }
-    &__amountR{
+    &__amountR {
       font-size: 1.7rem;
       font-family: inherit;
       color: inherit;
       padding: 0.5rem 0rem;
     }
-    &__pseudoName{
+    &__pseudoName {
       font-size: 1.8rem;
       font-family: inherit;
       font-weight: 800;
@@ -178,22 +177,22 @@
     }
   }
 }
-.coinWallet{
+.coinWallet {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  &__title{
+  &__title {
     font-size: 2rem;
     font-family: inherit;
     font-weight: 800;
   }
-  &__address{
+  &__address {
     font-family: inherit;
     font-weight: 800;
     color: #bebebe;
     padding: 0.5rem 0rem;
   }
-  &__qr{
+  &__qr {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,65 +202,65 @@
 
 //CoinCardsAdminList styles
 
-.containerList{
+.containerList {
   display: flex;
   align-items: center;
   margin-top: 4rem;
   background-color: var(--white);
   padding: 1.5rem;
-  box-shadow: 5px -1px 62px -10px rgba(0,0,0,0.2);
+  box-shadow: 5px -1px 62px -10px rgba(0, 0, 0, 0.2);
   justify-content: flex-start;
-  &__icons{
+  &__icons {
     display: flex;
     align-self: flex-end;
     align-items: center;
-    &__ico{
+    &__ico {
       width: 2.5rem;
       height: 2.5rem;
       margin: 2rem;
       fill: var(--terciary);
-      transition: all .3s ease;
-      &:hover{
-        fill:var(--primary);
+      transition: all 0.3s ease;
+      &:hover {
+        fill: var(--primary);
         cursor: pointer;
       }
     }
   }
-  &__img{
+  &__img {
     width: 20rem;
     height: auto;
     //margin: 3rem 3rem 0rem 0rem;
-    &--coin{
+    &--coin {
       width: 11rem;
       height: auto;
     }
   }
-  &__info{
+  &__info {
     display: flex;
     flex-direction: column;
     font-family: inherit;
     margin: 2rem;
     flex: 3;
-    &__title{
+    &__title {
       color: grey;
       font-size: 2.5rem;
       text-transform: capitalize;
     }
-    &__separator{
-      width: 45%;  
+    &__separator {
+      width: 45%;
       height: 0.3rem;
       background-color: var(--primary);
     }
-    &__text{
+    &__text {
       width: 40rem;
       font-size: 1.5rem;
       padding: 0.6rem 0rem;
-      &--faqs{
+      &--faqs {
         width: 100%;
         font-size: 1.5rem;
         padding: 0.6rem 0rem;
       }
-      &--date{
+      &--date {
         color: var(--primary);
         font-weight: bold;
         font-size: 1.8rem;
@@ -269,12 +268,12 @@
     }
   }
 }
-.featured{
+.featured {
   font-family: inherit;
   font-size: 1.6rem;
   margin: 1rem;
 }
-.slideContainer{
+.slideContainer {
   padding: 3rem;
   margin-top: 9rem;
 }
@@ -283,7 +282,7 @@
 // input[type=checkbox] {
 //   visibility: hidden;
 // }
-.checkbox{
+.checkbox {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,43 +290,43 @@
   height: 3rem;
   background-color: #bebebe;
   margin: 1.4rem;
-  transition: all .3s ease;
-  &:hover{
+  transition: all 0.3s ease;
+  &:hover {
     cursor: pointer;
     background-color: #aeaeae;
   }
 }
-.activeCheck{
+.activeCheck {
   width: 1.2rem;
   height: 1.2rem;
   background-color: var(--primary);
 }
 
-.dateContainer{
+.dateContainer {
   display: flex;
   align-items: center;
-  &__col{
+  &__col {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
-  &__title{
+  &__title {
     font-family: inherit;
     font-size: 1.7rem;
     color: var(--primary);
   }
-  &__text{
+  &__text {
     font-family: inherit;
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 430px) {
-  .coinCardC{
+  .coinCardC {
     margin: 2rem 0rem;
   }
-  .stories{
-    &__title{
+  .stories {
+    &__title {
       padding: 1rem 2.5rem;
     }
   }
