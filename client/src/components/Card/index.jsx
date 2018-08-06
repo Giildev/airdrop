@@ -27,7 +27,6 @@ export class HIWCard extends Component {
   };
   
   shouldComponentUpdate = (nextprops, nextstate) => {
-    console.log('hiw', nextprops)
     if (this.state.title !== nextprops.title || this.state.content !== nextprops.content || this.state.cover !== nextprops.cover) {
       this.setState({
         title: nextprops.title,
@@ -91,6 +90,15 @@ export class StorieCard extends Component {
       story: props.story
     };
   }
+
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.story !== nextprops.story ) {
+      this.setState({
+        story: nextprops.story,
+      });
+    }
+    return true;
+  };
 
   render() {
     const { story } = this.state;
