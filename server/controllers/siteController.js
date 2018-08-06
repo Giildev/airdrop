@@ -10,6 +10,22 @@ getSiteContent = (req, res) => {
   if (req.params.lan) {
     lan = req.params.lan.toUpperCase();
   }
+  
+  modelSite.find({})
+  .populate({
+    path: 'stories',
+    match: { lan: lan, deleted: false, featured: true },
+    options: { limit: 3 }
+  })
+  .populate('donations', null, { deleted: false })
+  .populate('faqs', null,{ lan: lan, deleted: false })
+  .populate('hiwcard', null,{ lan: lan, deleted: false })
+  .populate('timeline.lines', null,{ lan: lan, deleted: false })
+  .exec((err, sites) => {
+    if (err) return res.status(500).send({
+      success: false,
+      msg: `Problem to get all content`
+    })
 
   modelSite
     .find({})

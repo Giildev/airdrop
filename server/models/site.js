@@ -111,7 +111,8 @@ const siteSchema = new Schema({
   social_media: [{ rrss: String, url: String }],
   stories: [{ type: Schema.ObjectId, ref: 'story' }],
   donations: [{ type: Schema.ObjectId, ref: 'donation' }],
-  faqs: [{ type: Schema.ObjectId, ref: 'faq' }]
+  faqs: [{ type: Schema.ObjectId, ref: 'faq' }],
+  hiwcard: [{ type: Schema.ObjectId, ref: 'hiwcard' }]
 });
 
 const Site = mongoose.model("site", siteSchema);
