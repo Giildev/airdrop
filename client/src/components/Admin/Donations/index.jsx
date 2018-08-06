@@ -164,6 +164,7 @@ export default class AdminDonation extends Component {
           coin: donation.coin,
           icon: donation.icon,
           wallet: donation.wallet,
+          amount: donation.amount,
           QR: donation.QR,
         },
         iconImg: {
