@@ -2,10 +2,12 @@ const sharp = require("sharp");
 const uniqid = require("uniqid");
 
 uploadCover = async (req, res, next) => {
-  if (req.files !== null && req.body !== undefined) {
+  if (req.files !== null && req.body.data !== undefined) {
     // resize and save img on React folder with MD5 name
     const files = req.files;
     let body = req.body.data;
+    console.log("middle", body);
+
     body = JSON.parse(body);
 
     for (const file in files) {
@@ -18,21 +20,23 @@ uploadCover = async (req, res, next) => {
         .toBuffer()
         .then(() => {
           body[file] = imgName;
-        });        
+        });
     }
     req.body = body;
     next();
   } else {
     let body = req.body.data;
-    body = JSON.parse(body);
-    req.body = body;
-    next();
+    if (body !== undefined) {
+      body = JSON.parse(body);
+      req.body = body;
+      next();
+    } else {
+      next();
+    }
   }
 };
 
-uploadAvatar = (req, res, next) => {
-
-};
+uploadAvatar = (req, res, next) => {};
 
 module.exports = {
   uploadCover,

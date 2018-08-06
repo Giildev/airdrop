@@ -30,11 +30,11 @@ export default class AdminDonation extends Component {
   }
 
   componentDidMount = () => {
-    const { history, location } = this.props
+    const { history, location } = this.props;
     if (this.auth.authGuard()) {
       this.getFunds();
     } else {
-      history.push("/login")
+      history.push("/login");
     }
   };
 
@@ -47,7 +47,13 @@ export default class AdminDonation extends Component {
           this.setData(res.data.site);
         }
       })
-      .catch(err => { let error = err.response; let status = err.response.status; if (status === 404 || status === 500 || status === 401) { this.auth.logout(); } });
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500 || status === 401) {
+          this.auth.logout();
+        }
+      });
   };
 
   setData = data => {
@@ -86,8 +92,8 @@ export default class AdminDonation extends Component {
         let error = err.response;
         let status = err.response.status;
         if (status === 404 || status === 500) {
-          toast.warn(error.msg)
-        } else if (status === 401) this.auth.logout(); 
+          toast.warn(error.msg);
+        } else if (status === 401) this.auth.logout();
       });
   };
 
