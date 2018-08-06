@@ -27,14 +27,10 @@ getDonation = (req, res) => {
 
 setDonation = (req, res) => {
   const { coin, icon, wallet, symbol, QR } = req.body;
-  const Donation = new modelDonation();
-
+  
   if( coin && icon && wallet && symbol) {
-
-    Donation.coin = coin;
-    Donation.icon = icon;
-    Donation.wallet = wallet;
-    Donation.symbol = symbol;
+    
+    const Donation = new modelDonation(req.body);
     Donation.site = req.user.site;
 
     // Save Donation into DB
