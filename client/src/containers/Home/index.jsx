@@ -33,13 +33,13 @@ export default class Home extends Component {
     };
   }
 
-  shouldComponentUpdate = (nextProps) => {
+  shouldComponentUpdate = nextProps => {
     const { selectedLan } = this.state;
-    if(selectedLan !== nextProps.lan) {
+    if (selectedLan !== nextProps.lan) {
       this.handleLanguage(nextProps.lan);
     }
     return true;
-  }
+  };
 
   componentDidMount = () => {
     this.getContentData();
@@ -63,7 +63,6 @@ export default class Home extends Component {
       <Loader />
     ) : (
       <div>
-        
         <Banner
           image={content.banner}
           title={content.header[selectedLan].title}
@@ -77,23 +76,25 @@ export default class Home extends Component {
           fundsAmount={content.donationFundsAmount}
           cerfiedUsersAmount={content.donationCerfiedUsersAmount}
         />
-        <Quote 
-          title={content.about[selectedLan].title} 
-          description={content.about[selectedLan].description} 
+        <Quote
+          title={content.about[selectedLan].title}
+          description={content.about[selectedLan].description}
         />
-        <TimeLine 
+        <TimeLine
           title={content.timeline[selectedLan].title}
           description={content.timeline[selectedLan].description}
           timeline={content.timeline}
         />
-        <Stories 
+        <Stories
           title={content.story[selectedLan].title}
           description={content.story[selectedLan].description}
           stories={content.stories}
         />
-        <Donate 
+        <Donate
           title={content.donation[selectedLan].title}
           description={content.donation[selectedLan].description}
+          warningText={content.donation[selectedLan].warningText}
+          bottomText={content.donation[selectedLan].bottomText}
           donations={content.donations}
         />
         <MailList
@@ -105,9 +106,9 @@ export default class Home extends Component {
           description={content.faq[selectedLan].description}
           faqs={content.faqs}
         />
-        <Contact 
-          title={content.contactUs[selectedLan].title} 
-          description={content.contactUs[selectedLan].description} 
+        <Contact
+          title={content.contactUs[selectedLan].title}
+          description={content.contactUs[selectedLan].description}
         />
       </div>
     );
