@@ -25,11 +25,16 @@ export default class Stories extends Component {
       description !== nextProps.description ||
       stories !== nextProps.stories
     ) {
-      this.setState({
-        title: nextProps.title,
-        description: nextProps.description,
-        stories: nextProps.stories
-      });
+      this.setState(
+        {
+          title: nextProps.title,
+          description: nextProps.description,
+          stories: nextProps.stories
+        },
+        () => {
+          // console.log(this.state);
+        }
+      );
     }
     return true;
   };

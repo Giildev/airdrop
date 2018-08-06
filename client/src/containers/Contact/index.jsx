@@ -6,23 +6,36 @@ import "./style.css";
 
 export default class Contact extends Component {
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
       title: props.title || "Contact Us.",
-      description: props.description || `Please contact <span className="contact__subTitle__color">
+      description:
+        props.description ||
+        `Please contact <span className="contact__subTitle__color">
             donate@airdropvenezuela.org
-          </span> for any questions or requests.`,
-    }
+          </span> for any questions or requests.`
+    };
   }
-  
+
+  shouldComponentUpdate = nextProps => {
+    const { title, description } = this.state;
+    if (title !== nextProps.title || description !== nextProps.description) {
+      this.setState({
+        title: nextProps.title,
+        description: nextProps.description
+      });
+    }
+    return true;
+  };
+
   render() {
     const { title, description } = this.state;
-    return <section className="contact" id="Contact">
-        <div className="contact__title">{ title }</div>
-        <div className="contact__subTitle">
-          {ReactHtmlRender(description)}
-        </div>
-      </section>;
+    return (
+      <section className="contact" id="Contact">
+        <div className="contact__title">{title}</div>
+        <div className="contact__subTitle">{ReactHtmlRender(description)}</div>
+      </section>
+    );
   }
 }

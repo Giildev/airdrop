@@ -48,6 +48,7 @@ export default class Home extends Component {
   getContentData = () => {
     axios.get(`${config.BASE_URL}/site/${this.state.selectedLan}`).then(res => {
       this.setState({ content: res.data.site, lan: this.state.selectedLan });
+      console.log("content", res.data);
     }); // fix
   };
 
