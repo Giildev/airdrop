@@ -17,7 +17,29 @@ var headers = auth.buildAuthHeader();
 var calculatePercent = amount => (amount.raised * 100) / amount.goal;
 
 export class HIWCard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: props.title,
+      content: props.content,
+      // cover: props.cover
+    };
+  };
+  
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    console.log('hiw', nextprops)
+    if (this.state.title !== nextprops.title || this.state.content !== nextprops.content || this.state.cover !== nextprops.cover) {
+      this.setState({
+        title: nextprops.title,
+        content: nextprops.content,
+        cover: nextprops.cover
+      });
+    }
+    return true;
+  };
+
   render() {
+    const { title, content, cover } = this.state;
     return (
       <div className="hiwcard">
         <div className="hiwcard__iconBox">
@@ -25,8 +47,8 @@ export class HIWCard extends Component {
             <img src="/hiwIcon.png" alt="" />
           </div>
         </div>
-        <div className="hiwcard__title">{this.props.title}</div>
-        <div className="hiwcard__subTitle">{this.props.subTitle}</div>
+        <div className="hiwcard__title">{ title }</div>
+        <div className="hiwcard__subTitle">{ content }</div>
       </div>
     );
   }
