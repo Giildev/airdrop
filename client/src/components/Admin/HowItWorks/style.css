@@ -1,0 +1,111 @@
+.imageUpload {
+  background-color: var(--primary);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 2rem;
+  justify-content: center;
+  margin: 2rem;
+  border-radius: 50rem;
+  align-items: center;
+  text-align: center; }
+  .imageUpload--single {
+    background-color: var(--primary);
+    width: 77%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 7rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+    align-items: center;
+    text-align: center; }
+    .imageUpload--single:hover {
+      cursor: pointer; }
+  .imageUpload--profile {
+    background-color: var(--primary);
+    width: 15rem;
+    height: 15rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+    align-items: center;
+    text-align: center;
+    transition: all .3s ease; }
+    .imageUpload--profile:hover {
+      cursor: pointer;
+      opacity: .7; }
+  .imageUpload--banner {
+    background-color: var(--primary);
+    width: 27rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2rem;
+    justify-content: center;
+    margin: 2rem;
+    border-radius: 50rem;
+    align-items: center;
+    text-align: center; }
+    .imageUpload--banner:hover {
+      cursor: pointer; }
+  .imageUpload__hide {
+    display: none; }
+  .imageUpload:hover {
+    cursor: pointer; }
+  .imageUpload__ico {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    fill: var(--white);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+
+@media (max-width: 430px) {
+  .formContainer {
+    min-width: 44rem; } }
+
+@media (max-width: 768px) {
+  .formContainer {
+    min-width: 56rem; } }
+
+@media (max-width: 770px) {
+  .hamburguerIco {
+    display: flex; }
+    .hamburguerIco__btn {
+      border: none;
+      background: none; }
+      .hamburguerIco__btn__ico {
+        width: 5rem;
+        height: 5rem;
+        fill: var(--primary);
+        margin: 2rem 1rem; }
+  .containerList__icons {
+    align-items: center; }
+  .fundsRecipents__buttonBox {
+    margin-top: 0rem; }
+  .styles_overlay__CLSq- {
+    display: block; } }
