@@ -20,6 +20,7 @@ getSiteContent = (req, res) => {
     })
     .populate("donations", null, { deleted: false })
     .populate("faqs", null, { lan: lan, deleted: false })
+    .populate("hiwcard", null, { lan: lan, deleted: false })
     .populate("timeline.lines", null, { lan: lan, deleted: false })
     .exec((err, sites) => {
       console.table(sites[0].stories);

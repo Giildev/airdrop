@@ -289,6 +289,85 @@ export class StorieCardAdmin extends Component {
   }
 }
 
+// Admin How it Works cards
+export class HIWCardAdmin extends Component {
+  constructor(props) {
+    super(props);
+
+    this.form = new FormData();
+
+    this.state = {
+      card: props.card,
+    };
+  }
+
+  shouldComponentUpdate = (nextprops, nextstate) => {
+    if (this.state.card !== nextprops.card) {
+      this.setState({
+        card: nextprops.card,
+      });
+    }
+    return true;
+  };
+
+  handleDelete = id => {
+    const body = {
+      deleted: true
+    };
+
+    this.uploadCard(id, body)
+      .then(res => {
+        const response = res.data;
+
+        if (res.status === 200 && response.success) {
+          this.props.handleCards("delete", id);
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
+  handleEdit = (e, id) => {
+    this.props.handleCards("update", id);
+  };
+
+  uploadCard = (id, body) => {
+    this.form.set("data", JSON.stringify(body));
+    return axios.post(`${config.BASE_URL}/hiwcard/${id}`, this.form, headers);
+  };
+
+  render() {
+    const { card } = this.state;
+    return (
+      <div className="containerList">
+        <img className="containerList__img" src={`/${card.cover}`} alt="" />
+        <div className="containerList__info">
+          <h2 className="containerList__info__title">{card.title}</h2>
+          <div className="containerList__info__separator" />
+          <p className="containerList__info__text">{card.content}</p>
+        </div>
+        <div className="containerList__icons">
+          <Tooltip title="Delete" position="top" size="big" arrow="true">
+            <svg
+              className="containerList__icons__ico"
+              onClick={e => this.handleDelete(card._id)}
+            >
+              <use xlinkHref={`${Icons}#icon-trash`} />
+            </svg>
+          </Tooltip>
+          <Tooltip title="Edit" position="top" size="big" arrow="true">
+            <svg
+              className="containerList__icons__ico"
+              onClick={e => this.handleEdit(e, card._id)}
+            >
+              <use xlinkHref={`${Icons}#icon-pen`} />
+            </svg>
+          </Tooltip>
+        </div>
+      </div>
+    );
+  }
+}
+
 //card StorieListDonation
 export class StorieCardDonation extends Component {
   constructor(props) {

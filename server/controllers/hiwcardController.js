@@ -25,13 +25,11 @@ getHiwcard = (req, res) => {
 
 setHiwcard = (req, res) => {
   const { title, content, cover, lan } = req.body;
-  const Card = new modelHiwcard();
-
+  
   if ( title && cover && content && lan ) {
+    
+    const Card = new modelHiwcard(req.body);
 
-    Card.title = title;
-    Card.cover = cover;
-    Card.content = content;
     Card.lan = lan.toUpperCase();
     Card.site = req.user.site;
 
@@ -118,7 +116,7 @@ editHiwcard = (req, res) => {
   res.status(200).send({
     success: true,
     msg: "All stories modified successfully",
-    data: updatedCard
+    data: modifiedData
   })
 };
 

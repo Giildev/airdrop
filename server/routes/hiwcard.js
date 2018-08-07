@@ -8,7 +8,7 @@ const md_upload = require("../middlewares/upload_middleware");
 
 const prefix = "/hiwcard";
 
-router.get(`${prefix}`, hiwcardController.getHiwcards); // get all hiwcard
+router.get(`${prefix}`, md_auth.ensureToken, hiwcardController.getHiwcards); // get all hiwcard
 
 router.get(`${prefix}/:id`, md_auth.ensureToken, hiwcardController.getHiwcard); // get hiwcard by id
 

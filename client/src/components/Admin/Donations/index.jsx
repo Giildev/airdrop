@@ -63,10 +63,9 @@ export default class AdminDonation extends Component {
       .catch(err => {
         let error = err.response;
         let status = err.response.status;
-
-        if (status === 404 || status === 500 || status === 401) {
-          this.auth.logout();
-        }
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
       });
   }
 

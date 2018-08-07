@@ -4,13 +4,14 @@ import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
 import Modal from "react-responsive-modal";
-import Icons from "../../../icons.svg";
-import { StorieCardDonation } from "../../Card";
 import { toast } from "react-toastify";
 import { Tooltip } from "react-tippy";
+
 // Components & Containers
 import "./style.css";
-// import "react-tippy/dist/tippy.css";
+import Icons from "../../../icons.svg";
+import { HIWCardAdmin } from "../../Card";
+import TabLang from "../TabLang";
 import Loader from "../../Loader";
 
 export default class HowItWorks extends Component {
@@ -22,59 +23,67 @@ export default class HowItWorks extends Component {
     this.headers = this.auth.buildAuthHeader();
 
     this.state = {
-      title: "",
-      description: "",
-      img: ""
+      card: {
+        title: "",
+        content: "",
+        cover: "",
+        lan: "ES"
+      },
+      coverImg: {},
+      cards: undefined,
+      filteredCards: undefined,
+      idCardToUpdate: undefined,
+      isOpen: false,
+      newCard: true
     };
   }
 
   componentDidMount = () => {
     const { history, location } = this.props;
     if (this.auth.authGuard()) {
-      this.getDonations();
+      this.getCards();
     } else {
       history.push("/login");
     }
   };
 
-  getDonations = () => {
+  getCards = () => {
     return axios
-      .get(`${config.BASE_URL}/donation`, this.headers)
+      .get(`${config.BASE_URL}/hiwcard`, this.headers)
       .then(res => {
         console.log(res.data);
         if (res.status === 200) {
           this.setState({
-            donations: res.data.data,
-            filteredDonations: res.data.data
+            cards: res.data.hiwcards,
+            filteredCards: res.data.hiwcards
           });
         }
       })
       .catch(err => {
         let error = err.response;
         let status = err.response.status;
-
-        if (status === 404 || status === 500 || status === 401) {
-          this.auth.logout();
-        }
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg)
+        } else if (status === 401) this.auth.logout(); 
       });
   };
 
   updateContent = () => {
-    let id = this.state.idDonationToUpdate;
-    let donation = this.state.donation;
+    let id = this.state.idCardToUpdate;
+    let card = this.state.card;
 
-    this.form.set("data", JSON.stringify(donation));
+    this.form.set("data", JSON.stringify(card));
 
     axios
-      .post(`${config.BASE_URL}/donation/${id}`, this.form, this.headers)
+      .post(`${config.BASE_URL}/hiwcard/${id}`, this.form, this.headers)
       .then(res => {
         if (res.status === 200 && res.data.success) {
-          this.setState({ donations: undefined }, () => {
+          this.setState({ cards: undefined }, () => {
             toast.success(res.data.msg);
-            this.getDonations().then(() => this.onShowCloseModal());
+            this.getCards().then(() => this.onShowCloseModal());
           });
         } else {
-          this.getDonations().then(() => this.onShowCloseModal());
+          this.getCards().then(() => this.onShowCloseModal());
         }
       })
       .catch(err => {
@@ -86,99 +95,87 @@ export default class HowItWorks extends Component {
       });
   };
 
-  createDonation = () => {
-    let donation = this.state.donation;
+  createCard = () => {
+    let card = this.state.card;
+    console.log('card', card)
+    Object.keys(card).map(key => {
+      if (card[key] === "") {
+        delete card[key];
+      }
+    });
 
-    if (donation.icon !== "") {
-      Object.keys(donation).map(key => {
-        if (donation[key] === "") {
-          delete donation[key];
+    this.form.set("data", JSON.stringify(card));
+    axios
+      .put(`${config.BASE_URL}/hiwcard`, this.form, this.headers)
+      .then(res => {
+        if (res.status === 200 && res.data.success) {
+          /**
+           * Msg from server if all is correct
+           */
+          let card = res.data.hiwcard;
+          let cards = this.state.cards;
+          this.setState(
+            {
+              cards: [card, ...cards],
+              filteredCards: [card, ...cards]
+            },
+            () => {
+              this.onShowCloseModal();
+            }
+          );
+        } else if (res.status === 200 && !res.data.success) {
+          /**
+           * Msg from server if left any field in object
+           */
+          alert(res.data.msg);
         }
+      })
+      .catch(err => {
+        let error = err.response;
+        let status = err.response.status;
+        if (status === 404 || status === 500) {
+          toast.warn(error.msg);
+        } else if (status === 401) this.auth.logout();
       });
-      this.form.set("data", JSON.stringify(donation));
-      axios
-        .put(`${config.BASE_URL}/donation`, this.form, this.headers)
-        .then(res => {
-          if (res.status === 200 && res.data.success) {
-            /**
-             * Msg from server if all is correct
-             */
-            let donation = res.data.data;
-            let donations = this.state.donations;
-            this.setState(
-              {
-                donations: [donation, ...donations],
-                filteredFaqs: [donation, ...donations]
-              },
-              () => {
-                this.onShowCloseModal();
-              }
-            );
-          } else if (res.status === 200 && !res.data.success) {
-            /**
-             * Msg from server if left any field in object
-             */
-            alert(res.data.msg);
-          }
-        })
-        .catch(err => {
-          let error = err.response;
-          let status = err.response.status;
-          if (status === 404 || status === 500) {
-            toast.warn(error.msg);
-          } else if (status === 401) this.auth.logout();
-        });
-    } else {
-      toast.warn("Empty Icon");
-    }
   };
 
-  handleDonation = e => {
-    const donation = Object.assign({}, this.state.donation, {
+  handleCard = e => {
+    const card = Object.assign({}, this.state.card, {
       [e.target.name]: e.target.value
     });
-    this.setState({ donation });
+    this.setState({ card });
   };
 
-  handleDonations = (msg, id) => {
-    let donations = this.state.donations;
+  handleCards = (msg, id) => {
+    let cards = this.state.cards;
     if (msg === "delete") {
-      let newDonations = donations.filter(donation => donation._id !== id);
+      let newCards = cards.filter(card => card._id !== id);
 
       /*
         handle class animate before delete it from state
       */
       this.setState({
-        donations: newDonations
+        cards: newCards
       });
     } else if (msg === "update") {
-      let donation = donations.filter(donation => donation._id === id)[0];
+      let card = cards.filter(card => card._id === id)[0];
       this.setState(
         {
-          newDonation: false,
-          idDonationToUpdate: donation._id,
-          donation: {
-            symbol: donation.symbol,
-            coin: donation.coin,
-            icon: donation.icon,
-            wallet: donation.wallet,
-            amount: donation.amount,
-            QR: donation.QR
+          newCard: false,
+          idCardToUpdate: card._id,
+          card: {
+            title: card.title,
+            content: card.content,
+            cover: card.cover,
+            lan: card.lan
           },
-          iconImg: {
+          coverImg: {
             backgroundColor: "",
-            backgroundImage: `url("/${donation.icon}")`,
+            backgroundImage: `url("/${card.cover}")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain"
           },
-          qrImg: {
-            backgroundColor: "",
-            backgroundImage: `url("/${donation.QR}")`,
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain"
-          }
         },
         () => {
           this.onShowCloseModal();
@@ -188,37 +185,35 @@ export default class HowItWorks extends Component {
   };
 
   onShowCloseModal = () => {
-    const resetDonation = {
-      symbol: "",
-      coin: "",
-      icon: "",
-      wallet: "",
-      QR: ""
+    const resetCard = {
+      title: "",
+      content: "",
+      cover: "",
+      lan: "ES"
     };
 
     this.setState({ isOpen: !this.state.isOpen }, () => {
       if (!this.state.isOpen) {
         this.setState({
-          newDonation: true,
-          idDonationToUpdate: undefined,
-          donation: resetDonation,
-          iconImg: {},
-          qrImg: {}
+          newCard: true,
+          idCardToUpdate: undefined,
+          card: resetCard,
+          coverImg: {},
         });
       }
     });
   };
 
-  handleImageCoin = fl => {
-    this.form.set("icon", fl.files[0]);
+  handleImageCover = fl => {
+    this.form.set("cover", fl.files[0]);
 
-    const donation = Object.assign({}, this.state.donation, {
-      icon: fl.files[0].name
+    const card = Object.assign({}, this.state.card, {
+      cover: fl.files[0].name
     });
     fl.src = URL.createObjectURL(fl.files[0]);
     this.setState({
-      donation,
-      iconImg: {
+      card,
+      coverImg: {
         backgroundColor: "",
         backgroundImage: `url("${fl.src}")`,
         backgroundPosition: "center",
@@ -228,49 +223,46 @@ export default class HowItWorks extends Component {
     });
   };
 
-  handleImageQR = fl => {
-    this.form.set("QR", fl.files[0]);
+  handleLan = (lan) => {
+    const card = Object.assign({}, this.state.card, { lan });
+    this.setState({ card });
+  }
 
-    const donation = Object.assign({}, this.state.donation, {
-      QR: fl.files[0].name
-    });
-    fl.src = URL.createObjectURL(fl.files[0]);
-    this.setState({
-      donation,
-      qrImg: {
-        backgroundColor: "",
-        backgroundImage: `url("${fl.src}")`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "contain"
-      }
-    });
-  };
-
-  handleFilterDonations = e => {
+  handleFilterCards = e => {
     let lan = e.target.value;
-    let faqs = this.state.filteredFaqs;
-    let filteredFaqs = {};
+    let cards = this.state.filteredCards;
+    let filteredCards = {};
 
     if (lan === "") {
-      this.setState({ faqs: this.state.filteredFaqs });
+      this.setState({ cards: this.state.filteredCards });
     } else {
-      filteredFaqs = faqs.filter(faq => faq.lan === lan);
-      this.setState({ faqs: filteredFaqs });
+      filteredCards = cards.filter(card => card.lan === lan);
+      this.setState({ cards: filteredCards });
     }
   };
 
   render() {
     const {
       isOpen,
-      donations,
-      donation,
-      newDonation,
-      iconImg,
-      qrImg
+      cards,
+      card,
+      newCard,
+      coverImg,
     } = this.state;
     return (
       <div>
+        <h1 className="languageTitle">Select Language</h1>
+        <select className="selectLang" name="" onChange={this.handleFilterCards}>
+          <option className="selectLang__item" value="">
+            All
+          </option>
+          <option className="selectLang__item" value="ES">
+            ES
+          </option>
+          <option className="selectLang__item" value="EN">
+            EN
+          </option>
+        </select>
         <div className="containerStories">
           <div className="headerAdmin">
             <h1 className="headerAdmin__storiesTitle">How it works cards</h1>
@@ -290,15 +282,15 @@ export default class HowItWorks extends Component {
               </button>
             </Tooltip>
           </div>
-          {donations === undefined ? (
+          {cards === undefined ? (
             <Loader />
           ) : (
-            donations.map(donation => {
+            cards.map(card => {
               return (
-                <StorieCardDonation
-                  key={donation._id}
-                  donation={donation}
-                  handleDonations={this.handleDonations}
+                <HIWCardAdmin
+                  key={card._id}
+                  card={card}
+                  handleCards={this.handleCards}
                 />
               );
             })
@@ -311,15 +303,16 @@ export default class HowItWorks extends Component {
           classNames={{ modal: "custom-modal" }}
         >
           <div className="containerModal">
+            <TabLang lan={card.lan === "" ? "ES" : card.lan.toUpperCase()} handleLan={this.handleLan} />
             <h1 className="headerAdmin__storiesTitle">
               Create How it Works Card
             </h1>
             <div className="form">
               <div className="col1">
-                <label className="imageUpload" style={iconImg}>
+                <label className="imageUpload" style={coverImg}>
                   <input
                     onInputCapture={e => {
-                      this.handleImageCoin(e.target);
+                      this.handleImageCover(e.target);
                     }}
                     className="imageUpload__hide"
                     type="file"
@@ -334,46 +327,30 @@ export default class HowItWorks extends Component {
               </div>
               <div className="col2">
                 <div className="formContainer">
-                  {/*
+                  
                   <input
                     type="text"
-                    name="coin"
-                    defaultValue={donation.coin}
-                    onChange={this.handleDonation}
-                    placeholder="Coin"
-                    className="formContainer__item"
-                  />
-                  <input
-                    type="text"
-                    name="wallet"
-                    defaultValue={donation.wallet}
-                    onChange={this.handleDonation}
-                    placeholder="Wallet"
+                    name="title"
+                    defaultValue={card.title}
+                    onChange={this.handleCard}
+                    placeholder="Title"
                     className="formContainer__item"
                   />
                   <input
                     type="text"
-                    name="symbol"
-                    defaultValue={donation.symbol}
-                    onChange={this.handleDonation}
-                    placeholder="Symbol"
+                    name="content"
+                    defaultValue={card.content}
+                    onChange={this.handleCard}
+                    placeholder="Content"
                     className="formContainer__item"
                   />
-                  <input
-                    type="number"
-                    name="amount"
-                    defaultValue={donation.amount}
-                    onChange={this.handleDonation}
-                    placeholder="Amount"
-                    className="formContainer__item"
-                  />
-                */}
+               
                 </div>
               </div>
-              {newDonation ? (
+              {newCard ? (
                 <button
                   className="fundsRecipents__buttonBox"
-                  onClick={e => this.createDonation(e)}
+                  onClick={e => this.createCard(e)}
                 >
                   Save
                 </button>
