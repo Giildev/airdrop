@@ -395,6 +395,8 @@ td.rdtYear:hover {
       font-weight: 800;
       color: #bebebe;
       padding: 0.5rem 0rem; }
+  .coinInfo__icon {
+    height: 14rem; }
 
 .coinWallet {
   display: flex;
@@ -414,6 +416,9 @@ td.rdtYear:hover {
     justify-content: center;
     align-items: center;
     margin: 1.5rem; }
+    .coinWallet__qr__img {
+      height: 20rem;
+      width: auto; }
 
 .containerList {
   display: flex;

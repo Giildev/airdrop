@@ -18,16 +18,20 @@ var calculatePercent = amount => (amount.raised * 100) / amount.goal;
 
 export class HIWCard extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       title: props.title,
-      content: props.content,
+      content: props.content
       // cover: props.cover
     };
-  };
-  
+  }
+
   shouldComponentUpdate = (nextprops, nextstate) => {
-    if (this.state.title !== nextprops.title || this.state.content !== nextprops.content || this.state.cover !== nextprops.cover) {
+    if (
+      this.state.title !== nextprops.title ||
+      this.state.content !== nextprops.content ||
+      this.state.cover !== nextprops.cover
+    ) {
       this.setState({
         title: nextprops.title,
         content: nextprops.content,
@@ -46,8 +50,8 @@ export class HIWCard extends Component {
             <img src="/hiwIcon.png" alt="" />
           </div>
         </div>
-        <div className="hiwcard__title">{ title }</div>
-        <div className="hiwcard__subTitle">{ content }</div>
+        <div className="hiwcard__title">{title}</div>
+        <div className="hiwcard__subTitle">{content}</div>
       </div>
     );
   }
@@ -92,9 +96,9 @@ export class StorieCard extends Component {
   }
 
   shouldComponentUpdate = (nextprops, nextstate) => {
-    if (this.state.story !== nextprops.story ) {
+    if (this.state.story !== nextprops.story) {
       this.setState({
-        story: nextprops.story,
+        story: nextprops.story
       });
     }
     return true;
@@ -138,8 +142,12 @@ export class CoinCard extends Component {
         <div className="coinCardC">
           <div className="topBarCoin" />
           <div className="coinInfo">
-            <div className="coinInfo__icon">
-              <img src={`/${donationData.icon}`} alt="CoinName" />
+            <div>
+              <img
+                className="coinInfo__icon"
+                src={`/${donationData.icon}`}
+                alt="CoinName"
+              />
             </div>
             <div className="coinInfo__text">
               <div className="coinInfo__text__name">{`${
@@ -159,7 +167,11 @@ export class CoinCard extends Component {
               donationData.wallet
             }`}</div>
             <div className="coinWallet__qr">
-              <img src={`/${donationData.QR}`} alt="QR" />
+              <img
+                className="coinWallet__qr__img"
+                src={`/${donationData.QR}`}
+                alt="QR"
+              />
             </div>
           </div>
         </div>
@@ -396,8 +408,11 @@ export class CardRaised extends Component {
           <div className="funds__container__middle">
             <div className="funds__container__middle__outerBox">
               <div className="funds__container__middle__innerBox">
-                <div className="funds__container__middle__innerBox__bar" style={{ width: `${percent}%` }}>
-                  <span className="barInfo--admin">{ amount.raised } USD</span>
+                <div
+                  className="funds__container__middle__innerBox__bar"
+                  style={{ width: `${percent}%` }}
+                >
+                  <span className="barInfo--admin">{amount.raised} USD</span>
                 </div>
               </div>
             </div>
@@ -454,8 +469,11 @@ export class CardRaisedUsers extends Component {
           <div className="recipents__container__middle">
             <div className="recipents__container__middle__outerBox">
               <div className="recipents__container__middle__innerBox">
-                <div className="recipents__container__middle__innerBox__bar" style={{ width: `${percent}%` }} > 
-                  <span className="barInfo--admin">34093 Users</span>
+                <div
+                  className="recipents__container__middle__innerBox__bar"
+                  style={{ width: `${percent}%` }}
+                >
+                  <span className="barInfo--admin">{amount.raised} Users</span>
                 </div>
               </div>
             </div>
