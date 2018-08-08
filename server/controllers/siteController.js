@@ -20,14 +20,13 @@ getSiteContent = (req, res) => {
     })
     .populate({
       path: "hiwcard",
-      match: { lan: lan,  deleted: false },
+      match: { lan: lan, deleted: false },
       options: { limit: 3 }
     })
     .populate("donations", null, { deleted: false })
     .populate("faqs", null, { lan: lan, deleted: false })
     .populate("timeline.lines", null, { lan: lan, deleted: false })
     .exec((err, sites) => {
-      console.table(sites[0].stories);
       if (err)
         return res.status(500).send({
           success: false,
