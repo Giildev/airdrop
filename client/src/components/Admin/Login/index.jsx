@@ -1,74 +1,108 @@
 // Dependencies
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import axios from "axios";
 import config from "../../../libs/config";
 import Auth from "../../../services/authService";
+import { toast } from "react-toastify";
 // Components & Containers
 import "./style.css";
 import Loader from "../../Loader";
 
 export default class AdminLogin extends Component {
   constructor(props) {
-    super(props)
-    
+    super(props);
+
     this.auth = new Auth();
 
     this.user = {
       userName: "",
       password: ""
-    }
+    };
 
     this.state = {
       isLogged: false,
-      type: 'password'
-    }
+      type: "password"
+    };
   }
 
-  login = (e) => {
+  componentDidMount = () => {
+    const { history, location } = this.props;
+    if (this.auth.authGuard()) {
+      history.push("/dashboard");
+    }
+  };
+
+  login = e => {
+    const { history, location } = this.props;
     e.preventDefault();
-    const { userName, password } = this.user
-    if(userName && password) {
-      this.auth.login(userName, password)
+    const { userName, password } = this.user;
+    if (userName && password) {
+      this.auth
+        .login(userName, password)
         .then(res => {
           localStorage.auth = JSON.stringify(res.data.auth);
+          history.push("/dashboard");
         })
         .catch(err => {
-          let error = err.response.data;
-          let status = err.response.status;
+          console.log(err);
+          // let error = err.response;
+          // let status = err.response.status;
 
-          if(status === 404 || status === 500) {
-            alert(error.msg);
-          }
-        }) 
+          // if(status === 404 || status === 500) {
+          //   toast.warn(error.msg);
+          // }
+        });
     } else {
-      alert("Empty Fields")
+      toast.warn("Empty Fields");
     }
-  }
+  };
 
-  handleInput = (e) => {
+  handleInput = e => {
     this.user[e.target.name] = e.target.value;
-  }
+  };
 
-  changeTypeInput = (e) => {
+  changeTypeInput = e => {
     const { type } = this.state;
-    if(type === "text") {
-      this.setState({ type: "password" })
+    if (type === "text") {
+      this.setState({ type: "password" });
     } else {
       this.setState({ type: "text" });
     }
-  }
+  };
 
   render() {
     return (
       <div>
-        <form onSubmit={(e) => this.login(e)}>     
-          <input type="text" placeholder="User or email" name="userName" onChange={this.handleInput}/>
-          <input type={this.state.type} placeholder="Password" name="password" onChange={this.handleInput}/>
-          <button type="submit"> Entrompele </button>
-        </form>
-        
-        <input type="button" value="Ojito pa ve la clave" onClick={this.changeTypeInput}/>
+        <div className="loginContainer">
+          <img className="logoLogin" src="/logo.png" alt="" />
+          <form onSubmit={e => this.login(e)} className="formContainer">
+            <input
+              className="formContainer__item"
+              type="text"
+              placeholder="User or email"
+              name="userName"
+              onChange={this.handleInput}
+            />
+            <input
+              className="formContainer__item"
+              type={this.state.type}
+              placeholder="Password"
+              name="password"
+              onChange={this.handleInput}
+            />
+            <input
+              type="button"
+              value="Show Password"
+              className="showPass"
+              onClick={this.changeTypeInput}
+            />
+            <button type="submit" className="fundsRecipents__buttonBox">
+              {" "}
+              Login{" "}
+            </button>
+          </form>
+        </div>
       </div>
-    )
+    );
   }
 }

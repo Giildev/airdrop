@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    margin-top: 11rem;
     &__mainTitle {
       color: inherit;
       text-align: center;
@@ -28,6 +29,9 @@
       font-size: 4rem;
       font-weight: 100 !important;
       margin: 1rem;
+     &::first-letter {
+      text-transform:capitalize;
+     }
     }
 
     &__scroll {
@@ -39,7 +43,7 @@
       background-color: var(--white);
       border-radius: 50rem;
       position: absolute;
-      top: 67rem;
+      top: 69rem;
     }
   }
 }
@@ -47,7 +51,7 @@
   .banner{
     &__container{
       &__scroll{
-        top:77rem;
+        top:66rem;
       }
       &__mainTitle{
         font-size: 5rem;

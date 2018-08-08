@@ -15,10 +15,10 @@ getUsers = (req, res) => {
 getUser = (req, res) => {
   let id = req.params.id;
 
-  modelUser.find({ _id: id }, (err, user) => {
+  modelUser.find({ _id: id }, { 'email': 1, 'avatar': 1, 'userName': 1, '_id': 1 }, (err, user) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get user` })
 
-    res.status(200).send({ success: true, data: user })
+    res.status(200).send({ success: true, data: user[0] })
   })
 }
 
@@ -28,7 +28,6 @@ editUser = (req, res) => {
 
   let newDate = new Date();
   body.updatedAt = newDate;
-
 
   if (body.password) {
     let encryptedPass = bcrypt.hashSync(body.password, null)

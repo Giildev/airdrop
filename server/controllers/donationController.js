@@ -6,7 +6,9 @@ const modelDonation = require("../models/donation");
 const config = require("../libs/config")
 
 getDonations = (req, res) => {
-    modelDonation.find({}, (err, donations) => {
+    modelDonation.find({
+          'deleted': false
+        }, (err, donations) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get all donations` })
     
     res.status(200).send({ success: true, data: donations })
@@ -25,16 +27,11 @@ getDonation = (req, res) => {
 
 setDonation = (req, res) => {
   const { coin, icon, wallet, symbol, QR } = req.body;
-  const Donation = new modelDonation();
-
-  if( coin && icon && wallet && symbol && QR) {
-
-    Donation.coin = coin;
-    Donation.icon = icon;
-    Donation.wallet = wallet;
-    Donation.symbol = symbol;
-    Donation.QR = QR;
-    Donation.site = '5b479f121f22d372dfb0f433';
+  
+  if( coin && icon && wallet && symbol) {
+    
+    const Donation = new modelDonation(req.body);
+    Donation.site = req.user.site;
 
     // Save Donation into DB
     modelDonation.find({ wallet: Donation.wallet, deleted: false }, (err, donations) => {
@@ -47,7 +44,7 @@ setDonation = (req, res) => {
 
         if (donationStored) {
           modelSite.update(
-            { _id: '5b479f121f22d372dfb0f433' },
+            { _id: req.user.site },
             { $push: { donations: donationStored._id } },
             (err, siteUpdated) => {
               if (err) return res.status(500).send({

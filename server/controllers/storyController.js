@@ -6,7 +6,7 @@ const modelSite = require("../models/site");
 const config = require("../libs/config")
 
 getStories = (req, res) => {
-    modelStory.find({}, (err, stories) => {
+  modelStory.find({deleted: false}, (err, stories) => {
     if(err) return res.status(500).send({ success: false, msg: `Problem to get all stories` })
 
     res.status(200).send({ success: true, data: stories })
@@ -24,16 +24,18 @@ getStory = (req, res) => {
 };
 
 setStory = (req, res) => {
-  const { title, subtitle, cover, content } = req.body;
+  const { title, subtitle, cover, content, lan } = req.body;
   const Story = new modelStory();
 
-  if ( title && subtitle && cover && content ) {
+  if ( title && subtitle && cover && content && lan ) {
 
     Story.title = title;
     Story.subtitle = subtitle;
     Story.cover = cover;
     Story.content = content;
-    Story.site = '5b479f121f22d372dfb0f433';
+    Story.lan = lan.toUpperCase();
+    // Story.site = '5b479f121f22d372dfb0f433';
+    Story.site = req.user.site;
 
     // Check for duplicates
     modelStory.find({ title: Story.title, deleted: false }, (err, stories) => {
@@ -48,11 +50,11 @@ setStory = (req, res) => {
           success: false,
           msg: `Error saving story`
         });
-
+        console.log(storyStored);
         if (storyStored) {
 
           modelSite.update(
-            { _id: '5b479f121f22d372dfb0f433' }, // prueba
+            { _id: req.user.site },
             { $push: { stories: storyStored._id } },
             (err, siteUpdated) => {
               if (err) return res.status(500).send({

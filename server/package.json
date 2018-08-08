@@ -4,7 +4,7 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "client": "cd ../client && yarn start",
+    "client": "cd ../client && npm start",
     "server": "nodemon api.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
   },
@@ -12,6 +12,7 @@
     "bcrypt-nodejs": "0.0.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "express-fileupload": "^0.4.0",
     "jsonwebtoken": "^8.2.1",
     "jsonwebtoken-refresh": "^5.7.0",
     "moment": "^2.22.2",
@@ -19,7 +20,10 @@
     "morgan": "^1.9.0",
     "multer": "^1.3.0",
     "nodemon": "^1.17.5",
-    "sharp": "^0.20.5"
+    "react-slick": "^0.23.1",
+    "sharp": "^0.20.5",
+    "uniqid": "^5.0.3",
+    "wrappy": "^1.0.2"
   },
   "author": "",
   "license": "ISC",

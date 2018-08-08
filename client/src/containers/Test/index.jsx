@@ -7,12 +7,10 @@ import "./style.css";
 export default class Home extends Component {
   donationHandler = params => {
     params.preventDefault();
-    console.log(params.target);
   };
 
   storyHandler = params => {
     params.preventDefault();
-    console.log(params.target);
   };
 
   donationList = () => {

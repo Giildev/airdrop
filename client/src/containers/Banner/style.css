@@ -11,7 +11,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%; }
+    height: 100%;
+    margin-top: 11rem; }
     .banner__container__mainTitle {
       color: inherit;
       text-align: center;
@@ -26,6 +27,8 @@
       font-size: 4rem;
       font-weight: 100 !important;
       margin: 1rem; }
+      .banner__container__subTitle::first-letter {
+        text-transform: capitalize; }
     .banner__container__scroll {
       display: flex;
       align-items: center;
@@ -35,11 +38,11 @@
       background-color: var(--white);
       border-radius: 50rem;
       position: absolute;
-      top: 67rem; }
+      top: 69rem; }
 
 @media (max-width: 430px) {
   .banner__container__scroll {
-    top: 77rem; }
+    top: 66rem; }
   .banner__container__mainTitle {
     font-size: 5rem; }
   .banner__container__subTitle {

@@ -1,15 +1,37 @@
 // Dependencies
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 // Components & Containers
 import "./style.css";
-
+import TabLan from "../../components/Admin/TabLang"
 export default class Header extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      selectedLan: "EN"
+    };
+
+  }
+
+  // shouldComponentUpdate = (nextProps) => {
+  //   if (this.state.selectedLan !== nextProps.lan) {
+  //     this.setState({ selectedLan: nextProps.lan })
+  //   }
+  //   return true;
+  // }
+
+  handleLan = (lan) => {
+    this.props.handleLanguage(lan);
+  }
+
   render() {
-    return (
-      <header className="header">
+    return <header className="header">
         <div className="header__logoBox">
-          <img src="/logo.png" alt="" className="header__logo" />
+          <Link to={`/`}>
+            <img src="/logo.png" alt="" className="header__logo" />
+          </Link>
           <img src="/hamburguer.png" alt="" className="header__ico" />
         </div>
         <nav className="header__menu">
@@ -30,9 +52,13 @@ export default class Header extends Component {
           </a>
         </nav>
         <div className="header__cta">
-          <button className="header__cta__button">Donate Crypto</button>
+          <a href="#Donate">        
+            <button className="header__cta__button" >
+              Donate Crypto
+            </button>
+          </a>
         </div>
-      </header>
-    );
+        <TabLan lan={this.state.selectedLan} handleLan={this.handleLan} />
+      </header>;
   }
 }

@@ -48,13 +48,7 @@ class auth {
 
         if (session !== null || session !== undefined) {
           if (session.hasOwnProperty("access_token")) {
-            let token = session.access_token;
-            let auth = this.isAuthenticated(token);
-            if (auth) {
-              return true; // Valid token
-            } else {
-              return false; // Invalid Token
-            }
+            return true;
           } else {
             console.log(`Session haven't property access_token`);
             return false; // session haven't property 'access_token'
