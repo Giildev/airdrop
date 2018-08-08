@@ -12,8 +12,11 @@ app.get("/*.jpeg", (req, res) => {
   console.log(req.params[0]);
   res.sendFile(path.join(__dirname, "client/public/", req.params[0] + ".jpeg"));
 });
+// app.get("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build/", "index.html"));
+// });
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/", "index.html"));
+  res.send("Test");
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
