@@ -9,7 +9,7 @@ const app = express();
 /* Settings */
 const port = process.env.PORT || 4000;
 const corsOptions = {
-  origin: "http://localhost:4000"
+  origin: "http://206.189.202.169:4000"
 };
 
 /* Middleware */
