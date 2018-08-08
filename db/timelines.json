@@ -1,0 +1,174 @@
+{ 
+    "_id" : ObjectId("5b484229cb96de59e05d6119"), 
+    "start" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "end" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "createdAt" : ISODate("2018-07-13T06:09:45.055+0000"), 
+    "updatedAt" : ISODate("2018-07-13T22:51:56.543+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "lan" : "ES", 
+    "title" : "titulo evento", 
+    "event" : "un evento asi de loquix", 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-07-29T00:42:23.396+0000")
+}
+{ 
+    "_id" : ObjectId("5b4842a5615e792080a3b20b"), 
+    "start" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "end" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "createdAt" : ISODate("2018-07-13T06:11:49.032+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:18:19.742+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "lan" : "ES", 
+    "title" : "titulo evento 2", 
+    "event" : "Evento lacrita de donacion", 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-08-03T05:19:00.874+0000")
+}
+{ 
+    "_id" : ObjectId("5b484534befba04e8cfdab36"), 
+    "start" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "end" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "lan" : "ES", 
+    "createdAt" : ISODate("2018-07-13T06:22:44.689+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:16:53.878+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "event" : "event ultra happy", 
+    "title" : "titulo evento 3", 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-08-03T05:18:52.074+0000")
+}
+{ 
+    "_id" : ObjectId("5b484543befba04e8cfdab37"), 
+    "start" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "end" : ISODate("2018-07-06T01:27:20.292+0000"), 
+    "lan" : "EN", 
+    "createdAt" : ISODate("2018-07-13T06:22:59.754+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:17:47.459+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "event" : "evento super feliz", 
+    "title" : "titulo evento 4", 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-08-03T05:19:23.991+0000")
+}
+{ 
+    "_id" : ObjectId("5b5d0a12da887a16a4df4867"), 
+    "deleted" : true, 
+    "title" : "quinto elemento", 
+    "event" : "la lacra de las adjunta parte 2", 
+    "lan" : "es", 
+    "createdAt" : ISODate("2018-07-29T00:28:02.388+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:17:29.678+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "end" : ISODate("2011-04-14T04:30:00.000+0000"), 
+    "start" : ISODate("2018-07-04T04:00:00.000+0000"), 
+    "deletedAt" : ISODate("2018-08-03T05:19:02.831+0000")
+}
+{ 
+    "_id" : ObjectId("5b5e242edbbdd6440413ded9"), 
+    "deleted" : true, 
+    "title" : "English event", 
+    "event" : "Content event english", 
+    "start" : ISODate("2018-07-05T04:00:00.000+0000"), 
+    "end" : ISODate("2018-07-14T04:00:00.000+0000"), 
+    "lan" : "EN", 
+    "createdAt" : ISODate("2018-07-29T20:31:42.406+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:00:43.360+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:19:25.186+0000")
+}
+{ 
+    "_id" : ObjectId("5b6385b85ce7543cd8ef4373"), 
+    "deleted" : true, 
+    "title" : "Event X", 
+    "event" : "Event X", 
+    "lan" : "EN", 
+    "createdAt" : ISODate("2018-08-02T22:29:12.485+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:15:52.350+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "end" : ISODate("2018-08-02T04:00:00.000+0000"), 
+    "start" : ISODate("2018-08-02T04:00:00.000+0000"), 
+    "deletedAt" : ISODate("2018-08-03T05:19:26.508+0000")
+}
+{ 
+    "_id" : ObjectId("5b6385c55ce7543cd8ef4374"), 
+    "deleted" : true, 
+    "lan" : "EN", 
+    "title" : "Event y", 
+    "event" : "Event Y", 
+    "createdAt" : ISODate("2018-08-02T22:29:25.279+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:57:36.446+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:19:27.865+0000")
+}
+{ 
+    "_id" : ObjectId("5b6385db5ce7543cd8ef4375"), 
+    "deleted" : true, 
+    "lan" : "EN", 
+    "title" : "Event No", 
+    "event" : "Event No", 
+    "createdAt" : ISODate("2018-08-02T22:29:47.108+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:57:46.263+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:19:29.006+0000")
+}
+{ 
+    "_id" : ObjectId("5b63d5ba5ce7543cd8ef4376"), 
+    "deleted" : false, 
+    "title" : "Campaign Period, 7/16 - 9/14", 
+    "event" : "Open for donations and Venezuelan participants", 
+    "start" : ISODate("2018-07-16T04:08:34.682+0000"), 
+    "end" : ISODate("2018-09-14T04:08:34.682+0000"), 
+    "lan" : "EN", 
+    "createdAt" : ISODate("2018-08-03T04:10:34.277+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:10:34.277+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63dd905ce7543cd8ef4377"), 
+    "deleted" : false, 
+    "start" : ISODate("2018-09-15T04:42:52.850+0000"), 
+    "end" : ISODate("2018-09-30T04:42:52.850+0000"), 
+    "lan" : "EN", 
+    "title" : "Grace Period, 9/15 - 9/30", 
+    "event" : "Reserved period for Venezuelan participant accounts to be verified", 
+    "createdAt" : ISODate("2018-08-03T04:44:00.985+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:44:00.985+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63ddd25ce7543cd8ef4378"), 
+    "deleted" : false, 
+    "start" : ISODate("2018-10-01T04:00:00.000+0000"), 
+    "end" : ISODate("2018-10-29T04:00:00.000+0000"), 
+    "lan" : "EN", 
+    "title" : "Weekly Distribution, 10/1 - 10/29", 
+    "event" : "Each Monday a new currency is distributed to recipient AirTM wallets", 
+    "createdAt" : ISODate("2018-08-03T04:45:06.787+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:45:58.029+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63ddfc5ce7543cd8ef4379"), 
+    "deleted" : false, 
+    "start" : ISODate("2018-11-14T04:45:08.382+0000"), 
+    "end" : ISODate("2018-11-14T04:45:08.383+0000"), 
+    "lan" : "EN", 
+    "title" : "Update, 11/14", 
+    "event" : "Recap & user stories sent to mailing list", 
+    "createdAt" : ISODate("2018-08-03T04:45:48.366+0000"), 
+    "updatedAt" : ISODate("2018-08-03T04:45:48.366+0000"), 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}

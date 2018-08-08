@@ -1,0 +1,98 @@
+{ 
+    "_id" : ObjectId("5b52717c61c556416075fbfd"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "kywar59@gmail.com", 
+    "createdAt" : ISODate("2018-07-20T23:34:20.020+0000"), 
+    "updatedAt" : ISODate("2018-07-20T23:34:20.020+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-28T20:16:23.695+0000")
+}
+{ 
+    "_id" : ObjectId("5b52718561c556416075fbff"), 
+    "name" : "", 
+    "deleted" : false, 
+    "email" : "kywar58@gmail.com", 
+    "createdAt" : ISODate("2018-07-20T23:34:29.948+0000"), 
+    "updatedAt" : ISODate("2018-07-20T23:34:29.948+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b5276cbfd8a504a04b27040"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "hola@gmail.com", 
+    "createdAt" : ISODate("2018-07-20T23:56:59.218+0000"), 
+    "updatedAt" : ISODate("2018-07-20T23:56:59.218+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-28T20:03:49.119+0000")
+}
+{ 
+    "_id" : ObjectId("5b527af1fd8a504a04b27041"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "asd@asd.com", 
+    "createdAt" : ISODate("2018-07-21T00:14:41.836+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:14:41.836+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:09.417+0000")
+}
+{ 
+    "_id" : ObjectId("5b527b18fd8a504a04b27042"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "asdasd@dasdas.com", 
+    "createdAt" : ISODate("2018-07-21T00:15:20.862+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:15:20.862+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:10.548+0000")
+}
+{ 
+    "_id" : ObjectId("5b527b4ffd8a504a04b27043"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "a@a.com", 
+    "createdAt" : ISODate("2018-07-21T00:16:15.226+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:16:15.226+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:11.560+0000")
+}
+{ 
+    "_id" : ObjectId("5b527b80fd8a504a04b27044"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "asdasf@asg.com", 
+    "createdAt" : ISODate("2018-07-21T00:17:04.071+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:17:04.071+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:12.607+0000")
+}
+{ 
+    "_id" : ObjectId("5b527b9ffd8a504a04b27045"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "sg@gsf.com", 
+    "createdAt" : ISODate("2018-07-21T00:17:35.632+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:17:35.632+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:13.479+0000")
+}
+{ 
+    "_id" : ObjectId("5b527bd6fd8a504a04b27046"), 
+    "name" : "", 
+    "deleted" : true, 
+    "email" : "assd@gdgsdg.com", 
+    "createdAt" : ISODate("2018-07-21T00:18:30.265+0000"), 
+    "updatedAt" : ISODate("2018-07-21T00:18:30.265+0000"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-06T21:52:16.237+0000")
+}
+{ 
+    "_id" : ObjectId("5b5e9d1c824b1e37f09feaf3"), 
+    "name" : "", 
+    "deleted" : false, 
+    "email" : "giildev.exe@gmail.com", 
+    "createdAt" : ISODate("2018-07-30T05:07:40.293+0000"), 
+    "updatedAt" : ISODate("2018-07-30T05:07:40.293+0000"), 
+    "__v" : NumberInt(0)
+}

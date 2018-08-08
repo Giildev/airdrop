@@ -1,0 +1,352 @@
+{ 
+    "_id" : ObjectId("5b481abbeef5a73dacdacd4e"), 
+    "createdAt" : ISODate("2018-07-13T03:21:31.570+0000"), 
+    "updatedAt" : ISODate("2018-07-13T04:09:00.429+0000"), 
+    "lan" : "EN", 
+    "question" : "What is AirTM?", 
+    "answer" : "AirTM is a digital wallet connected to banks and blockchains, both directly and via a peer-to-peer exchange. AirTM’s provides globally-connected financial services to consumers and businesses in the developing world, including remittance, payments, donations, as well as access to global ecommerce and cryptocurrency. AirTM empowers people in countries with devaluing currencies, hyperinflation, and limited banking systems to exchange local money for digital currency at a free market rate.", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-08-02T22:03:23.894+0000")
+}
+{ 
+    "_id" : ObjectId("5b48249a8d2a9d04b850092f"), 
+    "createdAt" : ISODate("2018-07-13T04:03:38.323+0000"), 
+    "updatedAt" : ISODate("2018-07-13T04:09:56.689+0000"), 
+    "lan" : "EN", 
+    "question" : "How will the impact of these donations be measured?", 
+    "answer" : "After the campaign we will send an update email to all subscribers (subscribe above!), sharing the results of the campaign, and later user stories regarding the successes we’ve achieved as a result.\n\nAirdrop Venezuela will be reviewing recipient account activities relating to holding funds, cryptocurrency trading, withdrawals and the methods withdrawing to, and sends including the currency denominated in and sender/recipient countries.\n\nWe will be surveying our donation recipients of what they intend to use these donations for upon distribution, and another survey 30 days later regarding what they have done. This impact mining will be used as a means to create user stories on what the result of receiving these donations is.", 
+    "deleted" : true, 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:23.401+0000")
+}
+{ 
+    "_id" : ObjectId("5b5c07a6641883210c4e6de6"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-28T06:05:26.448+0000"), 
+    "updatedAt" : ISODate("2018-07-28T06:05:26.448+0000"), 
+    "question" : "asdasdasd", 
+    "answer" : "dsadasd", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-28T17:20:50.220+0000")
+}
+{ 
+    "_id" : ObjectId("5b5c08f0c2a02769c409089e"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-28T06:10:56.239+0000"), 
+    "updatedAt" : ISODate("2018-07-28T06:10:56.239+0000"), 
+    "question" : "sfdfsdfsdf", 
+    "answer" : "gdfghdfhdh", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-28T17:20:46.527+0000")
+}
+{ 
+    "_id" : ObjectId("5b5c097188271f68342b6e98"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-28T06:13:05.820+0000"), 
+    "updatedAt" : ISODate("2018-07-28T06:13:05.820+0000"), 
+    "question" : "Andres como estas?", 
+    "answer" : "Bien chamo", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:22.655+0000")
+}
+{ 
+    "_id" : ObjectId("5b5c0f0788271f68342b6e9e"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-28T06:36:55.362+0000"), 
+    "updatedAt" : ISODate("2018-07-28T19:06:29.495+0000"), 
+    "question" : "Te pregunte como estas otra ve", 
+    "answer" : "Todo bien vale", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:22.337+0000")
+}
+{ 
+    "_id" : ObjectId("5b5cb85e228628446c3f8dc2"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-28T18:39:26.820+0000"), 
+    "updatedAt" : ISODate("2018-07-28T18:39:26.820+0000"), 
+    "question" : "LA PREGUNTA FINAL QUE TAL", 
+    "answer" : "LA RESPUESTA FINAL QUE TAL", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-28T18:39:30.396+0000")
+}
+{ 
+    "_id" : ObjectId("5b5d17b7c7aefb545c6a971b"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-29T01:26:15.843+0000"), 
+    "updatedAt" : ISODate("2018-07-29T01:26:15.843+0000"), 
+    "question" : "asdaddfghdfh", 
+    "answer" : "bfggfnfhmndfm", 
+    "lan" : "es", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:21.135+0000")
+}
+{ 
+    "_id" : ObjectId("5b5d18a8fe3bf83930cabe20"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-29T01:30:16.216+0000"), 
+    "updatedAt" : ISODate("2018-07-29T01:30:16.216+0000"), 
+    "question" : "zxbvbxcv", 
+    "answer" : "xcvbxcvbxcvb", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:20.941+0000")
+}
+{ 
+    "_id" : ObjectId("5b5d194f02125a0740ed007e"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-29T01:33:03.533+0000"), 
+    "updatedAt" : ISODate("2018-07-29T01:33:03.533+0000"), 
+    "question" : "espanol", 
+    "answer" : "espanol", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:20.747+0000")
+}
+{ 
+    "_id" : ObjectId("5b5e17d6dbbdd6440413ded8"), 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-29T19:39:02.207+0000"), 
+    "updatedAt" : ISODate("2018-07-29T19:40:25.889+0000"), 
+    "question" : "Ahora la paso a espanol", 
+    "answer" : "Answer in English prueba del tabLang", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-02T22:03:20.248+0000")
+}
+{ 
+    "_id" : ObjectId("5b637fb65ce7543cd8ef4369"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:03:34.962+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:04:18.676+0000"), 
+    "question" : "What is AirTM?", 
+    "answer" : "<p>AirTM is a digital wallet connected to banks and blockchains, both directly and via a peer-to-peer exchange. AirTM’s provides globally-connected financial services to consumers and businesses in the developing world, including remittance, payments, donations, as well as access to global ecommerce and cryptocurrency. AirTM empowers people in countries with devaluing currencies, hyperinflation, and limited banking systems to exchange local money for digital currency at a free market rate.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637fd75ce7543cd8ef436a"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:04:07.429+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:04:07.429+0000"), 
+    "question" : "How will the impact of these donations be measured?", 
+    "answer" : "<p>After the campaign we will send an update email to all subscribers (subscribe above!), sharing the results of the campaign, and later user stories regarding the successes we’ve achieved as a result.</p>\n\n<p>Airdrop Venezuela will be reviewing recipient account activities relating to holding funds, cryptocurrency trading, withdrawals and the methods withdrawing to, and sends including the currency denominated in and sender/recipient countries.</p>\n\n<p>We will be surveying our donation recipients of what they intend to use these donations for upon distribution, and another survey 30 days later regarding what they have done. This impact mining will be used as a means to create user stories on what the result of receiving these donations is.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637ff65ce7543cd8ef436b"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:04:38.189+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:28:04.213+0000"), 
+    "question" : "How will these donations help Venezuela?", 
+    "answer" : "<p>Venezuela recipients will be introduced to the benefits of unrestricted currencies and gain access to the global economy via AirTM's globally connected e-wallet. It all starts with educating a large portion of the Venezuelan economy by giving them an account with value readily available. Upon distributing each currency to recipient wallets, we will include education materials about each of their specific benefit. An introduction is the first step in a multi-year long process of their economic growth.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6380005ce7543cd8ef436c"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:04:48.115+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:59.958+0000"), 
+    "question" : "How can I help?", 
+    "answer" : "<p>Anyone in the world is welcome to donate, either with funds in bank and e-money networks using AirTM (deposit to AirTM wallet, then send to donate@airdropvenezuela.org), or sending cryptocurrency to the addresses listed on airdropvenezuela.org. <a href=\" http://airdropvenezuela.org/#donations\" target=\"_blank\"><font color=\"white\"><u>Donate here</u></font></a>, and help spread the word by sharing airdropvenezuela.org with your friends and colleagues. You can also subscribe to our mailing list above to learn more.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6380075ce7543cd8ef436d"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:04:55.246+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:54.791+0000"), 
+    "question" : "Can I make a donation outside of airdropvenezuela.org?", 
+    "answer" : "<p>No. We are only supporting the addresses listed on airdropvenezuela.org, no other addresses shown outside of the website, including another website, social media, physical gathering, email, forum etc. Please notify us at donate@airdropvenezuela.org if you find any addresses referencing Airdrop Venezuela donations listed outside of airdropvenezuela.org.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63800d5ce7543cd8ef436e"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:05:01.156+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:42.406+0000"), 
+    "question" : "Who are the Venezuelan recipients?", 
+    "answer" : "<p>AirTM’s user base consists of >200k registered Venezuelan wallets who use AirTM to save in USD, send and receive money abroad, access freelancer payments received in e-money networks, and buy and sell cryptocurrency.</p>\n\n<p>In order for us to ensure funds get distributed to a Venezuelan citizen, without duplication, and someone who is actively aware of their participation, we’re requiring that only AirTM verified Venezuelan user's who have logged into their AirTM account during the campaign period (7/16 - 9/14) can participate. The first 100k AirTM Venezuelan users to be verified and have logged into their account during the campaign will be a recipient of $10 upon hitting our $1,000,000 USD equivalent goal.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6380155ce7543cd8ef436f"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:05:09.767+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:34.551+0000"), 
+    "question" : "How is Airdrop Venezuela preventing fraudulent and duplicate recipients?", 
+    "answer" : "<p>Each recipient is authenticated by AirTM's ID verification process to prevent fraudulent and duplicate accounts. AirTM's verifications and anti-fraud teams address these issues on a daily basis, and require clients to signup via an email not associated with a temporary email service, uniquely verify client identity via government issued ID and selfie. Additionally, AirTM limits duplicate registrations from the same IP address, and auto-bans accounts when inputing payment information associated with past banned and/or fraudulent accounts.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63801c5ce7543cd8ef4370"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:05:16.542+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:31.998+0000"), 
+    "question" : "How long will the Airdrop Venezuela campaign run for?", 
+    "answer" : "<p>Our goal is to achieve both the $1,000,000 USD equivalent and 100,000 verified Venezuelans milestones within 60 days of launch (7/16 - 9/14). If both goals are achieved prior to 60 days, we will continue the campaign until 9/14 limiting the number of Venezuelan recipients to 1/10th the currency USD equivalent raised ($10 each).</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6380245ce7543cd8ef4371"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:05:24.614+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:27.909+0000"), 
+    "question" : "What happens if more than 100k Venezuelans participate / more than or less than $1mm is raised?", 
+    "answer" : "<p>We are implementing a hard stop at 60 days from launch (7/16 - 9/14), with distribution starting 10/01.</p>\n\n<p>If < $1mm is raised: We will distribute the total value raised to 100k Venezuelan recipients.</p>\n\n<p>If > $1mm is raised: We are placing a hard cap at $3mm USD equivalent / 300k Venezuelan recipients ($10 USD equivalent each). Any balance left over from the distribution of $10 to each Venezuelan recipient starting on 10/01 will be distributed to future AirTM Venezuelan users.</p>", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63803d5ce7543cd8ef4372"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:05:49.567+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:27:25.126+0000"), 
+    "question" : "How are you distributing the funds by currency donated in?", 
+    "answer" : "Once we hit our goal of $1,000,000 USD equivalent, we will divide each currency by the number of recipients (100k) and credit the amounts evenly to each Venezuelan recipient's AirTM wallet. Amounts credited to Venezuelan recipients will be denominated in the currency donated for them to hold, buy/sell and send (as little as .0001) to others via email address.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e2eb8380452dc838880c"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:08:11.114+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:08:11.114+0000"), 
+    "question" : "¿Qué es AirTM?", 
+    "answer" : "AirTM es una billetera digital conectada a bancos y blockchains, tanto directamente como a través de un intercambio de igual a igual. AirTM proporciona servicios financieros conectados a nivel mundial a consumidores y empresas en el mundo en desarrollo, que incluyen remesas, pagos, donaciones, así como también acceso a comercio electrónico global y criptomonedas. AirTM faculta a las personas en países con devaluación de monedas, hiperinflación y sistemas bancarios limitados para intercambiar dinero local por moneda digital a una tasa de mercado libre.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e30d8380452dc838880d"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:08:45.793+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:08:45.793+0000"), 
+    "question" : "¿Cómo se medirá el impacto de estas donaciones?", 
+    "answer" : "Después de la campaña, enviaremos un correo electrónico de actualización a todos los suscriptores (¡suscríbase arriba!), Compartiremos los resultados de la campaña y las historias de usuarios posteriores con respecto a los éxitos que hemos logrado como resultado.\n\nAirdrop Venezuela revisará las actividades de la cuenta del destinatario relacionadas con los fondos de cartera, el comercio de criptomonedas, los retiros y los métodos que se retiran y envían, incluyendo la moneda denominada y los países emisores / receptores.\n\nVamos a encuestar a los destinatarios de nuestra donación de lo que pretenden utilizar estas donaciones para su distribución, y otra encuesta 30 días después con respecto a lo que han hecho. Esta minería de impacto se usará como un medio para crear historias de usuarios sobre el resultado de recibir estas donaciones.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e3268380452dc838880e"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:09:10.714+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:09:10.714+0000"), 
+    "question" : "¿Cómo ayudarán estas donaciones a Venezuela?", 
+    "answer" : "Los beneficiarios de Venezuela recibirán los beneficios de las monedas sin restricciones y obtendrán acceso a la economía mundial a través de la billetera electrónica global de AirTM. Todo comienza con la educación de una gran parte de la economía venezolana al darles una cuenta con valor disponible. Al distribuir cada moneda a las billeteras de los destinatarios, incluiremos materiales educativos sobre cada uno de sus beneficios específicos. Una introducción es el primer paso en un proceso de varios años de crecimiento económico.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e33e8380452dc838880f"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:09:34.497+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:09:34.497+0000"), 
+    "question" : "¿Cómo puedo ayudar?", 
+    "answer" : "Cualquiera en el mundo puede donar, ya sea con fondos en redes bancarias y de dinero electrónico utilizando AirTM (deposite en AirTM wallet, luego envíe a donate@airdropvenezuela.org), o envíe criptomonedas a las direcciones que figuran en airdropvenezuela.org. Done aquí y ayude a correr la voz al compartir airdropvenezuela.org con sus amigos y colegas. También puede suscribirse a nuestra lista de correo anterior para obtener más información.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e35a8380452dc8388810"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:10:02.857+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:10:02.857+0000"), 
+    "question" : "¿Puedo hacer una donación fuera de airdropvenezuela.org?", 
+    "answer" : "No. Solo apoyamos las direcciones que figuran en airdropvenezuela.org, no se muestran otras direcciones fuera del sitio web, incluido otro sitio web, redes sociales, reunión física, correo electrónico, foro, etc. Por favor notifíquenos a donate@airdropvenezuela.org si encuentra cualquier dirección que haga referencia a las donaciones de Airdrop Venezuela que figuran fuera de airdropvenezuela.org.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e3788380452dc8388811"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:10:32.081+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:10:32.081+0000"), 
+    "question" : "¿Quiénes son los destinatarios venezolanos?", 
+    "answer" : "La base de usuarios de AirTM consiste en más de 200k billeteras venezolanas registradas que usan AirTM para ahorrar en USD, enviar y recibir dinero en el extranjero, acceder a pagos de freelance recibidos en redes de dinero electrónico y comprar y vender criptomonedas.\n\nPara asegurarnos de que los fondos se distribuyan a un ciudadano venezolano, sin duplicación, y de que sea consciente de su participación, estamos requiriendo que solo AirTM verifique que los usuarios venezolanos hayan iniciado sesión en su cuenta AirTM durante el período de la campaña (7). / 16 - 9/14) puede participar. Los primeros 100k usuarios de AirTM Venezuela que se verifiquen y hayan iniciado sesión en su cuenta durante la campaña recibirán $ 10 al alcanzar nuestra meta equivalente de $ 1,000,000 USD.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e38f8380452dc8388812"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:10:55.566+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:10:55.566+0000"), 
+    "question" : "¿Cómo está evitando Airdrop Venezuela a los destinatarios fraudulentos y duplicados?", 
+    "answer" : "Cada destinatario es autenticado por el proceso de verificación de identificación de AirTM para evitar cuentas duplicadas y fraudulentas. Las verificaciones de AirTM y los equipos antifraude abordan estos problemas a diario y exigen que los clientes se registren a través de un correo electrónico no asociado con un servicio de correo electrónico temporal, verifican de forma única la identidad del cliente a través de ID y selfie emitidos por el gobierno. Además, AirTM limita los registros duplicados desde la misma dirección IP y las cuentas de auto prohibición cuando ingresa información de pago asociada con cuentas prohibidas y / o fraudulentas.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e3ab8380452dc8388813"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:11:23.632+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:11:23.632+0000"), 
+    "question" : "¿Cuánto tiempo durará la campaña de Airdrop Venezuela?", 
+    "answer" : "Nuestro objetivo es lograr el equivalente a $ 1,000,000 USD y 100,000 hitos verificados en Venezuela dentro de los 60 días posteriores al lanzamiento (7/16 - 9/14). Si ambos objetivos se logran antes de los 60 días, continuaremos la campaña hasta el 14 de septiembre, limitando el número de receptores venezolanos a 1/10 de la moneda equivalente en dólares recaudados ($ 10 cada uno).", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e3c98380452dc8388814"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:11:53.885+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:11:53.885+0000"), 
+    "question" : "¿Qué sucede si participan más de 100 mil venezolanos / se recauda más de $ 1 mm o menos?", 
+    "answer" : "Estamos implementando una parada estricta a los 60 días desde el lanzamiento (7/16 - 9/14), con distribución a partir del 10/01.\n\nSi se sube <$ 1mm: distribuiremos el valor total recaudado a 100k destinatarios venezolanos.\n\nSi se sube> $ 1mm: estamos colocando un tope fijo a $ 3mm USD equivalente / 300k destinatarios venezolanos ($ 10 USD equivalentes cada uno). Cualquier saldo sobrante de la distribución de $ 10 a cada receptor venezolano a partir del 10/01 se distribuirá a los futuros usuarios de AirTM Venezuela.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e3de8380452dc8388815"), 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:12:14.757+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:12:14.757+0000"), 
+    "question" : "¿Cómo está distribuyendo los fondos por moneda donada?", 
+    "answer" : "Una vez que alcancemos nuestra meta de $ 1,000,000 USD equivalente, dividiremos cada moneda por el número de destinatarios (100k) y acreditaremos los montos de manera equitativa a la billetera AirTM de cada receptor venezolano. Las cantidades acreditadas a los receptores venezolanos se denominarán en la moneda donada para que se mantengan, compren / vendan y envíen (tan poco como 0,0001) a otros por correo electrónico.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}

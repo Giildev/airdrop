@@ -1,0 +1,292 @@
+{ 
+    "_id" : ObjectId("5b4599433112e3553c5bfbfb"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "ETH", 
+    "QR" : "/eth-address.png", 
+    "createdAt" : ISODate("2018-07-11T05:44:35.278+0000"), 
+    "updatedAt" : ISODate("2018-07-11T05:44:35.278+0000"), 
+    "coin" : "Ethereum", 
+    "icon" : "/eth-icon.png", 
+    "deleted" : true, 
+    "wallet" : "16346asda4", 
+    "site" : "5b479f121f22d372dfb0f433", 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:22:23.183+0000")
+}
+{ 
+    "_id" : ObjectId("5b465333feae1f44046689a1"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XRP", 
+    "QR" : "/xrp-address.png", 
+    "createdAt" : ISODate("2018-07-11T18:57:55.331+0000"), 
+    "updatedAt" : ISODate("2018-07-11T18:57:55.331+0000"), 
+    "coin" : "rippe", 
+    "icon" : "/xrp-icon.png", 
+    "deleted" : true, 
+    "wallet" : "rippplepitpeipteipt", 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:22:24.014+0000")
+}
+{ 
+    "_id" : ObjectId("5b466313656cf7533823a20e"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XEM", 
+    "QR" : "/xem-address.png", 
+    "createdAt" : ISODate("2018-07-11T20:05:39.283+0000"), 
+    "updatedAt" : ISODate("2018-07-11T20:05:39.283+0000"), 
+    "coin" : "NEM", 
+    "icon" : "/xem-icon.png", 
+    "deleted" : true, 
+    "wallet" : "xemxmemxemxe", 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-30T04:24:08.149+0000")
+}
+{ 
+    "_id" : ObjectId("5b466ec2d9724b435869ce79"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "DASH", 
+    "QR" : "/dash-address.png", 
+    "createdAt" : ISODate("2018-07-11T20:55:30.754+0000"), 
+    "updatedAt" : ISODate("2018-07-11T20:55:30.754+0000"), 
+    "coin" : "DASH", 
+    "icon" : "/dash-icon.png", 
+    "deleted" : true, 
+    "wallet" : "dasdhashdashdhasd", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-30T04:24:08.145+0000")
+}
+{ 
+    "_id" : ObjectId("5b466ecad9724b435869ce7a"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "createdAt" : ISODate("2018-07-11T20:55:38.891+0000"), 
+    "updatedAt" : ISODate("2018-07-11T20:55:38.891+0000"), 
+    "coin" : "DASH", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "stellarstellarstellarstellar,maurolalacra", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-07-29T23:02:10.722+0000"), 
+    "lan" : "ES"
+}
+{ 
+    "_id" : ObjectId("5b481250c5accd3d68a87e23"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "createdAt" : ISODate("2018-07-13T02:45:36.513+0000"), 
+    "updatedAt" : ISODate("2018-07-13T02:45:36.513+0000"), 
+    "coin" : "Stellar", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "stellarstellarstellarstellar", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deleted" : true, 
+    "deletedAt" : ISODate("2018-07-16T18:14:52.639+0000")
+}
+{ 
+    "_id" : ObjectId("5b4cf37bbd7bbd5e5873bdbc"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-16T19:35:23.749+0000"), 
+    "updatedAt" : ISODate("2018-07-16T19:36:28.462+0000"), 
+    "coin" : "Stellar", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "maurolalacraa", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "lan" : "ES", 
+    "deletedAt" : ISODate("2018-07-16T19:37:04.458+0000")
+}
+{ 
+    "_id" : ObjectId("5b4cf6796aab093270f1880b"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-16T19:48:09.069+0000"), 
+    "updatedAt" : ISODate("2018-07-16T19:48:09.069+0000"), 
+    "coin" : "Stellar", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "maurolalacraaa", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-16T19:50:03.622+0000")
+}
+{ 
+    "_id" : ObjectId("5b4d04166aab093270f1880d"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-16T20:46:14.720+0000"), 
+    "updatedAt" : ISODate("2018-07-16T20:48:02.397+0000"), 
+    "coin" : "Stellar", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "maurolalacraaa", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-16T20:47:39.167+0000")
+}
+{ 
+    "_id" : ObjectId("5b4d04916aab093270f1880f"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "XLM", 
+    "QR" : "stellar-wallet.png", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-07-16T20:48:17.797+0000"), 
+    "updatedAt" : ISODate("2018-07-16T20:54:57.190+0000"), 
+    "coin" : "StellarModificada3", 
+    "icon" : "stellan-icon.png", 
+    "wallet" : "maurolalacraaa", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-07-29T23:02:10.725+0000")
+}
+{ 
+    "_id" : ObjectId("5b63e80ad393c206242fa0a6"), 
+    "amount" : 0.08, 
+    "symbol" : "BTC", 
+    "QR" : "4me391kjkix6scw.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:28:42.675+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:03:52.712+0000"), 
+    "coin" : "Bitcoin", 
+    "icon" : "4me391kjkix6sbc.jpeg", 
+    "wallet" : "3Amm1Yo2BQ1zcEdgjFHoHjT72Cg2gkg2pL", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e86bd393c206242fa0a7"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "BCH", 
+    "QR" : "4me391kjkix748b.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:30:19.405+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:41:55.128+0000"), 
+    "coin" : "Bitcoin Cash", 
+    "icon" : "4me391kjkix747y.jpeg", 
+    "wallet" : "qpd7azjpwffypdd5sgcc8ezajyx20e50mghwq02ppx", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e8aed393c206242fa0a8"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "DASH", 
+    "QR" : "4me317ojkdk0dn9.jpeg", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-08-03T05:31:26.923+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:33:54.858+0000"), 
+    "coin" : "Dash", 
+    "icon" : "4me317ojkdk0dmg.jpeg", 
+    "wallet" : "XahSL1p2sioX68yabsDjMCm3bTqVzx2uk8", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:34:06.780+0000")
+}
+{ 
+    "_id" : ObjectId("5b63e8d7d393c206242fa0a9"), 
+    "amount" : 0.9, 
+    "symbol" : "ETH", 
+    "QR" : "4me391kjkix7dnc.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:32:07.141+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:04:36.200+0000"), 
+    "coin" : "Ethereum", 
+    "icon" : "4me391kjkix7dmf.jpeg", 
+    "wallet" : "0xC47e1364A202376EbCd1304837f0C80d6fbf4D6c", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e8f3d393c206242fa0aa"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "ETC", 
+    "QR" : "4me391kjkix7s5k.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:32:35.174+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:42:26.142+0000"), 
+    "coin" : "Ethereum Classic", 
+    "icon" : "4me391kjkix7s54.jpeg", 
+    "wallet" : "0x00d557610A4cDA146E80AF082e02cdeE34ABCb5e", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e914d393c206242fa0ab"), 
+    "amount" : 7.25, 
+    "symbol" : "LTC", 
+    "QR" : "4me391kjkix81ty.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:33:08.092+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:04:26.080+0000"), 
+    "coin" : "Litecoin", 
+    "icon" : "4me391kjkix81sl.jpeg", 
+    "wallet" : "MScuuKS8QfYWndfJ1VzqdMiRTj2QMFyRct", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e92cd393c206242fa0ac"), 
+    "amount" : 1.1, 
+    "symbol" : "ZEC", 
+    "QR" : "4me391kjkix87xu.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:33:32.993+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:04:16.465+0000"), 
+    "coin" : "Zcash", 
+    "icon" : "4me391kjkix87vq.jpeg", 
+    "wallet" : "t1Wd5wnJC7uQ7yGbgnEHYt1GowXouHgFMC7", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63e964d393c206242fa0ad"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "DASH", 
+    "QR" : "", 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-08-03T05:34:28.967+0000"), 
+    "updatedAt" : ISODate("2018-08-03T05:34:28.967+0000"), 
+    "coin" : "Dash", 
+    "icon" : "4me317ojkdk13yg.jpeg", 
+    "wallet" : "XahSL1p2sioX68yabsDjMCm3bTqVzx2uk8", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-03T05:34:31.296+0000")
+}
+{ 
+    "_id" : ObjectId("5b63e976d393c206242fa0ae"), 
+    "amount" : NumberInt(0), 
+    "symbol" : "DASH", 
+    "QR" : "4me391kjkix8f9f.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-03T05:34:46.980+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:42:56.087+0000"), 
+    "coin" : "Dash", 
+    "icon" : "4me391kjkix8f91.jpeg", 
+    "wallet" : "XahSL1p2sioX68yabsDjMCm3bTqVzx2uk8", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b68e25e8380452dc838880b"), 
+    "amount" : 1414.38, 
+    "symbol" : "AirTm", 
+    "QR" : "4me391kjkiy354d.jpeg", 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-07T00:05:50.540+0000"), 
+    "updatedAt" : ISODate("2018-08-07T00:06:49.285+0000"), 
+    "coin" : "AirTm", 
+    "icon" : "4me391kjkiy353k.jpeg", 
+    "wallet" : "airtm.com", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}

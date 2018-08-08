@@ -1,0 +1,393 @@
+{ 
+    "_id" : ObjectId("5b63739f5ce7543cd8ef4354"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:11:59.085+0000"), 
+    "updatedAt" : ISODate("2018-08-03T00:03:58.330+0000"), 
+    "title" : "Yeinis Fuenmayor", 
+    "subtitle" : "Candy Seller", 
+    "cover" : "4me3c0ojkd22vr7.jpeg", 
+    "content" : "20 year old Venezuelan selling candy in the Cajero Banco Corpbanca Ventura Plaza Cúcuta, Colombia while husband is looking for a job to pay rent. She planned to travel beyond Cucuta but stayed after they noticed their daughter was sick with kidney disease. Now, every Colombian Peso she gets, goes directly to her daughters treatment in order to keep her alive.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6374205ce7543cd8ef4355"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:14:08.163+0000"), 
+    "updatedAt" : ISODate("2018-08-03T00:03:59.012+0000"), 
+    "title" : "Simón Bolívar International Bridge", 
+    "subtitle" : "Adios amigo, vuelva pronto.", 
+    "cover" : "4me3c0ojkd25nc8.jpeg", 
+    "content" : " “Adios amigo, vuelva pronto.” (Goodbye friend, come back soon). More than 2 million people have crossed this bridge since the Chaves Dictatorship started, and with Maduro, it's the daily traffic has only increased. Many of the people who cross the bridge in this direction won't be coming back soon, as most of them leave the country, their families and friends in search of a better future, waiting for the regimes fall.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6374a25ce7543cd8ef4356"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:16:18.029+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:17:17.130+0000"), 
+    "title" : "Migration Agencies", 
+    "subtitle" : "Migration Agencies", 
+    "cover" : "4me3c0ojkd28fly.jpeg", 
+    "content" : "Colombian travel agencies have found their perfect market. Now more than 15 agencies line the streets just after the border to Colombia to service Venezuelan immigrants who need to exchange cash, find transportation, and a free bottle of water. Daily, hundreds of buses filled with Venezuelans part their way to Bogotá, Lima, Santiago, Buenos Aires and most of the other South American capitals. Trips which can take up to 13 days and will cost from $200-$600 USD.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6374d25ce7543cd8ef4357"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:17:06.040+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:19:33.815+0000"), 
+    "title" : "Bracelet Maker Tulio Benitez", 
+    "subtitle" : "Bracelet Maker", 
+    "cover" : "4me3c0ojkd29gni.jpeg", 
+    "content" : "He started creating bracelets and selling them on the streets in Cúcuta, Colombia. Initially scared to make a Venezuela bracelet because he might be spotted by police and taken out of the country, he decided to do it anyways. Since then it's is the one he sells the most of, saying \"It's a piece of identity that every migrant values like nothing else\". These bracelets give identity to Venezuelan migrants who have lost it as the leave their home country. ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63755e5ce7543cd8ef4358"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:19:26.015+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:19:26.015+0000"), 
+    "title" : "Bolívar Handbag Artisan", 
+    "subtitle" : "Handbag", 
+    "cover" : "4me3c0ojkd2cgnw.jpeg", 
+    "content" : "He assembles bags and wallets using bolívares bills with his brother in Venezuela, then crosses the border to Cúcuta, Colombia to sell them on the streets. By doing this he multiplies the bolívars he brings from Venezuela >10x.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6375cb5ce7543cd8ef4359"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:21:15.314+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:25:35.650+0000"), 
+    "title" : "Daniel", 
+    "subtitle" : "Daniel Storie", 
+    "cover" : "4me3c0ojkd2eszm.jpeg", 
+    "content" : "Upon meeting he had just taken his first shower in three days at a hotel where they help Venezuelan immigrants. While on his way from Caracas, Venezuela to Lima, Perú he stopped in Cucuta to withdraw money to pay for his transportation. Due to a problem he had while cashing out his money from Western Union because his national ID was not in a legible condition to read his identification number, he was stuck unable to continue.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6376215ce7543cd8ef435b"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:22:41.745+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:25:42.781+0000"), 
+    "title" : "Another way back to my roots", 
+    "subtitle" : "Storie", 
+    "cover" : "4me3c0ojkd2go1h.jpeg", 
+    "content" : "I’m from Caracas, Venezuela and I currently dedicated my time to creating an online media agency. I am a lawyer with computer skills and programming, strange thing but I like it. In my country I had a collection company that due to the situation here became economically unfeasible after almost 10 years of operations. This forced me to look for another way back to my roots in web design. I founded a new web project and started receiving payments in dollars and Euros through Paypal and then in cryptocurrencies and AirTM was the solution to my currency exchange needs. There was not an equal platform to access currency exchanges. Although there are some brokers who do their job well located on Facebook with their own platforms, given the very high volumes of Bs that must be exchanged for few dollars, many of them can hardly meet local demand in Venezuela. I speak from my experience in my country, and I do not know for sure if this experience applies to other countries, but Venezuela is a wonderful country that is going through serious economic problems. The value of money within the country has fallen as a result of hyperinflation and political problems, so the future is on the Internet, online services open a door to great opportunities to earn income in foreign currency working from Venezuela.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637c4a5ce7543cd8ef435c"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:48:58.513+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:48:58.513+0000"), 
+    "title" : "Migdalia Piñeda", 
+    "subtitle" : "Colombian living in Cúcuta", 
+    "cover" : "4me3c0ojkd3egbk.jpeg", 
+    "content" : "Colombian living in Cúcuta her entire life. She helps Venezuelan immigrants by selling (really economic) basic things to help them at a popular plaza where they usually spend long periods. She is known as the mother of immigrants who spends her days and nights at the plaza.                     ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637c7b5ce7543cd8ef435d"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:49:47.657+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:25:49.733+0000"), 
+    "title" : "Hair for sale", 
+    "subtitle" : " $10 for each 30 centimeters", 
+    "cover" : "4me3c0ojkd3fi9p.jpeg", 
+    "content" : "Women crossing the Cúcuta Venezuela border sell their hair to fund their migration. $10 for each 30 centimeters.                          ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637cb55ce7543cd8ef435e"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:50:45.057+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:50:45.057+0000"), 
+    "title" : "Eddy and Eladdi", 
+    "subtitle" : "Couple selling candy", 
+    "cover" : "4me3c0ojkd3gqfz.jpeg", 
+    "content" : "Couple selling candy as a means to move onward from the border town of Cúcuta, away from Venezuela.                          ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637cf05ce7543cd8ef435f"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:51:44.879+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:25:56.269+0000"), 
+    "title" : "The Three Selling Sisters", 
+    "subtitle" : "The Three Selling Sisters", 
+    "cover" : "4me3c0ojkd3i0ng.jpeg", 
+    "content" : "These three sisters cross the Cúcuta border from Venezuela to Colombia every day to sell makeup to the lines that form in front of Western Union to help their father pay for household goods.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637d2a5ce7543cd8ef4360"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:52:42.351+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:52:42.351+0000"), 
+    "title" : "Jorge Cordero", 
+    "subtitle" : " Venezuelan artisan", 
+    "cover" : "4me3c0ojkd3j91s.jpeg", 
+    "content" : " Venezuelan artisan making crafts, bags, and wallets with bolívares bills. Bag made with 940, 100 and 50 bolivar bills. At that days FX rate the 70,500 bolivares were worth $0.063 USD. He made 47,619% profit. ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637d625ce7543cd8ef4361"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:53:38.685+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:26:06.974+0000"), 
+    "title" : "Unofficial border crossing", 
+    "subtitle" : "Parallel to the Colombia Venezuela border crossing bridge", 
+    "cover" : "4me3c0ojkd3kgeq.jpeg", 
+    "content" : "Parallel to the Colombia Venezuela border crossing bridge, there is a unofficial path taken by the brave. A territory which is controlled by one of the most powerful paramilitary groups of the Colombian jungles, las FARC. People who take this way face  the risk of being in the middle of a shooting or getting robbed. Even though Venezuelan and Colombian authorities know about this, its less than 100 meters away from the official crossing, they don't intervene. Venezuelans who cross the “Green Road” as its called by the locals, don't receive the official “stamp”, which is what an immigrant needs to legally be in Colombia.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637d965ce7543cd8ef4362"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:54:30.487+0000"), 
+    "updatedAt" : ISODate("2018-08-03T00:04:05.579+0000"), 
+    "title" : "Cúcuta “Where Great Things Happen”", 
+    "subtitle" : "The Cúcuta border between Venezuela and Colombia", 
+    "cover" : "4me3c0ojkd3lkgd.jpeg", 
+    "content" : "The Cúcuta border between Venezuela and Colombia is lined with barricades to funnel traffic, 30,000 documented people and their belongings per day. Time has converted the Venezuelan social, political and economic situation into great humanitarian crisis. So yes, Cúcuta, where great things happen.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637dd85ce7543cd8ef4363"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:55:36.535+0000"), 
+    "updatedAt" : ISODate("2018-08-02T21:55:36.535+0000"), 
+    "title" : "Passport Stamping Line", 
+    "subtitle" : "Having a stamp legalizes your stay in Colombia", 
+    "cover" : "4me3c0ojkd3mzfx.jpeg", 
+    "content" : "Having a stamp legalizes your stay in Colombia. For people who are just arriving to a new country in search of a new life, it means you can now get a job. Passport stamp waiting lines can be up to a 10 hour wait on a good day, and up to 3 days during times of conflict. For immigrants eager to get on their journey, some skip and take the risk of continuing undocumented.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637e255ce7543cd8ef4364"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:56:53.310+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:26:16.668+0000"), 
+    "title" : "Studying & Undertaking", 
+    "subtitle" : "I am a nurse, volunteer in first aid", 
+    "cover" : "4me3c0ojkd3on0c.jpeg", 
+    "content" : "I am a nurse, volunteer in first aid, and seller and merchant of various products. Sincerely, the crisis in the face of the closure that our government has imposed every day on the availability of foreign exchange as well as liquidity has caused saving to be impossible, a situation that forces us to seek sources of income totally different from the bolivars. Searching and searching the Internet I found AirTM, at first I thought it was a scam, until I made my first 3 transactions.\nI got fed up with the people who tried to charge extra for international currency, as well as the number of scammers that luckily you discovered before completing an exchange. I wasted my time, exposed myself to criminals, lost money. Infinite time, and money I have saved more than $100 as losses that I could have obtained by bad sales in the street market. (Photo by Redd Angelo on Unsplash)                          ", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637e705ce7543cd8ef4365"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:58:08.167+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:26:31.175+0000"), 
+    "title" : "Save in Stable Currency to Travel the World", 
+    "subtitle" : " I’m Darlyn and I live in Venezuela", 
+    "cover" : "4me3c0ojkd3q8sp.jpeg", 
+    "content" : " I’m Darlyn and I live in Venezuela. I work for a telecommunications company and in my free time I like to do jobs to earn $ in many PTC pages, mini-jobs and surveys. Also, I like technology and to have fun. My goal is to apply my knowledge of technology to generate income that allows me to create economic independence to help my family. My goal is to travel the world.\nAirTM allows me to keep my savings in a currency that does not lose value. In addition to being able to exchange my $ in different wallets like PayPal and Uphold. Above all, it helped me to open up my possibilities for currency exchanges, something I had not known about previously. I can now acquire goods abroad, which is currently impossible in my country. I exchange currencies with friends in different countries and AirTM gives me the possibilities of acquiring cryptocurrencies which helps to increase my savings. (Photo by Slava Bowman on Unsplash).", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637eaf5ce7543cd8ef4366"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T21:59:11.020+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:26:44.710+0000"), 
+    "title" : "Cook by Vocation, Merchant by Ambition", 
+    "subtitle" : "I’m Alexis, Venezuelan, a cook.", 
+    "cover" : "4me3c0ojkd3rla7.jpeg", 
+    "content" : "I’m Alexis, Venezuelan, a cook. I currently reside in the Northeast of Brazil.\nThe economic, political and social crisis in my country led me to look for an alternative to protect my capital from hyperinflation. Also, in my country exchange control practically prevents access to foreign currencies, so you have to go to parallel markets with very little security. Above all, it gave me enormous security in my transactions, since before I used secondary markets with unknown people and exposed myself to scams or unfavorable exchange transactions, something that does not happen to me since AirTM its trust system existed.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637ef25ce7543cd8ef4367"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:00:18.455+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:00:18.455+0000"), 
+    "title" : "Ericksson Morales", 
+    "subtitle" : "18 year old Venezuelan traveling to Bogotá", 
+    "cover" : "4me3c0ojkd3t0zc.jpeg", 
+    "content" : "18 year old Venezuelan traveling to Bogotá where he has cousins to start a new life with. His family promised him $80 so he could pay for the bus, but only received $40. This was his second day on the plaza waiting for the other $40. Once he gets to Bogotá he doesn’t know what he will do.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b637f515ce7543cd8ef4368"), 
+    "featured" : false, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-02T22:01:53.750+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:01:53.750+0000"), 
+    "title" : "Auto parts dealer", 
+    "subtitle" : "I’m from San Cristobal, Venezuela.", 
+    "cover" : "4me3c0ojkd3v2uw.jpeg", 
+    "content" : "I’m from San Cristobal, Venezuela. I am 31 years old and I am a Foreign Trader, I consider myself passionate about new challenges; dreamer and entrepreneur. In the last years I have been developing my company of online sales of auto parts for vehicles (he asked that the name be omitted for security reasons).\nI always had the intention of owning my own company, after doing different jobs that did not meet my expectations in 2012, I decided to start selling automotive parts on the internet and have been dedicating myself to this full time since.\nI have changed my life radically given that with the support of AirTM, I have a wide range of opportunities to start other types of online businesses and diversify my income, and what attracts me the most is how fast I have made the transition.", 
+    "lan" : "EN", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b63739f5ce7543cd8ef4353"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-08-02T21:11:59.085+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:26:28.046+0000"), 
+    "title" : "Yeinis Fuenmayor", 
+    "subtitle" : "Vendedora de Caramelos", 
+    "cover" : "4me3c0ojkd22vr7.jpeg", 
+    "content" : "Vendedora venezolana de 20 años que vende caramelos en el Cajero Banco Corpbanca Ventura Plaza Cúcuta, Colombia, mientras su esposo está buscando un trabajo para pagar el alquiler. Ella planeaba viajar más allá de Cúcuta, pero se quedó después de que notaron que su hija estaba enferma de riñón. Ahora, cada peso colombiano que recibe va directamente al tratamiento de sus hijas para mantenerla con vida.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-08T18:15:50.021+0000")
+}
+{ 
+    "_id" : ObjectId("5b6374205ce7543cd8ef4354"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-08-02T21:14:08.163+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:26:43.978+0000"), 
+    "title" : "Puente Internacional Simón Bolívar", 
+    "subtitle" : "Adios amigo, vuelva pronto.", 
+    "cover" : "4me3c0ojkd25nc8.jpeg", 
+    "content" : " “Adios amigo, vuelve pronto. Más de 2 millones de personas han cruzado este puente desde que comenzó la dictadura de Chaves, y con Maduro, el tráfico diario solo ha aumentado. Muchas de las personas que cruzan el puente en esta dirección no regresarán pronto, ya que la mayoría de ellos abandonan el país, sus familias y amigos en busca de un futuro mejor, esperando que caigan los regímenes.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-08T18:15:51.667+0000")
+}
+{ 
+    "_id" : ObjectId("5b6374a25ce7543cd8ef4355"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : true, 
+    "createdAt" : ISODate("2018-08-02T21:16:18.029+0000"), 
+    "updatedAt" : ISODate("2018-08-06T23:26:57.750+0000"), 
+    "title" : "Agencias de Migración", 
+    "subtitle" : "Agencias de Migración", 
+    "cover" : "4me3c0ojkd28fly.jpeg", 
+    "content" : "Las agencias de viajes colombianas han encontrado su mercado perfecto. Ahora más de 15 agencias se alinean en las calles justo después de la frontera con Colombia para atender a los inmigrantes venezolanos que necesitan cambiar dinero en efectivo, encontrar transporte y una botella de agua gratis. Diariamente, cientos de autobuses llenos de venezolanos se separan de Bogotá, Lima, Santiago, Buenos Aires y la mayoría de las otras capitales sudamericanas. Viajes que pueden demorar hasta 13 días y costarán entre $ 200 y $ 600 USD.", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0), 
+    "deletedAt" : ISODate("2018-08-08T18:15:52.173+0000")
+}
+{ 
+    "_id" : ObjectId("5b6b33769fb2823f20a2a083"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-08T18:16:22.472+0000"), 
+    "updatedAt" : ISODate("2018-08-08T18:17:37.289+0000"), 
+    "title" : "Storie 1", 
+    "subtitle" : "Storie 1", 
+    "cover" : "4me3cgwjklgg5k0.jpeg", 
+    "content" : "Storie 1", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6b339f9fb2823f20a2a084"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-08T18:17:03.717+0000"), 
+    "updatedAt" : ISODate("2018-08-08T18:17:37.982+0000"), 
+    "title" : "Storie 2", 
+    "subtitle" : "Storie 2", 
+    "cover" : "4me3cgwjklgh1hx.jpeg", 
+    "content" : "Storie 2", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5b6b33b99fb2823f20a2a085"), 
+    "featured" : true, 
+    "main" : false, 
+    "deleted" : false, 
+    "createdAt" : ISODate("2018-08-08T18:17:29.949+0000"), 
+    "updatedAt" : ISODate("2018-08-08T18:17:38.869+0000"), 
+    "title" : "Storie 3", 
+    "subtitle" : "Storie 3", 
+    "cover" : "4me3cgwjklghlqb.jpeg", 
+    "content" : "Storie 3", 
+    "lan" : "ES", 
+    "site" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "__v" : NumberInt(0)
+}

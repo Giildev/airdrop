@@ -1,0 +1,206 @@
+{ 
+    "_id" : ObjectId("5b479f121f22d372dfb0f433"), 
+    "banner" : "4me311gjkiu72eq.jpeg", 
+    "stories" : [
+        ObjectId("5b480c3f96a9093b1482cdab"), 
+        ObjectId("5b63739f5ce7543cd8ef4354"), 
+        ObjectId("5b6374205ce7543cd8ef4355"), 
+        ObjectId("5b6374a25ce7543cd8ef4356"), 
+        ObjectId("5b6374d25ce7543cd8ef4357"), 
+        ObjectId("5b63755e5ce7543cd8ef4358"), 
+        ObjectId("5b6375cb5ce7543cd8ef4359"), 
+        ObjectId("5b6376215ce7543cd8ef435b"), 
+        ObjectId("5b637c4a5ce7543cd8ef435c"), 
+        ObjectId("5b637c7b5ce7543cd8ef435d"), 
+        ObjectId("5b637cb55ce7543cd8ef435e"), 
+        ObjectId("5b637cf05ce7543cd8ef435f"), 
+        ObjectId("5b637d2a5ce7543cd8ef4360"), 
+        ObjectId("5b637d625ce7543cd8ef4361"), 
+        ObjectId("5b637d965ce7543cd8ef4362"), 
+        ObjectId("5b637dd85ce7543cd8ef4363"), 
+        ObjectId("5b637e255ce7543cd8ef4364"), 
+        ObjectId("5b637e705ce7543cd8ef4365"), 
+        ObjectId("5b637eaf5ce7543cd8ef4366"), 
+        ObjectId("5b637ef25ce7543cd8ef4367"), 
+        ObjectId("5b637f515ce7543cd8ef4368"), 
+        ObjectId("5b6b33769fb2823f20a2a083"), 
+        ObjectId("5b6b339f9fb2823f20a2a084"), 
+        ObjectId("5b6b33b99fb2823f20a2a085")
+    ], 
+    "hiwcard" : [
+        ObjectId("5b68bfdd2d19894318ba7ba1"), 
+        ObjectId("5b68c15d2598fe24908f5d40"), 
+        ObjectId("5b68c2002598fe24908f5d41"), 
+        ObjectId("5b68c2392598fe24908f5d42"), 
+        ObjectId("5b68c25d2598fe24908f5d43"), 
+        ObjectId("5b68c27b2598fe24908f5d44")
+    ], 
+    "donations" : [
+        ObjectId("5b481250c5accd3d68a87e23"), 
+        ObjectId("5b466ecad9724b435869ce7a"), 
+        ObjectId("5b4cf37bbd7bbd5e5873bdbc"), 
+        ObjectId("5b4cf6796aab093270f1880b"), 
+        ObjectId("5b4d04166aab093270f1880d"), 
+        ObjectId("5b4d04916aab093270f1880f"), 
+        ObjectId("5b63e80ad393c206242fa0a6"), 
+        ObjectId("5b63e86bd393c206242fa0a7"), 
+        ObjectId("5b63e8aed393c206242fa0a8"), 
+        ObjectId("5b63e8d7d393c206242fa0a9"), 
+        ObjectId("5b63e8f3d393c206242fa0aa"), 
+        ObjectId("5b63e914d393c206242fa0ab"), 
+        ObjectId("5b63e92cd393c206242fa0ac"), 
+        ObjectId("5b63e964d393c206242fa0ad"), 
+        ObjectId("5b63e976d393c206242fa0ae"), 
+        ObjectId("5b68e25e8380452dc838880b")
+    ], 
+    "faqs" : [
+        ObjectId("5b481abbeef5a73dacdacd4e"), 
+        ObjectId("5b48249a8d2a9d04b850092f"), 
+        ObjectId("5b5c07a6641883210c4e6de6"), 
+        ObjectId("5b5c08f0c2a02769c409089e"), 
+        ObjectId("5b5c097188271f68342b6e98"), 
+        ObjectId("5b5c0f0788271f68342b6e9e"), 
+        ObjectId("5b5cb85e228628446c3f8dc2"), 
+        ObjectId("5b5d17b7c7aefb545c6a971b"), 
+        ObjectId("5b5d18a8fe3bf83930cabe20"), 
+        ObjectId("5b5d194f02125a0740ed007e"), 
+        ObjectId("5b5e17d6dbbdd6440413ded8"), 
+        ObjectId("5b637fb65ce7543cd8ef4369"), 
+        ObjectId("5b637fd75ce7543cd8ef436a"), 
+        ObjectId("5b637ff65ce7543cd8ef436b"), 
+        ObjectId("5b6380005ce7543cd8ef436c"), 
+        ObjectId("5b6380075ce7543cd8ef436d"), 
+        ObjectId("5b63800d5ce7543cd8ef436e"), 
+        ObjectId("5b6380155ce7543cd8ef436f"), 
+        ObjectId("5b63801c5ce7543cd8ef4370"), 
+        ObjectId("5b6380245ce7543cd8ef4371"), 
+        ObjectId("5b63803d5ce7543cd8ef4372"), 
+        ObjectId("5b68e2eb8380452dc838880c"), 
+        ObjectId("5b68e30d8380452dc838880d"), 
+        ObjectId("5b68e3268380452dc838880e"), 
+        ObjectId("5b68e33e8380452dc838880f"), 
+        ObjectId("5b68e35a8380452dc8388810"), 
+        ObjectId("5b68e3788380452dc8388811"), 
+        ObjectId("5b68e38f8380452dc8388812"), 
+        ObjectId("5b68e3ab8380452dc8388813"), 
+        ObjectId("5b68e3c98380452dc8388814"), 
+        ObjectId("5b68e3de8380452dc8388815")
+    ], 
+    "timeline" : {
+        "lines" : [
+            ObjectId("5b484229cb96de59e05d6119"), 
+            ObjectId("5b4842a5615e792080a3b20b"), 
+            ObjectId("5b484534befba04e8cfdab36"), 
+            ObjectId("5b484543befba04e8cfdab37"), 
+            ObjectId("5b5d0a12da887a16a4df4867"), 
+            ObjectId("5b5e242edbbdd6440413ded9"), 
+            ObjectId("5b6385b85ce7543cd8ef4373"), 
+            ObjectId("5b6385c55ce7543cd8ef4374"), 
+            ObjectId("5b6385db5ce7543cd8ef4375"), 
+            ObjectId("5b63d5ba5ce7543cd8ef4376"), 
+            ObjectId("5b63dd905ce7543cd8ef4377"), 
+            ObjectId("5b63ddd25ce7543cd8ef4378"), 
+            ObjectId("5b63ddfc5ce7543cd8ef4379")
+        ], 
+        "en" : {
+            "description" : "NA", 
+            "title" : "Airdrop 2018 Timeline"
+        }, 
+        "es" : {
+            "description" : "N/A", 
+            "title" : "Cronología Airdrop 2018"
+        }
+    }, 
+    "header" : {
+        "es" : {
+            "title" : "Ayuda enviando $10 a 100,000 Venezolanos", 
+            "description" : "Las criptodivisa es indetenible. Venezuela lo necesita mas que otros paises"
+        }, 
+        "en" : {
+            "title" : "Help Send $10 to 100,000 Venezuelans", 
+            "description" : "Cryptocurrency is unstoppable. No country needs it more than Venezuela."
+        }
+    }, 
+    "middleSection" : {
+        "es" : {
+            "title" : "Como funciona", 
+            "description" : "Airdrop Venezuela distribuye donaciones para ayudar a introducir a los venezolanos a los beneficios de la criptomoneda, incluidos el comercio independiente, el comercio electrónico, la inversión, las remesas y otras oportunidades basadas en la web."
+        }, 
+        "en" : {
+            "title" : "How it Work's", 
+            "description" : "Airdrop Venezuela distributes donations to help introduce Venezuelans to cryptocurrency benefits including freelance, eCommerce, investment, remittance, and other web-based opportunities."
+        }
+    }, 
+    "about" : {
+        "en" : {
+            "description" : "<p>Venezuela should be among the most prosperous nations. Its oil reserves are estimated to be the largest in the world. It has a young and well-educated population and a dynamic culture founded in principles of freedom and fearless opposition to tyranny. </p>\n\n<p>Today Venezuela has a chaotic and isolated economy, plagued by hyperinflation, food shortages, international sanctions, and oppression of political dissent. Due to artificially-rigged government exchange rates, the banks in Venezuela are not used for remittance, payments, or donations. Venezuela needs better money. Venezuela needs cryptocurrency.</p>\n\n<p>Airdrop Venezuela’s mission is to send $1,000,000 in crypto-connected digital money to 100,000 ID-authenticated Venezuelans, distributing $10 each straight to their AirTM e-wallet. Ten dollars can help a family purchase food, medicine, and scarce imported goods. Access to digital money can help introduce Venezuelans to cryptocurrencies, online freelancer platforms, ecommerce, investments, donations and other income generating web-based opportunities.</p>\n\n<p>Airdrop Venezuela is powered by AirTM, an e-wallet connected to bank networks and e-money systems all over the world (including Venezuela) via direct bank connections and a peer-to-peer network of cryptocurrency buyers and sellers.. AirTM is used by thousands of Venezuelans everyday. Over the past three years, AirTM has become expert at authenticating digital identities to prevent fraud.</p>\n\n<p>Join AirTM to give Venezuelans access to digital cash that can be withdrawn as local money (Bolívares) at free market rates.</p>", 
+            "title" : "“A people that loves freedom will in the end be free.” "
+        }, 
+        "es" : {
+            "description" : "<p>Venezuela debería estar entre las naciones más prósperas. Se estima que sus reservas de petróleo son las más grandes del mundo. Tiene una población joven y bien educada y una cultura dinámica fundada en los principios de la libertad y la oposición valiente a la tiranía.</p>\n\n<p>Hoy Venezuela tiene una economía caótica y aislada, plagada de hiperinflación, escasez de alimentos, sanciones internacionales y opresión de la disidencia política. Debido a las tasas de cambio gubernamentales manipuladas artificialmente, los bancos en Venezuela no se utilizan para remesas, pagos o donaciones. Venezuela necesita mejor dinero. Venezuela necesita criptomoneda.</p>\n\n<p>La misión de Airdrop Venezuela es enviar $ 1,000,000 en dinero digital con conexión criptográfica a 100,000 venezolanos autenticados con identificación, distribuyendo $ 10 cada uno directamente a su billetera electrónica AirTM. Diez dólares pueden ayudar a una familia a comprar alimentos, medicinas y bienes importados escasos. El acceso al dinero digital puede ayudar a los venezolanos a ingresar en las criptomonedas, las plataformas en línea de los profesionales independientes, el comercio electrónico, las inversiones, las donaciones y otras oportunidades generadoras de ingresos en la web.</p>\n\n<p>Airdrop Venezuela es impulsado por AirTM, una billetera electrónica conectada a redes bancarias y sistemas de dinero electrónico en todo el mundo (incluido Venezuela) a través de conexiones bancarias directas y una red de compradores y vendedores de criptomonedas de igual a igual. Se usa AirTM. por miles de venezolanos todos los días. En los últimos tres años, AirTM se ha convertido en un experto en la autenticación de identidades digitales para evitar el fraude.</p>\n\n<p>Únase a AirTM para brindar a los venezolanos acceso a efectivo digital que puede retirarse como dinero local (Bolívares) a tasas de mercado libres</p>", 
+            "title" : "Un pueblo que ama la libertad al final será libre."
+        }
+    }, 
+    "story" : {
+        "en" : {
+            "description" : "Read stories from Venezuelans during this crisis. *Some identities are kept private.", 
+            "title" : "Stories From Venezuelans"
+        }, 
+        "es" : {
+            "description" : "Lea historias de venezolanos durante esta crisis. * Algunas identidades se mantienen privadas.", 
+            "title" : "Historias de venezolanos"
+        }
+    }, 
+    "mail" : {
+        "en" : {
+            "description" : "Stay informed about Airdrop Venezuela milestones and stories from donation recipients.", 
+            "title" : "Join our mailing list"
+        }, 
+        "es" : {
+            "description" : "Manténgase informado sobre los hitos e historias de Airdrop Venezuela de los destinatarios de las donaciones.", 
+            "title" : "Únete a nuestra lista de correos"
+        }
+    }, 
+    "faq" : {
+        "en" : {
+            "description" : "description English", 
+            "title" : "title english"
+        }, 
+        "es" : {
+            "description" : "N/A", 
+            "title" : "N/A"
+        }
+    }, 
+    "contactUs" : {
+        "en" : {
+            "description" : "Please contact donate@airdropvenezuela.org for any questions or requests.", 
+            "title" : "Contact Us"
+        }, 
+        "es" : {
+            "description" : "Por favor, póngase en contacto con donate@airdropvenezuela.org para cualquier pregunta o solicitud.", 
+            "title" : "Contáctenos"
+        }
+    }, 
+    "donation" : {
+        "en" : {
+            "bottomText" : "Cryptocurrency totals <$10k will be converted into USD upon distribution.", 
+            "description" : "Donation amounts are updated daily and distributed evenly in the value donated in to each recipients AirTM wallet.", 
+            "title" : "Donate to Airdrop Venezuela", 
+            "warningText" : "DO NOT DONATE TO ANY ADDRESSES LISTED OUTSIDE OF AIRDROPVENEZUELA.ORG."
+        }, 
+        "es" : {
+            "bottomText" : "Los totales de criptomonedas + $ 10k se convertirán a USD en la distribución.", 
+            "description" : "Los montos de la donación se actualizan diariamente y se distribuyen de manera uniforme en el valor donado en cada billetera AirTM de los destinatarios.", 
+            "title" : "Done a AirDrop Venezuela", 
+            "warningText" : "NO DONAR A NINGUNA DIRECCIÓN MENCIONADA FUERA DE AIRDROPVENEZUELA.ORG."
+        }
+    }, 
+    "donationFundsAmount" : {
+        "goal" : "1000000", 
+        "raised" : "34093"
+    }, 
+    "donationCerfiedUsersAmount" : {
+        "goal" : "100000", 
+        "raised" : "22230"
+    }
+}

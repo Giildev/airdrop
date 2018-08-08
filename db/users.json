@@ -1,0 +1,24 @@
+{ 
+    "_id" : ObjectId("5b45477cbf4ee3538444aa4e"), 
+    "avatar" : "4me3c0ojkd4zubn.jpeg", 
+    "createdAt" : ISODate("2018-07-10T23:55:40.413+0000"), 
+    "updatedAt" : ISODate("2018-08-02T22:33:35.599+0000"), 
+    "lastedEnter" : ISODate("2018-08-06T23:08:19.377+0000"), 
+    "userName" : "airdrop_admin", 
+    "email" : "hola@hola.com", 
+    "password" : "$2a$10$ZX5fQUi43i3qffV.0R2Z0e0oVoJYcVeTbSEetqSWQKCWpQCxMPbF.", 
+    "__v" : NumberInt(0), 
+    "access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjViNDU0NzdjYmY0ZWUzNTM4NDQ0YWE0ZSIsInVzZXJOYW1lIjoiYWlyZHJvcF9hZG1pbiIsImVtYWlsIjoiaG9sYUBob2xhLmNvbSIsInNpdGUiOiI1YjQ3OWYxMjFmMjJkMzcyZGZiMGY0MzMifSwiaWF0IjoxNTMzNTk2ODk5LCJleHAiOjE2MTk5MTA0OTl9.XpHN7BJQPtAumw0pAbMHARhSoDyQkVo-FHjZZYX2wbM"
+}
+{ 
+    "_id" : ObjectId("5b45980b3758231d8c1fb2ef"), 
+    "avatar" : "defaultAvatar.png", 
+    "createdAt" : ISODate("2018-07-11T05:39:23.340+0000"), 
+    "updatedAt" : ISODate("2018-07-16T17:25:57.315+0000"), 
+    "lastedEnter" : ISODate("2018-07-16T17:15:57.860+0000"), 
+    "userName" : "admin_airdrop", 
+    "email" : "holasda@hdsadola.com", 
+    "password" : "$2a$10$3F2fY3OweHOdbiIYikolqODx/oNLBecUeYRSzBscJKfRRw0ELYKqG", 
+    "__v" : NumberInt(0), 
+    "access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjViNDU5ODBiMzc1ODIzMWQ4YzFmYjJlZiIsInVzZXJOYW1lIjoiYWlyZHJvcF9zdXBlcl9sYWNyYSIsImVtYWlsIjoiaG9sYXNkYUBoZHNhZG9sYS5jb20ifSwiaWF0IjoxNTMxNzYxMzU3LCJleHAiOjE2MTgwNzQ5NTd9.Uc0ED7CXNIsKLyv0qjJXQzDcQheYkRwcRxWYPf7WQtM"
+}
