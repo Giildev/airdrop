@@ -16,7 +16,6 @@ export default class Caroussel extends Component{
   };
 
   shouldComponentUpdate = (nextProps) => {
-    console.log(nextProps)
     if(this.state.index !== nextProps.index || this.state.stories !== nextProps.stories) {
       this.setState({ index: nextProps.index, stories: nextProps.stories })
     }

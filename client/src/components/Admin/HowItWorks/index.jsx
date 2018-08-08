@@ -51,7 +51,6 @@ export default class HowItWorks extends Component {
     return axios
       .get(`${config.BASE_URL}/hiwcard`, this.headers)
       .then(res => {
-        console.log(res.data);
         if (res.status === 200) {
           this.setState({
             cards: res.data.hiwcards,
@@ -97,7 +96,6 @@ export default class HowItWorks extends Component {
 
   createCard = () => {
     let card = this.state.card;
-    console.log('card', card)
     Object.keys(card).map(key => {
       if (card[key] === "") {
         delete card[key];

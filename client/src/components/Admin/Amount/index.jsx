@@ -133,7 +133,6 @@ export default class AdminDonation extends Component {
       funds,
       site
     } = this.state;
-    console.log(donationCerfiedUsersAmount);
     return site === undefined ? (
       <Loader />
     ) : (

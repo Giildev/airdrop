@@ -37,14 +37,6 @@ export default class Switch extends Component {
       .catch(err => console.log(err));
   };
 
-  hola = () => {
-    console.log('hola')
-  }
-
-  chao = () => {
-    console.log('chao')
-  }
-
   handleSw = () => {
     this.setState({ sw: !this.state.sw })
   }

@@ -52,7 +52,6 @@ export default class AdminDonation extends Component {
     return axios
       .get(`${config.BASE_URL}/donation`, this.headers)
       .then(res => {
-        console.log(res.data)
         if (res.status === 200) {
           this.setState({
             donations: res.data.data,

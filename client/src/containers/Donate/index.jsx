@@ -8,7 +8,6 @@ import { CoinCard } from "../../components/Card";
 export default class Donate extends Component {
   constructor(props) {
     super(props);
-    console.log("donation", props);
     this.state = {
       title: props.title,
       description: props.description,

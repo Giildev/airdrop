@@ -47,9 +47,7 @@ export default class Home extends Component {
 
   getContentData = () => {
     axios.get(`${config.BASE_URL}/site/${this.state.selectedLan}`).then(res => {
-      console.log(res.data)
       this.setState({ content: res.data.site, lan: this.state.selectedLan });
-      console.log("content", res.data);
     }); // fix
   };
 
@@ -61,7 +59,6 @@ export default class Home extends Component {
 
   render() {
     const { content, selectedLan } = this.state;
-    console.log(content)
     return content === undefined ? (
       <Loader />
     ) : (

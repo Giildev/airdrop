@@ -134,14 +134,12 @@ export default class AdminTimeline extends Component {
   handleStart = (date) => {
     const line = Object.assign({}, this.state.line, { start: date.valueOf() })
     this.setState({ startDate: date, line }, () => {
-      // console.log(this.state.line);
     });
   }
 
   handleEnd = (date) => {
     const line = Object.assign({}, this.state.line, { end: date.valueOf() })
     this.setState({ endDate: date, line }, () => {
-      // console.log(this.state.line);
     });
   }
 
