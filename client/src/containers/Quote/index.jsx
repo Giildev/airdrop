@@ -10,30 +10,32 @@ export default class Quote extends Component {
 
     this.state = {
       title: undefined || props.title,
+      author: props.author || ``,
       description: undefined || props.description
     }
   }
 
   shouldComponentUpdate = (nextProps) => {
-    const { title, description } = this.state;
-    if (title !== nextProps.title || description !== nextProps.description) {
+    const { title, description, author } = this.state;
+    if (title !== nextProps.title || description !== nextProps.description || author !== nextProps.author) {
       this.setState({
         title: nextProps.title,
-        description: nextProps.description
+        description: nextProps.description,
+        author: nextProps.author
       })
     }
     return true;
   }
 
   render() {
-    const { title, description } = this.state;
+    const { title, author, description } = this.state;
     return <section className="quote" id="About">
         <div className="quote__text">
           <div className="quote__text__quote">
             {title}
             {/*“A people that loves freedom will in the end be free.”*/}
           </div>
-          <div className="quote__text__author">{/*- Simon Bolivar -*/}</div>
+          <div className="quote__text__author">{`- ${ author } -`}</div>
         </div>
         <div className="quote__container">
           <div className="quote__container__leftCol">

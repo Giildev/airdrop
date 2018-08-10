@@ -19,7 +19,6 @@ export default class Stories extends Component {
   }
 
   shouldComponentUpdate = nextProps => {
-    console.log("nextProps", nextProps);
     const { title, description, stories } = this.state;
     if (
       title !== nextProps.title ||
