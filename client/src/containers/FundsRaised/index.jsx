@@ -59,7 +59,7 @@ export default class componentName extends Component {
                     style={{ width: `${parseFloat(percentFunds).toFixed(2)}%` }}
                   />
                   <div className="containerBar__bubble">
-                    <img src="timeLine.png" className="barTimeline" alt="" />
+                    <img src="timeLine2.png" className="barTimeline" alt="" />
                     <div className="funds__container__middle__innerBox__bar__bubbleBox">
                       {fundsAmount.raised} USD Raised
                     </div>
@@ -95,7 +95,7 @@ export default class componentName extends Component {
                     style={{ width: `${parseFloat(percentUser).toFixed(2)}%` }}
                   />
                   <div className="containerBar__bubble">
-                    <img src="timeLine.png" class="barTimeline" alt="" />
+                    <img src="timeLine2.png" class="barTimeline" alt="" />
                     <div className="recipents__container__middle__innerBox__bar__bubbleBox">
                       {" "}
                       {cerfiedUsersAmount.raised} Certified Users{" "}

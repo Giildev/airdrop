@@ -332,7 +332,10 @@ td.rdtYear:hover {
     text-align: right;
     color: var(--primary);
     padding: 2rem;
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    align-self: flex-end; }
   .stories__img {
     object-fit: scale-down;
     height: 55%; }
@@ -410,7 +413,8 @@ td.rdtYear:hover {
     font-family: inherit;
     font-weight: 800;
     color: #bebebe;
-    padding: 0.5rem 0rem; }
+    padding: 0.5rem 0rem;
+    word-wrap: break-word; }
   .coinWallet__qr {
     display: flex;
     justify-content: center;

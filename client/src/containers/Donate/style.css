@@ -23,8 +23,8 @@
     text-align: center;
     text-transform: capitalize;
     color: var(--primary);
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: bold;
     margin: 6rem 0rem; }
   .donateContainer__message {
     font-size: 2rem;

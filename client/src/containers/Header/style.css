@@ -271,7 +271,7 @@ td.rdtYear:hover {
     height: auto; }
   .header__menu {
     display: flex;
-    width: 45rem;
+    width: 95rem;
     justify-content: space-evenly; }
     .header__menu__item {
       font-size: 2rem; }

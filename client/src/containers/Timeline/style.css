@@ -1,7 +1,7 @@
 .timeLineContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-image: url(/cloud.png);
   background-repeat: no-repeat;
@@ -15,8 +15,7 @@
   color: inherit;
   text-align: center;
   font-size: 5rem;
-  font-weight: 100 !important;
-  margin-bottom: 4rem; }
+  font-weight: 100 !important; }
 
 .cardRow {
   display: flex;

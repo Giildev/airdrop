@@ -65,17 +65,22 @@
     flex-wrap: wrap; } }
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide {
-  max-height: 70rem !important; }
+  max-height: 90rem !important; }
 
 .carousel .slide img {
   width: auto !important;
   max-height: 68rem !important; }
 
 .carousel .slide {
-  background-color: white !important; }
+  background-color: white !important;
+  text-align: left !important;
+  padding: 0rem 4rem; }
 
 .carousel.carousel-slider .control-arrow:hover {
-  background: var(--primary); }
+  background: var(--primary) !important; }
+
+.carousel.carousel-slider .control-arrow {
+  background-color: #bebebe !important; }
 
 .carousel .control-dots .dot {
   background-color: var(--primary) !important; }

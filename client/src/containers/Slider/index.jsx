@@ -29,7 +29,7 @@ export default class Caroussel extends Component{
         <Carousel 
         showArrows={true}
         infiniteLoop={true}
-        autoPlay={true}
+        autoPlay={false}
         stopOnHover={true}
         showIndicators={true}
         transitionTime={650}

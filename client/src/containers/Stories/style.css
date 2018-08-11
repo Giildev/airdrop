@@ -248,9 +248,10 @@ td.rdtYear:hover {
 .storiesSection {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100rem;
-  background-color: #f9f9f9; }
+  justify-content: space-around;
+  height: 80rem;
+  background-color: #f9f9f9;
+  margin-top: 5rem; }
   .storiesSection__title {
     text-align: center;
     font-size: 5rem;

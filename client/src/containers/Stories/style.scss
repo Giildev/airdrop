@@ -4,9 +4,10 @@
 .storiesSection {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  height: 100rem;
+  justify-content: space-around;
+  height: 80rem;
   background-color: #f9f9f9;
+  margin-top: 5rem;
   &__title {
     text-align: center;
     font-size: 5rem;

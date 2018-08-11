@@ -43,6 +43,14 @@ export default class Quote extends Component {
           </div>
           <div className="quote__container__rightCol">
             {ReactHtmlRender(description)}
+            <div className="footer__follow__icoCont">
+              <a href="https://www.facebook.com/airtmLatAm" target="_blank">
+                <img className="footer__follow__icon" src="fb.png" alt="" />
+              </a>
+              <a href="https://twitter.com/theairtm" target="_blank">
+                <img className="footer__follow__icon" src="tw.png" alt="" />
+              </a>
+            </div>
           </div>
         </div>
       </section>;

@@ -120,6 +120,7 @@ export class StorieCard extends Component {
           className="stories__more"
         >
           View More
+          <img src="/faqArrowClosed.png" alt="Arrow" />
         </Link>
       </div>
     );
