@@ -74,7 +74,6 @@ editContent = (req, res) => {
     },
     (err, siteUpdated) => {
       if (err) {
-        console.log(err);
         return res.status(500).send({
           success: false,
           msg: "Problem Editing HomePage"

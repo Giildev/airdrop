@@ -75,10 +75,13 @@ export default class Home extends Component {
         />
         <FundsRaised
           fundsAmount={content.donationFundsAmount}
+          titleFundsAmount={content.donationFundsAmount[selectedLan].title}
           cerfiedUsersAmount={content.donationCerfiedUsersAmount}
+          titleCertifiedFundsAmount={content.donationCerfiedUsersAmount[selectedLan].title}
         />
         <Quote
           title={content.about[selectedLan].title}
+          author={content.about[selectedLan].author}
           description={content.about[selectedLan].description}
         />
         <TimeLine

@@ -133,11 +133,13 @@
     }, 
     "about" : {
         "en" : {
-            "description" : "<p>Venezuela should be among the most prosperous nations. Its oil reserves are estimated to be the largest in the world. It has a young and well-educated population and a dynamic culture founded in principles of freedom and fearless opposition to tyranny. </p>\n\n<p>Today Venezuela has a chaotic and isolated economy, plagued by hyperinflation, food shortages, international sanctions, and oppression of political dissent. Due to artificially-rigged government exchange rates, the banks in Venezuela are not used for remittance, payments, or donations. Venezuela needs better money. Venezuela needs cryptocurrency.</p>\n\n<p>Airdrop Venezuela’s mission is to send $1,000,000 in crypto-connected digital money to 100,000 ID-authenticated Venezuelans, distributing $10 each straight to their AirTM e-wallet. Ten dollars can help a family purchase food, medicine, and scarce imported goods. Access to digital money can help introduce Venezuelans to cryptocurrencies, online freelancer platforms, ecommerce, investments, donations and other income generating web-based opportunities.</p>\n\n<p>Airdrop Venezuela is powered by AirTM, an e-wallet connected to bank networks and e-money systems all over the world (including Venezuela) via direct bank connections and a peer-to-peer network of cryptocurrency buyers and sellers.. AirTM is used by thousands of Venezuelans everyday. Over the past three years, AirTM has become expert at authenticating digital identities to prevent fraud.</p>\n\n<p>Join AirTM to give Venezuelans access to digital cash that can be withdrawn as local money (Bolívares) at free market rates.</p>", 
+            "description" : "<p>Venezuela should be among the most prosperous nations. Its oil reserves are estimated to be the largest in the world. It has a young and well-educated population and a dynamic culture founded in principles of freedom and fearless opposition to tyranny. </p>\n\n<p>Today Venezuela has a chaotic and isolated economy, plagued by hyperinflation, food shortages, international sanctions, and oppression of political dissent. Due to artificially-rigged government exchange rates, the banks in Venezuela are not used for remittance, payments, or donations. Venezuela needs better money. Venezuela needs cryptocurrency.</p>\n\n<p>Airdrop Venezuela’s mission is to send $1,000,000 in crypto-connected digital money to 100,000 ID-authenticated Venezuelans, distributing $10 each straight to their AirTM e-wallet. Ten dollars can help a family purchase food, medicine, and scarce imported goods. Access to digital money can help introduce Venezuelans to cryptocurrencies, online freelancer platforms, ecommerce, investments, donations and other income generating web-based opportunities.</p>\n\n<p>Airdrop Venezuela is powered by AirTM, an e-wallet connected to bank networks and e-money systems all over the world (including Venezuela) via direct bank connections and a peer-to-peer network of cryptocurrency buyers and sellers.. AirTM is used by thousands of Venezuelans everyday. Over the past three years, AirTM has become expert at authenticating digital identities to prevent fraud.</p>\n\n<p>Join AirTM to give Venezuelans access to digital cash that can be withdrawn as local money (Bolívares) at free market rates.</p>",
+            "author": "Simon Bolivar", 
             "title" : "“A people that loves freedom will in the end be free.” "
         }, 
         "es" : {
             "description" : "<p>Venezuela debería estar entre las naciones más prósperas. Se estima que sus reservas de petróleo son las más grandes del mundo. Tiene una población joven y bien educada y una cultura dinámica fundada en los principios de la libertad y la oposición valiente a la tiranía.</p>\n\n<p>Hoy Venezuela tiene una economía caótica y aislada, plagada de hiperinflación, escasez de alimentos, sanciones internacionales y opresión de la disidencia política. Debido a las tasas de cambio gubernamentales manipuladas artificialmente, los bancos en Venezuela no se utilizan para remesas, pagos o donaciones. Venezuela necesita mejor dinero. Venezuela necesita criptomoneda.</p>\n\n<p>La misión de Airdrop Venezuela es enviar $ 1,000,000 en dinero digital con conexión criptográfica a 100,000 venezolanos autenticados con identificación, distribuyendo $ 10 cada uno directamente a su billetera electrónica AirTM. Diez dólares pueden ayudar a una familia a comprar alimentos, medicinas y bienes importados escasos. El acceso al dinero digital puede ayudar a los venezolanos a ingresar en las criptomonedas, las plataformas en línea de los profesionales independientes, el comercio electrónico, las inversiones, las donaciones y otras oportunidades generadoras de ingresos en la web.</p>\n\n<p>Airdrop Venezuela es impulsado por AirTM, una billetera electrónica conectada a redes bancarias y sistemas de dinero electrónico en todo el mundo (incluido Venezuela) a través de conexiones bancarias directas y una red de compradores y vendedores de criptomonedas de igual a igual. Se usa AirTM. por miles de venezolanos todos los días. En los últimos tres años, AirTM se ha convertido en un experto en la autenticación de identidades digitales para evitar el fraude.</p>\n\n<p>Únase a AirTM para brindar a los venezolanos acceso a efectivo digital que puede retirarse como dinero local (Bolívares) a tasas de mercado libres</p>", 
+            "author": "Simon Bolivar",
             "title" : "Un pueblo que ama la libertad al final será libre."
         }
     }, 
@@ -196,10 +198,22 @@
         }
     }, 
     "donationFundsAmount" : {
+        "en": {
+            "title": "Airdrop Funds Raised"
+        },
+        "es": {
+            "title": "Fondos Recaudados AirDrop"
+        },
         "goal" : "1000000", 
         "raised" : "34093"
     }, 
     "donationCerfiedUsersAmount" : {
+        "en": {
+            "title": "Venezuelan Recipents"
+        },
+        "es": {
+            "title": "Receptores Venezolanos"
+        },
         "goal" : "100000", 
         "raised" : "22230"
     }
