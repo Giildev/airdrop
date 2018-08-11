@@ -434,7 +434,6 @@ td.rdtYear:hover {
   justify-content: flex-start; }
   .containerList__icons {
     display: flex;
-    align-self: flex-end;
     align-items: center; }
     .containerList__icons__ico {
       width: 2.5rem;
