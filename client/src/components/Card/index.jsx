@@ -47,7 +47,7 @@ export class HIWCard extends Component {
       <div className="hiwcard">
         <div className="hiwcard__iconBox">
           <div className="hiwcard__iconBox__imgBox">
-            <img src="/hiwIcon.png" alt="" />
+            <img src={`/${cover}`} alt="" />
           </div>
         </div>
         <div className="hiwcard__title">{title}</div>
@@ -297,14 +297,14 @@ export class HIWCardAdmin extends Component {
     this.form = new FormData();
 
     this.state = {
-      card: props.card,
+      card: props.card
     };
   }
 
   shouldComponentUpdate = (nextprops, nextstate) => {
     if (this.state.card !== nextprops.card) {
       this.setState({
-        card: nextprops.card,
+        card: nextprops.card
       });
     }
     return true;
