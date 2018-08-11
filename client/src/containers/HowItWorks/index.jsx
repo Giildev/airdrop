@@ -42,7 +42,12 @@ export default class HowItWorks extends Component {
         <h3 className="howItWorks__subTitle">{`${description}`}</h3>
         <div className="howItWorks__cardContainer">
           {cards.map(card => (
-            <HIWCard key={card._id} title={card.title} content={card.content} />
+            <HIWCard
+              key={card._id}
+              title={card.title}
+              content={card.content}
+              cover={card.cover}
+            />
           ))}
           {/* <HIWCard
             title="Donate"
