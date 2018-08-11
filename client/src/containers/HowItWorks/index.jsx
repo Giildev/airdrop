@@ -43,6 +43,7 @@ export default class HowItWorks extends Component {
         <div className="howItWorks__cardContainer">
           {cards.map(card => (
             <HIWCard
+              key={card._id}
               title={card.title}
               content={card.content}
               cover={card.cover}

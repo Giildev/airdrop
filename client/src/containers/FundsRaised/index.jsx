@@ -41,7 +41,7 @@ export default class componentName extends Component {
     } = this.state;
     return (
       <section className="fundsRecipents">
-        <h2 className="funds__title">Airdrop Funds Raised</h2>
+        <h2 className="funds__title">{ this.props.titleFundsAmount }</h2>
         <div className="funds__container">
           <div className="funds__container__left">
             <img src="/fundsLeft.png" alt="" />
@@ -75,7 +75,7 @@ export default class componentName extends Component {
             </h3>
           </div>
         </div>
-        <h2 className="recipents__title">Venezuelan Recipents</h2>
+        <h2 className="recipents__title">{ this.props.titleCertifiedFundsAmount }</h2>
         <div className="recipents__container">
           <div className="recipents__container__left">
             <img src="/recipentsLeft.png" alt="" />

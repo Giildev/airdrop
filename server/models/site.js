@@ -26,10 +26,22 @@ const siteSchema = new Schema({
     }
   },
   donationFundsAmount: {
+    en:{
+      title: String
+    },
+    es:{
+      title: String
+    },
     raised: String,
     goal: String
   },
   donationCerfiedUsersAmount: {
+    en:{
+        title: String
+      },
+      es: {
+        title: String
+      },
     raised: String,
     goal: String
   },
@@ -47,10 +59,12 @@ const siteSchema = new Schema({
   about: {
     es: {
       title: String,
+      author: String,
       description: String
     },
     en: {
       title: String,
+      author: String,
       description: String
     }
   },

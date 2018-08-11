@@ -186,10 +186,18 @@ export default class AdminSite extends Component {
               <label className="content__titles" htmlFor="">About Section</label>
               <input
                 type="text"
-                placeholder="Titulo"
+                placeholder="Cita"
                 name="about.es.title"
                 onChange={this.handleContent}
                 defaultValue={content.about.es.title}
+                className="formContainer__item"
+              />
+              <input
+                type="text"
+                placeholder="Author Cita"
+                name="about.es.author"
+                onChange={this.handleContent}
+                defaultValue={content.about.es.author}
                 className="formContainer__item"
               />
               <textarea
@@ -198,6 +206,26 @@ export default class AdminSite extends Component {
                 onChange={this.handleContent}
                 defaultValue={content.about.es.description}
                 className="formContainer__item__textarea"
+              />
+              <br />
+              <label className="content__titles" htmlFor="">Donation Funds Amount</label>
+              <input
+                type="text"
+                placeholder="Titulo"
+                name="donationFundsAmount.es.title"
+                onChange={this.handleContent}
+                defaultValue={content.donationFundsAmount.es.title}
+                className="formContainer__item"
+              />
+              <br />
+              <label className="content__titles" htmlFor="">Donation Funds User Amount</label>
+              <input
+                type="text"
+                placeholder="Titulo"
+                name="donationCerfiedUsersAmount.es.title"
+                onChange={this.handleContent}
+                defaultValue={content.donationCerfiedUsersAmount.es.title}
+                className="formContainer__item"
               />
               <br />
               <label className="content__titles" htmlFor="">Story Section</label>
@@ -364,10 +392,18 @@ export default class AdminSite extends Component {
               <label className="content__titles" htmlFor="">About Section</label>
               <input
                 type="text"
-                placeholder="Title english"
+                placeholder="Quote"
                 name="about.en.title"
                 onChange={this.handleContent}
                 defaultValue={content.about.en.title}
+                className="formContainer__item"
+              />
+              <input
+                type="text"
+                placeholder="Author Quote"
+                name="about.en.author"
+                onChange={this.handleContent}
+                defaultValue={content.about.en.author}
                 className="formContainer__item"
               />
               <textarea
@@ -376,6 +412,26 @@ export default class AdminSite extends Component {
                 onChange={this.handleContent}
                 defaultValue={content.about.en.description}
                 className="formContainer__item__textarea"
+              />
+              <br />
+              <label className="content__titles" htmlFor="">Donation Funds Amount</label>
+              <input
+                type="text"
+                placeholder="Title"
+                name="donationFundsAmount.en.title"
+                onChange={this.handleContent}
+                defaultValue={content.donationFundsAmount.en.title}
+                className="formContainer__item"
+              />
+              <br />
+              <label className="content__titles" htmlFor="">Donation Funds User Amount</label>
+              <input
+                type="text"
+                placeholder="Title"
+                name="donationCerfiedUsersAmount.en.title"
+                onChange={this.handleContent}
+                defaultValue={content.donationCerfiedUsersAmount.en.title}
+                className="formContainer__item"
               />
               <br />
               <label className="content__titles" htmlFor="">Story Section</label>
