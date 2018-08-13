@@ -280,6 +280,8 @@ td.rdtYear:hover {
       display: flex;
       justify-content: center;
       align-items: center; }
+      .hiwcard__iconBox__imgBox__img {
+        border-radius: 5rem; }
   .hiwcard__title {
     color: var(--primary);
     font-size: 2.1rem; }

@@ -47,7 +47,7 @@ export class HIWCard extends Component {
       <div className="hiwcard">
         <div className="hiwcard__iconBox">
           <div className="hiwcard__iconBox__imgBox">
-            <img src={`/${cover}`} alt="" />
+            <img className="hiwcard__iconBox__imgBox__img" src={`/${cover}`} alt="" />
           </div>
         </div>
         <div className="hiwcard__title">{title}</div>
